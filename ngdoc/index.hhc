@@ -5,13 +5,6 @@
 </OBJECT>
 <UL>
 <LI><OBJECT type="text/sitemap"><param name="Name" value="The Contiki-NG Operating System"><param name="Local" value="index.html"><param name="ImageNumber" value="11"></OBJECT>
-  <UL>
-  <LI><OBJECT type="text/sitemap"><param name="Name" value="Getting started with Contiki-NG"><param name="ImageNumber" value="1"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Name" value="Building the Contiki-NG system and its applications"><param name="ImageNumber" value="1"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Name" value="Low-Power IPv6 Networking"><param name="ImageNumber" value="1"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Name" value="Application Development"><param name="ImageNumber" value="1"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Name" value="Libraries"><param name="ImageNumber" value="1"></OBJECT>
-  </UL>
 <LI><OBJECT type="text/sitemap"><param name="Name" value="Modules"><param name="ImageNumber" value="1"></OBJECT>
   <UL>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="Hardware support"><param name="ImageNumber" value="1"></OBJECT>
@@ -7583,7 +7576,7 @@
       <LI><OBJECT type="text/sitemap"><param name="Name" value="trickle_timer_set"><param name="Local" value="group__trickle-timer.html#ga57b03043f109c0b2adb1dc92637ee8b4"><param name="ImageNumber" value="11"></OBJECT>
       </UL>
     </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Name" value="Sys"><param name="ImageNumber" value="1"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="System functions"><param name="ImageNumber" value="1"></OBJECT>
     <UL>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="Argument buffer"><param name="ImageNumber" value="1"></OBJECT>
       <UL>
@@ -7812,12 +7805,6 @@
         <LI><OBJECT type="text/sitemap"><param name="Name" value="timer_restart"><param name="Local" value="group__timer.html#gacb807bd57e5489b386b876af5c1f163a"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="timer_set"><param name="Local" value="group__timer.html#gaee48c16914ec4b58bafab733b006bd9e"><param name="ImageNumber" value="11"></OBJECT>
         </UL>
-      </UL>
-    </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Name" value="Tutorials"><param name="ImageNumber" value="1"></OBJECT>
-    <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Name" value="The Contiki-NG build system"><param name="Local" value="group__buildsystem.html"><param name="ImageNumber" value="11"></OBJECT>
-      <UL>
       </UL>
     </UL>
   </UL>
@@ -18498,10 +18485,6 @@
       <LI><OBJECT type="text/sitemap"><param name="Name" value="z"><param name="Local" value="globals_defs_z.html"><param name="ImageNumber" value="11"></OBJECT>
       </UL>
     </UL>
-  </UL>
-<LI><OBJECT type="text/sitemap"><param name="Name" value="Examples"><param name="ImageNumber" value="1"></OBJECT>
-  <UL>
-  <LI><OBJECT type="text/sitemap"><param name="Name" value="code-style.c"><param name="Local" value="code-style_8c-example.html"><param name="ImageNumber" value="11"></OBJECT>
   </UL>
 </UL>
 </BODY>

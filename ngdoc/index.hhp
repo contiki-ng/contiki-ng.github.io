@@ -14,7 +14,6 @@ Title=Contiki-NG
 main="Contiki-NG","index.hhc","index.hhk","index.html","index.html",,,,,0x23520,,0x10387e,,,,,,,,0
 
 [FILES]
-code-style_8c-example.html
 cmsis__armcc_8h_source.html
 cmsis__armcc__V6_8h_source.html
 cmsis__gcc_8h_source.html
@@ -1975,7 +1974,6 @@ group__rt.html
 group__stimer.html
 group__subprocess.html
 group__timer.html
-group__buildsystem.html
 group__arch.html
 group__net.html
 group__net-layer.html
@@ -1983,9 +1981,9 @@ group__uip.html
 group__rpl-lite.html
 group__mem.html
 group__data.html
+group__sys.html
 group__threads.html
 group__timers.html
-group__tutorials.html
 group__pt.html
 group__CMSIS__MISRA__Exceptions.html
 group__CMSIS__core__definitions.html
@@ -2009,7 +2007,6 @@ group__zoul-bme280-sensor.html
 group__sicslowpan.html
 group__nullnet.html
 group__shell.html
-group__sys.html
 group__cooja.html
 group__exp5438.html
 group__jn516x.html
@@ -2348,7 +2345,6 @@ globals_defs_u.html
 globals_defs_w.html
 globals_defs_x.html
 globals_defs_z.html
-examples.html
 tab_a.png
 tab_b.png
 tab_h.png
