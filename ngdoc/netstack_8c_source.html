@@ -91,21 +91,71 @@
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="netstack_8h.html">net/netstack.h</a>&quot;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;netstack_init(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  NETSTACK_RADIO.init();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  NETSTACK_MAC.<a class="code" href="structmac__driver.html#a8d70b9d00bde293223c72b8dc92466f2">init</a>();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  NETSTACK_NETWORK.init();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="list_8h.html">lib/list.h</a>&quot;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">/* The list of IP processors that will process IP packets before uip or after */</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<a class="code" href="group__list.html#ga1e61a00c396ab8bd4141f54772e310ce">LIST</a>(ip_processor_list);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">/* Note: localdest is only used for the output callback */</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">enum</span> netstack_ip_action</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;netstack_process_ip_callback(uint8_t type, <span class="keyword">const</span> linkaddr_t *localdest)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">enum</span> netstack_ip_action action = NETSTACK_IP_PROCESS;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">struct </span>netstack_ip_packet_processor *p;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordflow">for</span>(p = <a class="code" href="group__list.html#gacc0723982dcfcc54cfa6ba932ee63051">list_head</a>(ip_processor_list);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      p != NULL;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      p = <a class="code" href="group__list.html#gae9c13698f6fd8620561f0d1124ec8cdf">list_item_next</a>(p)) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">if</span>(type == NETSTACK_IP_OUTPUT) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <span class="keywordflow">if</span>(p-&gt;process_output != NULL) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        action = p-&gt;process_output(localdest);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(type == NETSTACK_IP_INPUT) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      <span class="keywordflow">if</span>(p-&gt;process_input != NULL) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        action = p-&gt;process_input();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">/* if not NETSTACK_IP_PROCESS - quit and return the desired action */</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">if</span>(action != NETSTACK_IP_PROCESS)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      <span class="keywordflow">return</span> action;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordflow">return</span> action;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;netstack_ip_packet_processor_add(<span class="keyword">struct</span> netstack_ip_packet_processor *p)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;{</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordflow">if</span>(p != NULL) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="group__list.html#ga775c0dfc08dca991297df7b419b7be43">list_add</a>(ip_processor_list, p);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;uip_ds6_ip_packet_processor_rm(<span class="keyword">struct</span> netstack_ip_packet_processor *p)</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                               {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <a class="code" href="group__list.html#ga3eb717d9997a980e937e2ea8b0c07677">list_remove</a>(ip_processor_list, p);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;netstack_init(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;{</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  NETSTACK_RADIO.init();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  NETSTACK_MAC.<a class="code" href="structmac__driver.html#a8d70b9d00bde293223c72b8dc92466f2">init</a>();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  NETSTACK_NETWORK.init();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
 <div class="ttc" id="structmac__driver_html_a8d70b9d00bde293223c72b8dc92466f2"><div class="ttname"><a href="structmac__driver.html#a8d70b9d00bde293223c72b8dc92466f2">mac_driver::init</a></div><div class="ttdeci">void(* init)(void)</div><div class="ttdoc">Initialize the MAC driver. </div><div class="ttdef"><b>Definition:</b> <a href="mac_8h_source.html#l00058">mac.h:58</a></div></div>
+<div class="ttc" id="list_8h_html"><div class="ttname"><a href="list_8h.html">list.h</a></div><div class="ttdoc">Linked list manipulation routines. </div></div>
+<div class="ttc" id="group__list_html_gacc0723982dcfcc54cfa6ba932ee63051"><div class="ttname"><a href="group__list.html#gacc0723982dcfcc54cfa6ba932ee63051">list_head</a></div><div class="ttdeci">void * list_head(list_t list)</div><div class="ttdoc">Get a pointer to the first element of a list. </div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00083">list.c:83</a></div></div>
+<div class="ttc" id="group__list_html_ga775c0dfc08dca991297df7b419b7be43"><div class="ttname"><a href="group__list.html#ga775c0dfc08dca991297df7b419b7be43">list_add</a></div><div class="ttdeci">void list_add(list_t list, void *item)</div><div class="ttdoc">Add an item at the end of a list. </div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00143">list.c:143</a></div></div>
+<div class="ttc" id="group__list_html_ga1e61a00c396ab8bd4141f54772e310ce"><div class="ttname"><a href="group__list.html#ga1e61a00c396ab8bd4141f54772e310ce">LIST</a></div><div class="ttdeci">#define LIST(name)</div><div class="ttdoc">Declare a linked list. </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00086">list.h:86</a></div></div>
 <div class="ttc" id="netstack_8h_html"><div class="ttname"><a href="netstack_8h.html">netstack.h</a></div><div class="ttdoc">    Include file for the Contiki low-layer network stack (NETSTACK)  </div></div>
+<div class="ttc" id="group__list_html_ga3eb717d9997a980e937e2ea8b0c07677"><div class="ttname"><a href="group__list.html#ga3eb717d9997a980e937e2ea8b0c07677">list_remove</a></div><div class="ttdeci">void list_remove(list_t list, void *item)</div><div class="ttdoc">Remove a specific element from a list. </div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00240">list.c:240</a></div></div>
+<div class="ttc" id="group__list_html_gae9c13698f6fd8620561f0d1124ec8cdf"><div class="ttname"><a href="group__list.html#gae9c13698f6fd8620561f0d1124ec8cdf">list_item_next</a></div><div class="ttdeci">void * list_item_next(void *item)</div><div class="ttdoc">Get the next item following this item. </div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00325">list.c:325</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 6 2017 15:45:05 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 31 2017 23:29:02 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

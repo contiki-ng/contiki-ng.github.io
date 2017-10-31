@@ -620,67 +620,59 @@
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;<span class="keywordtype">void</span></div>
 <div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;cc26xx_rf_cpe1_isr(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;{</div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;  ENERGEST_ON(ENERGEST_TYPE_IRQ);</div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;  PRINTF(<span class="stringliteral">&quot;RF Error\n&quot;</span>);</div>
 <div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;</div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;  PRINTF(<span class="stringliteral">&quot;RF Error\n&quot;</span>);</div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;</div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;  <span class="keywordflow">if</span>(!<a class="code" href="group__rf-core.html#ga51540b0f7f73535dffd44f92db9181be">rf_core_is_accessible</a>()) {</div>
-<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="group__rf-core.html#ga73af1f7ff1360df7bbe22d452708eaa4">rf_core_power_up</a>() != RF_CORE_CMD_OK) {</div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;      <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;    }</div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;  }</div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;</div>
-<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;  <span class="comment">/* Clear INTERNAL_ERROR interrupt flag */</span></div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;  HWREG(RFC_DBELL_NONBUF_BASE + RFC_DBELL_O_RFCPEIFG) = 0x7FFFFFFF;</div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;</div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;  ENERGEST_OFF(ENERGEST_TYPE_IRQ);</div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;}</div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;cc26xx_rf_cpe0_isr(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;{</div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;  ENERGEST_ON(ENERGEST_TYPE_IRQ);</div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;</div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;  <span class="keywordflow">if</span>(!<a class="code" href="group__rf-core.html#ga51540b0f7f73535dffd44f92db9181be">rf_core_is_accessible</a>()) {</div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;    printf(<span class="stringliteral">&quot;RF ISR called but RF not ready... PANIC!!\n&quot;</span>);</div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="group__rf-core.html#ga73af1f7ff1360df7bbe22d452708eaa4">rf_core_power_up</a>() != RF_CORE_CMD_OK) {</div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;      PRINTF(<span class="stringliteral">&quot;rf_core_power_up() failed\n&quot;</span>);</div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;      <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    }</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;  }</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;</div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;  ti_lib_int_master_disable();</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;  <span class="keywordflow">if</span>(!<a class="code" href="group__rf-core.html#ga51540b0f7f73535dffd44f92db9181be">rf_core_is_accessible</a>()) {</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="group__rf-core.html#ga73af1f7ff1360df7bbe22d452708eaa4">rf_core_power_up</a>() != RF_CORE_CMD_OK) {</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;      <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;    }</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;  }</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;  <span class="comment">/* Clear INTERNAL_ERROR interrupt flag */</span></div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;  HWREG(RFC_DBELL_NONBUF_BASE + RFC_DBELL_O_RFCPEIFG) = 0x7FFFFFFF;</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;}</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;cc26xx_rf_cpe0_isr(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;{</div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;  <span class="keywordflow">if</span>(!<a class="code" href="group__rf-core.html#ga51540b0f7f73535dffd44f92db9181be">rf_core_is_accessible</a>()) {</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;    printf(<span class="stringliteral">&quot;RF ISR called but RF not ready... PANIC!!\n&quot;</span>);</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="group__rf-core.html#ga73af1f7ff1360df7bbe22d452708eaa4">rf_core_power_up</a>() != RF_CORE_CMD_OK) {</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;      PRINTF(<span class="stringliteral">&quot;rf_core_power_up() failed\n&quot;</span>);</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;      <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;    }</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;  }</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;  ti_lib_int_master_disable();</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;  <span class="keywordflow">if</span>(HWREG(RFC_DBELL_NONBUF_BASE + RFC_DBELL_O_RFCPEIFG) &amp; RX_FRAME_IRQ) {</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    <span class="comment">/* Clear the RX_ENTRY_DONE interrupt flag */</span></div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    HWREG(RFC_DBELL_NONBUF_BASE + RFC_DBELL_O_RFCPEIFG) = 0xFF7FFFFF;</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    <a class="code" href="group__process.html#ga496ba132ce7a2ec12a8313dc05ab0142">process_poll</a>(&amp;rf_core_process);</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;  }</div>
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;</div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;  <span class="keywordflow">if</span>(HWREG(RFC_DBELL_NONBUF_BASE + RFC_DBELL_O_RFCPEIFG) &amp; RX_FRAME_IRQ) {</div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    <span class="comment">/* Clear the RX_ENTRY_DONE interrupt flag */</span></div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    HWREG(RFC_DBELL_NONBUF_BASE + RFC_DBELL_O_RFCPEIFG) = 0xFF7FFFFF;</div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    <a class="code" href="group__process.html#ga496ba132ce7a2ec12a8313dc05ab0142">process_poll</a>(&amp;rf_core_process);</div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;  }</div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;</div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;  <span class="keywordflow">if</span>(RF_CORE_DEBUG_CRC) {</div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    <span class="keywordflow">if</span>(HWREG(RFC_DBELL_NONBUF_BASE + RFC_DBELL_O_RFCPEIFG) &amp; RX_NOK_IRQ) {</div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;      <span class="comment">/* Clear the RX_NOK interrupt flag */</span></div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;      HWREG(RFC_DBELL_NONBUF_BASE + RFC_DBELL_O_RFCPEIFG) = 0xFFFDFFFF;</div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;      rx_nok_isr();</div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    }</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;  <span class="keywordflow">if</span>(RF_CORE_DEBUG_CRC) {</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    <span class="keywordflow">if</span>(HWREG(RFC_DBELL_NONBUF_BASE + RFC_DBELL_O_RFCPEIFG) &amp; RX_NOK_IRQ) {</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;      <span class="comment">/* Clear the RX_NOK interrupt flag */</span></div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;      HWREG(RFC_DBELL_NONBUF_BASE + RFC_DBELL_O_RFCPEIFG) = 0xFFFDFFFF;</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;      rx_nok_isr();</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;    }</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;  }</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;  <span class="keywordflow">if</span>(HWREG(RFC_DBELL_NONBUF_BASE + RFC_DBELL_O_RFCPEIFG) &amp;</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;     (IRQ_LAST_FG_COMMAND_DONE | IRQ_LAST_COMMAND_DONE)) {</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;    <span class="comment">/* Clear the two TX-related interrupt flags */</span></div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    HWREG(RFC_DBELL_NONBUF_BASE + RFC_DBELL_O_RFCPEIFG) = 0xFFFFFFF5;</div>
 <div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;  }</div>
 <div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;</div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;  <span class="keywordflow">if</span>(HWREG(RFC_DBELL_NONBUF_BASE + RFC_DBELL_O_RFCPEIFG) &amp;</div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;     (IRQ_LAST_FG_COMMAND_DONE | IRQ_LAST_COMMAND_DONE)) {</div>
-<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    <span class="comment">/* Clear the two TX-related interrupt flags */</span></div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;    HWREG(RFC_DBELL_NONBUF_BASE + RFC_DBELL_O_RFCPEIFG) = 0xFFFFFFF5;</div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;  }</div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;</div>
-<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;  ti_lib_int_master_enable();</div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;</div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;  ENERGEST_OFF(ENERGEST_TYPE_IRQ);</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;}</div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span><span class="comment"></span></div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;<span class="comment">/** @} */</span></div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;  ti_lib_int_master_enable();</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;}</div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span><span class="comment"></span></div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;<span class="comment">/** @} */</span></div>
 <div class="ttc" id="group__packetbuf_html_ga29a6f3f230b55e6bc2f017879c27113a"><div class="ttname"><a href="group__packetbuf.html#ga29a6f3f230b55e6bc2f017879c27113a">packetbuf_dataptr</a></div><div class="ttdeci">void * packetbuf_dataptr(void)</div><div class="ttdoc">Get a pointer to the data in the packetbuf. </div><div class="ttdef"><b>Definition:</b> <a href="packetbuf_8c_source.html#l00143">packetbuf.c:143</a></div></div>
 <div class="ttc" id="structrf__core__primary__mode__s_html_afaff643547e79ad65aba3796497dbad6"><div class="ttname"><a href="structrf__core__primary__mode__s.html#afaff643547e79ad65aba3796497dbad6">rf_core_primary_mode_s::abort</a></div><div class="ttdeci">void(* abort)(void)</div><div class="ttdoc">A pointer to a function used to abort the current radio op. </div><div class="ttdef"><b>Definition:</b> <a href="rf-core_8h_source.html#l00136">rf-core.h:136</a></div></div>
 <div class="ttc" id="group__process_html_ga27e9b6fc13f0438e37a198f69b38b4cf"><div class="ttname"><a href="group__process.html#ga27e9b6fc13f0438e37a198f69b38b4cf">PROCESS</a></div><div class="ttdeci">#define PROCESS(name, strname)</div><div class="ttdoc">Declare a process. </div><div class="ttdef"><b>Definition:</b> <a href="process_8h_source.html#l00307">process.h:307</a></div></div>
-<div class="ttc" id="group__process_html_ga496ba132ce7a2ec12a8313dc05ab0142"><div class="ttname"><a href="group__process.html#ga496ba132ce7a2ec12a8313dc05ab0142">process_poll</a></div><div class="ttdeci">void process_poll(struct process *p)</div><div class="ttdoc">Request a process to be polled. </div><div class="ttdef"><b>Definition:</b> <a href="process_8c_source.html#l00372">process.c:372</a></div></div>
+<div class="ttc" id="group__process_html_ga496ba132ce7a2ec12a8313dc05ab0142"><div class="ttname"><a href="group__process.html#ga496ba132ce7a2ec12a8313dc05ab0142">process_poll</a></div><div class="ttdeci">void process_poll(struct process *p)</div><div class="ttdoc">Request a process to be polled. </div><div class="ttdef"><b>Definition:</b> <a href="process_8c_source.html#l00371">process.c:371</a></div></div>
 <div class="ttc" id="group__rf-core_html_ga0977e84f82357f934a4475bf46526f8d"><div class="ttname"><a href="group__rf-core.html#ga0977e84f82357f934a4475bf46526f8d">rf_core_setup_interrupts</a></div><div class="ttdeci">void rf_core_setup_interrupts(bool poll_mode)</div><div class="ttdoc">Setup RF core interrupts. </div><div class="ttdef"><b>Definition:</b> <a href="rf-core_8c_source.html#l00446">rf-core.c:446</a></div></div>
 <div class="ttc" id="ti-lib_8h_html"><div class="ttname"><a href="ti-lib_8h.html">ti-lib.h</a></div><div class="ttdoc">Header file with macros which rename TI CC26xxware functions. </div></div>
 <div class="ttc" id="group__packetbuf_html_gaa540c9abf0db13d27881b616f7794824"><div class="ttname"><a href="group__packetbuf.html#gaa540c9abf0db13d27881b616f7794824">packetbuf_clear</a></div><div class="ttdeci">void packetbuf_clear(void)</div><div class="ttdoc">Clear and reset the packetbuf. </div><div class="ttdef"><b>Definition:</b> <a href="packetbuf_8c_source.html#l00075">packetbuf.c:75</a></div></div>
@@ -721,7 +713,7 @@
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 6 2017 15:44:45 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 31 2017 23:28:49 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

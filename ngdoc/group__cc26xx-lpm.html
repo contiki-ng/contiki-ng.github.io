@@ -172,11 +172,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 <p>Drop the cortex to sleep / deep sleep and shut down peripherals. </p>
 <p>Whether the cortex will drop to sleep or deep sleep is configurable. The exact peripherals which will be shut down is also configurable </p>
 
-<p>Definition at line <a class="el" href="cc26xx-cc13xx_2lpm_8c_source.html#l00539">539</a> of file <a class="el" href="cc26xx-cc13xx_2lpm_8c_source.html">lpm.c</a>.</p>
+<p>Definition at line <a class="el" href="cc26xx-cc13xx_2lpm_8c_source.html#l00517">517</a> of file <a class="el" href="cc26xx-cc13xx_2lpm_8c_source.html">lpm.c</a>.</p>
 
-<p>References <a class="el" href="cc26xx-cc13xx_2lpm_8c_source.html#l00388">lpm_sleep()</a>.</p>
+<p>References <a class="el" href="cc26xx-cc13xx_2lpm_8c_source.html#l00374">lpm_sleep()</a>.</p>
 
-<p>Referenced by <a class="el" href="nrf52dk_2contiki-main_8c_source.html#l00129">main()</a>.</p>
+<p>Referenced by <a class="el" href="nrf52dk_2platform_8c_source.html#l00163">platform_idle()</a>.</p>
 
 </div>
 </div>
@@ -204,7 +204,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 <p>This will set ioid to sw control, input, no pull. Input buffer and output driver will both be disabled</p>
 <p>The function will do nothing if ioid == IOID_UNUSED, so the caller does not have to check board configuration before calling this. </p>
 
-<p>Definition at line <a class="el" href="cc26xx-cc13xx_2lpm_8c_source.html#l00580">580</a> of file <a class="el" href="cc26xx-cc13xx_2lpm_8c_source.html">lpm.c</a>.</p>
+<p>Definition at line <a class="el" href="cc26xx-cc13xx_2lpm_8c_source.html#l00558">558</a> of file <a class="el" href="cc26xx-cc13xx_2lpm_8c_source.html">lpm.c</a>.</p>
 
 </div>
 </div>
@@ -232,11 +232,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 <p>When the LPM module is about to drop to some low power mode, it will first notify all modules about this.</p>
 <p>This function must not be called before the module has been initialised with <a class="el" href="group__cc26xx-lpm.html#gaa8ae14246c9df775c53eeb9b54a7e8a8" title="Initialise the low-power mode management module. ">lpm_init()</a>. The code does not perform checks: This is the caller's responsibility. </p>
 
-<p>Definition at line <a class="el" href="cc26xx-cc13xx_2lpm_8c_source.html#l00559">559</a> of file <a class="el" href="cc26xx-cc13xx_2lpm_8c_source.html">lpm.c</a>.</p>
+<p>Definition at line <a class="el" href="cc26xx-cc13xx_2lpm_8c_source.html#l00537">537</a> of file <a class="el" href="cc26xx-cc13xx_2lpm_8c_source.html">lpm.c</a>.</p>
 
 <p>References <a class="el" href="list_8c_source.html#l00143">list_add()</a>.</p>
 
-<p>Referenced by <a class="el" href="srf06-cc26xx_2launchpad_2board_8c_source.html#l00081">board_init()</a>, <a class="el" href="buzzer_8c_source.html#l00064">buzzer_start()</a>, <a class="el" href="cc26xx-uart_8c_source.html#l00269">cc26xx_uart_init()</a>, and <a class="el" href="soc-trng_8c_source.html#l00191">soc_trng_rand_asynchronous()</a>.</p>
+<p>Referenced by <a class="el" href="srf06-cc26xx_2launchpad_2board_8c_source.html#l00081">board_init()</a>, <a class="el" href="buzzer_8c_source.html#l00064">buzzer_start()</a>, <a class="el" href="cc26xx-uart_8c_source.html#l00268">cc26xx_uart_init()</a>, and <a class="el" href="soc-trng_8c_source.html#l00191">soc_trng_rand_asynchronous()</a>.</p>
 
 </div>
 </div>
@@ -280,7 +280,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="cc26xx-cc13xx_2lpm_8c_source.html#l00092">92</a> of file <a class="el" href="cc26xx-cc13xx_2lpm_8c_source.html">lpm.c</a>.</p>
+<p>Definition at line <a class="el" href="cc26xx-cc13xx_2lpm_8c_source.html#l00080">80</a> of file <a class="el" href="cc26xx-cc13xx_2lpm_8c_source.html">lpm.c</a>.</p>
 
 <p>References <a class="el" href="aux-ctrl_8c_source.html#l00087">aux_ctrl_power_down()</a>, <a class="el" href="aux-ctrl_8c_source.html#l00044">aux_ctrl_register_consumer()</a>, <a class="el" href="list_8c_source.html#l00083">list_head()</a>, <a class="el" href="oscillators_8c_source.html#l00073">oscillators_select_lf_rcosc()</a>, <a class="el" href="oscillators_8c_source.html#l00134">oscillators_switch_to_hf_rc()</a>, and <a class="el" href="cpu_2cc2538_2dev_2watchdog_8c_source.html#l00085">watchdog_periodic()</a>.</p>
 
@@ -311,7 +311,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 </dl>
 <p>When a previously registered module is no longer interested in LPM notifications, this function can be used to unregister it. </p>
 
-<p>Definition at line <a class="el" href="cc26xx-cc13xx_2lpm_8c_source.html#l00565">565</a> of file <a class="el" href="cc26xx-cc13xx_2lpm_8c_source.html">lpm.c</a>.</p>
+<p>Definition at line <a class="el" href="cc26xx-cc13xx_2lpm_8c_source.html#l00543">543</a> of file <a class="el" href="cc26xx-cc13xx_2lpm_8c_source.html">lpm.c</a>.</p>
 
 <p>References <a class="el" href="list_8c_source.html#l00240">list_remove()</a>.</p>
 
@@ -322,7 +322,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 6 2017 15:45:26 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 31 2017 23:29:15 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

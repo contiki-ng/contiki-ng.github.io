@@ -121,13 +121,21 @@
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="comment">/* Does not do anything. */</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="group__clock.html#ga78ab77b57cf2e00089f0a3a22508524c">   72</a></span>&#160;<a class="code" href="group__cc2538-clock.html#ga78ab77b57cf2e00089f0a3a22508524c">clock_init</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;{</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="comment">/* Provide this function, required by main() */</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
 <div class="ttc" id="group__cc2538-clock_html_ga50c22f9b9d60dd1f9e59b63a3a6676b1"><div class="ttname"><a href="group__cc2538-clock.html#ga50c22f9b9d60dd1f9e59b63a3a6676b1">clock_time</a></div><div class="ttdeci">CCIF clock_time_t clock_time(void)</div><div class="ttdoc">Get the current clock time. </div><div class="ttdef"><b>Definition:</b> <a href="cpu_2cc2538_2clock_8c_source.html#l00118">clock.c:118</a></div></div>
 <div class="ttc" id="group__cc2538-clock_html_ga8bbd5d5a773349139eee79d365af36ab"><div class="ttname"><a href="group__cc2538-clock.html#ga8bbd5d5a773349139eee79d365af36ab">clock_seconds</a></div><div class="ttdeci">CCIF unsigned long clock_seconds(void)</div><div class="ttdoc">Get the current value of the platform seconds. </div><div class="ttdef"><b>Definition:</b> <a href="cpu_2cc2538_2clock_8c_source.html#l00130">clock.c:130</a></div></div>
 <div class="ttc" id="group__cc2538-clock_html_gaf3e6545fa8f667795805b8f42e1e9a4f"><div class="ttname"><a href="group__cc2538-clock.html#gaf3e6545fa8f667795805b8f42e1e9a4f">clock_delay</a></div><div class="ttdeci">void clock_delay(unsigned int i)</div><div class="ttdoc">Obsolete delay function but we implement it here since some code still uses it. </div><div class="ttdef"><b>Definition:</b> <a href="cpu_2cc2538_2clock_8c_source.html#l00164">clock.c:164</a></div></div>
+<div class="ttc" id="group__cc2538-clock_html_ga78ab77b57cf2e00089f0a3a22508524c"><div class="ttname"><a href="group__cc2538-clock.html#ga78ab77b57cf2e00089f0a3a22508524c">clock_init</a></div><div class="ttdeci">void clock_init(void)</div><div class="ttdoc">Arch-specific implementation of clock_init for the cc2538. </div><div class="ttdef"><b>Definition:</b> <a href="cpu_2cc2538_2clock_8c_source.html#l00093">clock.c:93</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 6 2017 15:44:37 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 31 2017 23:28:46 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

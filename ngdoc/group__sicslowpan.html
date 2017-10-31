@@ -254,9 +254,9 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <tr class="memitem:gada265bb3d63d597a441a0ac38d2c44f1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sicslowpan.html#gada265bb3d63d597a441a0ac38d2c44f1">send_packet</a> (linkaddr_t *dest)</td></tr>
 <tr class="memdesc:gada265bb3d63d597a441a0ac38d2c44f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called by the 6lowpan code to send out a packet.  <a href="#gada265bb3d63d597a441a0ac38d2c44f1">More...</a><br/></td></tr>
 <tr class="separator:gada265bb3d63d597a441a0ac38d2c44f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3c0beeb7908da5d83ef11b37f8f6ab3f"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sicslowpan.html#ga3c0beeb7908da5d83ef11b37f8f6ab3f">output</a> (const <a class="el" href="group__uip.html#ga7583db18ab0411c60c4c1d6ce7bf9af4">uip_lladdr_t</a> *localdest)</td></tr>
-<tr class="memdesc:ga3c0beeb7908da5d83ef11b37f8f6ab3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Take an IP packet and format it to be sent on an 802.15.4 network using 6lowpan.  <a href="#ga3c0beeb7908da5d83ef11b37f8f6ab3f">More...</a><br/></td></tr>
-<tr class="separator:ga3c0beeb7908da5d83ef11b37f8f6ab3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaab2d9d0e3ef2ce7170f8fbc5a6ae70b2"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sicslowpan.html#gaab2d9d0e3ef2ce7170f8fbc5a6ae70b2">output</a> (const linkaddr_t *localdest)</td></tr>
+<tr class="memdesc:gaab2d9d0e3ef2ce7170f8fbc5a6ae70b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Take an IP packet and format it to be sent on an 802.15.4 network using 6lowpan.  <a href="#gaab2d9d0e3ef2ce7170f8fbc5a6ae70b2">More...</a><br/></td></tr>
+<tr class="separator:gaab2d9d0e3ef2ce7170f8fbc5a6ae70b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaea484884d194d01baee1026655a4692d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sicslowpan.html#gaea484884d194d01baee1026655a4692d">input</a> (void)</td></tr>
 <tr class="memdesc:gaea484884d194d01baee1026655a4692d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process a received 6lowpan packet.  <a href="#gaea484884d194d01baee1026655a4692d">More...</a><br/></td></tr>
 <tr class="separator:gaea484884d194d01baee1026655a4692d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -491,7 +491,7 @@ Address compressibility test functions</h2></td></tr>
 <p>-Verify TC/FL compression works</p>
 <p>-Add stateless multicast option </p>
 
-<p>Definition at line <a class="el" href="sicslowpan_8c_source.html#l00084">84</a> of file <a class="el" href="sicslowpan_8c_source.html">sicslowpan.c</a>.</p>
+<p>Definition at line <a class="el" href="sicslowpan_8c_source.html#l00085">85</a> of file <a class="el" href="sicslowpan_8c_source.html">sicslowpan.c</a>.</p>
 
 </div>
 </div>
@@ -507,9 +507,9 @@ Address compressibility test functions</h2></td></tr>
 
 <p>Maximum available size for frame headers, link layer security-related overhead, as well as 6LoWPAN payload. </p>
 
-<p>Definition at line <a class="el" href="sicslowpan_8c_source.html#l00148">148</a> of file <a class="el" href="sicslowpan_8c_source.html">sicslowpan.c</a>.</p>
+<p>Definition at line <a class="el" href="sicslowpan_8c_source.html#l00143">143</a> of file <a class="el" href="sicslowpan_8c_source.html">sicslowpan.c</a>.</p>
 
-<p>Referenced by <a class="el" href="sicslowpan_8c_source.html#l01490">output()</a>.</p>
+<p>Referenced by <a class="el" href="sicslowpan_8c_source.html#l01485">output()</a>.</p>
 
 </div>
 </div>
@@ -526,9 +526,9 @@ Address compressibility test functions</h2></td></tr>
 <p>Fixed size of a frame header. </p>
 <p>This value is used in case framer returns an error or if SICSLOWPAN_USE_FIXED_HDRLEN is defined. </p>
 
-<p>Definition at line <a class="el" href="sicslowpan_8c_source.html#l00156">156</a> of file <a class="el" href="sicslowpan_8c_source.html">sicslowpan.c</a>.</p>
+<p>Definition at line <a class="el" href="sicslowpan_8c_source.html#l00151">151</a> of file <a class="el" href="sicslowpan_8c_source.html">sicslowpan.c</a>.</p>
 
-<p>Referenced by <a class="el" href="sicslowpan_8c_source.html#l01490">output()</a>.</p>
+<p>Referenced by <a class="el" href="sicslowpan_8c_source.html#l01485">output()</a>.</p>
 
 </div>
 </div>
@@ -635,11 +635,11 @@ Address compressibility test functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="sicslowpan_8c_source.html#l00677">677</a> of file <a class="el" href="sicslowpan_8c_source.html">sicslowpan.c</a>.</p>
+<p>Definition at line <a class="el" href="sicslowpan_8c_source.html#l00672">672</a> of file <a class="el" href="sicslowpan_8c_source.html">sicslowpan.c</a>.</p>
 
-<p>References <a class="el" href="sicslowpan_8c_source.html#l00549">addr_context_lookup_by_prefix()</a>, <a class="el" href="sicslowpan_8c_source.html#l00512">hc06_ptr</a>, <a class="el" href="sicslowpan_8c_source.html#l00193">packetbuf_hdr_len</a>, <a class="el" href="sicslowpan_8c_source.html#l00186">packetbuf_ptr</a>, <a class="el" href="uip_8h_source.html#l01221">UIP_HTONS</a>, <a class="el" href="uip-nd6_8c_source.html#l00096">UIP_IP_BUF</a>, <a class="el" href="uip_8h_source.html#l02012">uip_is_addr_linklocal</a>, <a class="el" href="uip_8h_source.html#l02096">uip_is_addr_mcast</a>, <a class="el" href="uip_8h_source.html#l01971">uip_is_addr_unspecified</a>, <a class="el" href="uip6_8c_source.html#l00111">uip_lladdr</a>, <a class="el" href="uip_8h_source.html#l01895">UIP_PROTO_HBHO</a>, and <a class="el" href="sicslowpan_8c_source.html#l00207">uncomp_hdr_len</a>.</p>
+<p>References <a class="el" href="sicslowpan_8c_source.html#l00544">addr_context_lookup_by_prefix()</a>, <a class="el" href="sicslowpan_8c_source.html#l00507">hc06_ptr</a>, <a class="el" href="sicslowpan_8c_source.html#l00188">packetbuf_hdr_len</a>, <a class="el" href="sicslowpan_8c_source.html#l00181">packetbuf_ptr</a>, <a class="el" href="uip_8h_source.html#l01221">UIP_HTONS</a>, <a class="el" href="uip-nd6_8c_source.html#l00096">UIP_IP_BUF</a>, <a class="el" href="uip_8h_source.html#l02014">uip_is_addr_linklocal</a>, <a class="el" href="uip_8h_source.html#l02098">uip_is_addr_mcast</a>, <a class="el" href="uip_8h_source.html#l01973">uip_is_addr_unspecified</a>, <a class="el" href="uip6_8c_source.html#l00111">uip_lladdr</a>, <a class="el" href="uip_8h_source.html#l01895">UIP_PROTO_HBHO</a>, and <a class="el" href="sicslowpan_8c_source.html#l00202">uncomp_hdr_len</a>.</p>
 
-<p>Referenced by <a class="el" href="sicslowpan_8c_source.html#l01490">output()</a>.</p>
+<p>Referenced by <a class="el" href="sicslowpan_8c_source.html#l01485">output()</a>.</p>
 
 </div>
 </div>
@@ -669,15 +669,15 @@ Address compressibility test functions</h2></td></tr>
 <p>The 6lowpan packet is put in packetbuf by the MAC. If its a frag1 or a non-fragmented packet we first uncompress the IP header. The 6lowpan payload and possibly the uncompressed IP header are then copied in siclowpan_buf. If the IP packet is complete it is copied to uip_buf and the IP layer is called.</p>
 <dl class="section note"><dt>Note</dt><dd>We do not check for overlapping sicslowpan fragments (it is a SHALL in the RFC 4944 and should never happen) </dd></dl>
 
-<p>Definition at line <a class="el" href="sicslowpan_8c_source.html#l01703">1703</a> of file <a class="el" href="sicslowpan_8c_source.html">sicslowpan.c</a>.</p>
+<p>Definition at line <a class="el" href="sicslowpan_8c_source.html#l01698">1698</a> of file <a class="el" href="sicslowpan_8c_source.html">sicslowpan.c</a>.</p>
 
-<p>References <a class="el" href="sicslowpan_8c_source.html#l00212">curr_page</a>, <a class="el" href="sicslowpan_8c_source.html#l01383">digest_6lorh_hdr()</a>, <a class="el" href="sicslowpan_8c_source.html#l01369">digest_paging_dispatch()</a>, <a class="el" href="packetbuf_8c_source.html#l00155">packetbuf_datalen()</a>, <a class="el" href="packetbuf_8c_source.html#l00143">packetbuf_dataptr()</a>, <a class="el" href="sicslowpan_8c_source.html#l00193">packetbuf_hdr_len</a>, <a class="el" href="sicslowpan_8c_source.html#l00201">packetbuf_payload_len</a>, <a class="el" href="sicslowpan_8c_source.html#l00186">packetbuf_ptr</a>, <a class="el" href="tcpip_8c_source.html#l00436">tcpip_input()</a>, <a class="el" href="uip_8h_source.html#l00505">uip_buf</a>, <a class="el" href="uip-nd6_8c_source.html#l00096">UIP_IP_BUF</a>, <a class="el" href="uip6_8c_source.html#l00186">uip_len</a>, <a class="el" href="uipopt_8h_source.html#l00141">UIP_LLH_LEN</a>, <a class="el" href="sicslowpan_8c_source.html#l00207">uncomp_hdr_len</a>, and <a class="el" href="sicslowpan_8c_source.html#l01040">uncompress_hdr_iphc()</a>.</p>
+<p>References <a class="el" href="sicslowpan_8c_source.html#l00207">curr_page</a>, <a class="el" href="sicslowpan_8c_source.html#l01378">digest_6lorh_hdr()</a>, <a class="el" href="sicslowpan_8c_source.html#l01364">digest_paging_dispatch()</a>, <a class="el" href="packetbuf_8c_source.html#l00155">packetbuf_datalen()</a>, <a class="el" href="packetbuf_8c_source.html#l00143">packetbuf_dataptr()</a>, <a class="el" href="sicslowpan_8c_source.html#l00188">packetbuf_hdr_len</a>, <a class="el" href="sicslowpan_8c_source.html#l00196">packetbuf_payload_len</a>, <a class="el" href="sicslowpan_8c_source.html#l00181">packetbuf_ptr</a>, <a class="el" href="tcpip_8c_source.html#l00432">tcpip_input()</a>, <a class="el" href="uip_8h_source.html#l00505">uip_buf</a>, <a class="el" href="uip-nd6_8c_source.html#l00096">UIP_IP_BUF</a>, <a class="el" href="uip6_8c_source.html#l00186">uip_len</a>, <a class="el" href="uipopt_8h_source.html#l00141">UIP_LLH_LEN</a>, <a class="el" href="sicslowpan_8c_source.html#l00202">uncomp_hdr_len</a>, and <a class="el" href="sicslowpan_8c_source.html#l01035">uncompress_hdr_iphc()</a>.</p>
 
-<p>Referenced by <a class="el" href="cc26xx-uart_8c_source.html#l00314">cc26xx_uart_set_input()</a>, <a class="el" href="uart_8c_source.html#l00335">uart_set_input()</a>, and <a class="el" href="usb-serial_8c_source.html#l00295">usb_serial_set_input()</a>.</p>
+<p>Referenced by <a class="el" href="cc26xx-uart_8c_source.html#l00313">cc26xx_uart_set_input()</a>, <a class="el" href="uart_8c_source.html#l00334">uart_set_input()</a>, and <a class="el" href="usb-serial_8c_source.html#l00295">usb_serial_set_input()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ga3c0beeb7908da5d83ef11b37f8f6ab3f"></a>
+<a class="anchor" id="gaab2d9d0e3ef2ce7170f8fbc5a6ae70b2"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -687,7 +687,7 @@ Address compressibility test functions</h2></td></tr>
         <tr>
           <td class="memname">static uint8_t output </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__uip.html#ga7583db18ab0411c60c4c1d6ce7bf9af4">uip_lladdr_t</a> *&#160;</td>
+          <td class="paramtype">const linkaddr_t *&#160;</td>
           <td class="paramname"><em>localdest</em></td><td>)</td>
           <td></td>
         </tr>
@@ -708,9 +708,9 @@ Address compressibility test functions</h2></td></tr>
 </dl>
 <p>The IP packet is initially in uip_buf. Its header is compressed and if necessary it is fragmented. The resulting packet/fragments are put in packetbuf and delivered to the 802.15.4 MAC. </p>
 
-<p>Definition at line <a class="el" href="sicslowpan_8c_source.html#l01490">1490</a> of file <a class="el" href="sicslowpan_8c_source.html">sicslowpan.c</a>.</p>
+<p>Definition at line <a class="el" href="sicslowpan_8c_source.html#l01485">1485</a> of file <a class="el" href="sicslowpan_8c_source.html">sicslowpan.c</a>.</p>
 
-<p>References <a class="el" href="sicslowpan_8c_source.html#l01358">add_6lorh_hdr()</a>, <a class="el" href="sicslowpan_8c_source.html#l01347">add_paging_dispatch()</a>, <a class="el" href="sicslowpan_8c_source.html#l00677">compress_hdr_iphc()</a>, <a class="el" href="sicslowpan_8c_source.html#l00217">last_tx_status</a>, <a class="el" href="linkaddr_8c_source.html#l00063">linkaddr_copy()</a>, <a class="el" href="group__linkaddr.html#gaa8829a95f1d11a93a3ff75c8f5b2bffd">linkaddr_null</a>, <a class="el" href="sicslowpan_8c_source.html#l00148">MAC_MAX_PAYLOAD</a>, <a class="el" href="mac_8h_source.html#l00080">MAC_TX_COLLISION</a>, <a class="el" href="mac_8h_source.html#l00090">MAC_TX_ERR</a>, <a class="el" href="mac_8h_source.html#l00076">MAC_TX_OK</a>, <a class="el" href="packetbuf_8c_source.html#l00075">packetbuf_clear()</a>, <a class="el" href="packetbuf_8c_source.html#l00143">packetbuf_dataptr()</a>, <a class="el" href="sicslowpan_8c_source.html#l00193">packetbuf_hdr_len</a>, <a class="el" href="sicslowpan_8c_source.html#l00201">packetbuf_payload_len</a>, <a class="el" href="sicslowpan_8c_source.html#l00186">packetbuf_ptr</a>, <a class="el" href="packetbuf_8c_source.html#l00136">packetbuf_set_datalen()</a>, <a class="el" href="sicslowpan_8c_source.html#l01458">send_packet()</a>, <a class="el" href="sicslowpan_8c_source.html#l00156">SICSLOWPAN_FIXED_HDRLEN</a>, <a class="el" href="uip-nd6_8c_source.html#l00096">UIP_IP_BUF</a>, <a class="el" href="uip_8h_source.html#l02012">uip_is_addr_linklocal</a>, <a class="el" href="uip6_8c_source.html#l00186">uip_len</a>, and <a class="el" href="sicslowpan_8c_source.html#l00207">uncomp_hdr_len</a>.</p>
+<p>References <a class="el" href="sicslowpan_8c_source.html#l01353">add_6lorh_hdr()</a>, <a class="el" href="sicslowpan_8c_source.html#l01342">add_paging_dispatch()</a>, <a class="el" href="sicslowpan_8c_source.html#l00672">compress_hdr_iphc()</a>, <a class="el" href="sicslowpan_8c_source.html#l00212">last_tx_status</a>, <a class="el" href="linkaddr_8c_source.html#l00063">linkaddr_copy()</a>, <a class="el" href="group__linkaddr.html#gaa8829a95f1d11a93a3ff75c8f5b2bffd">linkaddr_null</a>, <a class="el" href="sicslowpan_8c_source.html#l00143">MAC_MAX_PAYLOAD</a>, <a class="el" href="mac_8h_source.html#l00080">MAC_TX_COLLISION</a>, <a class="el" href="mac_8h_source.html#l00090">MAC_TX_ERR</a>, <a class="el" href="mac_8h_source.html#l00076">MAC_TX_OK</a>, <a class="el" href="packetbuf_8c_source.html#l00075">packetbuf_clear()</a>, <a class="el" href="packetbuf_8c_source.html#l00143">packetbuf_dataptr()</a>, <a class="el" href="sicslowpan_8c_source.html#l00188">packetbuf_hdr_len</a>, <a class="el" href="sicslowpan_8c_source.html#l00196">packetbuf_payload_len</a>, <a class="el" href="sicslowpan_8c_source.html#l00181">packetbuf_ptr</a>, <a class="el" href="packetbuf_8c_source.html#l00136">packetbuf_set_datalen()</a>, <a class="el" href="sicslowpan_8c_source.html#l01453">send_packet()</a>, <a class="el" href="sicslowpan_8c_source.html#l00151">SICSLOWPAN_FIXED_HDRLEN</a>, <a class="el" href="uip-nd6_8c_source.html#l00096">UIP_IP_BUF</a>, <a class="el" href="uip_8h_source.html#l02014">uip_is_addr_linklocal</a>, <a class="el" href="uip6_8c_source.html#l00186">uip_len</a>, and <a class="el" href="sicslowpan_8c_source.html#l00202">uncomp_hdr_len</a>.</p>
 
 </div>
 </div>
@@ -744,11 +744,11 @@ Address compressibility test functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="sicslowpan_8c_source.html#l01458">1458</a> of file <a class="el" href="sicslowpan_8c_source.html">sicslowpan.c</a>.</p>
+<p>Definition at line <a class="el" href="sicslowpan_8c_source.html#l01453">1453</a> of file <a class="el" href="sicslowpan_8c_source.html">sicslowpan.c</a>.</p>
 
-<p>References <a class="el" href="sicslowpan_8c_source.html#l01425">packet_sent()</a>, <a class="el" href="mac_8h_source.html#l00061">mac_driver::send</a>, <a class="el" href="uip6_8c_source.html#l00111">uip_lladdr</a>, and <a class="el" href="cpu_2cc2538_2dev_2watchdog_8c_source.html#l00085">watchdog_periodic()</a>.</p>
+<p>References <a class="el" href="sicslowpan_8c_source.html#l01420">packet_sent()</a>, <a class="el" href="mac_8h_source.html#l00061">mac_driver::send</a>, <a class="el" href="uip6_8c_source.html#l00111">uip_lladdr</a>, and <a class="el" href="cpu_2cc2538_2dev_2watchdog_8c_source.html#l00085">watchdog_periodic()</a>.</p>
 
-<p>Referenced by <a class="el" href="sicslowpan_8c_source.html#l01490">output()</a>, and <a class="el" href="tcpip_8c_source.html#l00640">tcpip_ipv6_output()</a>.</p>
+<p>Referenced by <a class="el" href="sicslowpan_8c_source.html#l01485">output()</a>, and <a class="el" href="tcpip_8c_source.html#l00639">tcpip_ipv6_output()</a>.</p>
 
 </div>
 </div>
@@ -794,11 +794,11 @@ Address compressibility test functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="sicslowpan_8c_source.html#l01040">1040</a> of file <a class="el" href="sicslowpan_8c_source.html">sicslowpan.c</a>.</p>
+<p>Definition at line <a class="el" href="sicslowpan_8c_source.html#l01035">1035</a> of file <a class="el" href="sicslowpan_8c_source.html">sicslowpan.c</a>.</p>
 
-<p>References <a class="el" href="sicslowpan_8c_source.html#l00566">addr_context_lookup_by_number()</a>, <a class="el" href="sicslowpan_8c_source.html#l00512">hc06_ptr</a>, <a class="el" href="packetbuf_8c_source.html#l00155">packetbuf_datalen()</a>, <a class="el" href="sicslowpan_8c_source.html#l00193">packetbuf_hdr_len</a>, <a class="el" href="sicslowpan_8c_source.html#l00186">packetbuf_ptr</a>, <a class="el" href="uip_8h_source.html#l01221">UIP_HTONS</a>, <a class="el" href="uip_8h_source.html#l01895">UIP_PROTO_HBHO</a>, and <a class="el" href="sicslowpan_8c_source.html#l00207">uncomp_hdr_len</a>.</p>
+<p>References <a class="el" href="sicslowpan_8c_source.html#l00561">addr_context_lookup_by_number()</a>, <a class="el" href="sicslowpan_8c_source.html#l00507">hc06_ptr</a>, <a class="el" href="packetbuf_8c_source.html#l00155">packetbuf_datalen()</a>, <a class="el" href="sicslowpan_8c_source.html#l00188">packetbuf_hdr_len</a>, <a class="el" href="sicslowpan_8c_source.html#l00181">packetbuf_ptr</a>, <a class="el" href="uip_8h_source.html#l01221">UIP_HTONS</a>, <a class="el" href="uip_8h_source.html#l01895">UIP_PROTO_HBHO</a>, and <a class="el" href="sicslowpan_8c_source.html#l00202">uncomp_hdr_len</a>.</p>
 
-<p>Referenced by <a class="el" href="sicslowpan_8c_source.html#l01703">input()</a>.</p>
+<p>Referenced by <a class="el" href="sicslowpan_8c_source.html#l01698">input()</a>.</p>
 
 </div>
 </div>
@@ -824,9 +824,9 @@ Address compressibility test functions</h2></td></tr>
 <p>Addresses contexts for IPHC. </p>
 <p>pointer to an address context. </p>
 
-<p>Definition at line <a class="el" href="sicslowpan_8c_source.html#l00509">509</a> of file <a class="el" href="sicslowpan_8c_source.html">sicslowpan.c</a>.</p>
+<p>Definition at line <a class="el" href="sicslowpan_8c_source.html#l00504">504</a> of file <a class="el" href="sicslowpan_8c_source.html">sicslowpan.c</a>.</p>
 
-<p>Referenced by <a class="el" href="cpu_2arm_2common_2sys_2mtarch_8c_source.html#l00224">mtarch_start()</a>, and <a class="el" href="lwm2m-engine_8c_source.html#l00248">PROCESS_THREAD()</a>.</p>
+<p>Referenced by <a class="el" href="cpu_2arm_2common_2sys_2mtarch_8c_source.html#l00220">mtarch_start()</a>, and <a class="el" href="lwm2m-engine_8c_source.html#l00248">PROCESS_THREAD()</a>.</p>
 
 </div>
 </div>
@@ -850,9 +850,9 @@ Address compressibility test functions</h2></td></tr>
 
 <p>pointer to the byte where to write next inline field. </p>
 
-<p>Definition at line <a class="el" href="sicslowpan_8c_source.html#l00512">512</a> of file <a class="el" href="sicslowpan_8c_source.html">sicslowpan.c</a>.</p>
+<p>Definition at line <a class="el" href="sicslowpan_8c_source.html#l00507">507</a> of file <a class="el" href="sicslowpan_8c_source.html">sicslowpan.c</a>.</p>
 
-<p>Referenced by <a class="el" href="sicslowpan_8c_source.html#l00677">compress_hdr_iphc()</a>, and <a class="el" href="sicslowpan_8c_source.html#l01040">uncompress_hdr_iphc()</a>.</p>
+<p>Referenced by <a class="el" href="sicslowpan_8c_source.html#l00672">compress_hdr_iphc()</a>, and <a class="el" href="sicslowpan_8c_source.html#l01035">uncompress_hdr_iphc()</a>.</p>
 
 </div>
 </div>
@@ -877,9 +877,9 @@ Address compressibility test functions</h2></td></tr>
 <p>The length of the payload in the Packetbuf buffer. </p>
 <p>The payload is what comes after the compressed or uncompressed headers (can be the IP payload if the IP header only is compressed or the UDP payload if the UDP header is also compressed) </p>
 
-<p>Definition at line <a class="el" href="sicslowpan_8c_source.html#l00201">201</a> of file <a class="el" href="sicslowpan_8c_source.html">sicslowpan.c</a>.</p>
+<p>Definition at line <a class="el" href="sicslowpan_8c_source.html#l00196">196</a> of file <a class="el" href="sicslowpan_8c_source.html">sicslowpan.c</a>.</p>
 
-<p>Referenced by <a class="el" href="sicslowpan_8c_source.html#l01703">input()</a>, and <a class="el" href="sicslowpan_8c_source.html#l01490">output()</a>.</p>
+<p>Referenced by <a class="el" href="sicslowpan_8c_source.html#l01698">input()</a>, and <a class="el" href="sicslowpan_8c_source.html#l01485">output()</a>.</p>
 
 </div>
 </div>
@@ -904,16 +904,16 @@ Address compressibility test functions</h2></td></tr>
 <p>A pointer to the packetbuf buffer. </p>
 <p>We initialize it to the beginning of the packetbuf buffer, then access different fields by updating the offset packetbuf_hdr_len. </p>
 
-<p>Definition at line <a class="el" href="sicslowpan_8c_source.html#l00186">186</a> of file <a class="el" href="sicslowpan_8c_source.html">sicslowpan.c</a>.</p>
+<p>Definition at line <a class="el" href="sicslowpan_8c_source.html#l00181">181</a> of file <a class="el" href="sicslowpan_8c_source.html">sicslowpan.c</a>.</p>
 
-<p>Referenced by <a class="el" href="sicslowpan_8c_source.html#l00677">compress_hdr_iphc()</a>, <a class="el" href="sicslowpan_8c_source.html#l01703">input()</a>, <a class="el" href="sicslowpan_8c_source.html#l01490">output()</a>, and <a class="el" href="sicslowpan_8c_source.html#l01040">uncompress_hdr_iphc()</a>.</p>
+<p>Referenced by <a class="el" href="sicslowpan_8c_source.html#l00672">compress_hdr_iphc()</a>, <a class="el" href="sicslowpan_8c_source.html#l01698">input()</a>, <a class="el" href="sicslowpan_8c_source.html#l01485">output()</a>, and <a class="el" href="sicslowpan_8c_source.html#l01035">uncompress_hdr_iphc()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 6 2017 15:45:31 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 31 2017 23:29:18 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

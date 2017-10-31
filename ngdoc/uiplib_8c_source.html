@@ -100,7 +100,7 @@
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  uint16_t value;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">int</span> tmp, zero;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="structuip__conn.html#a5c55920c6901817dce661762e785614e">len</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> len;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordtype">char</span> c = 0;  <span class="comment">//gcc warning if not initialized</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  value = 0;</div>
@@ -110,7 +110,7 @@
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordflow">for</span>(len = 0; len &lt; <span class="keyword">sizeof</span>(uip_ip6addr_t) - 1; addrstr++) {</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    c = *addrstr;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">if</span>(c == <span class="charliteral">&#39;:&#39;</span> || c == <span class="charliteral">&#39;\0&#39;</span> || c == <span class="charliteral">&#39;]&#39;</span> || c == <span class="charliteral">&#39;/&#39;</span>) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      ipaddr-&gt;u8[<a class="code" href="structuip__conn.html#a5c55920c6901817dce661762e785614e">len</a>] = (value &gt;&gt; 8) &amp; 0xff;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      ipaddr-&gt;u8[len] = (value &gt;&gt; 8) &amp; 0xff;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      ipaddr-&gt;u8[len + 1] = value &amp; 0xff;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      len += 2;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      value = 0;</div>
@@ -122,7 +122,7 @@
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      <span class="keywordflow">if</span>(*(addrstr + 1) == <span class="charliteral">&#39;:&#39;</span>) {</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="comment">/* Zero compression */</span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">if</span>(zero &lt; 0) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;          zero = <a class="code" href="structuip__conn.html#a5c55920c6901817dce661762e785614e">len</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;          zero = len;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        addrstr++;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      }</div>
@@ -199,11 +199,10 @@
 <div class="ttc" id="unionuip__ip4addr__t_html"><div class="ttname"><a href="unionuip__ip4addr__t.html">uip_ip4addr_t</a></div><div class="ttdoc">Representation of an IP address. </div><div class="ttdef"><b>Definition:</b> <a href="uip_8h_source.html#l00091">uip.h:91</a></div></div>
 <div class="ttc" id="uiplib_8h_html"><div class="ttname"><a href="uiplib_8h.html">uiplib.h</a></div><div class="ttdoc">Various uIP library functions. </div></div>
 <div class="ttc" id="uip_8h_html"><div class="ttname"><a href="uip_8h.html">uip.h</a></div><div class="ttdoc">Header file for the uIP TCP/IP stack. </div></div>
-<div class="ttc" id="structuip__conn_html_a5c55920c6901817dce661762e785614e"><div class="ttname"><a href="structuip__conn.html#a5c55920c6901817dce661762e785614e">uip_conn::len</a></div><div class="ttdeci">uint16_t len</div><div class="ttdoc">Length of the data that was previously sent. </div><div class="ttdef"><b>Definition:</b> <a href="uip_8h_source.html#l01345">uip.h:1345</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 6 2017 15:45:02 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 31 2017 23:29:00 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

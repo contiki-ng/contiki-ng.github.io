@@ -225,7 +225,7 @@
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor">#ifdef TSCH_CONF_WITH_LINK_SELECTOR</span></div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TSCH_WITH_LINK_SELECTOR TSCH_CONF_WITH_LINK_SELECTOR</span></div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#else </span><span class="comment">/* TSCH_CONF_WITH_LINK_SELECTOR */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TSCH_WITH_LINK_SELECTOR 0</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TSCH_WITH_LINK_SELECTOR (BUILD_WITH_ORCHESTRA)</span></div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* TSCH_CONF_WITH_LINK_SELECTOR */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment">/* Estimate the drift of the time-source neighbor and compensate for it? */</span></div>
@@ -261,7 +261,7 @@
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 6 2017 15:45:04 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 31 2017 23:29:01 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

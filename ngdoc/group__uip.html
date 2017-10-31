@@ -1462,7 +1462,7 @@ struct uip_icmp6_conn&#160;</td><td class="memItemRight" valign="bottom"><a clas
 <p>Bitmaps for extension header processing. </p>
 <p>When processing extension headers, we should record somehow which one we see, because you cannot have twice the same header, except for destination We store all this in one uint8_t bitmap one bit for each header expected. The order in the bitmap is the order recommended in RFC2460 </p>
 
-<p>Definition at line <a class="el" href="uip_8h_source.html#l01919">1919</a> of file <a class="el" href="uip_8h_source.html">uip.h</a>.</p>
+<p>Definition at line <a class="el" href="uip_8h_source.html#l01921">1921</a> of file <a class="el" href="uip_8h_source.html">uip.h</a>.</p>
 
 <p>Referenced by <a class="el" href="uip6_8c_source.html#l00928">uip_process()</a>.</p>
 
@@ -1487,9 +1487,9 @@ struct uip_icmp6_conn&#160;</td><td class="memItemRight" valign="bottom"><a clas
 <p>is addr (a) a link local unicast address, see RFC 4291 i.e. </p>
 <p>is (a) on prefix FE80::/10 a is of type uip_ipaddr_t* </p>
 
-<p>Definition at line <a class="el" href="uip_8h_source.html#l02012">2012</a> of file <a class="el" href="uip_8h_source.html">uip.h</a>.</p>
+<p>Definition at line <a class="el" href="uip_8h_source.html#l02014">2014</a> of file <a class="el" href="uip_8h_source.html">uip.h</a>.</p>
 
-<p>Referenced by <a class="el" href="sicslowpan_8c_source.html#l00677">compress_hdr_iphc()</a>, <a class="el" href="log_8c_source.html#l00113">log_6addr_compact()</a>, <a class="el" href="sicslowpan_8c_source.html#l01490">output()</a>, <a class="el" href="uip-nd6_8c_source.html#l00862">ra_input()</a>, <a class="el" href="rpl-classic_2rpl-dag-root_8c_source.html#l00194">rpl_dag_root_init_dag_immediately()</a>, <a class="el" href="rpl-classic_2rpl-ext-header_8c_source.html#l00636">rpl_ext_header_update()</a>, <a class="el" href="rpl-lite_2rpl_8c_source.html#l00069">rpl_get_global_address()</a>, <a class="el" href="uip-ds6_8c_source.html#l00635">uip_ds6_dad_failed()</a>, <a class="el" href="uip-ds6_8c_source.html#l00510">uip_ds6_select_src()</a>, and <a class="el" href="uip6_8c_source.html#l00928">uip_process()</a>.</p>
+<p>Referenced by <a class="el" href="sicslowpan_8c_source.html#l00672">compress_hdr_iphc()</a>, <a class="el" href="log_8c_source.html#l00115">log_6addr_compact()</a>, <a class="el" href="sicslowpan_8c_source.html#l01485">output()</a>, <a class="el" href="uip-nd6_8c_source.html#l00862">ra_input()</a>, <a class="el" href="rpl-classic_2rpl-dag-root_8c_source.html#l00194">rpl_dag_root_init_dag_immediately()</a>, <a class="el" href="rpl-classic_2rpl-ext-header_8c_source.html#l00636">rpl_ext_header_update()</a>, <a class="el" href="rpl-lite_2rpl_8c_source.html#l00069">rpl_get_global_address()</a>, <a class="el" href="uip-ds6_8c_source.html#l00640">uip_ds6_dad_failed()</a>, <a class="el" href="uip-ds6_8c_source.html#l00515">uip_ds6_select_src()</a>, and <a class="el" href="uip6_8c_source.html#l00928">uip_process()</a>.</p>
 
 </div>
 </div>
@@ -1512,7 +1512,7 @@ struct uip_icmp6_conn&#160;</td><td class="memItemRight" valign="bottom"><a clas
 <p>is address a non-routable multicast address. </p>
 <p>Scopes 1 (interface-local) and 2 (link-local) are non-routable See RFC4291 and draft-ietf-6man-multicast-scopes a is of type uip_ip6addr_t* </p>
 
-<p>Definition at line <a class="el" href="uip_8h_source.html#l02113">2113</a> of file <a class="el" href="uip_8h_source.html">uip.h</a>.</p>
+<p>Definition at line <a class="el" href="uip_8h_source.html#l02115">2115</a> of file <a class="el" href="uip_8h_source.html">uip.h</a>.</p>
 
 <p>Referenced by <a class="el" href="roll-tm_8c_source.html#l00894">accept()</a>.</p>
 
@@ -1537,9 +1537,9 @@ struct uip_icmp6_conn&#160;</td><td class="memItemRight" valign="bottom"><a clas
 <p>is address a routable multicast address. </p>
 <p>Scope 3 (Realm-Local) or higher are routable Realm-Local scope is defined in draft-ietf-6man-multicast-scopes See RFC4291 and draft-ietf-6man-multicast-scopes a is of type uip_ip6addr_t* </p>
 
-<p>Definition at line <a class="el" href="uip_8h_source.html#l02124">2124</a> of file <a class="el" href="uip_8h_source.html">uip.h</a>.</p>
+<p>Definition at line <a class="el" href="uip_8h_source.html#l02126">2126</a> of file <a class="el" href="uip_8h_source.html">uip.h</a>.</p>
 
-<p>Referenced by <a class="el" href="uip-ds6_8c_source.html#l00510">uip_ds6_select_src()</a>, and <a class="el" href="uip6_8c_source.html#l00928">uip_process()</a>.</p>
+<p>Referenced by <a class="el" href="uip-ds6_8c_source.html#l00515">uip_ds6_select_src()</a>, and <a class="el" href="uip6_8c_source.html#l00928">uip_process()</a>.</p>
 
 </div>
 </div>
@@ -1851,7 +1851,7 @@ struct uip_icmp6_conn&#160;</td><td class="memItemRight" valign="bottom"><a clas
 
 <p>Definition at line <a class="el" href="rpl-classic_2rpl_8c_source.html#l00253">253</a> of file <a class="el" href="rpl-classic_2rpl_8c_source.html">rpl.c</a>.</p>
 
-<p>Referenced by <a class="el" href="sicslowpan_8c_source.html#l01425">packet_sent()</a>.</p>
+<p>Referenced by <a class="el" href="sicslowpan_8c_source.html#l01420">packet_sent()</a>.</p>
 
 </div>
 </div>
@@ -2103,7 +2103,7 @@ struct uip_icmp6_conn&#160;</td><td class="memItemRight" valign="bottom"><a clas
 
 <p>References <a class="el" href="list_8c_source.html#l00143">list_add()</a>.</p>
 
-<p>Referenced by <a class="el" href="shell-commands_8c_source.html#l00643">shell_commands_init()</a>.</p>
+<p>Referenced by <a class="el" href="shell-commands_8c_source.html#l00710">shell_commands_init()</a>.</p>
 
 </div>
 </div>
@@ -2179,7 +2179,7 @@ struct uip_icmp6_conn&#160;</td><td class="memItemRight" valign="bottom"><a clas
 
 <p>Definition at line <a class="el" href="uip-icmp6_8c_source.html#l00182">182</a> of file <a class="el" href="uip-icmp6_8c_source.html">uip-icmp6.c</a>.</p>
 
-<p>References <a class="el" href="uip-icmp6_8h_source.html#l00056">ICMP6_PARAM_PROB</a>, <a class="el" href="uip-icmp6_8h_source.html#l00096">ICMP6_PARAMPROB_OPTION</a>, <a class="el" href="rpl-classic_2rpl-ext-header_8c_source.html#l00591">rpl_ext_header_remove()</a>, <a class="el" href="uip-icmp6_8c_source.html#l00071">tmp_ipaddr</a>, <a class="el" href="uip-ds6_8c_source.html#l00074">uip_ds6_if</a>, <a class="el" href="uip-ds6_8c_source.html#l00510">uip_ds6_select_src()</a>, <a class="el" href="uip6_8c_source.html#l00136">uip_ext_len</a>, <a class="el" href="uip-icmp6_8h_source.html#l00103">UIP_ICMP6_ERROR_LEN</a>, <a class="el" href="uip6_8c_source.html#l00391">uip_icmp6chksum()</a>, <a class="el" href="uip-nd6_8c_source.html#l00097">UIP_ICMP_BUF</a>, <a class="el" href="uip-nd6_8c_source.html#l00096">UIP_IP_BUF</a>, <a class="el" href="uip_8h_source.html#l01009">uip_ipaddr_copy</a>, <a class="el" href="uip_8h_source.html#l02096">uip_is_addr_mcast</a>, <a class="el" href="uip_8h_source.html#l01971">uip_is_addr_unspecified</a>, <a class="el" href="uip6_8c_source.html#l00186">uip_len</a>, <a class="el" href="uipopt_8h_source.html#l00249">UIP_LINK_MTU</a>, and <a class="el" href="uip_8h_source.html#l01430">UIP_STAT</a>.</p>
+<p>References <a class="el" href="uip-icmp6_8h_source.html#l00056">ICMP6_PARAM_PROB</a>, <a class="el" href="uip-icmp6_8h_source.html#l00096">ICMP6_PARAMPROB_OPTION</a>, <a class="el" href="rpl-classic_2rpl-ext-header_8c_source.html#l00591">rpl_ext_header_remove()</a>, <a class="el" href="uip-icmp6_8c_source.html#l00071">tmp_ipaddr</a>, <a class="el" href="uip-ds6_8c_source.html#l00074">uip_ds6_if</a>, <a class="el" href="uip-ds6_8c_source.html#l00515">uip_ds6_select_src()</a>, <a class="el" href="uip6_8c_source.html#l00136">uip_ext_len</a>, <a class="el" href="uip-icmp6_8h_source.html#l00103">UIP_ICMP6_ERROR_LEN</a>, <a class="el" href="uip6_8c_source.html#l00391">uip_icmp6chksum()</a>, <a class="el" href="uip-nd6_8c_source.html#l00097">UIP_ICMP_BUF</a>, <a class="el" href="uip-nd6_8c_source.html#l00096">UIP_IP_BUF</a>, <a class="el" href="uip_8h_source.html#l01009">uip_ipaddr_copy</a>, <a class="el" href="uip_8h_source.html#l02098">uip_is_addr_mcast</a>, <a class="el" href="uip_8h_source.html#l01973">uip_is_addr_unspecified</a>, <a class="el" href="uip6_8c_source.html#l00186">uip_len</a>, <a class="el" href="uipopt_8h_source.html#l00249">UIP_LINK_MTU</a>, and <a class="el" href="uip_8h_source.html#l01430">UIP_STAT</a>.</p>
 
 <p>Referenced by <a class="el" href="uip6_8c_source.html#l00847">ext_hdr_options_process()</a>, <a class="el" href="uip6_8c_source.html#l00928">uip_process()</a>, and <a class="el" href="uip6_8c_source.html#l00799">uip_reass_over()</a>.</p>
 
@@ -2307,7 +2307,7 @@ struct uip_icmp6_conn&#160;</td><td class="memItemRight" valign="bottom"><a clas
 
 <p>Definition at line <a class="el" href="uip-icmp6_8c_source.html#l00269">269</a> of file <a class="el" href="uip-icmp6_8c_source.html">uip-icmp6.c</a>.</p>
 
-<p>References <a class="el" href="tcpip_8c_source.html#l00640">tcpip_ipv6_output()</a>, <a class="el" href="uip-ds6_8c_source.html#l00074">uip_ds6_if</a>, <a class="el" href="uip-ds6_8c_source.html#l00510">uip_ds6_select_src()</a>, <a class="el" href="uip6_8c_source.html#l00391">uip_icmp6chksum()</a>, <a class="el" href="uip-nd6_8c_source.html#l00097">UIP_ICMP_BUF</a>, <a class="el" href="uip-nd6_8c_source.html#l00096">UIP_IP_BUF</a>, <a class="el" href="uip6_8c_source.html#l00186">uip_len</a>, and <a class="el" href="uip_8h_source.html#l01430">UIP_STAT</a>.</p>
+<p>References <a class="el" href="tcpip_8c_source.html#l00639">tcpip_ipv6_output()</a>, <a class="el" href="uip-ds6_8c_source.html#l00074">uip_ds6_if</a>, <a class="el" href="uip-ds6_8c_source.html#l00515">uip_ds6_select_src()</a>, <a class="el" href="uip6_8c_source.html#l00391">uip_icmp6chksum()</a>, <a class="el" href="uip-nd6_8c_source.html#l00097">UIP_ICMP_BUF</a>, <a class="el" href="uip-nd6_8c_source.html#l00096">UIP_IP_BUF</a>, <a class="el" href="uip6_8c_source.html#l00186">uip_len</a>, and <a class="el" href="uip_8h_source.html#l01430">UIP_STAT</a>.</p>
 
 <p>Referenced by <a class="el" href="rpl-lite_2rpl-icmp6_8c_source.html#l00547">rpl_icmp6_dao_output()</a>, <a class="el" href="rpl-lite_2rpl-icmp6_8c_source.html#l00336">rpl_icmp6_dio_output()</a>, and <a class="el" href="rpl-lite_2rpl-icmp6_8c_source.html#l00154">rpl_icmp6_dis_output()</a>.</p>
 
@@ -2411,7 +2411,7 @@ struct uip_icmp6_conn&#160;</td><td class="memItemRight" valign="bottom"><a clas
 
 <p>References <a class="el" href="uipopt_8h_source.html#l00399">UIP_LISTENPORTS</a>.</p>
 
-<p>Referenced by <a class="el" href="tcpip_8c_source.html#l00220">tcp_listen()</a>.</p>
+<p>Referenced by <a class="el" href="tcpip_8c_source.html#l00216">tcp_listen()</a>.</p>
 
 </div>
 </div>
@@ -2553,7 +2553,7 @@ struct uip_icmp6_conn&#160;</td><td class="memItemRight" valign="bottom"><a clas
 <li>we check if it is a NS for Address resolution or NUD, if yes we include a SLLAO option, otherwise no. </li>
 </ul>
 
-<p>Referenced by <a class="el" href="uip-ds6_8c_source.html#l00607">uip_ds6_dad()</a>.</p>
+<p>Referenced by <a class="el" href="uip-ds6_8c_source.html#l00612">uip_ds6_dad()</a>.</p>
 
 </div>
 </div>
@@ -2590,9 +2590,9 @@ struct uip_icmp6_conn&#160;</td><td class="memItemRight" valign="bottom"><a clas
 
 <p>Definition at line <a class="el" href="uip-nd6_8c_source.html#l00815">815</a> of file <a class="el" href="uip-nd6_8c_source.html">uip-nd6.c</a>.</p>
 
-<p>References <a class="el" href="uip-icmp6_8h_source.html#l00060">ICMP6_RS</a>, <a class="el" href="uip_8h_source.html#l00505">uip_buf</a>, <a class="el" href="uip_8h_source.html#l02023">uip_create_linklocal_allrouters_mcast</a>, <a class="el" href="uip-ds6_8c_source.html#l00510">uip_ds6_select_src()</a>, <a class="el" href="uip6_8c_source.html#l00391">uip_icmp6chksum()</a>, <a class="el" href="uip-nd6_8c_source.html#l00097">UIP_ICMP_BUF</a>, <a class="el" href="uip-nd6_8c_source.html#l00096">UIP_IP_BUF</a>, <a class="el" href="uip_8h_source.html#l01971">uip_is_addr_unspecified</a>, <a class="el" href="uip6_8c_source.html#l00186">uip_len</a>, <a class="el" href="uip-nd6_8h_source.html#l00055">UIP_ND6_HOP_LIMIT</a>, <a class="el" href="uip-nd6_8h_source.html#l00243">UIP_ND6_OPT_LLAO_LEN</a>, and <a class="el" href="uip_8h_source.html#l01430">UIP_STAT</a>.</p>
+<p>References <a class="el" href="uip-icmp6_8h_source.html#l00060">ICMP6_RS</a>, <a class="el" href="uip_8h_source.html#l00505">uip_buf</a>, <a class="el" href="uip_8h_source.html#l02025">uip_create_linklocal_allrouters_mcast</a>, <a class="el" href="uip-ds6_8c_source.html#l00515">uip_ds6_select_src()</a>, <a class="el" href="uip6_8c_source.html#l00391">uip_icmp6chksum()</a>, <a class="el" href="uip-nd6_8c_source.html#l00097">UIP_ICMP_BUF</a>, <a class="el" href="uip-nd6_8c_source.html#l00096">UIP_IP_BUF</a>, <a class="el" href="uip_8h_source.html#l01973">uip_is_addr_unspecified</a>, <a class="el" href="uip6_8c_source.html#l00186">uip_len</a>, <a class="el" href="uip-nd6_8h_source.html#l00055">UIP_ND6_HOP_LIMIT</a>, <a class="el" href="uip-nd6_8h_source.html#l00243">UIP_ND6_OPT_LLAO_LEN</a>, and <a class="el" href="uip_8h_source.html#l01430">UIP_STAT</a>.</p>
 
-<p>Referenced by <a class="el" href="uip-ds6_8c_source.html#l00702">uip_ds6_send_rs()</a>.</p>
+<p>Referenced by <a class="el" href="uip-ds6_8c_source.html#l00707">uip_ds6_send_rs()</a>.</p>
 
 </div>
 </div>
@@ -2622,7 +2622,7 @@ struct uip_icmp6_conn&#160;</td><td class="memItemRight" valign="bottom"><a clas
 
 <p>Definition at line <a class="el" href="uip6_8c_source.html#l00928">928</a> of file <a class="el" href="uip6_8c_source.html">uip6.c</a>.</p>
 
-<p>References <a class="el" href="uip6_8c_source.html#l00847">ext_hdr_options_process()</a>, <a class="el" href="uip-icmp6_8h_source.html#l00053">ICMP6_DST_UNREACH</a>, <a class="el" href="uip-icmp6_8h_source.html#l00083">ICMP6_DST_UNREACH_NOPORT</a>, <a class="el" href="uip-icmp6_8h_source.html#l00080">ICMP6_DST_UNREACH_NOTNEIGHBOR</a>, <a class="el" href="uip-icmp6_8h_source.html#l00054">ICMP6_PACKET_TOO_BIG</a>, <a class="el" href="uip-icmp6_8h_source.html#l00056">ICMP6_PARAM_PROB</a>, <a class="el" href="uip-icmp6_8h_source.html#l00094">ICMP6_PARAMPROB_HEADER</a>, <a class="el" href="uip-icmp6_8h_source.html#l00095">ICMP6_PARAMPROB_NEXTHEADER</a>, <a class="el" href="uip-icmp6_8h_source.html#l00088">ICMP6_TIME_EXCEED_TRANSIT</a>, <a class="el" href="uip-icmp6_8h_source.html#l00055">ICMP6_TIME_EXCEEDED</a>, <a class="el" href="uip-mcast6_8h_source.html#l00138">uip_mcast6_driver::in</a>, <a class="el" href="uip_8h_source.html#l01347">uip_conn::initialmss</a>, <a class="el" href="uip_8h_source.html#l01345">uip_conn::len</a>, <a class="el" href="uip_8h_source.html#l01338">uip_conn::lport</a>, <a class="el" href="uip_8h_source.html#l01389">uip_udp_conn::lport</a>, <a class="el" href="uip_8h_source.html#l01346">uip_conn::mss</a>, <a class="el" href="uip_8h_source.html#l01353">uip_conn::nrtx</a>, <a class="el" href="uip_8h_source.html#l01342">uip_conn::rcv_nxt</a>, <a class="el" href="uip_8h_source.html#l01336">uip_conn::ripaddr</a>, <a class="el" href="uip_8h_source.html#l01388">uip_udp_conn::ripaddr</a>, <a class="el" href="rpl-lite_2rpl-ext-header_8c_source.html#l00122">rpl_ext_header_srh_update()</a>, <a class="el" href="uip_8h_source.html#l01339">uip_conn::rport</a>, <a class="el" href="uip_8h_source.html#l01390">uip_udp_conn::rport</a>, <a class="el" href="uip_8h_source.html#l01350">uip_conn::rto</a>, <a class="el" href="uip_8h_source.html#l01348">uip_conn::sa</a>, <a class="el" href="uip_8h_source.html#l01344">uip_conn::snd_nxt</a>, <a class="el" href="uip_8h_source.html#l01349">uip_conn::sv</a>, <a class="el" href="uip_8h_source.html#l01351">uip_conn::tcpstateflags</a>, <a class="el" href="uip_8h_source.html#l01352">uip_conn::timer</a>, <a class="el" href="uip_8h_source.html#l01391">uip_udp_conn::ttl</a>, <a class="el" href="uip6_8c_source.html#l00246">uip_acc32</a>, <a class="el" href="uip6_8c_source.html#l00279">uip_add32()</a>, <a class="el" href="tcpip_8h_source.html#l00079">UIP_APPCALL</a>, <a class="el" href="uip6_8c_source.html#l00175">uip_appdata</a>, <a class="el" href="uip_8h_source.html#l00505">uip_buf</a>, <a class="el" href="uip6_8c_source.html#l00201">uip_conn</a>, <a class="el" href="uip-ds6_8c_source.html#l00074">uip_ds6_if</a>, <a class="el" href="uip-ds6_8c_source.html#l00510">uip_ds6_select_src()</a>, <a class="el" href="uip6_8c_source.html#l00131">uip_ext_bitmap</a>, <a class="el" href="uip_8h_source.html#l01919">UIP_EXT_HDR_BITMAP_HBHO</a>, <a class="el" href="uip6_8c_source.html#l00136">uip_ext_len</a>, <a class="el" href="uip_8h_source.html#l01221">UIP_HTONS</a>, <a class="el" href="uip-icmp6_8c_source.html#l00182">uip_icmp6_error_output()</a>, <a class="el" href="uip-icmp6_8c_source.html#l00097">uip_icmp6_input()</a>, <a class="el" href="uip6_8c_source.html#l00391">uip_icmp6chksum()</a>, <a class="el" href="uip-nd6_8c_source.html#l00097">UIP_ICMP_BUF</a>, <a class="el" href="uip-nd6_8c_source.html#l00096">UIP_IP_BUF</a>, <a class="el" href="uip_8h_source.html#l01009">uip_ipaddr_copy</a>, <a class="el" href="uip_8h_source.html#l02012">uip_is_addr_linklocal</a>, <a class="el" href="uip_8h_source.html#l01957">uip_is_addr_loopback</a>, <a class="el" href="uip_8h_source.html#l02096">uip_is_addr_mcast</a>, <a class="el" href="uip_8h_source.html#l02124">uip_is_addr_mcast_routable</a>, <a class="el" href="uip_8h_source.html#l01971">uip_is_addr_unspecified</a>, <a class="el" href="uip6_8c_source.html#l00186">uip_len</a>, <a class="el" href="uipopt_8h_source.html#l00249">UIP_LINK_MTU</a>, <a class="el" href="uipopt_8h_source.html#l00399">UIP_LISTENPORTS</a>, <a class="el" href="uipopt_8h_source.html#l00141">UIP_LLH_LEN</a>, <a class="el" href="uipopt_8h_source.html#l00428">UIP_MAXRTX</a>, <a class="el" href="uipopt_8h_source.html#l00437">UIP_MAXSYNRTX</a>, <a class="el" href="uip6_8c_source.html#l00129">uip_next_hdr</a>, <a class="el" href="uip_8h_source.html#l01895">UIP_PROTO_HBHO</a>, <a class="el" href="uipopt_8h_source.html#l00464">UIP_RECEIVE_WINDOW</a>, <a class="el" href="uipopt_8h_source.html#l00420">UIP_RTO</a>, <a class="el" href="uip_8h_source.html#l01430">UIP_STAT</a>, <a class="el" href="uipopt_8h_source.html#l00385">UIP_TCP_CONNS</a>, <a class="el" href="uipopt_8h_source.html#l00451">UIP_TCP_MSS</a>, <a class="el" href="uip6_8c_source.html#l00399">uip_tcpchksum()</a>, <a class="el" href="uipopt_8h_source.html#l00475">UIP_TIME_WAIT_TIMEOUT</a>, <a class="el" href="uip6_8c_source.html#l00257">uip_udp_conn</a>, <a class="el" href="uipopt_8h_source.html#l00331">UIP_UDP_CONNS</a>, and <a class="el" href="group__uip.html#gaeb447241dcd4e7840ea4b0603fc2c330">uip_udpchksum()</a>.</p>
+<p>References <a class="el" href="uip6_8c_source.html#l00847">ext_hdr_options_process()</a>, <a class="el" href="uip-icmp6_8h_source.html#l00053">ICMP6_DST_UNREACH</a>, <a class="el" href="uip-icmp6_8h_source.html#l00083">ICMP6_DST_UNREACH_NOPORT</a>, <a class="el" href="uip-icmp6_8h_source.html#l00080">ICMP6_DST_UNREACH_NOTNEIGHBOR</a>, <a class="el" href="uip-icmp6_8h_source.html#l00054">ICMP6_PACKET_TOO_BIG</a>, <a class="el" href="uip-icmp6_8h_source.html#l00056">ICMP6_PARAM_PROB</a>, <a class="el" href="uip-icmp6_8h_source.html#l00094">ICMP6_PARAMPROB_HEADER</a>, <a class="el" href="uip-icmp6_8h_source.html#l00095">ICMP6_PARAMPROB_NEXTHEADER</a>, <a class="el" href="uip-icmp6_8h_source.html#l00088">ICMP6_TIME_EXCEED_TRANSIT</a>, <a class="el" href="uip-icmp6_8h_source.html#l00055">ICMP6_TIME_EXCEEDED</a>, <a class="el" href="uip-mcast6_8h_source.html#l00138">uip_mcast6_driver::in</a>, <a class="el" href="uip_8h_source.html#l01347">uip_conn::initialmss</a>, <a class="el" href="uip_8h_source.html#l01345">uip_conn::len</a>, <a class="el" href="uip_8h_source.html#l01338">uip_conn::lport</a>, <a class="el" href="uip_8h_source.html#l01389">uip_udp_conn::lport</a>, <a class="el" href="uip_8h_source.html#l01346">uip_conn::mss</a>, <a class="el" href="uip_8h_source.html#l01353">uip_conn::nrtx</a>, <a class="el" href="uip_8h_source.html#l01342">uip_conn::rcv_nxt</a>, <a class="el" href="uip_8h_source.html#l01336">uip_conn::ripaddr</a>, <a class="el" href="uip_8h_source.html#l01388">uip_udp_conn::ripaddr</a>, <a class="el" href="rpl-lite_2rpl-ext-header_8c_source.html#l00122">rpl_ext_header_srh_update()</a>, <a class="el" href="uip_8h_source.html#l01339">uip_conn::rport</a>, <a class="el" href="uip_8h_source.html#l01390">uip_udp_conn::rport</a>, <a class="el" href="uip_8h_source.html#l01350">uip_conn::rto</a>, <a class="el" href="uip_8h_source.html#l01348">uip_conn::sa</a>, <a class="el" href="uip_8h_source.html#l01344">uip_conn::snd_nxt</a>, <a class="el" href="uip_8h_source.html#l01349">uip_conn::sv</a>, <a class="el" href="uip_8h_source.html#l01351">uip_conn::tcpstateflags</a>, <a class="el" href="uip_8h_source.html#l01352">uip_conn::timer</a>, <a class="el" href="uip_8h_source.html#l01391">uip_udp_conn::ttl</a>, <a class="el" href="uip6_8c_source.html#l00246">uip_acc32</a>, <a class="el" href="uip6_8c_source.html#l00279">uip_add32()</a>, <a class="el" href="tcpip_8h_source.html#l00079">UIP_APPCALL</a>, <a class="el" href="uip6_8c_source.html#l00175">uip_appdata</a>, <a class="el" href="uip_8h_source.html#l00505">uip_buf</a>, <a class="el" href="uip6_8c_source.html#l00201">uip_conn</a>, <a class="el" href="uip-ds6_8c_source.html#l00074">uip_ds6_if</a>, <a class="el" href="uip-ds6_8c_source.html#l00515">uip_ds6_select_src()</a>, <a class="el" href="uip6_8c_source.html#l00131">uip_ext_bitmap</a>, <a class="el" href="uip_8h_source.html#l01921">UIP_EXT_HDR_BITMAP_HBHO</a>, <a class="el" href="uip6_8c_source.html#l00136">uip_ext_len</a>, <a class="el" href="uip_8h_source.html#l01221">UIP_HTONS</a>, <a class="el" href="uip-icmp6_8c_source.html#l00182">uip_icmp6_error_output()</a>, <a class="el" href="uip-icmp6_8c_source.html#l00097">uip_icmp6_input()</a>, <a class="el" href="uip6_8c_source.html#l00391">uip_icmp6chksum()</a>, <a class="el" href="uip-nd6_8c_source.html#l00097">UIP_ICMP_BUF</a>, <a class="el" href="uip-nd6_8c_source.html#l00096">UIP_IP_BUF</a>, <a class="el" href="uip_8h_source.html#l01009">uip_ipaddr_copy</a>, <a class="el" href="uip_8h_source.html#l02014">uip_is_addr_linklocal</a>, <a class="el" href="uip_8h_source.html#l01959">uip_is_addr_loopback</a>, <a class="el" href="uip_8h_source.html#l02098">uip_is_addr_mcast</a>, <a class="el" href="uip_8h_source.html#l02126">uip_is_addr_mcast_routable</a>, <a class="el" href="uip_8h_source.html#l01973">uip_is_addr_unspecified</a>, <a class="el" href="uip6_8c_source.html#l00186">uip_len</a>, <a class="el" href="uipopt_8h_source.html#l00249">UIP_LINK_MTU</a>, <a class="el" href="uipopt_8h_source.html#l00399">UIP_LISTENPORTS</a>, <a class="el" href="uipopt_8h_source.html#l00141">UIP_LLH_LEN</a>, <a class="el" href="uipopt_8h_source.html#l00428">UIP_MAXRTX</a>, <a class="el" href="uipopt_8h_source.html#l00437">UIP_MAXSYNRTX</a>, <a class="el" href="uip6_8c_source.html#l00129">uip_next_hdr</a>, <a class="el" href="uip_8h_source.html#l01895">UIP_PROTO_HBHO</a>, <a class="el" href="uipopt_8h_source.html#l00464">UIP_RECEIVE_WINDOW</a>, <a class="el" href="uipopt_8h_source.html#l00420">UIP_RTO</a>, <a class="el" href="uip_8h_source.html#l01430">UIP_STAT</a>, <a class="el" href="uipopt_8h_source.html#l00385">UIP_TCP_CONNS</a>, <a class="el" href="uipopt_8h_source.html#l00451">UIP_TCP_MSS</a>, <a class="el" href="uip6_8c_source.html#l00399">uip_tcpchksum()</a>, <a class="el" href="uipopt_8h_source.html#l00475">UIP_TIME_WAIT_TIMEOUT</a>, <a class="el" href="uip6_8c_source.html#l00257">uip_udp_conn</a>, <a class="el" href="uipopt_8h_source.html#l00331">UIP_UDP_CONNS</a>, and <a class="el" href="group__uip.html#gaeb447241dcd4e7840ea4b0603fc2c330">uip_udpchksum()</a>.</p>
 
 </div>
 </div>
@@ -2763,7 +2763,7 @@ struct uip_icmp6_conn&#160;</td><td class="memItemRight" valign="bottom"><a clas
 
 <p>References <a class="el" href="uip_8h_source.html#l01389">uip_udp_conn::lport</a>, <a class="el" href="uip_8h_source.html#l01388">uip_udp_conn::ripaddr</a>, <a class="el" href="uip_8h_source.html#l01390">uip_udp_conn::rport</a>, <a class="el" href="uip_8h_source.html#l01391">uip_udp_conn::ttl</a>, <a class="el" href="uip-ds6_8c_source.html#l00074">uip_ds6_if</a>, <a class="el" href="uip_8h_source.html#l01221">UIP_HTONS</a>, <a class="el" href="uip6_8c_source.html#l02307">uip_htons()</a>, <a class="el" href="uip_8h_source.html#l01009">uip_ipaddr_copy</a>, and <a class="el" href="uipopt_8h_source.html#l00331">UIP_UDP_CONNS</a>.</p>
 
-<p>Referenced by <a class="el" href="tcpip_8c_source.html#l00252">udp_new()</a>.</p>
+<p>Referenced by <a class="el" href="tcpip_8c_source.html#l00248">udp_new()</a>.</p>
 
 </div>
 </div>
@@ -2817,7 +2817,7 @@ struct uip_icmp6_conn&#160;</td><td class="memItemRight" valign="bottom"><a clas
 
 <p>References <a class="el" href="uipopt_8h_source.html#l00399">UIP_LISTENPORTS</a>.</p>
 
-<p>Referenced by <a class="el" href="tcpip_8c_source.html#l00202">tcp_unlisten()</a>.</p>
+<p>Referenced by <a class="el" href="tcpip_8c_source.html#l00198">tcp_unlisten()</a>.</p>
 
 </div>
 </div>
@@ -2935,7 +2935,7 @@ struct uip_icmp6_conn&#160;</td><td class="memItemRight" valign="bottom"><a clas
 
 <p>Definition at line <a class="el" href="uip6_8c_source.html#l00186">186</a> of file <a class="el" href="uip6_8c_source.html">uip6.c</a>.</p>
 
-<p>Referenced by <a class="el" href="roll-tm_8c_source.html#l00894">accept()</a>, <a class="el" href="sicslowpan_8c_source.html#l01703">input()</a>, <a class="el" href="sicslowpan_8c_source.html#l01490">output()</a>, <a class="el" href="uip-nd6_8c_source.html#l00862">ra_input()</a>, <a class="el" href="rpl-classic_2rpl-ext-header_8c_source.html#l00591">rpl_ext_header_remove()</a>, <a class="el" href="arch_2platform_2jn516x_2lib_2slip_8c_source.html#l00192">slip_send()</a>, <a class="el" href="tcpip_8c_source.html#l00640">tcpip_ipv6_output()</a>, <a class="el" href="uip-ds6_8c_source.html#l00149">uip_ds6_periodic()</a>, <a class="el" href="uip-icmp6_8c_source.html#l00182">uip_icmp6_error_output()</a>, <a class="el" href="uip-icmp6_8c_source.html#l00269">uip_icmp6_send()</a>, <a class="el" href="uip-nd6_8c_source.html#l00815">uip_nd6_rs_output()</a>, and <a class="el" href="uip6_8c_source.html#l00928">uip_process()</a>.</p>
+<p>Referenced by <a class="el" href="roll-tm_8c_source.html#l00894">accept()</a>, <a class="el" href="sicslowpan_8c_source.html#l01698">input()</a>, <a class="el" href="sicslowpan_8c_source.html#l01485">output()</a>, <a class="el" href="uip-nd6_8c_source.html#l00862">ra_input()</a>, <a class="el" href="rpl-classic_2rpl-ext-header_8c_source.html#l00591">rpl_ext_header_remove()</a>, <a class="el" href="arch_2platform_2jn516x_2lib_2slip_8c_source.html#l00192">slip_send()</a>, <a class="el" href="tcpip_8c_source.html#l00639">tcpip_ipv6_output()</a>, <a class="el" href="uip-ds6_8c_source.html#l00154">uip_ds6_periodic()</a>, <a class="el" href="uip-icmp6_8c_source.html#l00182">uip_icmp6_error_output()</a>, <a class="el" href="uip-icmp6_8c_source.html#l00269">uip_icmp6_send()</a>, <a class="el" href="uip-nd6_8c_source.html#l00815">uip_nd6_rs_output()</a>, and <a class="el" href="uip6_8c_source.html#l00928">uip_process()</a>.</p>
 
 </div>
 </div>
@@ -2961,7 +2961,7 @@ struct uip_icmp6_conn&#160;</td><td class="memItemRight" valign="bottom"><a clas
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 6 2017 15:45:31 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 31 2017 23:29:17 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

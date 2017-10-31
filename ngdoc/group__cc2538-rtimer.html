@@ -60,7 +60,7 @@ Files</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:gab84335ec495695cccd7f49c967e75baa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cc2538-rtimer.html#gab84335ec495695cccd7f49c967e75baa">rtimer_arch_now</a>()&#160;&#160;&#160;(T1CNTL + (T1CNTH &lt;&lt; 8))</td></tr>
+<tr class="memitem:gab84335ec495695cccd7f49c967e75baa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cc2538-rtimer.html#gab84335ec495695cccd7f49c967e75baa">rtimer_arch_now</a>()&#160;&#160;&#160;<a class="el" href="group__clock.html#ga50c22f9b9d60dd1f9e59b63a3a6676b1">clock_time</a>()</td></tr>
 <tr class="separator:gab84335ec495695cccd7f49c967e75baa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -96,13 +96,13 @@ Functions</h2></td></tr>
           <td class="memname">rtimer_clock_t rtimer_arch_now</td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;(T1CNTL + (T1CNTH &lt;&lt; 8))</td>
+          <td>&#160;&#160;&#160;<a class="el" href="group__clock.html#ga50c22f9b9d60dd1f9e59b63a3a6676b1">clock_time</a>()</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="group__rt.html#gae646864933baa81ca646c96fa6f9f803" title="Get the current clock time. ">RTIMER_NOW()</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="cpu_2cc253x_2rtimer-arch_8h_source.html#l00056">56</a> of file <a class="el" href="cpu_2cc253x_2rtimer-arch_8h_source.html">rtimer-arch.h</a>.</p>
+<p>Definition at line <a class="el" href="cpu_2native_2rtimer-arch_8h_source.html#l00047">47</a> of file <a class="el" href="cpu_2native_2rtimer-arch_8h_source.html">rtimer-arch.h</a>.</p>
 
 </div>
 </div>
@@ -124,7 +124,7 @@ Functions</h2></td></tr>
 <p>We don't need to explicitly initialise anything but this routine is required by the API. </p>
 <p>The Sleep Timer starts ticking automatically as soon as the device turns on. We don't need to turn on interrupts before the first call to <a class="el" href="group__cc2538-rtimer.html#gac69ae14f718f5f7b78b101a034d67c3a" title="Schedules an rtimer task to be triggered at time t. ">rtimer_arch_schedule()</a> </p>
 
-<p>Definition at line <a class="el" href="cpu_2cc2538_2rtimer-arch_8c_source.html#l00060">60</a> of file <a class="el" href="cpu_2cc2538_2rtimer-arch_8c_source.html">rtimer-arch.c</a>.</p>
+<p>Definition at line <a class="el" href="cpu_2cc2538_2rtimer-arch_8c_source.html#l00059">59</a> of file <a class="el" href="cpu_2cc2538_2rtimer-arch_8c_source.html">rtimer-arch.c</a>.</p>
 
 <p>Referenced by <a class="el" href="rtimer_8c_source.html#l00061">rtimer_init()</a>.</p>
 
@@ -147,7 +147,7 @@ Functions</h2></td></tr>
 <p>Get the time of the next scheduled rtimer trigger. </p>
 <dl class="section return"><dt>Returns</dt><dd>The time next rtimer ISR is scheduled for </dd></dl>
 
-<p>Definition at line <a class="el" href="cpu_2cc2538_2rtimer-arch_8c_source.html#l00106">106</a> of file <a class="el" href="cpu_2cc2538_2rtimer-arch_8c_source.html">rtimer-arch.c</a>.</p>
+<p>Definition at line <a class="el" href="cpu_2cc2538_2rtimer-arch_8c_source.html#l00105">105</a> of file <a class="el" href="cpu_2cc2538_2rtimer-arch_8c_source.html">rtimer-arch.c</a>.</p>
 
 </div>
 </div>
@@ -168,7 +168,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The current rtimer time in ticks</dd></dl>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="group__rt.html#gae646864933baa81ca646c96fa6f9f803" title="Get the current clock time. ">RTIMER_NOW()</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="cpu_2cc2538_2rtimer-arch_8c_source.html#l00116">116</a> of file <a class="el" href="cpu_2cc2538_2rtimer-arch_8c_source.html">rtimer-arch.c</a>.</p>
+<p>Definition at line <a class="el" href="cpu_2cc2538_2rtimer-arch_8c_source.html#l00115">115</a> of file <a class="el" href="cpu_2cc2538_2rtimer-arch_8c_source.html">rtimer-arch.c</a>.</p>
 
 </div>
 </div>
@@ -194,7 +194,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="cpu_2cc2538_2rtimer-arch_8c_source.html#l00072">72</a> of file <a class="el" href="cpu_2cc2538_2rtimer-arch_8c_source.html">rtimer-arch.c</a>.</p>
+<p>Definition at line <a class="el" href="cpu_2cc2538_2rtimer-arch_8c_source.html#l00071">71</a> of file <a class="el" href="cpu_2cc2538_2rtimer-arch_8c_source.html">rtimer-arch.c</a>.</p>
 
 <p>Referenced by <a class="el" href="rtimer_8c_source.html#l00092">rtimer_run_next()</a>, and <a class="el" href="rtimer_8c_source.html#l00067">rtimer_set()</a>.</p>
 
@@ -217,14 +217,16 @@ Functions</h2></td></tr>
 <p>The rtimer ISR. </p>
 <p>Interrupts are only turned on when we have an rtimer task to schedule Once the interrupt fires, the task is called and then interrupts no longer get acknowledged until the next task needs scheduled. </p>
 
-<p>Definition at line <a class="el" href="cpu_2cc2538_2rtimer-arch_8c_source.html#l00137">137</a> of file <a class="el" href="cpu_2cc2538_2rtimer-arch_8c_source.html">rtimer-arch.c</a>.</p>
+<p>Definition at line <a class="el" href="cpu_2cc2538_2rtimer-arch_8c_source.html#l00136">136</a> of file <a class="el" href="cpu_2cc2538_2rtimer-arch_8c_source.html">rtimer-arch.c</a>.</p>
+
+<p>References <a class="el" href="core__cm0_8h_source.html#l00688">NVIC_ClearPendingIRQ()</a>, <a class="el" href="core__cm0_8h_source.html#l00653">NVIC_DisableIRQ()</a>, <a class="el" href="rtimer_8c_source.html#l00092">rtimer_run_next()</a>, and <a class="el" href="cc2538__cm3_8h_source.html#l00113">SMT_IRQn</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 6 2017 15:45:24 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 31 2017 23:29:13 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

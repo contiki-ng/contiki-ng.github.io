@@ -80,8 +80,8 @@ Files</h2></td></tr>
 <tr class="memitem:openmote-cc2538_2contiki-conf_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openmote-cc2538_2contiki-conf_8h.html">contiki-conf.h</a></td></tr>
 <tr class="memdesc:openmote-cc2538_2contiki-conf_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration for the OpenMote-CC2538 platform. <br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:openmote-cc2538_2contiki-main_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openmote-cc2538_2contiki-main_8c.html">contiki-main.c</a></td></tr>
-<tr class="memdesc:openmote-cc2538_2contiki-main_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main module for the OpenMote-CC2538 platform. <br/></td></tr>
+<tr class="memitem:openmote-cc2538_2platform_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openmote-cc2538_2platform_8c.html">platform.c</a></td></tr>
+<tr class="memdesc:openmote-cc2538_2platform_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main module for the OpenMote-CC2538 platform. <br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -90,9 +90,18 @@ Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openmote-cc2538.html#ga916f2adc2080b4fe88034086d107a8dc">board_init</a> (void)</td></tr>
 <tr class="memdesc:ga916f2adc2080b4fe88034086d107a8dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Board specific iniatialisation. <br/></td></tr>
 <tr class="separator:ga916f2adc2080b4fe88034086d107a8dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openmote-cc2538.html#ga840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
-<tr class="memdesc:ga840291bc02cba5474a4cb46a9b9566fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main routine for the OpenMote-CC2538 platforms.  <a href="#ga840291bc02cba5474a4cb46a9b9566fe">More...</a><br/></td></tr>
-<tr class="separator:ga840291bc02cba5474a4cb46a9b9566fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6719b0d352559b922f36d15452886f33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openmote-cc2538.html#ga6719b0d352559b922f36d15452886f33">platform_init_stage_one</a> (void)</td></tr>
+<tr class="memdesc:ga6719b0d352559b922f36d15452886f33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Basic (Stage 1) platform driver initialisation.  <a href="#ga6719b0d352559b922f36d15452886f33">More...</a><br/></td></tr>
+<tr class="separator:ga6719b0d352559b922f36d15452886f33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaab1b4c3f4dccd0c98c889c54c157470e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openmote-cc2538.html#gaab1b4c3f4dccd0c98c889c54c157470e">platform_init_stage_two</a> ()</td></tr>
+<tr class="memdesc:gaab1b4c3f4dccd0c98c889c54c157470e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stage 2 of platform driver initialisation.  <a href="#gaab1b4c3f4dccd0c98c889c54c157470e">More...</a><br/></td></tr>
+<tr class="separator:gaab1b4c3f4dccd0c98c889c54c157470e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2785c94c0f271073be2bea057917c822"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openmote-cc2538.html#ga2785c94c0f271073be2bea057917c822">platform_init_stage_three</a> ()</td></tr>
+<tr class="memdesc:ga2785c94c0f271073be2bea057917c822"><td class="mdescLeft">&#160;</td><td class="mdescRight">Final stage of platform driver initialisation.  <a href="#ga2785c94c0f271073be2bea057917c822">More...</a><br/></td></tr>
+<tr class="separator:ga2785c94c0f271073be2bea057917c822"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa98c41aae3b9a3380ba78a48eb5c7583"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openmote-cc2538.html#gaa98c41aae3b9a3380ba78a48eb5c7583">platform_idle</a> ()</td></tr>
+<tr class="memdesc:gaa98c41aae3b9a3380ba78a48eb5c7583"><td class="mdescLeft">&#160;</td><td class="mdescRight">The platform's idle/sleep function.  <a href="#gaa98c41aae3b9a3380ba78a48eb5c7583">More...</a><br/></td></tr>
+<tr class="separator:gaa98c41aae3b9a3380ba78a48eb5c7583"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
 OpenMote-CC2538 LED configuration</h2></td></tr>
@@ -364,13 +373,6 @@ USB 'core' configuration</h2></td></tr>
 <tr class="separator:ga4eaf61a0442e322fe765f441dd6347c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
-Generic Configuration directives</h2></td></tr>
-<tr class="memitem:ga7881a20cfd447b49cade8ab9ff94f970"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga7881a20cfd447b49cade8ab9ff94f970"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openmote-cc2538.html#ga7881a20cfd447b49cade8ab9ff94f970">STARTUP_CONF_VERBOSE</a>&#160;&#160;&#160;1</td></tr>
-<tr class="memdesc:ga7881a20cfd447b49cade8ab9ff94f970"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to 0 to decrease startup verbosity. <br/></td></tr>
-<tr class="separator:ga7881a20cfd447b49cade8ab9ff94f970"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
 uDMA Configuration and channel allocations</h2></td></tr>
 <tr class="memitem:gae9e4b34cbcbed96bd5eda879aed2ebb3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gae9e4b34cbcbed96bd5eda879aed2ebb3"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openmote-cc2538.html#gae9e4b34cbcbed96bd5eda879aed2ebb3">USB_ARCH_CONF_RX_DMA_CHAN</a>&#160;&#160;&#160;0</td></tr>
@@ -545,7 +547,7 @@ Security</h2></td></tr>
 <p>Define this as 1 to build a headless node. </p>
 <p>The UART will not be initialised its clock will be gated, offering some energy savings. The USB will not be initialised either </p>
 
-<p>Definition at line <a class="el" href="openmote-cc2538_2contiki-conf_8h_source.html#l00262">262</a> of file <a class="el" href="openmote-cc2538_2contiki-conf_8h_source.html">contiki-conf.h</a>.</p>
+<p>Definition at line <a class="el" href="openmote-cc2538_2contiki-conf_8h_source.html#l00253">253</a> of file <a class="el" href="openmote-cc2538_2contiki-conf_8h_source.html">contiki-conf.h</a>.</p>
 
 </div>
 </div>
@@ -562,17 +564,17 @@ Security</h2></td></tr>
 <p>Maximum PM. </p>
 <p>The SoC will never drop to a Power Mode deeper than the one specified here. 0 for PM0, 1 for PM1 and 2 for PM2 </p>
 
-<p>Definition at line <a class="el" href="openmote-cc2538_2contiki-conf_8h_source.html#l00344">344</a> of file <a class="el" href="openmote-cc2538_2contiki-conf_8h_source.html">contiki-conf.h</a>.</p>
+<p>Definition at line <a class="el" href="openmote-cc2538_2contiki-conf_8h_source.html#l00333">333</a> of file <a class="el" href="openmote-cc2538_2contiki-conf_8h_source.html">contiki-conf.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="ga840291bc02cba5474a4cb46a9b9566fe"></a>
+<a class="anchor" id="gaa98c41aae3b9a3380ba78a48eb5c7583"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int main </td>
+          <td class="memname">void platform_idle </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -581,19 +583,113 @@ Security</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Main routine for the OpenMote-CC2538 platforms. </p>
-<p>Main routine for the cc2538dk platform. </p>
+<p>The platform's idle/sleep function. </p>
+<p>This function will be called as part of the main loop after all events have been serviced. This is where you will normally put the device in a low-power state. Waking up from this state and tidying up the hardware is the port's responsibility.</p>
+<p>It is the port developer's responsibility to implement this function. </p>
 
-<p>Definition at line <a class="el" href="openmote-cc2538_2contiki-main_8c_source.html#l00150">150</a> of file <a class="el" href="openmote-cc2538_2contiki-main_8c_source.html">contiki-main.c</a>.</p>
+<p>Definition at line <a class="el" href="openmote-cc2538_2platform_8c_source.html#l00184">184</a> of file <a class="el" href="openmote-cc2538_2platform_8c_source.html">platform.c</a>.</p>
 
-<p>References <a class="el" href="openmote-cc2538_2board_8c_source.html#l00054">board_init()</a>, <a class="el" href="cpu_2cc2538_2clock_8c_source.html#l00093">clock_init()</a>, <a class="el" href="crypto_8c_source.html#l00106">crypto_disable()</a>, <a class="el" href="crypto_8c_source.html#l00082">crypto_init()</a>, <a class="el" href="ctimer_8c_source.html#l00091">ctimer_init()</a>, <a class="el" href="gpio_8c_source.html#l00119">gpio_init()</a>, <a class="el" href="cpu_2cc2538_2dev_2i2c_8c_source.html#l00049">i2c_init()</a>, <a class="el" href="cpu_8h_source.html#l00060">INTERRUPTS_ENABLE</a>, <a class="el" href="ioc_8c_source.html#l00047">ioc_init()</a>, <a class="el" href="cc2538dk_2dev_2board_8h_source.html#l00082">LEDS_GREEN</a>, <a class="el" href="cc2538dk_2dev_2board_8h_source.html#l00090">LEDS_RED</a>, <a class="el" href="linkaddr_8c_source.html#l00048">linkaddr_node_addr</a>, <a class="el" href="cc26xx-cc13xx_2lpm_8c_source.html#l00571">lpm_init()</a>, <a class="el" href="nvic_8c_source.html#l00044">nvic_init()</a>, <a class="el" href="process_8c_source.html#l00209">process_init()</a>, <a class="el" href="process_8c_source.html#l00303">process_run()</a>, <a class="el" href="process_8c_source.html#l00100">process_start()</a>, <a class="el" href="arch_2cpu_2cc2538_2dev_2random_8c_source.html#l00084">random_init()</a>, <a class="el" href="rtimer_8c_source.html#l00061">rtimer_init()</a>, <a class="el" href="cc2538dk_2contiki-conf_8h_source.html#l00171">SERIAL_LINE_CONF_UART</a>, <a class="el" href="serial-line_8c_source.html#l00060">serial_line_input_byte()</a>, <a class="el" href="cc2538_2soc_8c_source.html#l00087">soc_print_info()</a>, <a class="el" href="sys-ctrl_8c_source.html#l00074">sys_ctrl_init()</a>, <a class="el" href="uart_8c_source.html#l00242">uart_init()</a>, <a class="el" href="uart_8c_source.html#l00335">uart_set_input()</a>, <a class="el" href="udma_8c_source.html#l00057">udma_init()</a>, <a class="el" href="uip6_8c_source.html#l00111">uip_lladdr</a>, <a class="el" href="usb-serial_8c_source.html#l00301">usb_serial_init()</a>, <a class="el" href="usb-serial_8c_source.html#l00295">usb_serial_set_input()</a>, <a class="el" href="cpu_2cc2538_2dev_2watchdog_8c_source.html#l00063">watchdog_init()</a>, <a class="el" href="cpu_2cc2538_2dev_2watchdog_8c_source.html#l00085">watchdog_periodic()</a>, and <a class="el" href="cpu_2cc2538_2dev_2watchdog_8c_source.html#l00072">watchdog_start()</a>.</p>
+</div>
+</div>
+<a class="anchor" id="ga6719b0d352559b922f36d15452886f33"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void platform_init_stage_one </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Basic (Stage 1) platform driver initialisation. </p>
+<p>This function will get called early on in the Contiki-NG boot sequence.</p>
+<p>In this function, the platform should initialise all core device drivers. For example, this is where you will normally want to initialise hardware timers/clocks, GPIO, LEDS. Normally this function will also enable the MCU's global interrupt.</p>
+<p>The Contiki-NG process scheduler, software clocks and timers will not be running yet, so any platform drivers that rely on it should not be initialised here. Instead, they should be initialised in <em><a class="el" href="group__main.html#ga25e6a1eae353952734bb49a46a3ff426" title="Stage 2 of platform driver initialisation. ">platform_init_stage_two()</a></em> or in <em><a class="el" href="group__main.html#gae18f5f437eb0d414b6ad781553542b6a" title="Final stage of platform driver initialisation. ">platform_init_stage_three()</a></em> </p>
+<p>It is the port developer's responsibility to implement this function.</p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="group__main.html#ga25e6a1eae353952734bb49a46a3ff426" title="Stage 2 of platform driver initialisation. ">platform_init_stage_two()</a> </dd>
+<dd>
+<a class="el" href="group__main.html#gae18f5f437eb0d414b6ad781553542b6a" title="Final stage of platform driver initialisation. ">platform_init_stage_three()</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="openmote-cc2538_2platform_8c_source.html#l00124">124</a> of file <a class="el" href="openmote-cc2538_2platform_8c_source.html">platform.c</a>.</p>
+
+<p>References <a class="el" href="cc2538dk_2dev_2board_8h_source.html#l00090">LEDS_RED</a>, and <a class="el" href="soc_8c_source.html#l00118">soc_init()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga2785c94c0f271073be2bea057917c822"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void platform_init_stage_three </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Final stage of platform driver initialisation. </p>
+<p>Initialisation of platform-specific drivers that require networking to be running. This is also a good place to initialise sensor drivers.</p>
+<p>When this function returns, the main routine will assume that the hardware is fully initialised.</p>
+<p>It is the port developer's responsibility to implement this function.</p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="group__main.html#ga6719b0d352559b922f36d15452886f33" title="Basic (Stage 1) platform driver initialisation. ">platform_init_stage_one()</a> </dd>
+<dd>
+<a class="el" href="group__main.html#ga25e6a1eae353952734bb49a46a3ff426" title="Stage 2 of platform driver initialisation. ">platform_init_stage_two()</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="openmote-cc2538_2platform_8c_source.html#l00168">168</a> of file <a class="el" href="openmote-cc2538_2platform_8c_source.html">platform.c</a>.</p>
+
+<p>References <a class="el" href="openmote-cc2538_2board_8c_source.html#l00054">board_init()</a>, <a class="el" href="cc2538dk_2dev_2board_8h_source.html#l00082">LEDS_GREEN</a>, <a class="el" href="process_8c_source.html#l00099">process_start()</a>, and <a class="el" href="soc_8c_source.html#l00096">soc_print_info()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaab1b4c3f4dccd0c98c889c54c157470e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void platform_init_stage_two </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stage 2 of platform driver initialisation. </p>
+<p>This function will be called by the Contiki-NG boot sequence after parts of the core have been initialised. More specifically, when this function gets called, the following modules will be running:</p>
+<ul>
+<li>Software clock</li>
+<li>Process scheduler</li>
+<li>Event timer (etimer)</li>
+<li>Callback timer (ctimer)</li>
+<li>rtimer</li>
+<li>Energest (if enabled)</li>
+</ul>
+<p>Therefore, any platform driver that relies on any of the above modules should be initialised here or in <em><a class="el" href="group__main.html#gae18f5f437eb0d414b6ad781553542b6a" title="Final stage of platform driver initialisation. ">platform_init_stage_three()</a></em>, but not in <em><a class="el" href="group__main.html#ga6719b0d352559b922f36d15452886f33" title="Basic (Stage 1) platform driver initialisation. ">platform_init_stage_one()</a></em> </p>
+<p>The Contiki-NG network stack will not be running yet, so any platform drivers that rely on networking should not be initialised here.</p>
+<p>When this function returns, the main routine will assume that the platform has enabled character I/O and can print to console. When this function returns, main() will attempt to initialise the network stack. For this to work properly, this function should also populate linkaddr_node_addr.</p>
+<p>It is the port developer's responsibility to implement this function.</p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="group__main.html#ga6719b0d352559b922f36d15452886f33" title="Basic (Stage 1) platform driver initialisation. ">platform_init_stage_one()</a> </dd>
+<dd>
+<a class="el" href="group__main.html#gae18f5f437eb0d414b6ad781553542b6a" title="Final stage of platform driver initialisation. ">platform_init_stage_three()</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="openmote-cc2538_2platform_8c_source.html#l00133">133</a> of file <a class="el" href="openmote-cc2538_2platform_8c_source.html">platform.c</a>.</p>
+
+<p>References <a class="el" href="crypto_8c_source.html#l00101">crypto_disable()</a>, <a class="el" href="crypto_8c_source.html#l00077">crypto_init()</a>, <a class="el" href="cpu_2cc2538_2dev_2i2c_8c_source.html#l00049">i2c_init()</a>, <a class="el" href="cpu_8h_source.html#l00060">INTERRUPTS_ENABLE</a>, <a class="el" href="arch_2cpu_2cc2538_2dev_2random_8c_source.html#l00084">random_init()</a>, <a class="el" href="cc2538dk_2contiki-conf_8h_source.html#l00161">SERIAL_LINE_CONF_UART</a>, <a class="el" href="serial-line_8c_source.html#l00065">serial_line_input_byte()</a>, <a class="el" href="uart_8c_source.html#l00241">uart_init()</a>, <a class="el" href="uart_8c_source.html#l00334">uart_set_input()</a>, <a class="el" href="udma_8c_source.html#l00057">udma_init()</a>, <a class="el" href="usb-serial_8c_source.html#l00301">usb_serial_init()</a>, and <a class="el" href="usb-serial_8c_source.html#l00295">usb_serial_set_input()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 6 2017 15:45:27 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 31 2017 23:29:15 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

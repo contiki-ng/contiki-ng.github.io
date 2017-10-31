@@ -106,7 +106,7 @@
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="group__apps.html#ga875bd6a0fb2a64cbd04f385d211531e5">   56</a></span>&#160;<a class="code" href="group__shell.html#ga875bd6a0fb2a64cbd04f385d211531e5">shell_output_6addr</a>(shell_output_func <a class="code" href="group__sicslowpan.html#ga3c0beeb7908da5d83ef11b37f8f6ab3f">output</a>, <span class="keyword">const</span> uip_ipaddr_t *<a class="code" href="uip-nd6_8c.html#a4e1a84fd63a1c24d54501f93d9bc5757">ipaddr</a>)</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="group__apps.html#ga875bd6a0fb2a64cbd04f385d211531e5">   56</a></span>&#160;<a class="code" href="group__shell.html#ga875bd6a0fb2a64cbd04f385d211531e5">shell_output_6addr</a>(shell_output_func <a class="code" href="group__sicslowpan.html#gaab2d9d0e3ef2ce7170f8fbc5a6ae70b2">output</a>, <span class="keyword">const</span> uip_ipaddr_t *<a class="code" href="uip-nd6_8c.html#a4e1a84fd63a1c24d54501f93d9bc5757">ipaddr</a>)</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  uint16_t a;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i;</div>
@@ -140,7 +140,7 @@
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="group__apps.html#gab55d2fd87484e8819fbaefc3569da1a1">   90</a></span>&#160;<a class="code" href="group__shell.html#gab55d2fd87484e8819fbaefc3569da1a1">shell_output_lladdr</a>(shell_output_func <a class="code" href="group__sicslowpan.html#ga3c0beeb7908da5d83ef11b37f8f6ab3f">output</a>, <span class="keyword">const</span> linkaddr_t *lladdr)</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="group__apps.html#gab55d2fd87484e8819fbaefc3569da1a1">   90</a></span>&#160;<a class="code" href="group__shell.html#gab55d2fd87484e8819fbaefc3569da1a1">shell_output_lladdr</a>(shell_output_func <a class="code" href="group__sicslowpan.html#gaab2d9d0e3ef2ce7170f8fbc5a6ae70b2">output</a>, <span class="keyword">const</span> linkaddr_t *lladdr)</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;{</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keywordflow">if</span>(lladdr == NULL) {</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    SHELL_OUTPUT(output, <span class="stringliteral">&quot;(NULL LL addr)&quot;</span>);</div>
@@ -157,73 +157,74 @@
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;output_prompt(shell_output_func <a class="code" href="group__sicslowpan.html#ga3c0beeb7908da5d83ef11b37f8f6ab3f">output</a>)</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;output_prompt(shell_output_func <a class="code" href="group__sicslowpan.html#gaab2d9d0e3ef2ce7170f8fbc5a6ae70b2">output</a>)</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;{</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <a class="code" href="group__shell.html#gab55d2fd87484e8819fbaefc3569da1a1">shell_output_lladdr</a>(output, &amp;<a class="code" href="group__linkaddr.html#ga03585f3e07ec49ec11cb4bbd17f3cf0e">linkaddr_node_addr</a>);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  SHELL_OUTPUT(output, <span class="stringliteral">&quot;&gt; &quot;</span>);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<a class="code" href="group__pt.html#ga3d4c8bd4aada659eb34f5d2ffd3e7901">PT_THREAD</a>(shell_input(<span class="keyword">struct</span> pt *pt, shell_output_func <a class="code" href="group__sicslowpan.html#ga3c0beeb7908da5d83ef11b37f8f6ab3f">output</a>, <span class="keyword">const</span> <span class="keywordtype">char</span> *cmd))</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;{</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">char</span> *args;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="keyword">static</span> <span class="keyword">struct </span>shell_command_t *cmd_ptr;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <a class="code" href="group__pt.html#ga92f1c8b9f87df406e19dfe19a2995130">PT_BEGIN</a>(pt);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="comment">/* Shave off any leading spaces. */</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keywordflow">while</span>(*cmd == <span class="charliteral">&#39; &#39;</span>) {</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    cmd++;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  }</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="comment">/* Look for arguments */</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  args = strchr(cmd, <span class="charliteral">&#39; &#39;</span>);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="keywordflow">if</span>(args != NULL) {</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    *args = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    args++;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  }</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <span class="comment">/* Lookup for command */</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  cmd_ptr = shell_commands;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <span class="keywordflow">while</span>(cmd_ptr-&gt;name != NULL) {</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">if</span>(strcmp(cmd, cmd_ptr-&gt;name) == 0) {</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;      <span class="keyword">static</span> <span class="keyword">struct </span>pt cmd_pt;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;      <a class="code" href="group__pt.html#ga9e97a0b4d5cc7764d8e19758f5da53ae">PT_SPAWN</a>(pt, &amp;cmd_pt, cmd_ptr-&gt;func(&amp;cmd_pt, output, args));</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;      <span class="keywordflow">goto</span> done;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    cmd_ptr++;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  }</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  SHELL_OUTPUT(output, <span class="stringliteral">&quot;Command not found. Type &#39;help&#39; for a list of commands\n&quot;</span>);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;done:</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  output_prompt(output);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <a class="code" href="group__pt.html#gaa24910691cbfb65d2a208e758d12b504">PT_END</a>(pt);</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;}</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="group__apps.html#ga69b075ef7e4d7bcf5a903d3d75baac02">  151</a></span>&#160;<a class="code" href="group__shell.html#ga69b075ef7e4d7bcf5a903d3d75baac02">shell_init</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;{</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <a class="code" href="group__shell.html#gab635fb14f3475e527f5b82d44540748b">shell_commands_init</a>();</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;}<span class="comment"></span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment">/** @} */</span></div>
-<div class="ttc" id="group__sicslowpan_html_ga3c0beeb7908da5d83ef11b37f8f6ab3f"><div class="ttname"><a href="group__sicslowpan.html#ga3c0beeb7908da5d83ef11b37f8f6ab3f">output</a></div><div class="ttdeci">static uint8_t output(const uip_lladdr_t *localdest)</div><div class="ttdoc">Take an IP packet and format it to be sent on an 802.15.4 network using 6lowpan. </div><div class="ttdef"><b>Definition:</b> <a href="sicslowpan_8c_source.html#l01490">sicslowpan.c:1490</a></div></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  SHELL_OUTPUT(output, <span class="stringliteral">&quot;#&quot;</span>);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <a class="code" href="group__shell.html#gab55d2fd87484e8819fbaefc3569da1a1">shell_output_lladdr</a>(output, &amp;<a class="code" href="group__linkaddr.html#ga03585f3e07ec49ec11cb4bbd17f3cf0e">linkaddr_node_addr</a>);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  SHELL_OUTPUT(output, <span class="stringliteral">&quot;&gt; &quot;</span>);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<a class="code" href="group__pt.html#ga3d4c8bd4aada659eb34f5d2ffd3e7901">PT_THREAD</a>(shell_input(<span class="keyword">struct</span> pt *pt, shell_output_func <a class="code" href="group__sicslowpan.html#gaab2d9d0e3ef2ce7170f8fbc5a6ae70b2">output</a>, <span class="keyword">const</span> <span class="keywordtype">char</span> *cmd))</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;{</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">char</span> *args;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keyword">static</span> <span class="keyword">struct </span>shell_command_t *cmd_ptr;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <a class="code" href="group__pt.html#ga92f1c8b9f87df406e19dfe19a2995130">PT_BEGIN</a>(pt);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="comment">/* Shave off any leading spaces. */</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keywordflow">while</span>(*cmd == <span class="charliteral">&#39; &#39;</span>) {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    cmd++;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="comment">/* Look for arguments */</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  args = strchr(cmd, <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="keywordflow">if</span>(args != NULL) {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    *args = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    args++;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <span class="comment">/* Lookup for command */</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  cmd_ptr = shell_commands;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <span class="keywordflow">while</span>(cmd_ptr-&gt;name != NULL) {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">if</span>(strcmp(cmd, cmd_ptr-&gt;name) == 0) {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;      <span class="keyword">static</span> <span class="keyword">struct </span>pt cmd_pt;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;      <a class="code" href="group__pt.html#ga9e97a0b4d5cc7764d8e19758f5da53ae">PT_SPAWN</a>(pt, &amp;cmd_pt, cmd_ptr-&gt;func(&amp;cmd_pt, output, args));</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;      <span class="keywordflow">goto</span> done;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    }</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    cmd_ptr++;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  SHELL_OUTPUT(output, <span class="stringliteral">&quot;Command not found. Type &#39;help&#39; for a list of commands\n&quot;</span>);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;done:</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  output_prompt(output);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  <a class="code" href="group__pt.html#gaa24910691cbfb65d2a208e758d12b504">PT_END</a>(pt);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;}</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="group__apps.html#ga69b075ef7e4d7bcf5a903d3d75baac02">  152</a></span>&#160;<a class="code" href="group__shell.html#ga69b075ef7e4d7bcf5a903d3d75baac02">shell_init</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;{</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  <a class="code" href="group__shell.html#gab635fb14f3475e527f5b82d44540748b">shell_commands_init</a>();</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;}<span class="comment"></span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="comment">/** @} */</span></div>
 <div class="ttc" id="uip-nd6_8c_html_a4e1a84fd63a1c24d54501f93d9bc5757"><div class="ttname"><a href="uip-nd6_8c.html#a4e1a84fd63a1c24d54501f93d9bc5757">ipaddr</a></div><div class="ttdeci">static uip_ipaddr_t ipaddr</div><div class="ttdoc">Pointer to prefix information option in uip_buf. </div><div class="ttdef"><b>Definition:</b> <a href="uip-nd6_8c_source.html#l00124">uip-nd6.c:124</a></div></div>
 <div class="ttc" id="shell_8h_html"><div class="ttname"><a href="shell_8h.html">shell.h</a></div><div class="ttdoc">    Main header file for the Contiki shell  </div></div>
-<div class="ttc" id="group__shell_html_gab635fb14f3475e527f5b82d44540748b"><div class="ttname"><a href="group__shell.html#gab635fb14f3475e527f5b82d44540748b">shell_commands_init</a></div><div class="ttdeci">void shell_commands_init(void)</div><div class="ttdoc">Initializes Shell-commands module. </div><div class="ttdef"><b>Definition:</b> <a href="shell-commands_8c_source.html#l00643">shell-commands.c:643</a></div></div>
+<div class="ttc" id="group__shell_html_gab635fb14f3475e527f5b82d44540748b"><div class="ttname"><a href="group__shell.html#gab635fb14f3475e527f5b82d44540748b">shell_commands_init</a></div><div class="ttdeci">void shell_commands_init(void)</div><div class="ttdoc">Initializes Shell-commands module. </div><div class="ttdef"><b>Definition:</b> <a href="shell-commands_8c_source.html#l00710">shell-commands.c:710</a></div></div>
 <div class="ttc" id="group__shell_html_gab55d2fd87484e8819fbaefc3569da1a1"><div class="ttname"><a href="group__shell.html#gab55d2fd87484e8819fbaefc3569da1a1">shell_output_lladdr</a></div><div class="ttdeci">void shell_output_lladdr(shell_output_func output, const linkaddr_t *lladdr)</div><div class="ttdoc">Prints a link-layer address. </div><div class="ttdef"><b>Definition:</b> <a href="shell_8c_source.html#l00090">shell.c:90</a></div></div>
 <div class="ttc" id="shell-commands_8h_html"><div class="ttname"><a href="shell-commands_8h.html">shell-commands.h</a></div><div class="ttdoc">    Main header file for the Contiki shell  </div></div>
 <div class="ttc" id="group__pt_html_ga92f1c8b9f87df406e19dfe19a2995130"><div class="ttname"><a href="group__pt.html#ga92f1c8b9f87df406e19dfe19a2995130">PT_BEGIN</a></div><div class="ttdeci">#define PT_BEGIN(pt)</div><div class="ttdoc">Declare the start of a protothread inside the C function implementing the protothread. </div><div class="ttdef"><b>Definition:</b> <a href="pt_8h_source.html#l00114">pt.h:114</a></div></div>
 <div class="ttc" id="group__pt_html_ga9e97a0b4d5cc7764d8e19758f5da53ae"><div class="ttname"><a href="group__pt.html#ga9e97a0b4d5cc7764d8e19758f5da53ae">PT_SPAWN</a></div><div class="ttdeci">#define PT_SPAWN(pt, child, thread)</div><div class="ttdoc">Spawn a child protothread and wait until it exits. </div><div class="ttdef"><b>Definition:</b> <a href="pt_8h_source.html#l00205">pt.h:205</a></div></div>
+<div class="ttc" id="group__sicslowpan_html_gaab2d9d0e3ef2ce7170f8fbc5a6ae70b2"><div class="ttname"><a href="group__sicslowpan.html#gaab2d9d0e3ef2ce7170f8fbc5a6ae70b2">output</a></div><div class="ttdeci">static uint8_t output(const linkaddr_t *localdest)</div><div class="ttdoc">Take an IP packet and format it to be sent on an 802.15.4 network using 6lowpan. </div><div class="ttdef"><b>Definition:</b> <a href="sicslowpan_8c_source.html#l01485">sicslowpan.c:1485</a></div></div>
 <div class="ttc" id="group__linkaddr_html_ga03585f3e07ec49ec11cb4bbd17f3cf0e"><div class="ttname"><a href="group__linkaddr.html#ga03585f3e07ec49ec11cb4bbd17f3cf0e">linkaddr_node_addr</a></div><div class="ttdeci">linkaddr_t linkaddr_node_addr</div><div class="ttdoc">The link-layer address of the node. </div><div class="ttdef"><b>Definition:</b> <a href="linkaddr_8c_source.html#l00048">linkaddr.c:48</a></div></div>
 <div class="ttc" id="group__pt_html_gaa24910691cbfb65d2a208e758d12b504"><div class="ttname"><a href="group__pt.html#gaa24910691cbfb65d2a208e758d12b504">PT_END</a></div><div class="ttdeci">#define PT_END(pt)</div><div class="ttdoc">Declare the end of a protothread. </div><div class="ttdef"><b>Definition:</b> <a href="pt_8h_source.html#l00126">pt.h:126</a></div></div>
 <div class="ttc" id="group__pt_html_ga3d4c8bd4aada659eb34f5d2ffd3e7901"><div class="ttname"><a href="group__pt.html#ga3d4c8bd4aada659eb34f5d2ffd3e7901">PT_THREAD</a></div><div class="ttdeci">#define PT_THREAD(name_args)</div><div class="ttdoc">Declaration of a protothread. </div><div class="ttdef"><b>Definition:</b> <a href="pt_8h_source.html#l00099">pt.h:99</a></div></div>
-<div class="ttc" id="group__shell_html_ga69b075ef7e4d7bcf5a903d3d75baac02"><div class="ttname"><a href="group__shell.html#ga69b075ef7e4d7bcf5a903d3d75baac02">shell_init</a></div><div class="ttdeci">void shell_init(void)</div><div class="ttdoc">Initializes Shell module. </div><div class="ttdef"><b>Definition:</b> <a href="shell_8c_source.html#l00151">shell.c:151</a></div></div>
+<div class="ttc" id="group__shell_html_ga69b075ef7e4d7bcf5a903d3d75baac02"><div class="ttname"><a href="group__shell.html#ga69b075ef7e4d7bcf5a903d3d75baac02">shell_init</a></div><div class="ttdeci">void shell_init(void)</div><div class="ttdoc">Initializes Shell module. </div><div class="ttdef"><b>Definition:</b> <a href="shell_8c_source.html#l00152">shell.c:152</a></div></div>
 <div class="ttc" id="uip_8h_html"><div class="ttname"><a href="uip_8h.html">uip.h</a></div><div class="ttdoc">Header file for the uIP TCP/IP stack. </div></div>
 <div class="ttc" id="group__shell_html_ga875bd6a0fb2a64cbd04f385d211531e5"><div class="ttname"><a href="group__shell.html#ga875bd6a0fb2a64cbd04f385d211531e5">shell_output_6addr</a></div><div class="ttdeci">void shell_output_6addr(shell_output_func output, const uip_ipaddr_t *ipaddr)</div><div class="ttdoc">Prints an IPv6 address. </div><div class="ttdef"><b>Definition:</b> <a href="shell_8c_source.html#l00056">shell.c:56</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 6 2017 15:45:08 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 31 2017 23:29:04 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

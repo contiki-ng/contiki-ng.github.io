@@ -62,7 +62,7 @@ Macros</h2></td></tr>
 <tr class="memitem:ga3b6203a969d07b25be717bf04f0a0a99"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__uipconvfunc.html#ga3b6203a969d07b25be717bf04f0a0a99">uip_ip6addr_u8</a>(<a class="el" href="uip-nd6_8c.html#a9a7cf6986d952290ec159e9a084003ff">addr</a>, addr0, addr1, addr2, addr3, addr4, addr5, addr6, addr7, addr8, addr9, addr10, addr11, addr12, addr13, addr14, addr15)</td></tr>
 <tr class="memdesc:ga3b6203a969d07b25be717bf04f0a0a99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an IPv6 address from sixteen 8-bit words.  <a href="#ga3b6203a969d07b25be717bf04f0a0a99">More...</a><br/></td></tr>
 <tr class="separator:ga3b6203a969d07b25be717bf04f0a0a99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga769512993b7b27271909d6daa4748b60"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__uipconvfunc.html#ga769512993b7b27271909d6daa4748b60">uip_ipaddr_copy</a>(dest, src)&#160;&#160;&#160;(*(dest) = *(src))</td></tr>
+<tr class="memitem:ga769512993b7b27271909d6daa4748b60"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__uipconvfunc.html#ga769512993b7b27271909d6daa4748b60">uip_ipaddr_copy</a>(dest, src)</td></tr>
 <tr class="memdesc:ga769512993b7b27271909d6daa4748b60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy an IP address from one place to another.  <a href="#ga769512993b7b27271909d6daa4748b60">More...</a><br/></td></tr>
 <tr class="separator:ga769512993b7b27271909d6daa4748b60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga15917bd1d72a506e758056fe1c036446"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__uipconvfunc.html#ga15917bd1d72a506e758056fe1c036446">uip_ip4addr_cmp</a>(addr1, addr2)</td></tr>
@@ -121,7 +121,7 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="uip_8h_source.html#l01221">1221</a> of file <a class="el" href="uip_8h_source.html">uip.h</a>.</p>
 
-<p>Referenced by <a class="el" href="sicslowpan_8c_source.html#l00677">compress_hdr_iphc()</a>, <a class="el" href="log_8c_source.html#l00113">log_6addr_compact()</a>, <a class="el" href="log_8c_source.html#l00147">log_lladdr_compact()</a>, <a class="el" href="resolv_8c_source.html#l00754">newdata()</a>, <a class="el" href="lwm2m-engine_8c_source.html#l00248">PROCESS_THREAD()</a>, <a class="el" href="rpl-classic_2rpl-ext-header_8c_source.html#l00072">rpl_ext_header_hbh_update()</a>, <a class="el" href="simple-udp_8c_source.html#l00104">simple_udp_register()</a>, <a class="el" href="simple-udp_8c_source.html#l00068">simple_udp_send()</a>, <a class="el" href="simple-udp_8c_source.html#l00079">simple_udp_sendto()</a>, <a class="el" href="simple-udp_8c_source.html#l00091">simple_udp_sendto_port()</a>, <a class="el" href="uip6_8c_source.html#l02307">uip_htons()</a>, <a class="el" href="uip6_8c_source.html#l00928">uip_process()</a>, <a class="el" href="uip6_8c_source.html#l00545">uip_udp_new()</a>, and <a class="el" href="sicslowpan_8c_source.html#l01040">uncompress_hdr_iphc()</a>.</p>
+<p>Referenced by <a class="el" href="sicslowpan_8c_source.html#l00672">compress_hdr_iphc()</a>, <a class="el" href="log_8c_source.html#l00115">log_6addr_compact()</a>, <a class="el" href="log_8c_source.html#l00149">log_lladdr_compact()</a>, <a class="el" href="resolv_8c_source.html#l00754">newdata()</a>, <a class="el" href="lwm2m-engine_8c_source.html#l00248">PROCESS_THREAD()</a>, <a class="el" href="rpl-classic_2rpl-ext-header_8c_source.html#l00072">rpl_ext_header_hbh_update()</a>, <a class="el" href="simple-udp_8c_source.html#l00104">simple_udp_register()</a>, <a class="el" href="simple-udp_8c_source.html#l00068">simple_udp_send()</a>, <a class="el" href="simple-udp_8c_source.html#l00079">simple_udp_sendto()</a>, <a class="el" href="simple-udp_8c_source.html#l00091">simple_udp_sendto_port()</a>, <a class="el" href="uip6_8c_source.html#l02307">uip_htons()</a>, <a class="el" href="uip6_8c_source.html#l00928">uip_process()</a>, <a class="el" href="uip6_8c_source.html#l00545">uip_udp_new()</a>, and <a class="el" href="sicslowpan_8c_source.html#l01035">uncompress_hdr_iphc()</a>.</p>
 
 </div>
 </div>
@@ -562,7 +562,7 @@ Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;(*(dest) = *(src))</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -584,7 +584,7 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="uip_8h_source.html#l01009">1009</a> of file <a class="el" href="uip_8h_source.html">uip.h</a>.</p>
 
-<p>Referenced by <a class="el" href="coap-separate_8c_source.html#l00088">coap_separate_accept()</a>, <a class="el" href="mqtt_8c_source.html#l01320">mqtt_connect()</a>, <a class="el" href="resolv_8c_source.html#l00754">newdata()</a>, <a class="el" href="uip-nd6_8c_source.html#l00862">ra_input()</a>, <a class="el" href="rpl-lite_2rpl-ext-header_8c_source.html#l00067">rpl_ext_header_srh_get_next_hop()</a>, <a class="el" href="rpl-lite_2rpl-ext-header_8c_source.html#l00122">rpl_ext_header_srh_update()</a>, <a class="el" href="simple-udp_8c_source.html#l00104">simple_udp_register()</a>, <a class="el" href="uip-ds6_8c_source.html#l00332">uip_ds6_addr_add()</a>, <a class="el" href="uip-ds6-nbr_8c_source.html#l00078">uip_ds6_nbr_add()</a>, <a class="el" href="uip-ds6_8c_source.html#l00510">uip_ds6_select_src()</a>, <a class="el" href="uip-icmp6_8c_source.html#l00182">uip_icmp6_error_output()</a>, <a class="el" href="uip-mcast6-route_8c_source.html#l00081">uip_mcast6_route_add()</a>, <a class="el" href="uip-nameserver_8c_source.html#l00095">uip_nameserver_update()</a>, <a class="el" href="uip6_8c_source.html#l00928">uip_process()</a>, and <a class="el" href="uip6_8c_source.html#l00545">uip_udp_new()</a>.</p>
+<p>Referenced by <a class="el" href="coap-separate_8c_source.html#l00088">coap_separate_accept()</a>, <a class="el" href="mqtt_8c_source.html#l01320">mqtt_connect()</a>, <a class="el" href="resolv_8c_source.html#l00754">newdata()</a>, <a class="el" href="uip-nd6_8c_source.html#l00862">ra_input()</a>, <a class="el" href="rpl-lite_2rpl-ext-header_8c_source.html#l00067">rpl_ext_header_srh_get_next_hop()</a>, <a class="el" href="rpl-lite_2rpl-ext-header_8c_source.html#l00122">rpl_ext_header_srh_update()</a>, <a class="el" href="simple-udp_8c_source.html#l00104">simple_udp_register()</a>, <a class="el" href="uip-ds6_8c_source.html#l00337">uip_ds6_addr_add()</a>, <a class="el" href="uip-ds6-nbr_8c_source.html#l00078">uip_ds6_nbr_add()</a>, <a class="el" href="uip-ds6_8c_source.html#l00515">uip_ds6_select_src()</a>, <a class="el" href="uip-icmp6_8c_source.html#l00182">uip_icmp6_error_output()</a>, <a class="el" href="uip-mcast6-route_8c_source.html#l00081">uip_mcast6_route_add()</a>, <a class="el" href="uip-nameserver_8c_source.html#l00095">uip_nameserver_update()</a>, <a class="el" href="uip6_8c_source.html#l00928">uip_process()</a>, and <a class="el" href="uip6_8c_source.html#l00545">uip_udp_new()</a>.</p>
 
 </div>
 </div>
@@ -785,7 +785,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 6 2017 15:45:30 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 31 2017 23:29:17 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -52,8 +52,8 @@ Files</h2></td></tr>
 <tr class="memitem:uart_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uart_8c.html">uart.c</a></td></tr>
 <tr class="memdesc:uart_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of the cc2538 UART driver. <br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:cc2538_2dev_2uart_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cc2538_2dev_2uart_8h.html">uart.h</a></td></tr>
-<tr class="memdesc:cc2538_2dev_2uart_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header file for the cc2538 UART driver. <br/></td></tr>
+<tr class="memitem:uart_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uart_8h.html">uart.h</a></td></tr>
+<tr class="memdesc:uart_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header file for the cc2538 UART driver. <br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:cpu_2cc2538_2dev_2uart1_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cpu_2cc2538_2dev_2uart1_8h.html">uart1.h</a></td></tr>
 <tr class="memdesc:cpu_2cc2538_2dev_2uart1_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">This file really only exists because some examples rely on it. <br/></td></tr>
@@ -731,11 +731,11 @@ UART functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="uart_8c_source.html#l00242">242</a> of file <a class="el" href="uart_8c_source.html">uart.c</a>.</p>
+<p>Definition at line <a class="el" href="uart_8c_source.html#l00241">241</a> of file <a class="el" href="uart_8c_source.html">uart.c</a>.</p>
 
-<p>References <a class="el" href="gpio_8h_source.html#l00265">GPIO_PERIPHERAL_CONTROL</a>, <a class="el" href="gpio_8h_source.html#l00335">GPIO_PIN_MASK</a>, <a class="el" href="gpio_8h_source.html#l00343">GPIO_PORT_TO_BASE</a>, <a class="el" href="ioc_8h_source.html#l00270">ioc_input_sel</a>, <a class="el" href="ioc_8h_source.html#l00226">IOC_OVERRIDE_DIS</a>, <a class="el" href="ioc_8h_source.html#l00222">IOC_OVERRIDE_OE</a>, <a class="el" href="ioc_8c_source.html#l00054">ioc_set_over()</a>, <a class="el" href="ioc_8c_source.html#l00060">ioc_set_sel()</a>, <a class="el" href="ioc_8h_source.html#l00126">IOC_UARTCTS_UART1</a>, <a class="el" href="core__cm0_8h_source.html#l00642">NVIC_EnableIRQ()</a>, <a class="el" href="sys-ctrl_8h_source.html#l00077">SYS_CTRL_DCGCUART</a>, <a class="el" href="sys-ctrl_8h_source.html#l00075">SYS_CTRL_RCGCUART</a>, <a class="el" href="sys-ctrl_8h_source.html#l00076">SYS_CTRL_SCGCUART</a>, <a class="el" href="cc2538_2dev_2uart_8h_source.html#l00087">UART_CC</a>, <a class="el" href="cc2538_2dev_2uart_8h_source.html#l00074">UART_CTL</a>, <a class="el" href="cc2538_2dev_2uart_8h_source.html#l00168">UART_CTL_CTSEN</a>, <a class="el" href="cc2538_2dev_2uart_8h_source.html#l00169">UART_CTL_RTSEN</a>, <a class="el" href="cc2538_2dev_2uart_8h_source.html#l00179">UART_CTL_UARTEN</a>, <a class="el" href="cc2538_2dev_2uart_8h_source.html#l00072">UART_FBRD</a>, <a class="el" href="cc2538_2dev_2uart_8h_source.html#l00071">UART_IBRD</a>, <a class="el" href="cc2538_2dev_2uart_8h_source.html#l00075">UART_IFLS</a>, <a class="el" href="cc2538_2dev_2uart_8h_source.html#l00196">UART_IFLS_RXIFLSEL_1_8</a>, <a class="el" href="cc2538_2dev_2uart_8h_source.html#l00204">UART_IFLS_TXIFLSEL_1_2</a>, <a class="el" href="cc2538_2dev_2uart_8h_source.html#l00076">UART_IM</a>, <a class="el" href="cc2538_2dev_2uart_8h_source.html#l00217">UART_IM_BEIM</a>, <a class="el" href="cc2538_2dev_2uart_8h_source.html#l00219">UART_IM_FEIM</a>, <a class="el" href="cc2538_2dev_2uart_8h_source.html#l00216">UART_IM_OEIM</a>, <a class="el" href="cc2538_2dev_2uart_8h_source.html#l00220">UART_IM_RTIM</a>, <a class="el" href="cc2538_2dev_2uart_8h_source.html#l00222">UART_IM_RXIM</a>, <a class="el" href="cc2538_2dev_2uart_8h_source.html#l00073">UART_LCRH</a>, and <a class="el" href="cc2538_2dev_2uart_8h_source.html#l00149">UART_LCRH_FEN</a>.</p>
+<p>References <a class="el" href="gpio_8h_source.html#l00265">GPIO_PERIPHERAL_CONTROL</a>, <a class="el" href="gpio_8h_source.html#l00335">GPIO_PIN_MASK</a>, <a class="el" href="gpio_8h_source.html#l00343">GPIO_PORT_TO_BASE</a>, <a class="el" href="ioc_8h_source.html#l00270">ioc_input_sel</a>, <a class="el" href="ioc_8h_source.html#l00226">IOC_OVERRIDE_DIS</a>, <a class="el" href="ioc_8h_source.html#l00222">IOC_OVERRIDE_OE</a>, <a class="el" href="ioc_8c_source.html#l00054">ioc_set_over()</a>, <a class="el" href="ioc_8c_source.html#l00060">ioc_set_sel()</a>, <a class="el" href="ioc_8h_source.html#l00126">IOC_UARTCTS_UART1</a>, <a class="el" href="core__cm0_8h_source.html#l00642">NVIC_EnableIRQ()</a>, <a class="el" href="sys-ctrl_8h_source.html#l00077">SYS_CTRL_DCGCUART</a>, <a class="el" href="sys-ctrl_8h_source.html#l00075">SYS_CTRL_RCGCUART</a>, <a class="el" href="sys-ctrl_8h_source.html#l00076">SYS_CTRL_SCGCUART</a>, <a class="el" href="uart_8h_source.html#l00087">UART_CC</a>, <a class="el" href="uart_8h_source.html#l00074">UART_CTL</a>, <a class="el" href="uart_8h_source.html#l00168">UART_CTL_CTSEN</a>, <a class="el" href="uart_8h_source.html#l00169">UART_CTL_RTSEN</a>, <a class="el" href="uart_8h_source.html#l00179">UART_CTL_UARTEN</a>, <a class="el" href="uart_8h_source.html#l00072">UART_FBRD</a>, <a class="el" href="uart_8h_source.html#l00071">UART_IBRD</a>, <a class="el" href="uart_8h_source.html#l00075">UART_IFLS</a>, <a class="el" href="uart_8h_source.html#l00196">UART_IFLS_RXIFLSEL_1_8</a>, <a class="el" href="uart_8h_source.html#l00204">UART_IFLS_TXIFLSEL_1_2</a>, <a class="el" href="uart_8h_source.html#l00076">UART_IM</a>, <a class="el" href="uart_8h_source.html#l00217">UART_IM_BEIM</a>, <a class="el" href="uart_8h_source.html#l00219">UART_IM_FEIM</a>, <a class="el" href="uart_8h_source.html#l00216">UART_IM_OEIM</a>, <a class="el" href="uart_8h_source.html#l00220">UART_IM_RTIM</a>, <a class="el" href="uart_8h_source.html#l00222">UART_IM_RXIM</a>, <a class="el" href="uart_8h_source.html#l00073">UART_LCRH</a>, and <a class="el" href="uart_8h_source.html#l00149">UART_LCRH_FEN</a>.</p>
 
-<p>Referenced by <a class="el" href="cc2538dk_2contiki-main_8c_source.html#l00142">main()</a>.</p>
+<p>Referenced by <a class="el" href="cc2538dk_2platform_8c_source.html#l00125">platform_init_stage_two()</a>.</p>
 
 </div>
 </div>
@@ -772,11 +772,11 @@ UART functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="uart_8c_source.html#l00335">335</a> of file <a class="el" href="uart_8c_source.html">uart.c</a>.</p>
+<p>Definition at line <a class="el" href="uart_8c_source.html#l00334">334</a> of file <a class="el" href="uart_8c_source.html">uart.c</a>.</p>
 
-<p>References <a class="el" href="sicslowpan_8c_source.html#l01703">input()</a>.</p>
+<p>References <a class="el" href="sicslowpan_8c_source.html#l01698">input()</a>.</p>
 
-<p>Referenced by <a class="el" href="cc2538dk_2contiki-main_8c_source.html#l00142">main()</a>.</p>
+<p>Referenced by <a class="el" href="cc2538dk_2platform_8c_source.html#l00125">platform_init_stage_two()</a>.</p>
 
 </div>
 </div>
@@ -813,16 +813,16 @@ UART functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="uart_8c_source.html#l00345">345</a> of file <a class="el" href="uart_8c_source.html">uart.c</a>.</p>
+<p>Definition at line <a class="el" href="uart_8c_source.html#l00344">344</a> of file <a class="el" href="uart_8c_source.html">uart.c</a>.</p>
 
-<p>References <a class="el" href="cc2538_2dev_2uart_8h_source.html#l00066">UART_DR</a>, <a class="el" href="cc2538_2dev_2uart_8h_source.html#l00069">UART_FR</a>, and <a class="el" href="cc2538_2dev_2uart_8h_source.html#l00120">UART_FR_TXFF</a>.</p>
+<p>References <a class="el" href="uart_8h_source.html#l00066">UART_DR</a>, <a class="el" href="uart_8h_source.html#l00069">UART_FR</a>, and <a class="el" href="uart_8h_source.html#l00120">UART_FR_TXFF</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 6 2017 15:45:26 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 31 2017 23:29:14 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

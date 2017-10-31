@@ -96,9 +96,9 @@
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">/* Include Project Specific conf */</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#ifdef PROJECT_CONF_H</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include PROJECT_CONF_H</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* PROJECT_CONF_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#ifdef PROJECT_CONF_PATH</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include PROJECT_CONF_PATH</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* PROJECT_CONF_PATH */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor"></span><span class="comment">/*---------------------------------------------------------------------------*/</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">/* Include platform peripherals configuration */</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="nrf52dk_2platform-conf_8h.html">platform-conf.h</a>&quot;</span></div>
@@ -109,55 +109,61 @@
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"> * @{</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">/* Selected in netstack.h because our Makefile sets MAKE_MAC = MAKE_MAC_OTHER */</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#define NETSTACK_CONF_OTHER_MAC     ble_ipsp_mac_driver</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">/* 6LoWPAN */</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#define SICSLOWPAN_CONF_MAC_MAX_PAYLOAD         1280</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="group__nrf52dk-contikic-conf.html#gaa90aad19d21903b0fccb7f033a894162">   64</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SICSLOWPAN_CONF_FRAG                    0     </span><span class="comment">/**&lt; We don&#39;t use 6LoWPAN fragmentation as IPSP takes care of that for us.*/</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="group__nrf52dk-contikic-conf.html#gaa7854eb9a249c0051adc2612d6a2070c">   65</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SICSLOWPAN_FRAMER_HDRLEN                0     </span><span class="comment">/**&lt; Use fixed header len rather than framer.length() function */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">/* Select the BLE mac driver */</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#if MAC_CONF_WITH_OTHER</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define NETSTACK_CONF_MAC     ble_ipsp_mac_driver</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">/* 6LoWPAN */</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#define SICSLOWPAN_CONF_MAC_MAX_PAYLOAD         1280</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">/* Packet buffer */</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="group__nrf52dk-contikic-conf.html#ga6224ffcbd53b35ff382a4ea1b3d613d1">   68</a></span>&#160;<span class="preprocessor">#define PACKETBUF_CONF_SIZE                     1280  </span><span class="comment">/**&lt; Required IPv6 MTU size */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor"></span><span class="comment">/** @} */</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment"> * \name BLE configuration</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment"> * @{</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#ifndef DEVICE_NAME</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="group__nrf52dk-contikic-conf.html#ga5f5a2c9450ebc584b4fe743c6b1a280b">   76</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define DEVICE_NAME &quot;Contiki nRF52dk&quot;  </span><span class="comment">/**&lt; Device name used in BLE undirected advertisement. */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor"></span><span class="comment">/**</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment"> * @}</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#ifndef SICSLOWPAN_CONF_FRAG</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="group__nrf52dk-contikic-conf.html#gaa90aad19d21903b0fccb7f033a894162">   68</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SICSLOWPAN_CONF_FRAG                    0     </span><span class="comment">/**&lt; We don&#39;t use 6LoWPAN fragmentation as IPSP takes care of that for us.*/</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="group__nrf52dk-contikic-conf.html#gaa7854eb9a249c0051adc2612d6a2070c">   71</a></span>&#160;<span class="preprocessor">#define SICSLOWPAN_FRAMER_HDRLEN                0     </span><span class="comment">/**&lt; Use fixed header len rather than framer.length() function */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">/* Packet buffer */</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="group__nrf52dk-contikic-conf.html#ga6224ffcbd53b35ff382a4ea1b3d613d1">   74</a></span>&#160;<span class="preprocessor">#define PACKETBUF_CONF_SIZE                     1280  </span><span class="comment">/**&lt; Required IPv6 MTU size */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor"></span><span class="comment">/** @} */</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment"> * \name BLE configuration</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment"> * @{</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment"> * \name IPv6 network buffer configuration</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment"> * @{</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#ifndef DEVICE_NAME</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="group__nrf52dk-contikic-conf.html#ga5f5a2c9450ebc584b4fe743c6b1a280b">   82</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define DEVICE_NAME &quot;Contiki nRF52dk&quot;  </span><span class="comment">/**&lt; Device name used in BLE undirected advertisement. */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor"></span><span class="comment">/**</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment"> * @}</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#if NETSTACK_CONF_WITH_IPV6</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor"></span><span class="comment">/*---------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">/* ND and Routing */</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="group__nrf52dk-contikic-conf.html#ga7577274ba3ef005a9cf6a4ca89e108a5">   92</a></span>&#160;<span class="preprocessor">#define UIP_CONF_ROUTER                      0 </span><span class="comment">/**&lt; BLE master role, which allows for routing, isn&#39;t supported. */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define UIP_CONF_ND6_SEND_NS                 1</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* NETSTACK_CONF_WITH_IPV6 */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor"></span><span class="comment"></span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">/** @} */</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* CONTIKI_CONF_H */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor"></span><span class="comment">/**</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment"> * @}</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment"> * @}</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment"> * \name IPv6 network buffer configuration</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment"> * @{</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#if NETSTACK_CONF_WITH_IPV6</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor"></span><span class="comment">/*---------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">/* ND and Routing */</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="group__nrf52dk-contikic-conf.html#ga7577274ba3ef005a9cf6a4ca89e108a5">   98</a></span>&#160;<span class="preprocessor">#define UIP_CONF_ROUTER                      0 </span><span class="comment">/**&lt; BLE master role, which allows for routing, isn&#39;t supported. */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define UIP_CONF_ND6_SEND_NS                 1</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* NETSTACK_CONF_WITH_IPV6 */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor"></span><span class="comment"></span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">/** @} */</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* CONTIKI_CONF_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor"></span><span class="comment">/**</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment"> * @}</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment"> * @}</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment"> */</span></div>
 <div class="ttc" id="nrf52dk_2platform-conf_8h_html"><div class="ttname"><a href="nrf52dk_2platform-conf_8h.html">platform-conf.h</a></div><div class="ttdoc">Platform features configuration. </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 6 2017 15:44:47 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 31 2017 23:28:51 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

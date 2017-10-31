@@ -106,78 +106,83 @@
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#define LOG_MODULE &quot;NullNet&quot;</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define LOG_LEVEL LOG_LEVEL_NULLNET</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">static</span> <a class="code" href="group__nullnet.html#ga73e16a582e11d05bbf4132a8124a1f59">nullnet_input_callback</a> current_callback = NULL;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">/*--------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;init(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  LOG_INFO(<span class="stringliteral">&quot;init\n&quot;</span>);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  current_callback = NULL;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">/*--------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<a class="code" href="group__sicslowpan.html#gaea484884d194d01baee1026655a4692d">input</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordflow">if</span>(current_callback != NULL) {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    LOG_INFO(<span class="stringliteral">&quot;received %u bytes from &quot;</span>, <a class="code" href="group__packetbuf.html#ga4a1157b882c15f5ea05d64f81d37115d">packetbuf_datalen</a>());</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    LOG_INFO_LLADDR(packetbuf_addr(PACKETBUF_ADDR_SENDER));</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    LOG_INFO_(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    current_callback(<a class="code" href="group__packetbuf.html#ga29a6f3f230b55e6bc2f017879c27113a">packetbuf_dataptr</a>(), <a class="code" href="group__packetbuf.html#ga4a1157b882c15f5ea05d64f81d37115d">packetbuf_datalen</a>(),</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      packetbuf_addr(PACKETBUF_ADDR_SENDER), packetbuf_addr(PACKETBUF_ADDR_RECEIVER));</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">/*--------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="group__nullnet.html#ga3d21bd93b6c3b7364954f0b828520930">   78</a></span>&#160;<a class="code" href="group__nullnet.html#ga3d21bd93b6c3b7364954f0b828520930">nullnet_set_input_callback</a>(<a class="code" href="group__nullnet.html#ga73e16a582e11d05bbf4132a8124a1f59">nullnet_input_callback</a> callback)</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; current_callback = callback;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">/*--------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="group__nullnet.html#ga7318ae58146c0e016560d9078c072f52">   84</a></span>&#160;<a class="code" href="group__nullnet.html#ga7318ae58146c0e016560d9078c072f52">nullnet_output</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> *data, uint16_t len, <span class="keyword">const</span> linkaddr_t *dest)</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <a class="code" href="group__packetbuf.html#gaa540c9abf0db13d27881b616f7794824">packetbuf_clear</a>();</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <a class="code" href="group__packetbuf.html#ga5fd9cb98f800733b6d9381bce81cd224">packetbuf_copyfrom</a>(data, len);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordflow">if</span>(dest != NULL) {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    packetbuf_set_addr(PACKETBUF_ADDR_RECEIVER, dest);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    packetbuf_set_addr(PACKETBUF_ADDR_RECEIVER, &amp;<a class="code" href="group__linkaddr.html#gaa8829a95f1d11a93a3ff75c8f5b2bffd">linkaddr_null</a>);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  packetbuf_set_addr(PACKETBUF_ADDR_SENDER, &amp;<a class="code" href="group__linkaddr.html#ga03585f3e07ec49ec11cb4bbd17f3cf0e">linkaddr_node_addr</a>);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  LOG_INFO(<span class="stringliteral">&quot;sending %u bytes to &quot;</span>, <a class="code" href="group__packetbuf.html#ga4a1157b882c15f5ea05d64f81d37115d">packetbuf_datalen</a>());</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  LOG_INFO_LLADDR(packetbuf_addr(PACKETBUF_ADDR_RECEIVER));</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  LOG_INFO_(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  NETSTACK_MAC.<a class="code" href="structmac__driver.html#ae784cdda1858aff84f02a5ec9ee603d5">send</a>(NULL, NULL);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">/*--------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keyword">const</span> <span class="keyword">struct </span><a class="code" href="structnetwork__driver.html">network_driver</a> nullnet_driver = {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="stringliteral">&quot;nullnet&quot;</span>,</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <a class="code" href="structnetwork__driver.html#af1528d41c178519fdc135214827262fd">init</a>,</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <a class="code" href="group__sicslowpan.html#gaea484884d194d01baee1026655a4692d">input</a></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;};</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">/*--------------------------------------------------------------------*/</span><span class="comment"></span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">/** @} */</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="group__nullnet.html#gaf6c79524d14338a814fb0726156966a6">   56</a></span>&#160;uint8_t *<a class="code" href="group__nullnet.html#gaf6c79524d14338a814fb0726156966a6">nullnet_buf</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;uint16_t nullnet_len;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">static</span> <a class="code" href="group__nullnet.html#ga73e16a582e11d05bbf4132a8124a1f59">nullnet_input_callback</a> current_callback = NULL;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">/*--------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;init(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  LOG_INFO(<span class="stringliteral">&quot;init\n&quot;</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  current_callback = NULL;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">/*--------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<a class="code" href="group__sicslowpan.html#gaea484884d194d01baee1026655a4692d">input</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordflow">if</span>(current_callback != NULL) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    LOG_INFO(<span class="stringliteral">&quot;received %u bytes from &quot;</span>, <a class="code" href="group__packetbuf.html#ga4a1157b882c15f5ea05d64f81d37115d">packetbuf_datalen</a>());</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    LOG_INFO_LLADDR(packetbuf_addr(PACKETBUF_ADDR_SENDER));</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    LOG_INFO_(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    current_callback(<a class="code" href="group__packetbuf.html#ga29a6f3f230b55e6bc2f017879c27113a">packetbuf_dataptr</a>(), <a class="code" href="group__packetbuf.html#ga4a1157b882c15f5ea05d64f81d37115d">packetbuf_datalen</a>(),</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      packetbuf_addr(PACKETBUF_ADDR_SENDER), packetbuf_addr(PACKETBUF_ADDR_RECEIVER));</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">/*--------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="group__nullnet.html#ga3d21bd93b6c3b7364954f0b828520930">   80</a></span>&#160;<a class="code" href="group__nullnet.html#ga3d21bd93b6c3b7364954f0b828520930">nullnet_set_input_callback</a>(<a class="code" href="group__nullnet.html#ga73e16a582e11d05bbf4132a8124a1f59">nullnet_input_callback</a> callback)</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; current_callback = callback;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">/*--------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">static</span> uint8_t</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<a class="code" href="group__sicslowpan.html#gaab2d9d0e3ef2ce7170f8fbc5a6ae70b2">output</a>(<span class="keyword">const</span> linkaddr_t *dest)</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;{</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <a class="code" href="group__packetbuf.html#gaa540c9abf0db13d27881b616f7794824">packetbuf_clear</a>();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <a class="code" href="group__packetbuf.html#ga5fd9cb98f800733b6d9381bce81cd224">packetbuf_copyfrom</a>(<a class="code" href="group__nullnet.html#gaf6c79524d14338a814fb0726156966a6">nullnet_buf</a>, nullnet_len);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordflow">if</span>(dest != NULL) {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    packetbuf_set_addr(PACKETBUF_ADDR_RECEIVER, dest);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    packetbuf_set_addr(PACKETBUF_ADDR_RECEIVER, &amp;<a class="code" href="group__linkaddr.html#gaa8829a95f1d11a93a3ff75c8f5b2bffd">linkaddr_null</a>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  packetbuf_set_addr(PACKETBUF_ADDR_SENDER, &amp;<a class="code" href="group__linkaddr.html#ga03585f3e07ec49ec11cb4bbd17f3cf0e">linkaddr_node_addr</a>);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  LOG_INFO(<span class="stringliteral">&quot;sending %u bytes to &quot;</span>, <a class="code" href="group__packetbuf.html#ga4a1157b882c15f5ea05d64f81d37115d">packetbuf_datalen</a>());</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  LOG_INFO_LLADDR(packetbuf_addr(PACKETBUF_ADDR_RECEIVER));</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  LOG_INFO_(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  NETSTACK_MAC.<a class="code" href="structmac__driver.html#ae784cdda1858aff84f02a5ec9ee603d5">send</a>(NULL, NULL);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">/*--------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keyword">const</span> <span class="keyword">struct </span><a class="code" href="structnetwork__driver.html">network_driver</a> nullnet_driver = {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="stringliteral">&quot;nullnet&quot;</span>,</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <a class="code" href="structnetwork__driver.html#af1528d41c178519fdc135214827262fd">init</a>,</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <a class="code" href="group__sicslowpan.html#gaea484884d194d01baee1026655a4692d">input</a>,</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <a class="code" href="group__sicslowpan.html#gaab2d9d0e3ef2ce7170f8fbc5a6ae70b2">output</a></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;};</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">/*--------------------------------------------------------------------*/</span><span class="comment"></span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">/** @} */</span></div>
 <div class="ttc" id="group__packetbuf_html_ga29a6f3f230b55e6bc2f017879c27113a"><div class="ttname"><a href="group__packetbuf.html#ga29a6f3f230b55e6bc2f017879c27113a">packetbuf_dataptr</a></div><div class="ttdeci">void * packetbuf_dataptr(void)</div><div class="ttdoc">Get a pointer to the data in the packetbuf. </div><div class="ttdef"><b>Definition:</b> <a href="packetbuf_8c_source.html#l00143">packetbuf.c:143</a></div></div>
-<div class="ttc" id="structnetwork__driver_html_af1528d41c178519fdc135214827262fd"><div class="ttname"><a href="structnetwork__driver.html#af1528d41c178519fdc135214827262fd">network_driver::init</a></div><div class="ttdeci">void(* init)(void)</div><div class="ttdoc">Initialize the network driver. </div><div class="ttdef"><b>Definition:</b> <a href="netstack_8h_source.html#l00098">netstack.h:98</a></div></div>
-<div class="ttc" id="group__nullnet_html_ga73e16a582e11d05bbf4132a8124a1f59"><div class="ttname"><a href="group__nullnet.html#ga73e16a582e11d05bbf4132a8124a1f59">nullnet_input_callback</a></div><div class="ttdeci">void(* nullnet_input_callback)(const void *data, uint16_t len, const linkaddr_t *src, const linkaddr_t *dest)</div><div class="ttdoc">Function prototype for NullNet input callback. </div><div class="ttdef"><b>Definition:</b> <a href="nullnet_8h_source.html#l00058">nullnet.h:58</a></div></div>
+<div class="ttc" id="structnetwork__driver_html_af1528d41c178519fdc135214827262fd"><div class="ttname"><a href="structnetwork__driver.html#af1528d41c178519fdc135214827262fd">network_driver::init</a></div><div class="ttdeci">void(* init)(void)</div><div class="ttdoc">Initialize the network driver. </div><div class="ttdef"><b>Definition:</b> <a href="netstack_8h_source.html#l00103">netstack.h:103</a></div></div>
+<div class="ttc" id="group__nullnet_html_ga73e16a582e11d05bbf4132a8124a1f59"><div class="ttname"><a href="group__nullnet.html#ga73e16a582e11d05bbf4132a8124a1f59">nullnet_input_callback</a></div><div class="ttdeci">void(* nullnet_input_callback)(const void *data, uint16_t len, const linkaddr_t *src, const linkaddr_t *dest)</div><div class="ttdoc">Function prototype for NullNet input callback. </div><div class="ttdef"><b>Definition:</b> <a href="nullnet_8h_source.html#l00064">nullnet.h:64</a></div></div>
 <div class="ttc" id="group__packetbuf_html_gaa540c9abf0db13d27881b616f7794824"><div class="ttname"><a href="group__packetbuf.html#gaa540c9abf0db13d27881b616f7794824">packetbuf_clear</a></div><div class="ttdeci">void packetbuf_clear(void)</div><div class="ttdoc">Clear and reset the packetbuf. </div><div class="ttdef"><b>Definition:</b> <a href="packetbuf_8c_source.html#l00075">packetbuf.c:75</a></div></div>
 <div class="ttc" id="nullnet_8h_html"><div class="ttname"><a href="nullnet_8h.html">nullnet.h</a></div><div class="ttdoc">    NullNet, a minimal network layer. </div></div>
 <div class="ttc" id="structmac__driver_html_ae784cdda1858aff84f02a5ec9ee603d5"><div class="ttname"><a href="structmac__driver.html#ae784cdda1858aff84f02a5ec9ee603d5">mac_driver::send</a></div><div class="ttdeci">void(* send)(mac_callback_t sent_callback, void *ptr)</div><div class="ttdoc">Send a packet from the packetbuf. </div><div class="ttdef"><b>Definition:</b> <a href="mac_8h_source.html#l00061">mac.h:61</a></div></div>
 <div class="ttc" id="group__linkaddr_html_gaa8829a95f1d11a93a3ff75c8f5b2bffd"><div class="ttname"><a href="group__linkaddr.html#gaa8829a95f1d11a93a3ff75c8f5b2bffd">linkaddr_null</a></div><div class="ttdeci">const linkaddr_t linkaddr_null</div><div class="ttdoc">The null link-layer address. </div></div>
+<div class="ttc" id="group__sicslowpan_html_gaab2d9d0e3ef2ce7170f8fbc5a6ae70b2"><div class="ttname"><a href="group__sicslowpan.html#gaab2d9d0e3ef2ce7170f8fbc5a6ae70b2">output</a></div><div class="ttdeci">static uint8_t output(const linkaddr_t *localdest)</div><div class="ttdoc">Take an IP packet and format it to be sent on an 802.15.4 network using 6lowpan. </div><div class="ttdef"><b>Definition:</b> <a href="sicslowpan_8c_source.html#l01485">sicslowpan.c:1485</a></div></div>
 <div class="ttc" id="group__packetbuf_html_ga4a1157b882c15f5ea05d64f81d37115d"><div class="ttname"><a href="group__packetbuf.html#ga4a1157b882c15f5ea05d64f81d37115d">packetbuf_datalen</a></div><div class="ttdeci">uint16_t packetbuf_datalen(void)</div><div class="ttdoc">Get the length of the data in the packetbuf. </div><div class="ttdef"><b>Definition:</b> <a href="packetbuf_8c_source.html#l00155">packetbuf.c:155</a></div></div>
 <div class="ttc" id="group__linkaddr_html_ga03585f3e07ec49ec11cb4bbd17f3cf0e"><div class="ttname"><a href="group__linkaddr.html#ga03585f3e07ec49ec11cb4bbd17f3cf0e">linkaddr_node_addr</a></div><div class="ttdeci">linkaddr_t linkaddr_node_addr</div><div class="ttdoc">The link-layer address of the node. </div><div class="ttdef"><b>Definition:</b> <a href="linkaddr_8c_source.html#l00048">linkaddr.c:48</a></div></div>
-<div class="ttc" id="group__nullnet_html_ga7318ae58146c0e016560d9078c072f52"><div class="ttname"><a href="group__nullnet.html#ga7318ae58146c0e016560d9078c072f52">nullnet_output</a></div><div class="ttdeci">void nullnet_output(const void *data, uint16_t len, const linkaddr_t *dest)</div><div class="ttdoc">Send data with NullNet. </div><div class="ttdef"><b>Definition:</b> <a href="nullnet_8c_source.html#l00084">nullnet.c:84</a></div></div>
-<div class="ttc" id="structnetwork__driver_html"><div class="ttname"><a href="structnetwork__driver.html">network_driver</a></div><div class="ttdoc">The structure of a network driver in Contiki. </div><div class="ttdef"><b>Definition:</b> <a href="netstack_8h_source.html#l00094">netstack.h:94</a></div></div>
+<div class="ttc" id="group__nullnet_html_gaf6c79524d14338a814fb0726156966a6"><div class="ttname"><a href="group__nullnet.html#gaf6c79524d14338a814fb0726156966a6">nullnet_buf</a></div><div class="ttdeci">uint8_t * nullnet_buf</div><div class="ttdoc">Buffer used by the output function. </div><div class="ttdef"><b>Definition:</b> <a href="nullnet_8c_source.html#l00056">nullnet.c:56</a></div></div>
+<div class="ttc" id="structnetwork__driver_html"><div class="ttname"><a href="structnetwork__driver.html">network_driver</a></div><div class="ttdoc">The structure of a network driver in Contiki. </div><div class="ttdef"><b>Definition:</b> <a href="netstack_8h_source.html#l00099">netstack.h:99</a></div></div>
 <div class="ttc" id="group__packetbuf_html_ga5fd9cb98f800733b6d9381bce81cd224"><div class="ttname"><a href="group__packetbuf.html#ga5fd9cb98f800733b6d9381bce81cd224">packetbuf_copyfrom</a></div><div class="ttdeci">int packetbuf_copyfrom(const void *from, uint16_t len)</div><div class="ttdoc">Copy from external data into the packetbuf. </div><div class="ttdef"><b>Definition:</b> <a href="packetbuf_8c_source.html#l00084">packetbuf.c:84</a></div></div>
-<div class="ttc" id="group__nullnet_html_ga3d21bd93b6c3b7364954f0b828520930"><div class="ttname"><a href="group__nullnet.html#ga3d21bd93b6c3b7364954f0b828520930">nullnet_set_input_callback</a></div><div class="ttdeci">void nullnet_set_input_callback(nullnet_input_callback callback)</div><div class="ttdoc">Set input callback for NullNet. </div><div class="ttdef"><b>Definition:</b> <a href="nullnet_8c_source.html#l00078">nullnet.c:78</a></div></div>
+<div class="ttc" id="group__nullnet_html_ga3d21bd93b6c3b7364954f0b828520930"><div class="ttname"><a href="group__nullnet.html#ga3d21bd93b6c3b7364954f0b828520930">nullnet_set_input_callback</a></div><div class="ttdeci">void nullnet_set_input_callback(nullnet_input_callback callback)</div><div class="ttdoc">Set input callback for NullNet. </div><div class="ttdef"><b>Definition:</b> <a href="nullnet_8c_source.html#l00080">nullnet.c:80</a></div></div>
 <div class="ttc" id="packetbuf_8h_html"><div class="ttname"><a href="packetbuf_8h.html">packetbuf.h</a></div><div class="ttdoc">    Header file for the Packet buffer (packetbuf) management  </div></div>
 <div class="ttc" id="netstack_8h_html"><div class="ttname"><a href="netstack_8h.html">netstack.h</a></div><div class="ttdoc">    Include file for the Contiki low-layer network stack (NETSTACK)  </div></div>
 <div class="ttc" id="log_8h_html"><div class="ttname"><a href="log_8h.html">log.h</a></div><div class="ttdoc">    Header file for the logging system  </div></div>
-<div class="ttc" id="group__sicslowpan_html_gaea484884d194d01baee1026655a4692d"><div class="ttname"><a href="group__sicslowpan.html#gaea484884d194d01baee1026655a4692d">input</a></div><div class="ttdeci">static void input(void)</div><div class="ttdoc">Process a received 6lowpan packet. </div><div class="ttdef"><b>Definition:</b> <a href="sicslowpan_8c_source.html#l01703">sicslowpan.c:1703</a></div></div>
+<div class="ttc" id="group__sicslowpan_html_gaea484884d194d01baee1026655a4692d"><div class="ttname"><a href="group__sicslowpan.html#gaea484884d194d01baee1026655a4692d">input</a></div><div class="ttdeci">static void input(void)</div><div class="ttdoc">Process a received 6lowpan packet. </div><div class="ttdef"><b>Definition:</b> <a href="sicslowpan_8c_source.html#l01698">sicslowpan.c:1698</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 6 2017 15:45:05 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 31 2017 23:29:02 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

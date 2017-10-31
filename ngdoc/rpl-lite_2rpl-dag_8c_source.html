@@ -222,7 +222,7 @@
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;}</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="group__shell.html#gac4087492aa8f2314033f0fa1bc337b18">  172</a></span>&#160;<a class="code" href="group__rpl-lite.html#ga1f3706b22c198c354f4364a3cbb92836">rpl_global_repair</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="group__rpl-lite.html#ga1f3706b22c198c354f4364a3cbb92836">  172</a></span>&#160;<a class="code" href="group__rpl-lite.html#ga1f3706b22c198c354f4364a3cbb92836">rpl_global_repair</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;{</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="group__rpl-lite.html#ga3df0553a34de69d88691ef128ad55097">rpl_dag_root_is_root</a>()) {</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    LOG_WARN(<span class="stringliteral">&quot;initiating global repair, version %u, rank %u)\n&quot;</span>,</div>
@@ -589,7 +589,7 @@
 <div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;</div>
 <div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;  LOG_ANNOTATE(<span class="stringliteral">&quot;#A init=%u\n&quot;</span>, curr_instance.dag.dag_id.u8[<span class="keyword">sizeof</span>(curr_instance.dag.dag_id) - 1]);</div>
 <div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;</div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;  LOG_WARN_(<span class="stringliteral">&quot;just joined, no parent yet, setting timer for leaving\n&quot;</span>);</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;  LOG_WARN(<span class="stringliteral">&quot;just joined, no parent yet, setting timer for leaving\n&quot;</span>);</div>
 <div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;  <a class="code" href="group__rpl-lite.html#ga85812ae2d8481dc5130ebe84e512a8aa">rpl_timers_schedule_leaving</a>();</div>
 <div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;</div>
 <div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;  <span class="keywordflow">return</span> 1;</div>
@@ -815,7 +815,7 @@
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 6 2017 15:45:05 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 31 2017 23:29:03 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

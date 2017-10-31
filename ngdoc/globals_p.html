@@ -408,8 +408,38 @@
 <li>PKA_SW_REV_MINOR_FW_REVISION_M
 : <a class="el" href="group__cc2538-pka.html#gab9247a7d6c3babf188840e876029653b">pka.h</a>
 </li>
+<li>platform_idle()
+: <a class="el" href="group__main.html#gaa7c111e53bbea81533861867d6cfd007">platform.c</a>
+, <a class="el" href="group__main.html#gaa7c111e53bbea81533861867d6cfd007">platform.h</a>
+</li>
 <li>PLATFORM_INDICATE_BLE_STATE
 : <a class="el" href="group__nrf52dk-platform-conf.html#ga3425b3af2c3a714f994dfefae825bd56">platform-conf.h</a>
+</li>
+<li>platform_init_stage_one()
+: <a class="el" href="group__zoul.html#ga6719b0d352559b922f36d15452886f33">platform.c</a>
+, <a class="el" href="group__main.html#ga6719b0d352559b922f36d15452886f33">platform.h</a>
+</li>
+<li>platform_init_stage_three()
+: <a class="el" href="group__openmote-cc2538.html#ga2785c94c0f271073be2bea057917c822">platform.c</a>
+, <a class="el" href="group__main.html#gae18f5f437eb0d414b6ad781553542b6a">platform.h</a>
+</li>
+<li>platform_init_stage_two()
+: <a class="el" href="group__openmote-cc2538.html#gaab1b4c3f4dccd0c98c889c54c157470e">platform.c</a>
+, <a class="el" href="group__main.html#ga25e6a1eae353952734bb49a46a3ff426">platform.h</a>
+, <a class="el" href="group__main.html#ga25e6a1eae353952734bb49a46a3ff426">platform.c</a>
+</li>
+<li>PLATFORM_MAIN_ACCEPTS_ARGS
+: <a class="el" href="group__main.html#gae27ca8e0da6a0bcce83c9473b43f9e95">platform.h</a>
+</li>
+<li>platform_main_loop()
+: <a class="el" href="group__main.html#ga87eb4448b64a5525609704ed1f835644">platform.c</a>
+, <a class="el" href="group__main.html#ga87eb4448b64a5525609704ed1f835644">platform.h</a>
+</li>
+<li>platform_process_args()
+: <a class="el" href="group__main.html#gab5f8db3bcbaff01421dc630b9d2779ad">platform.h</a>
+</li>
+<li>PLATFORM_PROVIDES_MAIN_LOOP
+: <a class="el" href="group__main.html#ga5d0f695854fc14034671c407507058b1">platform.h</a>
 </li>
 <li>PLATFORM_RTC_INSTANCE_ID
 : <a class="el" href="group__nrf52dk-platform-conf.html#ga971facd711355fb0435e3095f44a7a06">platform-conf.h</a>
@@ -495,10 +525,10 @@
 <li>process_start()
 : <a class="el" href="group__process.html#gab353be0ee7b9c98f4599b21371f3b17b">process.c</a>
 </li>
-<li>PROCESS_THREAD()
-: <a class="el" href="group__cc2538-rf.html#gad9ac47af91b8dc72c6a711aaec9690a0">cc2538-rf.c</a>
+<li>PROCESS_THREAD
+: <a class="el" href="group__process.html#gaa4cff8e4f3abc50c74619a90ae347200">process.h</a>
 , <a class="el" href="group__oma-lwm2m.html#ga523821aa5bf4eb3ef929c04052348269">lwm2m-engine.c</a>
-, <a class="el" href="group__process.html#gaa4cff8e4f3abc50c74619a90ae347200">process.h</a>
+, <a class="el" href="group__cc2538-rf.html#gad9ac47af91b8dc72c6a711aaec9690a0">cc2538-rf.c</a>
 </li>
 <li>PROCESS_WAIT_EVENT
 : <a class="el" href="group__process.html#ga4f9c1d291e210793e8c4444762f748ba">process.h</a>
@@ -593,11 +623,11 @@
 <li>PT_SPAWN
 : <a class="el" href="group__pt.html#ga9e97a0b4d5cc7764d8e19758f5da53ae">pt.h</a>
 </li>
-<li>PT_THREAD
-: <a class="el" href="group__pt.html#ga3d4c8bd4aada659eb34f5d2ffd3e7901">pt.h</a>
-, <a class="el" href="group__cc2538-ecc-algo.html#gafc4da9146fb4b8918ebe46bea112d3aa">ecc-algorithm.c</a>
+<li>PT_THREAD()
+: <a class="el" href="group__cc2538-ecc-algo.html#ga3ade41d9abce9971b0258d46678c877a">ecc-algorithm.c</a>
+, <a class="el" href="group__pt.html#ga3d4c8bd4aada659eb34f5d2ffd3e7901">pt.h</a>
 , <a class="el" href="group__apps.html#ga91f93cf510676b384266fc8bd934a942">shell.h</a>
-, <a class="el" href="group__cc2538-ecc-algo.html#gae459f6b901c875f16a0c8a51eff0aa0f">ecc-algorithm.c</a>
+, <a class="el" href="group__cc2538-ecc-algo.html#gafc4da9146fb4b8918ebe46bea112d3aa">ecc-algorithm.c</a>
 </li>
 <li>PT_WAIT_THREAD
 : <a class="el" href="group__pt.html#ga2f8f70c30b9ee08a103fbd69a4365c4c">pt.h</a>
@@ -639,7 +669,7 @@
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 6 2017 15:45:36 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 31 2017 23:29:20 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

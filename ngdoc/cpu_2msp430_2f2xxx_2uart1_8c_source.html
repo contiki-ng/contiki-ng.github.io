@@ -86,137 +86,130 @@
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;contiki.h&quot;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="energest_8h.html">sys/energest.h</a>&quot;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;dev/uart1.h&quot;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;dev/watchdog.h&quot;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ringbuf_8h.html">lib/ringbuf.h</a>&quot;</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;isr_compat.h&quot;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">static</span> int (*uart1_input_handler)(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> c);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">static</span> <span class="keyword">volatile</span> uint8_t <a class="code" href="group__rf-core-ieee.html#ga479ab418110d1af0a44bc610103230a8">transmitting</a>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#ifdef UART1_CONF_TX_WITH_INTERRUPT</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TX_WITH_INTERRUPT UART1_CONF_TX_WITH_INTERRUPT</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#else </span><span class="comment">/* UART1_CONF_TX_WITH_INTERRUPT */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TX_WITH_INTERRUPT 1</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* UART1_CONF_TX_WITH_INTERRUPT */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#if TX_WITH_INTERRUPT</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TXBUFSIZE 64</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structringbuf.html">ringbuf</a> txbuf;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">static</span> uint8_t txbuf_data[TXBUFSIZE];</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* TX_WITH_INTERRUPT */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;uint8_t</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;uart1_active(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordflow">return</span> (UCA0STAT &amp; UCBUSY) | <a class="code" href="group__rf-core-ieee.html#ga479ab418110d1af0a44bc610103230a8">transmitting</a>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;uart1_set_input(<span class="keywordtype">int</span> (*<a class="code" href="group__sicslowpan.html#gaea484884d194d01baee1026655a4692d">input</a>)(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> c))</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  uart1_input_handler = <a class="code" href="group__sicslowpan.html#gaea484884d194d01baee1026655a4692d">input</a>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;uart1_writeb(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> c)</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="comment">/* watchdog_periodic(); */</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#if TX_WITH_INTERRUPT</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="comment">/* Put the outgoing byte on the transmission buffer. If the buffer</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">     is full, we just keep on trying to put the byte into the buffer</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">     until it is possible to put it there. */</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordflow">while</span>(<a class="code" href="group__ringbuf.html#ga2a370b54ed5d194e188a94e505b48eeb">ringbuf_put</a>(&amp;txbuf, c) == 0);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="comment">/* If there is no transmission going, we need to start it by putting</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">     the first byte into the UART. */</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="group__rf-core-ieee.html#ga479ab418110d1af0a44bc610103230a8">transmitting</a> == 0) {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="group__rf-core-ieee.html#ga479ab418110d1af0a44bc610103230a8">transmitting</a> = 1;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    UCA0TXBUF = <a class="code" href="group__ringbuf.html#ga2972cc12c40c75e5c883e831ff8c14ab">ringbuf_get</a>(&amp;txbuf);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#else </span><span class="comment">/* TX_WITH_INTERRUPT */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="comment">/* Loop until the transmission buffer is available. */</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordflow">while</span>(!(IFG2 &amp; UCA0TXIFG));</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="comment">/* Transmit the data. */</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  UCA0TXBUF = c;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* TX_WITH_INTERRUPT */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span><span class="comment"></span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment"> * Initalize the RS232 port.</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<a class="code" href="cpu_2msp430_2dev_2uart1_8h.html#a63263e531162ee62179b3f0c9915b8a3">uart1_init</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> ubr)</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="comment">/* RS232 */</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  P3SEL |= 0x30;                            <span class="comment">/* P3.4,5 = USCI_A0 TXD/RXD */</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  UCA0CTL1 |= UCSSEL_2;                     <span class="comment">/* CLK = SMCLK */</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  UCA0BR0 = 0x45;                           <span class="comment">/* 8MHz/115200 = 69 = 0x45 */</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  UCA0BR1 = 0x00;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  UCA0MCTL = UCBRS2;                        <span class="comment">/* Modulation UCBRSx = 4 */</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  UCA0CTL1 &amp;= ~UCSWRST;                     <span class="comment">/* Initialize USCI state machine */</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <a class="code" href="group__rf-core-ieee.html#ga479ab418110d1af0a44bc610103230a8">transmitting</a> = 0;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;ISR(USCIAB1RX, uart1_rx_interrupt)</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;{</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  uint8_t c;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  ENERGEST_ON(ENERGEST_TYPE_IRQ);</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="comment">/* Check status register for receive errors. */</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keywordflow">if</span>(UCA0STAT &amp; UCRXERR) {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    c = UCA0RXBUF;   <span class="comment">/* Clear error flags by forcing a dummy read. */</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    c = UCA0RXBUF;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">if</span>(uart1_input_handler != NULL) {</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;      <span class="keywordflow">if</span>(uart1_input_handler(c)) {</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        LPM4_EXIT;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;      }</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    }</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  }</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  ENERGEST_OFF(ENERGEST_TYPE_IRQ);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="preprocessor">#if TX_WITH_INTERRUPT</span></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="preprocessor"></span>ISR(USCIAB1TX, uart1_tx_interrupt)</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;{</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  ENERGEST_ON(ENERGEST_TYPE_IRQ);</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  <span class="keywordflow">if</span>(IFG2 &amp; UCA0TXIFG) {</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="group__ringbuf.html#ga8b3f31407ae7e5a98f9cedcb6f5bd82b">ringbuf_elements</a>(&amp;txbuf) == 0) {</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;      <a class="code" href="group__rf-core-ieee.html#ga479ab418110d1af0a44bc610103230a8">transmitting</a> = 0;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;      UCA0TXBUF = <a class="code" href="group__ringbuf.html#ga2972cc12c40c75e5c883e831ff8c14ab">ringbuf_get</a>(&amp;txbuf);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    }</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  }</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  ENERGEST_OFF(ENERGEST_TYPE_IRQ);</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* TX_WITH_INTERRUPT */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor"></span><span class="comment">/*---------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;dev/uart1.h&quot;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;dev/watchdog.h&quot;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ringbuf_8h.html">lib/ringbuf.h</a>&quot;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;isr_compat.h&quot;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">static</span> int (*uart1_input_handler)(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> c);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">static</span> <span class="keyword">volatile</span> uint8_t <a class="code" href="group__rf-core-ieee.html#ga479ab418110d1af0a44bc610103230a8">transmitting</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#ifdef UART1_CONF_TX_WITH_INTERRUPT</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TX_WITH_INTERRUPT UART1_CONF_TX_WITH_INTERRUPT</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#else </span><span class="comment">/* UART1_CONF_TX_WITH_INTERRUPT */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TX_WITH_INTERRUPT 1</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* UART1_CONF_TX_WITH_INTERRUPT */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#if TX_WITH_INTERRUPT</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TXBUFSIZE 64</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="structringbuf.html">ringbuf</a> txbuf;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">static</span> uint8_t txbuf_data[TXBUFSIZE];</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* TX_WITH_INTERRUPT */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;uint8_t</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;uart1_active(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">return</span> (UCA0STAT &amp; UCBUSY) | <a class="code" href="group__rf-core-ieee.html#ga479ab418110d1af0a44bc610103230a8">transmitting</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;uart1_set_input(<span class="keywordtype">int</span> (*<a class="code" href="group__sicslowpan.html#gaea484884d194d01baee1026655a4692d">input</a>)(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> c))</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  uart1_input_handler = <a class="code" href="group__sicslowpan.html#gaea484884d194d01baee1026655a4692d">input</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;uart1_writeb(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> c)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;{</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="comment">/* watchdog_periodic(); */</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#if TX_WITH_INTERRUPT</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="comment">/* Put the outgoing byte on the transmission buffer. If the buffer</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">     is full, we just keep on trying to put the byte into the buffer</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">     until it is possible to put it there. */</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordflow">while</span>(<a class="code" href="group__ringbuf.html#ga2a370b54ed5d194e188a94e505b48eeb">ringbuf_put</a>(&amp;txbuf, c) == 0);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="comment">/* If there is no transmission going, we need to start it by putting</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">     the first byte into the UART. */</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="group__rf-core-ieee.html#ga479ab418110d1af0a44bc610103230a8">transmitting</a> == 0) {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="group__rf-core-ieee.html#ga479ab418110d1af0a44bc610103230a8">transmitting</a> = 1;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    UCA0TXBUF = <a class="code" href="group__ringbuf.html#ga2972cc12c40c75e5c883e831ff8c14ab">ringbuf_get</a>(&amp;txbuf);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#else </span><span class="comment">/* TX_WITH_INTERRUPT */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="comment">/* Loop until the transmission buffer is available. */</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keywordflow">while</span>(!(IFG2 &amp; UCA0TXIFG));</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="comment">/* Transmit the data. */</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  UCA0TXBUF = c;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* TX_WITH_INTERRUPT */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span><span class="comment"></span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment"> * Initalize the RS232 port.</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<a class="code" href="cpu_2msp430_2dev_2uart1_8h.html#a63263e531162ee62179b3f0c9915b8a3">uart1_init</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> ubr)</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;{</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="comment">/* RS232 */</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  P3SEL |= 0x30;                            <span class="comment">/* P3.4,5 = USCI_A0 TXD/RXD */</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  UCA0CTL1 |= UCSSEL_2;                     <span class="comment">/* CLK = SMCLK */</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  UCA0BR0 = 0x45;                           <span class="comment">/* 8MHz/115200 = 69 = 0x45 */</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  UCA0BR1 = 0x00;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  UCA0MCTL = UCBRS2;                        <span class="comment">/* Modulation UCBRSx = 4 */</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  UCA0CTL1 &amp;= ~UCSWRST;                     <span class="comment">/* Initialize USCI state machine */</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <a class="code" href="group__rf-core-ieee.html#ga479ab418110d1af0a44bc610103230a8">transmitting</a> = 0;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;ISR(USCIAB1RX, uart1_rx_interrupt)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;{</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  uint8_t c;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="comment">/* Check status register for receive errors. */</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keywordflow">if</span>(UCA0STAT &amp; UCRXERR) {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    c = UCA0RXBUF;   <span class="comment">/* Clear error flags by forcing a dummy read. */</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    c = UCA0RXBUF;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">if</span>(uart1_input_handler != NULL) {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;      <span class="keywordflow">if</span>(uart1_input_handler(c)) {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        LPM4_EXIT;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;      }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor">#if TX_WITH_INTERRUPT</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor"></span>ISR(USCIAB1TX, uart1_tx_interrupt)</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;{</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <span class="keywordflow">if</span>(IFG2 &amp; UCA0TXIFG) {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="group__ringbuf.html#ga8b3f31407ae7e5a98f9cedcb6f5bd82b">ringbuf_elements</a>(&amp;txbuf) == 0) {</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;      <a class="code" href="group__rf-core-ieee.html#ga479ab418110d1af0a44bc610103230a8">transmitting</a> = 0;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;      UCA0TXBUF = <a class="code" href="group__ringbuf.html#ga2972cc12c40c75e5c883e831ff8c14ab">ringbuf_get</a>(&amp;txbuf);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    }</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* TX_WITH_INTERRUPT */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="preprocessor"></span><span class="comment">/*---------------------------------------------------------------------------*/</span></div>
 <div class="ttc" id="group__rf-core-ieee_html_ga479ab418110d1af0a44bc610103230a8"><div class="ttname"><a href="group__rf-core-ieee.html#ga479ab418110d1af0a44bc610103230a8">transmitting</a></div><div class="ttdeci">static uint8_t transmitting(void)</div><div class="ttdoc">Check the RF&#39;s TX status. </div><div class="ttdef"><b>Definition:</b> <a href="ieee-mode_8c_source.html#l00325">ieee-mode.c:325</a></div></div>
 <div class="ttc" id="group__ringbuf_html_ga8b3f31407ae7e5a98f9cedcb6f5bd82b"><div class="ttname"><a href="group__ringbuf.html#ga8b3f31407ae7e5a98f9cedcb6f5bd82b">ringbuf_elements</a></div><div class="ttdeci">int ringbuf_elements(struct ringbuf *r)</div><div class="ttdoc">Get the number of elements currently in the ring buffer. </div><div class="ttdef"><b>Definition:</b> <a href="ringbuf_8c_source.html#l00119">ringbuf.c:119</a></div></div>
-<div class="ttc" id="energest_8h_html"><div class="ttname"><a href="energest_8h.html">energest.h</a></div><div class="ttdoc">    Header file for the energy estimation mechanism  </div></div>
 <div class="ttc" id="group__ringbuf_html_ga2972cc12c40c75e5c883e831ff8c14ab"><div class="ttname"><a href="group__ringbuf.html#ga2972cc12c40c75e5c883e831ff8c14ab">ringbuf_get</a></div><div class="ttdeci">int ringbuf_get(struct ringbuf *r)</div><div class="ttdoc">Get a byte from the ring buffer. </div><div class="ttdef"><b>Definition:</b> <a href="ringbuf_8c_source.html#l00080">ringbuf.c:80</a></div></div>
-<div class="ttc" id="cpu_2msp430_2dev_2uart1_8h_html_a63263e531162ee62179b3f0c9915b8a3"><div class="ttname"><a href="cpu_2msp430_2dev_2uart1_8h.html#a63263e531162ee62179b3f0c9915b8a3">uart1_init</a></div><div class="ttdeci">void uart1_init(unsigned long ubr)</div><div class="ttdoc">Initalize the RS232 port. </div><div class="ttdef"><b>Definition:</b> <a href="cpu_2msp430_2f1xxx_2uart1_8c_source.html#l00143">uart1.c:143</a></div></div>
+<div class="ttc" id="cpu_2msp430_2dev_2uart1_8h_html_a63263e531162ee62179b3f0c9915b8a3"><div class="ttname"><a href="cpu_2msp430_2dev_2uart1_8h.html#a63263e531162ee62179b3f0c9915b8a3">uart1_init</a></div><div class="ttdeci">void uart1_init(unsigned long ubr)</div><div class="ttdoc">Initalize the RS232 port. </div><div class="ttdef"><b>Definition:</b> <a href="cpu_2msp430_2f1xxx_2uart1_8c_source.html#l00142">uart1.c:142</a></div></div>
 <div class="ttc" id="ringbuf_8h_html"><div class="ttname"><a href="ringbuf_8h.html">ringbuf.h</a></div><div class="ttdoc">    Header file for the ring buffer library  </div></div>
 <div class="ttc" id="structringbuf_html"><div class="ttname"><a href="structringbuf.html">ringbuf</a></div><div class="ttdoc">Structure that holds the state of a ring buffer. </div><div class="ttdef"><b>Definition:</b> <a href="ringbuf_8h_source.html#l00068">ringbuf.h:68</a></div></div>
 <div class="ttc" id="group__ringbuf_html_ga2a370b54ed5d194e188a94e505b48eeb"><div class="ttname"><a href="group__ringbuf.html#ga2a370b54ed5d194e188a94e505b48eeb">ringbuf_put</a></div><div class="ttdeci">int ringbuf_put(struct ringbuf *r, uint8_t c)</div><div class="ttdoc">Insert a byte into the ring buffer. </div><div class="ttdef"><b>Definition:</b> <a href="ringbuf_8c_source.html#l00053">ringbuf.c:53</a></div></div>
-<div class="ttc" id="group__sicslowpan_html_gaea484884d194d01baee1026655a4692d"><div class="ttname"><a href="group__sicslowpan.html#gaea484884d194d01baee1026655a4692d">input</a></div><div class="ttdeci">static void input(void)</div><div class="ttdoc">Process a received 6lowpan packet. </div><div class="ttdef"><b>Definition:</b> <a href="sicslowpan_8c_source.html#l01703">sicslowpan.c:1703</a></div></div>
+<div class="ttc" id="group__sicslowpan_html_gaea484884d194d01baee1026655a4692d"><div class="ttname"><a href="group__sicslowpan.html#gaea484884d194d01baee1026655a4692d">input</a></div><div class="ttdeci">static void input(void)</div><div class="ttdoc">Process a received 6lowpan packet. </div><div class="ttdef"><b>Definition:</b> <a href="sicslowpan_8c_source.html#l01698">sicslowpan.c:1698</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 6 2017 15:44:43 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 31 2017 23:28:49 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

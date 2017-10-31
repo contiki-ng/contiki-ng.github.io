@@ -292,20 +292,16 @@
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="comment"> * software clock tick and seconds counter.</span></div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00242"></a><span class="lineno"><a class="line" href="group__cc2538-clock.html#gabd65a6abf21722a26686787058985881">  242</a></span>&#160;<a class="code" href="group__cc2538-clock.html#gabd65a6abf21722a26686787058985881">clock_isr</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00242"></a><span class="lineno"><a class="line" href="group__cc2538.html#gabd65a6abf21722a26686787058985881">  242</a></span>&#160;<a class="code" href="group__cc2538-clock.html#gabd65a6abf21722a26686787058985881">clock_isr</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;{</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  ENERGEST_ON(ENERGEST_TYPE_IRQ);</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  <a class="code" href="group__cc2538-clock.html#ga6ef7b5febf1ca78492b45552a7605f26">update_ticks</a>();</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  ENERGEST_OFF(ENERGEST_TYPE_IRQ);</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;}</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="comment"> * @}</span></div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="comment"> * @}</span></div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  <a class="code" href="group__cc2538-clock.html#ga6ef7b5febf1ca78492b45552a7605f26">update_ticks</a>();</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;}</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="comment"> * @}</span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="comment"> * @}</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="comment"> */</span></div>
 <div class="ttc" id="group__cc2538-clock_html_ga50c22f9b9d60dd1f9e59b63a3a6676b1"><div class="ttname"><a href="group__cc2538-clock.html#ga50c22f9b9d60dd1f9e59b63a3a6676b1">clock_time</a></div><div class="ttdeci">CCIF clock_time_t clock_time(void)</div><div class="ttdoc">Get the current clock time. </div><div class="ttdef"><b>Definition:</b> <a href="cpu_2cc2538_2clock_8c_source.html#l00118">clock.c:118</a></div></div>
 <div class="ttc" id="sys-ctrl_8h_html"><div class="ttname"><a href="sys-ctrl_8h.html">sys-ctrl.h</a></div><div class="ttdoc">Header file for the cc2538 System Control driver. </div></div>
 <div class="ttc" id="gptimer_8h_html"><div class="ttname"><a href="gptimer_8h.html">gptimer.h</a></div><div class="ttdoc">Header file for the cc2538 General Purpose Timers. </div></div>
@@ -343,7 +339,7 @@
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 6 2017 15:44:37 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 31 2017 23:28:45 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

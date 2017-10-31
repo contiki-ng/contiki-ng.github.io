@@ -324,83 +324,95 @@
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="keyword">extern</span> rpl_stats_t rpl_stats;</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="comment">/* RPL macros. */</span></div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="preprocessor">#if RPL_CONF_STATS</span></div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define RPL_STAT(code)  (code)</span></div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define RPL_STAT(code)</span></div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* RPL_CONF_STATS */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="comment">/* Instances */</span></div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="keyword">extern</span> rpl_instance_t instance_table[];</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="keyword">extern</span> rpl_instance_t *default_instance;</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="comment">/* ICMPv6 functions for RPL. */</span></div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="keywordtype">void</span> dis_output(uip_ipaddr_t *<a class="code" href="uip-nd6_8c.html#a9a7cf6986d952290ec159e9a084003ff">addr</a>);</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;<span class="keywordtype">void</span> dio_output(rpl_instance_t *, uip_ipaddr_t *uc_addr);</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="keywordtype">void</span> dao_output(rpl_parent_t *, uint8_t lifetime);</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="keywordtype">void</span> dao_output_target(rpl_parent_t *, uip_ipaddr_t *, uint8_t lifetime);</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="keywordtype">void</span> dao_ack_output(rpl_instance_t *, uip_ipaddr_t *, uint8_t, uint8_t);</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="keywordtype">void</span> rpl_icmp6_register_handlers(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<a class="code" href="structuip__ds6__nbr.html">uip_ds6_nbr_t</a> *<a class="code" href="group__uip.html#gaa85ad25009f01f72dc680520a351a1b8">rpl_icmp6_update_nbr_table</a>(uip_ipaddr_t *from,</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                                          nbr_table_reason_t r, <span class="keywordtype">void</span> *data);</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="comment">/* RPL logic functions. */</span></div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;<span class="keywordtype">void</span> rpl_join_dag(uip_ipaddr_t *from, rpl_dio_t *dio);</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="keywordtype">void</span> rpl_join_instance(uip_ipaddr_t *from, rpl_dio_t *dio);</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="keywordtype">void</span> rpl_local_repair(rpl_instance_t *instance);</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__uip.html#gab8521c4e508ce92f41dc21588fe53d3d">rpl_process_dio</a>(uip_ipaddr_t *, rpl_dio_t *);</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="keywordtype">int</span> rpl_process_parent_event(rpl_instance_t *, rpl_parent_t *);</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="comment">/* DAG object management. */</span></div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;rpl_dag_t *rpl_alloc_dag(uint8_t, uip_ipaddr_t *);</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;rpl_instance_t *rpl_alloc_instance(uint8_t);</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="keywordtype">void</span> rpl_free_dag(rpl_dag_t *);</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="keywordtype">void</span> rpl_free_instance(rpl_instance_t *);</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="keywordtype">void</span> rpl_purge_dags(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="comment">/* DAG parent management function. */</span></div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;rpl_parent_t *rpl_add_parent(rpl_dag_t *, rpl_dio_t *dio, uip_ipaddr_t *);</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;rpl_parent_t *rpl_find_parent(rpl_dag_t *, uip_ipaddr_t *);</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;rpl_parent_t *rpl_find_parent_any_dag(rpl_instance_t *instance, uip_ipaddr_t *<a class="code" href="uip-nd6_8c.html#a9a7cf6986d952290ec159e9a084003ff">addr</a>);</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="keywordtype">void</span> rpl_nullify_parent(rpl_parent_t *);</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="keywordtype">void</span> rpl_remove_parent(rpl_parent_t *);</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="keywordtype">void</span> rpl_move_parent(rpl_dag_t *dag_src, rpl_dag_t *dag_dst, rpl_parent_t *parent);</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;rpl_parent_t *rpl_select_parent(rpl_dag_t *dag);</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;rpl_dag_t *rpl_select_dag(rpl_instance_t *instance,rpl_parent_t *parent);</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="keywordtype">void</span> rpl_recalculate_ranks(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="comment">/* RPL routing table functions. */</span></div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<span class="keywordtype">void</span> rpl_remove_routes(rpl_dag_t *dag);</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="keywordtype">void</span> rpl_remove_routes_by_nexthop(uip_ipaddr_t *nexthop, rpl_dag_t *dag);</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<a class="code" href="structuip__ds6__route.html">uip_ds6_route_t</a> *rpl_add_route(rpl_dag_t *dag, uip_ipaddr_t *prefix,</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                               <span class="keywordtype">int</span> prefix_len, uip_ipaddr_t *next_hop);</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;<span class="keywordtype">void</span> rpl_purge_routes(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="comment">/* Objective function. */</span></div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;rpl_of_t *rpl_find_of(rpl_ocp_t);</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="comment">/* Timer functions. */</span></div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="keywordtype">void</span> rpl_schedule_dao(rpl_instance_t *);</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="keywordtype">void</span> rpl_schedule_dao_immediately(rpl_instance_t *);</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;<span class="keywordtype">void</span> rpl_schedule_unicast_dio_immediately(rpl_instance_t *instance);</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="keywordtype">void</span> rpl_cancel_dao(rpl_instance_t *instance);</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="keywordtype">void</span> rpl_schedule_probing(rpl_instance_t *instance);</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;<span class="keywordtype">void</span> rpl_reset_dio_timer(rpl_instance_t *);</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;<span class="keywordtype">void</span> rpl_reset_periodic_timer(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;<span class="comment">/* Route poisoning. */</span></div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;<span class="keywordtype">void</span> rpl_poison_routes(rpl_dag_t *, rpl_parent_t *);</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;rpl_instance_t *<a class="code" href="group__uip.html#ga8173f5da900f946a8de35b4dd701ce44">rpl_get_default_instance</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* RPL_PRIVATE_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="comment">/* RPL callbacks when TSCH is enabled */</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="preprocessor">#if MAC_CONF_WITH_TSCH</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="preprocessor">#ifndef RPL_CALLBACK_PARENT_SWITCH</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define RPL_CALLBACK_PARENT_SWITCH tsch_rpl_callback_parent_switch</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* RPL_CALLBACK_PARENT_SWITCH */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="preprocessor">#ifndef RPL_CALLBACK_NEW_DIO_INTERVAL</span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define RPL_CALLBACK_NEW_DIO_INTERVAL tsch_rpl_callback_new_dio_interval</span></div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* RPL_CALLBACK_NEW_DIO_INTERVAL */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* MAC_CONF_WITH_TSCH */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;<span class="comment">/* RPL macros. */</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="preprocessor">#if RPL_CONF_STATS</span></div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define RPL_STAT(code)  (code)</span></div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define RPL_STAT(code)</span></div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* RPL_CONF_STATS */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="comment">/* Instances */</span></div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="keyword">extern</span> rpl_instance_t instance_table[];</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="keyword">extern</span> rpl_instance_t *default_instance;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="comment">/* ICMPv6 functions for RPL. */</span></div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="keywordtype">void</span> dis_output(uip_ipaddr_t *<a class="code" href="uip-nd6_8c.html#a9a7cf6986d952290ec159e9a084003ff">addr</a>);</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;<span class="keywordtype">void</span> dio_output(rpl_instance_t *, uip_ipaddr_t *uc_addr);</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="keywordtype">void</span> dao_output(rpl_parent_t *, uint8_t lifetime);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="keywordtype">void</span> dao_output_target(rpl_parent_t *, uip_ipaddr_t *, uint8_t lifetime);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="keywordtype">void</span> dao_ack_output(rpl_instance_t *, uip_ipaddr_t *, uint8_t, uint8_t);</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="keywordtype">void</span> rpl_icmp6_register_handlers(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<a class="code" href="structuip__ds6__nbr.html">uip_ds6_nbr_t</a> *<a class="code" href="group__uip.html#gaa85ad25009f01f72dc680520a351a1b8">rpl_icmp6_update_nbr_table</a>(uip_ipaddr_t *from,</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                                          nbr_table_reason_t r, <span class="keywordtype">void</span> *data);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="comment">/* RPL logic functions. */</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="keywordtype">void</span> rpl_join_dag(uip_ipaddr_t *from, rpl_dio_t *dio);</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="keywordtype">void</span> rpl_join_instance(uip_ipaddr_t *from, rpl_dio_t *dio);</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="keywordtype">void</span> rpl_local_repair(rpl_instance_t *instance);</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__uip.html#gab8521c4e508ce92f41dc21588fe53d3d">rpl_process_dio</a>(uip_ipaddr_t *, rpl_dio_t *);</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="keywordtype">int</span> rpl_process_parent_event(rpl_instance_t *, rpl_parent_t *);</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="comment">/* DAG object management. */</span></div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;rpl_dag_t *rpl_alloc_dag(uint8_t, uip_ipaddr_t *);</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;rpl_instance_t *rpl_alloc_instance(uint8_t);</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<span class="keywordtype">void</span> rpl_free_dag(rpl_dag_t *);</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="keywordtype">void</span> rpl_free_instance(rpl_instance_t *);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;<span class="keywordtype">void</span> rpl_purge_dags(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<span class="comment">/* DAG parent management function. */</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;rpl_parent_t *rpl_add_parent(rpl_dag_t *, rpl_dio_t *dio, uip_ipaddr_t *);</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;rpl_parent_t *rpl_find_parent(rpl_dag_t *, uip_ipaddr_t *);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;rpl_parent_t *rpl_find_parent_any_dag(rpl_instance_t *instance, uip_ipaddr_t *<a class="code" href="uip-nd6_8c.html#a9a7cf6986d952290ec159e9a084003ff">addr</a>);</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;<span class="keywordtype">void</span> rpl_nullify_parent(rpl_parent_t *);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="keywordtype">void</span> rpl_remove_parent(rpl_parent_t *);</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="keywordtype">void</span> rpl_move_parent(rpl_dag_t *dag_src, rpl_dag_t *dag_dst, rpl_parent_t *parent);</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;rpl_parent_t *rpl_select_parent(rpl_dag_t *dag);</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;rpl_dag_t *rpl_select_dag(rpl_instance_t *instance,rpl_parent_t *parent);</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="keywordtype">void</span> rpl_recalculate_ranks(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="comment">/* RPL routing table functions. */</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;<span class="keywordtype">void</span> rpl_remove_routes(rpl_dag_t *dag);</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="keywordtype">void</span> rpl_remove_routes_by_nexthop(uip_ipaddr_t *nexthop, rpl_dag_t *dag);</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<a class="code" href="structuip__ds6__route.html">uip_ds6_route_t</a> *rpl_add_route(rpl_dag_t *dag, uip_ipaddr_t *prefix,</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                               <span class="keywordtype">int</span> prefix_len, uip_ipaddr_t *next_hop);</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;<span class="keywordtype">void</span> rpl_purge_routes(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;<span class="comment">/* Objective function. */</span></div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;rpl_of_t *rpl_find_of(rpl_ocp_t);</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;<span class="comment">/* Timer functions. */</span></div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;<span class="keywordtype">void</span> rpl_schedule_dao(rpl_instance_t *);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="keywordtype">void</span> rpl_schedule_dao_immediately(rpl_instance_t *);</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="keywordtype">void</span> rpl_schedule_unicast_dio_immediately(rpl_instance_t *instance);</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="keywordtype">void</span> rpl_cancel_dao(rpl_instance_t *instance);</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="keywordtype">void</span> rpl_schedule_probing(rpl_instance_t *instance);</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;<span class="keywordtype">void</span> rpl_reset_dio_timer(rpl_instance_t *);</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="keywordtype">void</span> rpl_reset_periodic_timer(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="comment">/* Route poisoning. */</span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="keywordtype">void</span> rpl_poison_routes(rpl_dag_t *, rpl_parent_t *);</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;rpl_instance_t *<a class="code" href="group__uip.html#ga8173f5da900f946a8de35b4dd701ce44">rpl_get_default_instance</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* RPL_PRIVATE_H */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="uip-nd6_8c_html_a9a7cf6986d952290ec159e9a084003ff"><div class="ttname"><a href="uip-nd6_8c.html#a9a7cf6986d952290ec159e9a084003ff">addr</a></div><div class="ttdeci">static uip_ds6_addr_t * addr</div><div class="ttdoc">Pointer to a nbr cache entry. </div><div class="ttdef"><b>Definition:</b> <a href="uip-nd6_8c_source.html#l00115">uip-nd6.c:115</a></div></div>
 <div class="ttc" id="rpl-classic_2rpl-ns_8h_html"><div class="ttname"><a href="rpl-classic_2rpl-ns_8h.html">rpl-ns.h</a></div><div class="ttdoc">    RPL non-storing mode specific functions. </div></div>
 <div class="ttc" id="uip-ds6_8h_html"><div class="ttname"><a href="uip-ds6_8h.html">uip-ds6.h</a></div><div class="ttdoc">Header file for IPv6-related data structures. </div></div>
@@ -417,7 +429,7 @@
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 6 2017 15:45:06 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 31 2017 23:29:03 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
