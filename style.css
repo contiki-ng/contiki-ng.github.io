@@ -1,0 +1,87 @@
+@font-face {
+  font-family: 'Cutive-Regular';
+  src: url('Cutive-Regular.ttf');
+}
+
+.container {
+  padding-top: 10%;
+  text-align: center;
+  margin: auto;
+}
+
+body {
+	font-family: 'Cutive-Regular';
+}
+
+ul {
+  margin: auto;
+  text-align: left;
+  width: 30em;
+  list-style-type: none;
+}
+
+li {
+  display: block;
+}
+
+li .label {
+  margin-left: 0.5em;
+}
+
+h1 {
+	font-family: 'Cutive-Regular';
+	font-size: 2em;
+	margin-bottom: 0.4em;
+}
+
+#subtitle {
+	color: #666;
+}
+
+.a2:link {
+	color: black;
+	text-decoration:none;
+}
+
+.a2:visited {
+	color: black;
+	text-decoration:none;
+}
+
+.a2:hover {
+	color:#bc8929;
+	text-decoration:none;
+}
+
+.container .fa {
+  padding: 10px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-github {
+  background: #24292e;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-comments-o {
+  background: #cc2b5e;
+  color: white;
+}
+
+.fa-file-text {
+  background: #44af6d;
+  color: white;
+}
