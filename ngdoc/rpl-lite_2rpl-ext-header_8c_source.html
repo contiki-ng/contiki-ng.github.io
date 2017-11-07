@@ -417,7 +417,7 @@
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;  <span class="keywordtype">int</span> loop_detected;</div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;  uint16_t sender_rank;</div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;  uint8_t sender_closer;</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;  rpl_nbr_t *sender;</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;  <a class="code" href="structrpl__nbr.html">rpl_nbr_t</a> *sender;</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;  uint8_t opt_type = UIP_EXT_HDR_OPT_RPL_BUF-&gt;opt_type;</div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;  uint8_t opt_len = UIP_EXT_HDR_OPT_RPL_BUF-&gt;opt_len;</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;</div>
@@ -640,6 +640,7 @@
 <div class="ttc" id="group__rpl-lite_html_ga19ccc2cc3f67c2c7d6070c379ead3c8d"><div class="ttname"><a href="group__rpl-lite.html#ga19ccc2cc3f67c2c7d6070c379ead3c8d">rpl_ns_get_node_global_addr</a></div><div class="ttdeci">void rpl_ns_get_node_global_addr(uip_ipaddr_t *addr, rpl_ns_node_t *node)</div><div class="ttdoc">Finds the global address of a given node. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-lite_2rpl-ns_8c_source.html#l00194">rpl-ns.c:194</a></div></div>
 <div class="ttc" id="group__uipdrivervars_html_ga96b8904e098e8f1f896379732f1996be"><div class="ttname"><a href="group__uipdrivervars.html#ga96b8904e098e8f1f896379732f1996be">uip_len</a></div><div class="ttdeci">CCIF uint16_t uip_len</div><div class="ttdoc">The length of the packet in the uip_buf buffer. </div><div class="ttdef"><b>Definition:</b> <a href="uip6_8c_source.html#l00186">uip6.c:186</a></div></div>
 <div class="ttc" id="group__uipdevfunc_html_gacd4537a3bf8a16f8f9af3660caf5040a"><div class="ttname"><a href="group__uipdevfunc.html#gacd4537a3bf8a16f8f9af3660caf5040a">uip_buf</a></div><div class="ttdeci">#define uip_buf</div><div class="ttdoc">Macro to access uip_aligned_buf as an array of bytes. </div><div class="ttdef"><b>Definition:</b> <a href="uip_8h_source.html#l00505">uip.h:505</a></div></div>
+<div class="ttc" id="structrpl__nbr_html"><div class="ttname"><a href="structrpl__nbr.html">rpl_nbr</a></div><div class="ttdoc">All information related to a RPL neighbor. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-types_8h_source.html#l00136">rpl-types.h:136</a></div></div>
 <div class="ttc" id="group__uipconvfunc_html_ga769512993b7b27271909d6daa4748b60"><div class="ttname"><a href="group__uipconvfunc.html#ga769512993b7b27271909d6daa4748b60">uip_ipaddr_copy</a></div><div class="ttdeci">#define uip_ipaddr_copy(dest, src)</div><div class="ttdoc">Copy an IP address from one place to another. </div><div class="ttdef"><b>Definition:</b> <a href="uip_8h_source.html#l01009">uip.h:1009</a></div></div>
 <div class="ttc" id="group__uip_html_ga7a264ba26cdd3286c96fce7f854b0aa1"><div class="ttname"><a href="group__uip.html#ga7a264ba26cdd3286c96fce7f854b0aa1">uip_is_addr_mcast</a></div><div class="ttdeci">#define uip_is_addr_mcast(a)</div><div class="ttdoc">is address a multicast address, see RFC 4291 a is of type uip_ipaddr_t* </div><div class="ttdef"><b>Definition:</b> <a href="uip_8h_source.html#l02098">uip.h:2098</a></div></div>
 <div class="ttc" id="group__uipconvfunc_html_ga703ee949a28cb00b5f8ee54bfe664e8d"><div class="ttname"><a href="group__uipconvfunc.html#ga703ee949a28cb00b5f8ee54bfe664e8d">UIP_HTONS</a></div><div class="ttdeci">#define UIP_HTONS(n)</div><div class="ttdoc">Convert 16-bit quantity from host byte order to network byte order. </div><div class="ttdef"><b>Definition:</b> <a href="uip_8h_source.html#l01221">uip.h:1221</a></div></div>
@@ -656,7 +657,7 @@
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 31 2017 23:29:03 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 7 2017 12:06:20 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -109,7 +109,7 @@
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>rpl_ns_node {</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">struct </span>rpl_ns_node *next;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  uint32_t lifetime;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  rpl_dag_t *dag;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="structrpl__dag.html">rpl_dag_t</a> *dag;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="comment">/* Store only IPv6 link identifiers as all nodes in the DAG share the same prefix */</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> link_identifier[8];</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">struct </span>rpl_ns_node *parent;</div>
@@ -203,6 +203,7 @@
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment"> /** @} */</span></div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* RPL_NS_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="structrpl__dag_html"><div class="ttname"><a href="structrpl__dag.html">rpl_dag</a></div><div class="ttdoc">RPL DAG structure. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-classic_2rpl_8h_source.html#l00135">rpl.h:135</a></div></div>
 <div class="ttc" id="uip-nd6_8c_html_a9a7cf6986d952290ec159e9a084003ff"><div class="ttname"><a href="uip-nd6_8c.html#a9a7cf6986d952290ec159e9a084003ff">addr</a></div><div class="ttdeci">static uip_ds6_addr_t * addr</div><div class="ttdoc">Pointer to a nbr cache entry. </div><div class="ttdef"><b>Definition:</b> <a href="uip-nd6_8c_source.html#l00115">uip-nd6.c:115</a></div></div>
 <div class="ttc" id="group__rpl-lite_html_ga1ce67244731e3891a03da57123c63983"><div class="ttname"><a href="group__rpl-lite.html#ga1ce67244731e3891a03da57123c63983">rpl_ns_node_next</a></div><div class="ttdeci">rpl_ns_node_t * rpl_ns_node_next(rpl_ns_node_t *item)</div><div class="ttdoc">Returns the next element of the non-storing node list. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-lite_2rpl-ns_8c_source.html#l00188">rpl-ns.c:188</a></div></div>
 <div class="ttc" id="group__rpl-lite_html_ga6819bb6c9087a5a4c1f2616d334b2a57"><div class="ttname"><a href="group__rpl-lite.html#ga6819bb6c9087a5a4c1f2616d334b2a57">rpl_ns_node_head</a></div><div class="ttdeci">rpl_ns_node_t * rpl_ns_node_head(void)</div><div class="ttdoc">Returns the head of the non-storing node list. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-lite_2rpl-ns_8c_source.html#l00182">rpl-ns.c:182</a></div></div>
@@ -219,7 +220,7 @@
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 31 2017 23:29:03 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 7 2017 12:06:20 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

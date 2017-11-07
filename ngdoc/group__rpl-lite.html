@@ -39,6 +39,9 @@
 <div class="header">
   <div class="summary">
 <a href="#files">Files</a> &#124;
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">RPL-lite<div class="ingroups"><a class="el" href="group__net-layer.html">Network layer</a></div></div>  </div>
@@ -50,6 +53,12 @@
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
 Files</h2></td></tr>
+<tr class="memitem:rpl-lite_2rpl-conf_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rpl-lite_2rpl-conf_8h.html">rpl-conf.h</a></td></tr>
+<tr class="memdesc:rpl-lite_2rpl-conf_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Public configuration and API declarations for ContikiRPL. <br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:rpl-const_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rpl-const_8h.html">rpl-const.h</a></td></tr>
+<tr class="memdesc:rpl-const_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constants for RPL. <br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:rpl-lite_2rpl-dag-root_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rpl-lite_2rpl-dag-root_8c.html">rpl-dag-root.c</a></td></tr>
 <tr class="memdesc:rpl-lite_2rpl-dag-root_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">DAG root utility functions for RPL. <br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -58,6 +67,9 @@ Files</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:rpl-lite_2rpl-dag_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rpl-lite_2rpl-dag_8c.html">rpl-dag.c</a></td></tr>
 <tr class="memdesc:rpl-lite_2rpl-dag_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logic for Directed Acyclic Graphs in RPL. <br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:rpl-dag_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rpl-dag_8h.html">rpl-dag.h</a></td></tr>
+<tr class="memdesc:rpl-dag_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header file for rpl-dag module. <br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:rpl-lite_2rpl-ext-header_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rpl-lite_2rpl-ext-header_8c.html">rpl-ext-header.c</a></td></tr>
 <tr class="memdesc:rpl-lite_2rpl-ext-header_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Management of extension headers for ContikiRPL. <br/></td></tr>
@@ -80,6 +92,9 @@ Files</h2></td></tr>
 <tr class="memitem:rpl-neighbor_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rpl-neighbor_8c.html">rpl-neighbor.c</a></td></tr>
 <tr class="memdesc:rpl-neighbor_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logic for DAG neighbors in RPL. <br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:rpl-neighbor_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rpl-neighbor_8h.html">rpl-neighbor.h</a></td></tr>
+<tr class="memdesc:rpl-neighbor_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header file for rpl-neighbor module. <br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:rpl-lite_2rpl-ns_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rpl-lite_2rpl-ns_8c.html">rpl-ns.c</a></td></tr>
 <tr class="memdesc:rpl-lite_2rpl-ns_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">RPL non-storing mode specific functions. <br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -92,9 +107,66 @@ Files</h2></td></tr>
 <tr class="memitem:rpl-lite_2rpl-timers_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rpl-lite_2rpl-timers_8c.html">rpl-timers.c</a></td></tr>
 <tr class="memdesc:rpl-lite_2rpl-timers_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">RPL timer management. <br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:rpl-timers_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rpl-timers_8h.html">rpl-timers.h</a></td></tr>
+<tr class="memdesc:rpl-timers_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header file for rpl-timers module. <br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:rpl-types_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rpl-types_8h.html">rpl-types.h</a></td></tr>
+<tr class="memdesc:rpl-types_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">RPL types and macros. <br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:rpl-lite_2rpl_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rpl-lite_2rpl_8c.html">rpl.c</a></td></tr>
 <tr class="memdesc:rpl-lite_2rpl_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">ContikiRPL, an implementation of RPL: IPv6 Routing Protocol for Low-Power and Lossy Networks (IETF RFC 6550) <br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrpl__metric__object__energy.html">rpl_metric_object_energy</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for RPL energy metric.  <a href="structrpl__metric__object__energy.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrpl__metric__container.html">rpl_metric_container</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logical representation of a DAG Metric Container.  <a href="structrpl__metric__container.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrpl__prefix.html">rpl_prefix</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">RPL prefix information.  <a href="structrpl__prefix.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrpl__nbr.html">rpl_nbr</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">All information related to a RPL neighbor.  <a href="structrpl__nbr.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrpl__of.html">rpl_of</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">API for RPL objective functions (OF)  <a href="structrpl__of.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrpl__dag.html">rpl_dag</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">RPL DAG structure.  <a href="structrpl__dag.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrpl__instance.html">rpl_instance</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">RPL instance structure.  <a href="structrpl__instance.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga0072bf95228f953c66afec4447c9c412"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga0072bf95228f953c66afec4447c9c412">uip_create_linklocal_rplnodes_mcast</a>(<a class="el" href="uip-nd6_8c.html#a9a7cf6986d952290ec159e9a084003ff">addr</a>)&#160;&#160;&#160;<a class="el" href="group__uipconvfunc.html#ga53fbda0e8c31d4882294c8dc3cb5f487">uip_ip6addr</a>((<a class="el" href="uip-nd6_8c.html#a9a7cf6986d952290ec159e9a084003ff">addr</a>), 0xff02, 0, 0, 0, 0, 0, 0, 0x001a)</td></tr>
+<tr class="memdesc:ga0072bf95228f953c66afec4447c9c412"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set IP address addr to the link-local, all-rpl-nodes multicast address.  <a href="#ga0072bf95228f953c66afec4447c9c412">More...</a><br/></td></tr>
+<tr class="separator:ga0072bf95228f953c66afec4447c9c412"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga405c374bc89ef38047eb083f45a7780f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga405c374bc89ef38047eb083f45a7780f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga405c374bc89ef38047eb083f45a7780f">uip_is_addr_linklocal_rplnodes_mcast</a>(<a class="el" href="uip-nd6_8c.html#a9a7cf6986d952290ec159e9a084003ff">addr</a>)</td></tr>
+<tr class="memdesc:ga405c374bc89ef38047eb083f45a7780f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is IPv6 address addr the link-local, all-RPL-nodes multicast address? <br/></td></tr>
+<tr class="separator:ga405c374bc89ef38047eb083f45a7780f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga83e5484decd181443ba0c98ceb4e9196"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga83e5484decd181443ba0c98ceb4e9196"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga83e5484decd181443ba0c98ceb4e9196">RPL_LIFETIME</a>(lifetime)</td></tr>
+<tr class="memdesc:ga83e5484decd181443ba0c98ceb4e9196"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute lifetime, accounting for the lifetime unit. <br/></td></tr>
+<tr class="separator:ga83e5484decd181443ba0c98ceb4e9196"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae33bd529ba3bfc61e6068308b0482ee7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#gae33bd529ba3bfc61e6068308b0482ee7">ROOT_RANK</a>&#160;&#160;&#160;curr_instance.min_hoprankinc</td></tr>
+<tr class="memdesc:gae33bd529ba3bfc61e6068308b0482ee7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rank of a root node.  <a href="#gae33bd529ba3bfc61e6068308b0482ee7">More...</a><br/></td></tr>
+<tr class="separator:gae33bd529ba3bfc61e6068308b0482ee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga942c01e927b32169271dd344007ac928"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga942c01e927b32169271dd344007ac928"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga942c01e927b32169271dd344007ac928">DAG_RANK</a>(fixpt_rank)&#160;&#160;&#160;((fixpt_rank) / curr_instance.min_hoprankinc)</td></tr>
+<tr class="memdesc:ga942c01e927b32169271dd344007ac928"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return DAG RANK as per RFC 6550 (rank divided by min_hoprankinc) <br/></td></tr>
+<tr class="separator:ga942c01e927b32169271dd344007ac928"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:gac7e013fe9d1e9082aa8aedde38a08955"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#gac7e013fe9d1e9082aa8aedde38a08955">rpl_dag_state</a> </td></tr>
+<tr class="memdesc:gac7e013fe9d1e9082aa8aedde38a08955"><td class="mdescLeft">&#160;</td><td class="mdescRight">RPL DAG states. <br/></td></tr>
+<tr class="separator:gac7e013fe9d1e9082aa8aedde38a08955"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -110,9 +182,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga3df0553a34de69d88691ef128ad55097"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga3df0553a34de69d88691ef128ad55097">rpl_dag_root_is_root</a> (void)</td></tr>
 <tr class="memdesc:ga3df0553a34de69d88691ef128ad55097"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tells whether we are DAG root or not.  <a href="#ga3df0553a34de69d88691ef128ad55097">More...</a><br/></td></tr>
 <tr class="separator:ga3df0553a34de69d88691ef128ad55097"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7a6acbdda4488f3771a084a5c703fa81"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga7a6acbdda4488f3771a084a5c703fa81">rpl_dag_state_to_str</a> (enum rpl_dag_state state)</td></tr>
-<tr class="memdesc:ga7a6acbdda4488f3771a084a5c703fa81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a textual description of the current DAG state.  <a href="#ga7a6acbdda4488f3771a084a5c703fa81">More...</a><br/></td></tr>
-<tr class="separator:ga7a6acbdda4488f3771a084a5c703fa81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad2718ea0486e7bfe884a5daf906fe221"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#gad2718ea0486e7bfe884a5daf906fe221">rpl_dag_state_to_str</a> (enum <a class="el" href="group__rpl-lite.html#gac7e013fe9d1e9082aa8aedde38a08955">rpl_dag_state</a> state)</td></tr>
+<tr class="memdesc:gad2718ea0486e7bfe884a5daf906fe221"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a textual description of the current DAG state.  <a href="#gad2718ea0486e7bfe884a5daf906fe221">More...</a><br/></td></tr>
+<tr class="separator:gad2718ea0486e7bfe884a5daf906fe221"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad4d3bc7b5fa6bdb68c43a2de52ed62f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#gad4d3bc7b5fa6bdb68c43a2de52ed62f3">rpl_dag_leave</a> (void)</td></tr>
 <tr class="memdesc:gad4d3bc7b5fa6bdb68c43a2de52ed62f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leaves the current DAG.  <a href="#gad4d3bc7b5fa6bdb68c43a2de52ed62f3">More...</a><br/></td></tr>
 <tr class="separator:gad4d3bc7b5fa6bdb68c43a2de52ed62f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -125,10 +197,10 @@ Functions</h2></td></tr>
 <tr class="memitem:gaed104e6c0b24684d78b49eef5df4f1bb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#gaed104e6c0b24684d78b49eef5df4f1bb">rpl_is_addr_in_our_dag</a> (const uip_ipaddr_t *<a class="el" href="uip-nd6_8c.html#a9a7cf6986d952290ec159e9a084003ff">addr</a>)</td></tr>
 <tr class="memdesc:gaed104e6c0b24684d78b49eef5df4f1bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tells whether a given global IPv6 address is in our current DAG.  <a href="#gaed104e6c0b24684d78b49eef5df4f1bb">More...</a><br/></td></tr>
 <tr class="separator:gaed104e6c0b24684d78b49eef5df4f1bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8173f5da900f946a8de35b4dd701ce44"><td class="memItemLeft" align="right" valign="top">rpl_instance_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga8173f5da900f946a8de35b4dd701ce44">rpl_get_default_instance</a> (void)</td></tr>
+<tr class="memitem:ga8173f5da900f946a8de35b4dd701ce44"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrpl__instance.html">rpl_instance_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga8173f5da900f946a8de35b4dd701ce44">rpl_get_default_instance</a> (void)</td></tr>
 <tr class="memdesc:ga8173f5da900f946a8de35b4dd701ce44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns pointer to the default instance (for compatibility with legagy RPL code)  <a href="#ga8173f5da900f946a8de35b4dd701ce44">More...</a><br/></td></tr>
 <tr class="separator:ga8173f5da900f946a8de35b4dd701ce44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8976e165e3a5b6410b68a81c2cdadc68"><td class="memItemLeft" align="right" valign="top">rpl_dag_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga8976e165e3a5b6410b68a81c2cdadc68">rpl_get_any_dag</a> (void)</td></tr>
+<tr class="memitem:ga8976e165e3a5b6410b68a81c2cdadc68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrpl__dag.html">rpl_dag_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga8976e165e3a5b6410b68a81c2cdadc68">rpl_get_any_dag</a> (void)</td></tr>
 <tr class="memdesc:ga8976e165e3a5b6410b68a81c2cdadc68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns pointer to any DAG (for compatibility with legagy RPL code)  <a href="#ga8976e165e3a5b6410b68a81c2cdadc68">More...</a><br/></td></tr>
 <tr class="separator:ga8976e165e3a5b6410b68a81c2cdadc68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1f3706b22c198c354f4364a3cbb92836"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga1f3706b22c198c354f4364a3cbb92836"></a>
@@ -154,16 +226,19 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 <tr class="memitem:gab2ea55dae5cd99c6d1305fdf526f2fe0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#gab2ea55dae5cd99c6d1305fdf526f2fe0">rpl_process_dao</a> (uip_ipaddr_t *from, rpl_dao_t *dao)</td></tr>
 <tr class="memdesc:gab2ea55dae5cd99c6d1305fdf526f2fe0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes incoming DAO.  <a href="#gab2ea55dae5cd99c6d1305fdf526f2fe0">More...</a><br/></td></tr>
 <tr class="separator:gab2ea55dae5cd99c6d1305fdf526f2fe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad24ac3a37d82f71a45758d14a3ddc131"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#gad24ac3a37d82f71a45758d14a3ddc131">rpl_process_hbh</a> (rpl_nbr_t *sender, uint16_t sender_rank, int loop_detected, int rank_error_signaled)</td></tr>
+<tr class="memitem:gad24ac3a37d82f71a45758d14a3ddc131"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#gad24ac3a37d82f71a45758d14a3ddc131">rpl_process_hbh</a> (<a class="el" href="structrpl__nbr.html">rpl_nbr_t</a> *sender, uint16_t sender_rank, int loop_detected, int rank_error_signaled)</td></tr>
 <tr class="memdesc:gad24ac3a37d82f71a45758d14a3ddc131"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes Hop-by-Hop (HBH) Extension Header of a packet currently being forwrded.  <a href="#gad24ac3a37d82f71a45758d14a3ddc131">More...</a><br/></td></tr>
 <tr class="separator:gad24ac3a37d82f71a45758d14a3ddc131"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac626c8c88fef0298b9c1f35c54ee49da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#gac626c8c88fef0298b9c1f35c54ee49da">rpl_dag_init_root</a> (uint8_t instance_id, uip_ipaddr_t *dag_id, uip_ipaddr_t *prefix, unsigned prefix_len, uint8_t prefix_flags)</td></tr>
-<tr class="memdesc:gac626c8c88fef0298b9c1f35c54ee49da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes DAG internal structure for a root node.  <a href="#gac626c8c88fef0298b9c1f35c54ee49da">More...</a><br/></td></tr>
-<tr class="separator:gac626c8c88fef0298b9c1f35c54ee49da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga715fec352c9cb2e6de3f85da84c2fbf2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga715fec352c9cb2e6de3f85da84c2fbf2">rpl_dag_init_root</a> (uint8_t instance_id, uip_ipaddr_t *dag_id, uip_ipaddr_t *prefix, unsigned prefix_len, uint8_t flags)</td></tr>
+<tr class="memdesc:ga715fec352c9cb2e6de3f85da84c2fbf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes DAG internal structure for a root node.  <a href="#ga715fec352c9cb2e6de3f85da84c2fbf2">More...</a><br/></td></tr>
+<tr class="separator:ga715fec352c9cb2e6de3f85da84c2fbf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8e8d465b518552aa7f8b868df515dd31"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga8e8d465b518552aa7f8b868df515dd31"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga8e8d465b518552aa7f8b868df515dd31">rpl_dag_init</a> (void)</td></tr>
 <tr class="memdesc:ga8e8d465b518552aa7f8b868df515dd31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes rpl-dag module. <br/></td></tr>
 <tr class="separator:ga8e8d465b518552aa7f8b868df515dd31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1eb0b8ee10b8841eca1cee80ba6a0d2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga1eb0b8ee10b8841eca1cee80ba6a0d2d">rpl_process_dao_ack</a> (uint8_t sequence, uint8_t <a class="el" href="group__srf06-common-peripherals.html#ga13ec8fa3710e1f3f5937b97712fa9ab8">status</a>)</td></tr>
+<tr class="memdesc:ga1eb0b8ee10b8841eca1cee80ba6a0d2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes incoming DAO-ACK.  <a href="#ga1eb0b8ee10b8841eca1cee80ba6a0d2d">More...</a><br/></td></tr>
+<tr class="separator:ga1eb0b8ee10b8841eca1cee80ba6a0d2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9652f6aa7b33a12b05434c05e955efa8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga9652f6aa7b33a12b05434c05e955efa8">rpl_ext_header_srh_get_next_hop</a> (uip_ipaddr_t *<a class="el" href="uip-nd6_8c.html#a4e1a84fd63a1c24d54501f93d9bc5757">ipaddr</a>)</td></tr>
 <tr class="memdesc:ga9652f6aa7b33a12b05434c05e955efa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Look for next hop from SRH of current uIP packet.  <a href="#ga9652f6aa7b33a12b05434c05e955efa8">More...</a><br/></td></tr>
 <tr class="separator:ga9652f6aa7b33a12b05434c05e955efa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -205,49 +280,49 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 <tr class="memitem:gafce2df2d30554b43660d98f41f1a130e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#gafce2df2d30554b43660d98f41f1a130e">rpl_neighbor_count</a> (void)</td></tr>
 <tr class="memdesc:gafce2df2d30554b43660d98f41f1a130e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of nodes in the RPL neighbor table.  <a href="#gafce2df2d30554b43660d98f41f1a130e">More...</a><br/></td></tr>
 <tr class="separator:gafce2df2d30554b43660d98f41f1a130e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaea79cc87c534135169dd5f803db5989c"><td class="memItemLeft" align="right" valign="top">rpl_nbr_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#gaea79cc87c534135169dd5f803db5989c">rpl_neighbor_get_from_lladdr</a> (<a class="el" href="group__uip.html#ga7583db18ab0411c60c4c1d6ce7bf9af4">uip_lladdr_t</a> *<a class="el" href="uip-nd6_8c.html#a9a7cf6986d952290ec159e9a084003ff">addr</a>)</td></tr>
-<tr class="memdesc:gaea79cc87c534135169dd5f803db5989c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a neighbor from its link-layer address.  <a href="#gaea79cc87c534135169dd5f803db5989c">More...</a><br/></td></tr>
-<tr class="separator:gaea79cc87c534135169dd5f803db5989c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf2ddc7fabc692b9d8bd7e9ebfa43bc8a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#gaf2ddc7fabc692b9d8bd7e9ebfa43bc8a">rpl_neighbor_is_acceptable_parent</a> (rpl_nbr_t *<a class="el" href="uip-nd6_8c.html#a0469af3fec6ddbe5fb60093767575e44">nbr</a>)</td></tr>
+<tr class="memitem:ga046cdfb4e53460342b97672a6b695fa7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrpl__nbr.html">rpl_nbr_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga046cdfb4e53460342b97672a6b695fa7">rpl_neighbor_get_from_lladdr</a> (<a class="el" href="group__uip.html#ga7583db18ab0411c60c4c1d6ce7bf9af4">uip_lladdr_t</a> *<a class="el" href="uip-nd6_8c.html#a9a7cf6986d952290ec159e9a084003ff">addr</a>)</td></tr>
+<tr class="memdesc:ga046cdfb4e53460342b97672a6b695fa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a neighbor from its link-layer address.  <a href="#ga046cdfb4e53460342b97672a6b695fa7">More...</a><br/></td></tr>
+<tr class="separator:ga046cdfb4e53460342b97672a6b695fa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf2ddc7fabc692b9d8bd7e9ebfa43bc8a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#gaf2ddc7fabc692b9d8bd7e9ebfa43bc8a">rpl_neighbor_is_acceptable_parent</a> (<a class="el" href="structrpl__nbr.html">rpl_nbr_t</a> *<a class="el" href="uip-nd6_8c.html#a0469af3fec6ddbe5fb60093767575e44">nbr</a>)</td></tr>
 <tr class="memdesc:gaf2ddc7fabc692b9d8bd7e9ebfa43bc8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tells whether a nbr is acceptable as per the OF's definition.  <a href="#gaf2ddc7fabc692b9d8bd7e9ebfa43bc8a">More...</a><br/></td></tr>
 <tr class="separator:gaf2ddc7fabc692b9d8bd7e9ebfa43bc8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga43c22bfe34694fd82bfa676a26d242ef"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga43c22bfe34694fd82bfa676a26d242ef">rpl_neighbor_get_link_metric</a> (rpl_nbr_t *<a class="el" href="uip-nd6_8c.html#a0469af3fec6ddbe5fb60093767575e44">nbr</a>)</td></tr>
+<tr class="memitem:ga43c22bfe34694fd82bfa676a26d242ef"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga43c22bfe34694fd82bfa676a26d242ef">rpl_neighbor_get_link_metric</a> (<a class="el" href="structrpl__nbr.html">rpl_nbr_t</a> *<a class="el" href="uip-nd6_8c.html#a0469af3fec6ddbe5fb60093767575e44">nbr</a>)</td></tr>
 <tr class="memdesc:ga43c22bfe34694fd82bfa676a26d242ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a neighbor's link metric.  <a href="#ga43c22bfe34694fd82bfa676a26d242ef">More...</a><br/></td></tr>
 <tr class="separator:ga43c22bfe34694fd82bfa676a26d242ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1b6dc3b4a4f57f621347e505c3aa2e81"><td class="memItemLeft" align="right" valign="top">rpl_rank_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga1b6dc3b4a4f57f621347e505c3aa2e81">rpl_neighbor_rank_via_nbr</a> (rpl_nbr_t *<a class="el" href="uip-nd6_8c.html#a0469af3fec6ddbe5fb60093767575e44">nbr</a>)</td></tr>
+<tr class="memitem:ga1b6dc3b4a4f57f621347e505c3aa2e81"><td class="memItemLeft" align="right" valign="top">rpl_rank_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga1b6dc3b4a4f57f621347e505c3aa2e81">rpl_neighbor_rank_via_nbr</a> (<a class="el" href="structrpl__nbr.html">rpl_nbr_t</a> *<a class="el" href="uip-nd6_8c.html#a0469af3fec6ddbe5fb60093767575e44">nbr</a>)</td></tr>
 <tr class="memdesc:ga1b6dc3b4a4f57f621347e505c3aa2e81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns our rank if selecting a given parent as preferred parent.  <a href="#ga1b6dc3b4a4f57f621347e505c3aa2e81">More...</a><br/></td></tr>
 <tr class="separator:ga1b6dc3b4a4f57f621347e505c3aa2e81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga201b98452ff81a4b6ec9343b71270aac"><td class="memItemLeft" align="right" valign="top">const linkaddr_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga201b98452ff81a4b6ec9343b71270aac">rpl_neighbor_get_lladdr</a> (rpl_nbr_t *<a class="el" href="uip-nd6_8c.html#a0469af3fec6ddbe5fb60093767575e44">nbr</a>)</td></tr>
-<tr class="memdesc:ga201b98452ff81a4b6ec9343b71270aac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a neighbors's link-layer address.  <a href="#ga201b98452ff81a4b6ec9343b71270aac">More...</a><br/></td></tr>
-<tr class="separator:ga201b98452ff81a4b6ec9343b71270aac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga39d8da804f13a79bbf87d623448e63d4"><td class="memItemLeft" align="right" valign="top">uip_ipaddr_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga39d8da804f13a79bbf87d623448e63d4">rpl_neighbor_get_ipaddr</a> (rpl_nbr_t *<a class="el" href="uip-nd6_8c.html#a0469af3fec6ddbe5fb60093767575e44">nbr</a>)</td></tr>
-<tr class="memdesc:ga39d8da804f13a79bbf87d623448e63d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a neighbor's (link-local) IPv6 address.  <a href="#ga39d8da804f13a79bbf87d623448e63d4">More...</a><br/></td></tr>
-<tr class="separator:ga39d8da804f13a79bbf87d623448e63d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1933d220b1a9c9b6d7da0dc1421096d3"><td class="memItemLeft" align="right" valign="top">const struct link_stats *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga1933d220b1a9c9b6d7da0dc1421096d3">rpl_neighbor_get_link_stats</a> (rpl_nbr_t *<a class="el" href="uip-nd6_8c.html#a0469af3fec6ddbe5fb60093767575e44">nbr</a>)</td></tr>
-<tr class="memdesc:ga1933d220b1a9c9b6d7da0dc1421096d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a neighbor's link statistics.  <a href="#ga1933d220b1a9c9b6d7da0dc1421096d3">More...</a><br/></td></tr>
-<tr class="separator:ga1933d220b1a9c9b6d7da0dc1421096d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4e9982f7fb544e9bc582814828769861"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga4e9982f7fb544e9bc582814828769861">rpl_neighbor_is_fresh</a> (rpl_nbr_t *<a class="el" href="uip-nd6_8c.html#a0469af3fec6ddbe5fb60093767575e44">nbr</a>)</td></tr>
+<tr class="memitem:ga4d1244edd4b081898250ce9743803679"><td class="memItemLeft" align="right" valign="top">const linkaddr_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga4d1244edd4b081898250ce9743803679">rpl_neighbor_get_lladdr</a> (<a class="el" href="structrpl__nbr.html">rpl_nbr_t</a> *<a class="el" href="uip-nd6_8c.html#a0469af3fec6ddbe5fb60093767575e44">nbr</a>)</td></tr>
+<tr class="memdesc:ga4d1244edd4b081898250ce9743803679"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a neighbors's link-layer address.  <a href="#ga4d1244edd4b081898250ce9743803679">More...</a><br/></td></tr>
+<tr class="separator:ga4d1244edd4b081898250ce9743803679"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac8b82e4fc7bffd251854748b35503b57"><td class="memItemLeft" align="right" valign="top">uip_ipaddr_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#gac8b82e4fc7bffd251854748b35503b57">rpl_neighbor_get_ipaddr</a> (<a class="el" href="structrpl__nbr.html">rpl_nbr_t</a> *<a class="el" href="uip-nd6_8c.html#a0469af3fec6ddbe5fb60093767575e44">nbr</a>)</td></tr>
+<tr class="memdesc:gac8b82e4fc7bffd251854748b35503b57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a neighbor's (link-local) IPv6 address.  <a href="#gac8b82e4fc7bffd251854748b35503b57">More...</a><br/></td></tr>
+<tr class="separator:gac8b82e4fc7bffd251854748b35503b57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8fc3bd591c49d7e4a909568c3bdfb4b4"><td class="memItemLeft" align="right" valign="top">const struct link_stats *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga8fc3bd591c49d7e4a909568c3bdfb4b4">rpl_neighbor_get_link_stats</a> (<a class="el" href="structrpl__nbr.html">rpl_nbr_t</a> *<a class="el" href="uip-nd6_8c.html#a0469af3fec6ddbe5fb60093767575e44">nbr</a>)</td></tr>
+<tr class="memdesc:ga8fc3bd591c49d7e4a909568c3bdfb4b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a neighbor's link statistics.  <a href="#ga8fc3bd591c49d7e4a909568c3bdfb4b4">More...</a><br/></td></tr>
+<tr class="separator:ga8fc3bd591c49d7e4a909568c3bdfb4b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4e9982f7fb544e9bc582814828769861"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga4e9982f7fb544e9bc582814828769861">rpl_neighbor_is_fresh</a> (<a class="el" href="structrpl__nbr.html">rpl_nbr_t</a> *<a class="el" href="uip-nd6_8c.html#a0469af3fec6ddbe5fb60093767575e44">nbr</a>)</td></tr>
 <tr class="memdesc:ga4e9982f7fb544e9bc582814828769861"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tells wether we have fresh link information towards a given neighbor.  <a href="#ga4e9982f7fb544e9bc582814828769861">More...</a><br/></td></tr>
 <tr class="separator:ga4e9982f7fb544e9bc582814828769861"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadc0c271a08ec3486a053d9ce9dc2468b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#gadc0c271a08ec3486a053d9ce9dc2468b">rpl_neighbor_is_reachable</a> (rpl_nbr_t *<a class="el" href="uip-nd6_8c.html#a0469af3fec6ddbe5fb60093767575e44">nbr</a>)</td></tr>
+<tr class="memitem:gadc0c271a08ec3486a053d9ce9dc2468b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#gadc0c271a08ec3486a053d9ce9dc2468b">rpl_neighbor_is_reachable</a> (<a class="el" href="structrpl__nbr.html">rpl_nbr_t</a> *<a class="el" href="uip-nd6_8c.html#a0469af3fec6ddbe5fb60093767575e44">nbr</a>)</td></tr>
 <tr class="memdesc:gadc0c271a08ec3486a053d9ce9dc2468b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tells wether we a given neighbor is reachable.  <a href="#gadc0c271a08ec3486a053d9ce9dc2468b">More...</a><br/></td></tr>
 <tr class="separator:gadc0c271a08ec3486a053d9ce9dc2468b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga60715c50b3891828bb6fa8aa2d723718"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga60715c50b3891828bb6fa8aa2d723718">rpl_neighbor_is_parent</a> (rpl_nbr_t *<a class="el" href="uip-nd6_8c.html#a0469af3fec6ddbe5fb60093767575e44">nbr</a>)</td></tr>
+<tr class="memitem:ga60715c50b3891828bb6fa8aa2d723718"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga60715c50b3891828bb6fa8aa2d723718">rpl_neighbor_is_parent</a> (<a class="el" href="structrpl__nbr.html">rpl_nbr_t</a> *<a class="el" href="uip-nd6_8c.html#a0469af3fec6ddbe5fb60093767575e44">nbr</a>)</td></tr>
 <tr class="memdesc:ga60715c50b3891828bb6fa8aa2d723718"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tells whether a neighbor is in the parent set.  <a href="#ga60715c50b3891828bb6fa8aa2d723718">More...</a><br/></td></tr>
 <tr class="separator:ga60715c50b3891828bb6fa8aa2d723718"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac05fe65242c2d0a89dede401442074bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#gac05fe65242c2d0a89dede401442074bb">rpl_neighbor_set_preferred_parent</a> (rpl_nbr_t *<a class="el" href="uip-nd6_8c.html#a0469af3fec6ddbe5fb60093767575e44">nbr</a>)</td></tr>
+<tr class="memitem:gac05fe65242c2d0a89dede401442074bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#gac05fe65242c2d0a89dede401442074bb">rpl_neighbor_set_preferred_parent</a> (<a class="el" href="structrpl__nbr.html">rpl_nbr_t</a> *<a class="el" href="uip-nd6_8c.html#a0469af3fec6ddbe5fb60093767575e44">nbr</a>)</td></tr>
 <tr class="memdesc:gac05fe65242c2d0a89dede401442074bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set current RPL preferred parent and update DS6 default route accordingly.  <a href="#gac05fe65242c2d0a89dede401442074bb">More...</a><br/></td></tr>
 <tr class="separator:gac05fe65242c2d0a89dede401442074bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga46c892cc449cd258a02f7eac8bad18b8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga46c892cc449cd258a02f7eac8bad18b8"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga46c892cc449cd258a02f7eac8bad18b8">rpl_neighbor_remove_all</a> (void)</td></tr>
 <tr class="memdesc:ga46c892cc449cd258a02f7eac8bad18b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty the RPL neighbor table. <br/></td></tr>
 <tr class="separator:ga46c892cc449cd258a02f7eac8bad18b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga82cbc22b01378ef30eef204dc88727db"><td class="memItemLeft" align="right" valign="top">rpl_nbr_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga82cbc22b01378ef30eef204dc88727db">rpl_neighbor_get_from_ipaddr</a> (uip_ipaddr_t *<a class="el" href="uip-nd6_8c.html#a9a7cf6986d952290ec159e9a084003ff">addr</a>)</td></tr>
-<tr class="memdesc:ga82cbc22b01378ef30eef204dc88727db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a neighbor from its link-local IPv6 address.  <a href="#ga82cbc22b01378ef30eef204dc88727db">More...</a><br/></td></tr>
-<tr class="separator:ga82cbc22b01378ef30eef204dc88727db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad9a52ff68a6861446e58b6159463b21e"><td class="memItemLeft" align="right" valign="top">rpl_nbr_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#gad9a52ff68a6861446e58b6159463b21e">rpl_neighbor_select_best</a> (void)</td></tr>
-<tr class="memdesc:gad9a52ff68a6861446e58b6159463b21e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the best candidate for preferred parent.  <a href="#gad9a52ff68a6861446e58b6159463b21e">More...</a><br/></td></tr>
-<tr class="separator:gad9a52ff68a6861446e58b6159463b21e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9f328e7d0b904c95547f70073c997b89"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrpl__nbr.html">rpl_nbr_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga9f328e7d0b904c95547f70073c997b89">rpl_neighbor_get_from_ipaddr</a> (uip_ipaddr_t *<a class="el" href="uip-nd6_8c.html#a9a7cf6986d952290ec159e9a084003ff">addr</a>)</td></tr>
+<tr class="memdesc:ga9f328e7d0b904c95547f70073c997b89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a neighbor from its link-local IPv6 address.  <a href="#ga9f328e7d0b904c95547f70073c997b89">More...</a><br/></td></tr>
+<tr class="separator:ga9f328e7d0b904c95547f70073c997b89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae79b9c8837d0ab8b24859b191e3b7756"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrpl__nbr.html">rpl_nbr_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#gae79b9c8837d0ab8b24859b191e3b7756">rpl_neighbor_select_best</a> (void)</td></tr>
+<tr class="memdesc:gae79b9c8837d0ab8b24859b191e3b7756"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the best candidate for preferred parent.  <a href="#gae79b9c8837d0ab8b24859b191e3b7756">More...</a><br/></td></tr>
+<tr class="separator:gae79b9c8837d0ab8b24859b191e3b7756"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0378846b62008f835fecfa61226cd906"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga0378846b62008f835fecfa61226cd906"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga0378846b62008f835fecfa61226cd906">rpl_neighbor_init</a> (void)</td></tr>
 <tr class="memdesc:ga0378846b62008f835fecfa61226cd906"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize rpl-dag-neighbor module. <br/></td></tr>
@@ -295,7 +370,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 <tr class="memdesc:ga92a5a1b168aa55c3c3b35ce590f3931f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset DIO Trickle timer.  <a href="#ga92a5a1b168aa55c3c3b35ce590f3931f">More...</a><br/></td></tr>
 <tr class="separator:ga92a5a1b168aa55c3c3b35ce590f3931f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gafe38c20d1297d8fd65c042d2837e7035"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gafe38c20d1297d8fd65c042d2837e7035"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#gafe38c20d1297d8fd65c042d2837e7035">rpl_timers_schedule_unicast_dio</a> (rpl_nbr_t *target)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#gafe38c20d1297d8fd65c042d2837e7035">rpl_timers_schedule_unicast_dio</a> (<a class="el" href="structrpl__nbr.html">rpl_nbr_t</a> *target)</td></tr>
 <tr class="memdesc:gafe38c20d1297d8fd65c042d2837e7035"><td class="mdescLeft">&#160;</td><td class="mdescRight">Schedule unicast DIO with no delay. <br/></td></tr>
 <tr class="separator:gafe38c20d1297d8fd65c042d2837e7035"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga837202e5a0a412abf6a5f1c01825d3f4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga837202e5a0a412abf6a5f1c01825d3f4"></a>
@@ -325,6 +400,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 <tr class="memitem:gafdd6edb1b76922e31cf60b2ee5eebded"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#gafdd6edb1b76922e31cf60b2ee5eebded">rpl_timers_schedule_state_update</a> (void)</td></tr>
 <tr class="memdesc:gafdd6edb1b76922e31cf60b2ee5eebded"><td class="mdescLeft">&#160;</td><td class="mdescRight">Schedule a state update ASAP.  <a href="#gafdd6edb1b76922e31cf60b2ee5eebded">More...</a><br/></td></tr>
 <tr class="separator:gafdd6edb1b76922e31cf60b2ee5eebded"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac0fc67dc797559f43491808cf8b84699"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gac0fc67dc797559f43491808cf8b84699"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#gac0fc67dc797559f43491808cf8b84699">rpl_timers_schedule_dao_ack</a> (uip_ipaddr_t *target, uint16_t sequence)</td></tr>
+<tr class="memdesc:gac0fc67dc797559f43491808cf8b84699"><td class="mdescLeft">&#160;</td><td class="mdescRight">Schedule a DAO-ACK with no delay. <br/></td></tr>
+<tr class="separator:gac0fc67dc797559f43491808cf8b84699"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga16833c4ffb7f93d5aacd5ff96886e52a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga16833c4ffb7f93d5aacd5ff96886e52a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga16833c4ffb7f93d5aacd5ff96886e52a">rpl_schedule_probing</a> (void)</td></tr>
+<tr class="memdesc:ga16833c4ffb7f93d5aacd5ff96886e52a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Schedule probing with delay RPL_PROBING_DELAY_FUNC() <br/></td></tr>
+<tr class="separator:ga16833c4ffb7f93d5aacd5ff96886e52a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3bb0d38b1f525e6795820f835632fdf9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga3bb0d38b1f525e6795820f835632fdf9">rpl_lollipop_greater_than</a> (int a, int b)</td></tr>
 <tr class="memdesc:ga3bb0d38b1f525e6795820f835632fdf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Greater-than function for a lollipop counter.  <a href="#ga3bb0d38b1f525e6795820f835632fdf9">More...</a><br/></td></tr>
 <tr class="separator:ga3bb0d38b1f525e6795820f835632fdf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -337,13 +420,13 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 <tr class="memitem:ga2f5eaddf52d96d4476c9a85f1b0f844c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga2f5eaddf52d96d4476c9a85f1b0f844c">rpl_is_reachable</a> (void)</td></tr>
 <tr class="memdesc:ga2f5eaddf52d96d4476c9a85f1b0f844c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the RPL's best guess on if we are reachable via have downward route or not.  <a href="#ga2f5eaddf52d96d4476c9a85f1b0f844c">More...</a><br/></td></tr>
 <tr class="separator:ga2f5eaddf52d96d4476c9a85f1b0f844c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7f438615b8a459e2ba7ae61db8d41443"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga7f438615b8a459e2ba7ae61db8d41443">rpl_reset_prefix</a> (rpl_prefix_t *last_prefix)</td></tr>
+<tr class="memitem:ga7f438615b8a459e2ba7ae61db8d41443"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga7f438615b8a459e2ba7ae61db8d41443">rpl_reset_prefix</a> (<a class="el" href="structrpl__prefix.html">rpl_prefix_t</a> *last_prefix)</td></tr>
 <tr class="memdesc:ga7f438615b8a459e2ba7ae61db8d41443"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes current prefx.  <a href="#ga7f438615b8a459e2ba7ae61db8d41443">More...</a><br/></td></tr>
 <tr class="separator:ga7f438615b8a459e2ba7ae61db8d41443"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8a02637dfd57cfeaa4ca754858fd3c5e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga8a02637dfd57cfeaa4ca754858fd3c5e">rpl_set_prefix_from_addr</a> (uip_ipaddr_t *<a class="el" href="uip-nd6_8c.html#a9a7cf6986d952290ec159e9a084003ff">addr</a>, unsigned len, uint8_t flags)</td></tr>
 <tr class="memdesc:ga8a02637dfd57cfeaa4ca754858fd3c5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set prefix from an IPv6 address.  <a href="#ga8a02637dfd57cfeaa4ca754858fd3c5e">More...</a><br/></td></tr>
 <tr class="separator:ga8a02637dfd57cfeaa4ca754858fd3c5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1bb22bed04b727b54e0b07b8a99dc0f2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga1bb22bed04b727b54e0b07b8a99dc0f2">rpl_set_prefix</a> (rpl_prefix_t *prefix)</td></tr>
+<tr class="memitem:ga1bb22bed04b727b54e0b07b8a99dc0f2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl-lite.html#ga1bb22bed04b727b54e0b07b8a99dc0f2">rpl_set_prefix</a> (<a class="el" href="structrpl__prefix.html">rpl_prefix_t</a> *prefix)</td></tr>
 <tr class="memdesc:ga1bb22bed04b727b54e0b07b8a99dc0f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set prefix from an prefix data structure (from DIO)  <a href="#ga1bb22bed04b727b54e0b07b8a99dc0f2">More...</a><br/></td></tr>
 <tr class="separator:ga1bb22bed04b727b54e0b07b8a99dc0f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga494f643ec9bdf344cdabef720ba413a4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga494f643ec9bdf344cdabef720ba413a4"></a>
@@ -354,8 +437,49 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>RPL-lite is a lightweight implementation of RPL tailored for reliability. </p>
 <p>Supports only non-storing mode, one instance and one DAG. </p>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="gae33bd529ba3bfc61e6068308b0482ee7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ROOT_RANK&#160;&#160;&#160;curr_instance.min_hoprankinc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rank of a root node. </p>
+
+<p>Definition at line <a class="el" href="rpl-types_8h_source.html#l00078">78</a> of file <a class="el" href="rpl-types_8h_source.html">rpl-types.h</a>.</p>
+
+<p>Referenced by <a class="el" href="rpl-lite_2rpl-dag_8c_source.html#l00657">rpl_dag_init_root()</a>, <a class="el" href="rpl-classic_2rpl-dag-root_8c_source.html#l00259">rpl_dag_root_is_root()</a>, <a class="el" href="rpl-classic_2rpl-ext-header_8c_source.html#l00636">rpl_ext_header_update()</a>, <a class="el" href="rpl-neighbor_8c_source.html#l00078">rpl_neighbor_print_list()</a>, and <a class="el" href="rpl-classic_2rpl-dag_8c_source.html#l01437">rpl_process_dio()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga0072bf95228f953c66afec4447c9c412"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define uip_create_linklocal_rplnodes_mcast</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="uip-nd6_8c.html#a9a7cf6986d952290ec159e9a084003ff">addr</a></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="group__uipconvfunc.html#ga53fbda0e8c31d4882294c8dc3cb5f487">uip_ip6addr</a>((<a class="el" href="uip-nd6_8c.html#a9a7cf6986d952290ec159e9a084003ff">addr</a>), 0xff02, 0, 0, 0, 0, 0, 0, 0x001a)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set IP address addr to the link-local, all-rpl-nodes multicast address. </p>
+
+<p>Definition at line <a class="el" href="rpl-types_8h_source.html#l00054">54</a> of file <a class="el" href="rpl-types_8h_source.html">rpl-types.h</a>.</p>
+
+<p>Referenced by <a class="el" href="rpl-classic_2rpl_8c_source.html#l00331">rpl_init()</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="gac626c8c88fef0298b9c1f35c54ee49da"></a>
+<a class="anchor" id="ga715fec352c9cb2e6de3f85da84c2fbf2"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -411,7 +535,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 
 <p>Definition at line <a class="el" href="rpl-lite_2rpl-dag_8c_source.html#l00657">657</a> of file <a class="el" href="rpl-lite_2rpl-dag_8c_source.html">rpl-dag.c</a>.</p>
 
-<p>References <a class="el" href="rpl-lite_2rpl-dag_8c_source.html#l00082">rpl_dag_leave()</a>, and <a class="el" href="rpl-lite_2rpl-timers_8c_source.html#l00148">rpl_timers_dio_reset()</a>.</p>
+<p>References <a class="el" href="rpl-types_8h_source.html#l00078">ROOT_RANK</a>, <a class="el" href="rpl-lite_2rpl-dag_8c_source.html#l00082">rpl_dag_leave()</a>, <a class="el" href="rpl-types_8h_source.html#l00072">RPL_LIFETIME</a>, and <a class="el" href="rpl-lite_2rpl-timers_8c_source.html#l00148">rpl_timers_dio_reset()</a>.</p>
 
 <p>Referenced by <a class="el" href="rpl-lite_2rpl-dag-root_8c_source.html#l00140">rpl_dag_root_init_dag_immediately()</a>.</p>
 
@@ -466,7 +590,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 
 <p>Definition at line <a class="el" href="rpl-lite_2rpl-dag_8c_source.html#l00121">121</a> of file <a class="el" href="rpl-lite_2rpl-dag_8c_source.html">rpl-dag.c</a>.</p>
 
-<p>References <a class="el" href="rpl-lite_2rpl-icmp6_8c_source.html#l00154">rpl_icmp6_dis_output()</a>, <a class="el" href="rpl-neighbor_8c_source.html#l00207">rpl_neighbor_get_ipaddr()</a>, and <a class="el" href="rpl-lite_2rpl-timers_8c_source.html#l00549">rpl_timers_schedule_state_update()</a>.</p>
+<p>References <a class="el" href="rpl-lite_2rpl-icmp6_8c_source.html#l00154">rpl_icmp6_dis_output()</a>, <a class="el" href="rpl-types_8h_source.html#l00072">RPL_LIFETIME</a>, <a class="el" href="rpl-neighbor_8c_source.html#l00207">rpl_neighbor_get_ipaddr()</a>, and <a class="el" href="rpl-lite_2rpl-timers_8c_source.html#l00549">rpl_timers_schedule_state_update()</a>.</p>
 
 </div>
 </div>
@@ -619,20 +743,20 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 
 <p>Definition at line <a class="el" href="rpl-lite_2rpl-dag-root_8c_source.html#l00186">186</a> of file <a class="el" href="rpl-lite_2rpl-dag-root_8c_source.html">rpl-dag-root.c</a>.</p>
 
-<p>References <a class="el" href="rpl-classic_2rpl-dag_8c_source.html#l00619">rpl_get_default_instance()</a>.</p>
+<p>References <a class="el" href="rpl-types_8h_source.html#l00078">ROOT_RANK</a>, and <a class="el" href="rpl-classic_2rpl-dag_8c_source.html#l00619">rpl_get_default_instance()</a>.</p>
 
 <p>Referenced by <a class="el" href="rpl-lite_2rpl-dag_8c_source.html#l00082">rpl_dag_leave()</a>, <a class="el" href="rpl-lite_2rpl-dag_8c_source.html#l00231">rpl_dag_update_state()</a>, <a class="el" href="rpl-lite_2rpl-ext-header_8c_source.html#l00502">rpl_ext_header_update()</a>, <a class="el" href="rpl-lite_2rpl-dag_8c_source.html#l00172">rpl_global_repair()</a>, <a class="el" href="rpl-lite_2rpl-dag_8c_source.html#l00204">rpl_local_repair()</a>, <a class="el" href="rpl-neighbor_8c_source.html#l00346">rpl_neighbor_select_best()</a>, and <a class="el" href="rpl-lite_2rpl-dag_8c_source.html#l00546">rpl_process_dio()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ga7a6acbdda4488f3771a084a5c703fa81"></a>
+<a class="anchor" id="gad2718ea0486e7bfe884a5daf906fe221"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const char* rpl_dag_state_to_str </td>
+          <td class="memname">const char * rpl_dag_state_to_str </td>
           <td>(</td>
-          <td class="paramtype">enum rpl_dag_state&#160;</td>
+          <td class="paramtype">enum <a class="el" href="group__rpl-lite.html#gac7e013fe9d1e9082aa8aedde38a08955">rpl_dag_state</a>&#160;</td>
           <td class="paramname"><em>state</em></td><td>)</td>
           <td></td>
         </tr>
@@ -757,7 +881,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 
 <p>Definition at line <a class="el" href="rpl-lite_2rpl-ext-header_8c_source.html#l00502">502</a> of file <a class="el" href="rpl-lite_2rpl-ext-header_8c_source.html">rpl-ext-header.c</a>.</p>
 
-<p>References <a class="el" href="rpl-classic_2rpl-dag-root_8c_source.html#l00259">rpl_dag_root_is_root()</a>, <a class="el" href="rpl-classic_2rpl-ext-header_8c_source.html#l00591">rpl_ext_header_remove()</a>, <a class="el" href="uip-ds6_8c_source.html#l00074">uip_ds6_if</a>, <a class="el" href="uip-nd6_8c_source.html#l00096">UIP_IP_BUF</a>, <a class="el" href="uip_8h_source.html#l02014">uip_is_addr_linklocal</a>, and <a class="el" href="uip_8h_source.html#l02098">uip_is_addr_mcast</a>.</p>
+<p>References <a class="el" href="rpl-types_8h_source.html#l00078">ROOT_RANK</a>, <a class="el" href="rpl-classic_2rpl-dag-root_8c_source.html#l00259">rpl_dag_root_is_root()</a>, <a class="el" href="rpl-classic_2rpl-ext-header_8c_source.html#l00591">rpl_ext_header_remove()</a>, <a class="el" href="uip-ds6_8c_source.html#l00074">uip_ds6_if</a>, <a class="el" href="uip-nd6_8c_source.html#l00096">UIP_IP_BUF</a>, <a class="el" href="uip_8h_source.html#l02014">uip_is_addr_linklocal</a>, and <a class="el" href="uip_8h_source.html#l02098">uip_is_addr_mcast</a>.</p>
 
 </div>
 </div>
@@ -766,7 +890,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rpl_dag_t* rpl_get_any_dag </td>
+          <td class="memname"><a class="el" href="structrpl__dag.html">rpl_dag_t</a>* rpl_get_any_dag </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -787,7 +911,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rpl_instance_t* rpl_get_default_instance </td>
+          <td class="memname"><a class="el" href="structrpl__instance.html">rpl_instance_t</a>* rpl_get_default_instance </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -1198,12 +1322,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 
 </div>
 </div>
-<a class="anchor" id="ga82cbc22b01378ef30eef204dc88727db"></a>
+<a class="anchor" id="ga9f328e7d0b904c95547f70073c997b89"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rpl_nbr_t* rpl_neighbor_get_from_ipaddr </td>
+          <td class="memname"><a class="el" href="structrpl__nbr.html">rpl_nbr_t</a> * rpl_neighbor_get_from_ipaddr </td>
           <td>(</td>
           <td class="paramtype">uip_ipaddr_t *&#160;</td>
           <td class="paramname"><em>addr</em></td><td>)</td>
@@ -1225,12 +1349,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 
 </div>
 </div>
-<a class="anchor" id="gaea79cc87c534135169dd5f803db5989c"></a>
+<a class="anchor" id="ga046cdfb4e53460342b97672a6b695fa7"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rpl_nbr_t* rpl_neighbor_get_from_lladdr </td>
+          <td class="memname"><a class="el" href="structrpl__nbr.html">rpl_nbr_t</a> * rpl_neighbor_get_from_lladdr </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__uip.html#ga7583db18ab0411c60c4c1d6ce7bf9af4">uip_lladdr_t</a> *&#160;</td>
           <td class="paramname"><em>addr</em></td><td>)</td>
@@ -1254,14 +1378,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 
 </div>
 </div>
-<a class="anchor" id="ga39d8da804f13a79bbf87d623448e63d4"></a>
+<a class="anchor" id="gac8b82e4fc7bffd251854748b35503b57"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uip_ipaddr_t* rpl_neighbor_get_ipaddr </td>
+          <td class="memname">uip_ipaddr_t * rpl_neighbor_get_ipaddr </td>
           <td>(</td>
-          <td class="paramtype">rpl_nbr_t *&#160;</td>
+          <td class="paramtype"><a class="el" href="structrpl__nbr.html">rpl_nbr_t</a> *&#160;</td>
           <td class="paramname"><em>nbr</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1292,7 +1416,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
         <tr>
           <td class="memname">uint16_t rpl_neighbor_get_link_metric </td>
           <td>(</td>
-          <td class="paramtype">rpl_nbr_t *&#160;</td>
+          <td class="paramtype"><a class="el" href="structrpl__nbr.html">rpl_nbr_t</a> *&#160;</td>
           <td class="paramname"><em>nbr</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1314,14 +1438,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 
 </div>
 </div>
-<a class="anchor" id="ga1933d220b1a9c9b6d7da0dc1421096d3"></a>
+<a class="anchor" id="ga8fc3bd591c49d7e4a909568c3bdfb4b4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const struct link_stats* rpl_neighbor_get_link_stats </td>
+          <td class="memname">const struct link_stats * rpl_neighbor_get_link_stats </td>
           <td>(</td>
-          <td class="paramtype">rpl_nbr_t *&#160;</td>
+          <td class="paramtype"><a class="el" href="structrpl__nbr.html">rpl_nbr_t</a> *&#160;</td>
           <td class="paramname"><em>nbr</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1345,14 +1469,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 
 </div>
 </div>
-<a class="anchor" id="ga201b98452ff81a4b6ec9343b71270aac"></a>
+<a class="anchor" id="ga4d1244edd4b081898250ce9743803679"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const linkaddr_t* rpl_neighbor_get_lladdr </td>
+          <td class="memname">const linkaddr_t * rpl_neighbor_get_lladdr </td>
           <td>(</td>
-          <td class="paramtype">rpl_nbr_t *&#160;</td>
+          <td class="paramtype"><a class="el" href="structrpl__nbr.html">rpl_nbr_t</a> *&#160;</td>
           <td class="paramname"><em>nbr</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1381,7 +1505,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
         <tr>
           <td class="memname">int rpl_neighbor_is_acceptable_parent </td>
           <td>(</td>
-          <td class="paramtype">rpl_nbr_t *&#160;</td>
+          <td class="paramtype"><a class="el" href="structrpl__nbr.html">rpl_nbr_t</a> *&#160;</td>
           <td class="paramname"><em>nbr</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1410,7 +1534,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
         <tr>
           <td class="memname">int rpl_neighbor_is_fresh </td>
           <td>(</td>
-          <td class="paramtype">rpl_nbr_t *&#160;</td>
+          <td class="paramtype"><a class="el" href="structrpl__nbr.html">rpl_nbr_t</a> *&#160;</td>
           <td class="paramname"><em>nbr</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1441,7 +1565,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
         <tr>
           <td class="memname">int rpl_neighbor_is_parent </td>
           <td>(</td>
-          <td class="paramtype">rpl_nbr_t *&#160;</td>
+          <td class="paramtype"><a class="el" href="structrpl__nbr.html">rpl_nbr_t</a> *&#160;</td>
           <td class="paramname"><em>nbr</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1468,7 +1592,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
         <tr>
           <td class="memname">int rpl_neighbor_is_reachable </td>
           <td>(</td>
-          <td class="paramtype">rpl_nbr_t *&#160;</td>
+          <td class="paramtype"><a class="el" href="structrpl__nbr.html">rpl_nbr_t</a> *&#160;</td>
           <td class="paramname"><em>nbr</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1514,7 +1638,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 
 <p>Definition at line <a class="el" href="rpl-neighbor_8c_source.html#l00078">78</a> of file <a class="el" href="rpl-neighbor_8c_source.html">rpl-neighbor.c</a>.</p>
 
-<p>References <a class="el" href="clock_8h_source.html#l00082">CLOCK_SECOND</a>, <a class="el" href="cpu_2cc2538_2clock_8c_source.html#l00118">clock_time()</a>, <a class="el" href="uip-nd6_8c_source.html#l00114">nbr</a>, <a class="el" href="rpl-lite_2rpl-dag_8c_source.html#l00065">rpl_dag_state_to_str()</a>, <a class="el" href="rpl-lite_2rpl_8c_source.html#l00069">rpl_get_global_address()</a>, <a class="el" href="rpl-neighbor_8c_source.html#l00126">rpl_neighbor_count()</a>, <a class="el" href="rpl-neighbor_8c_source.html#l00207">rpl_neighbor_get_ipaddr()</a>, <a class="el" href="rpl-neighbor_8c_source.html#l00183">rpl_neighbor_get_link_metric()</a>, <a class="el" href="rpl-neighbor_8c_source.html#l00214">rpl_neighbor_get_link_stats()</a>, <a class="el" href="rpl-neighbor_8c_source.html#l00174">rpl_neighbor_is_acceptable_parent()</a>, and <a class="el" href="rpl-neighbor_8c_source.html#l00192">rpl_neighbor_rank_via_nbr()</a>.</p>
+<p>References <a class="el" href="clock_8h_source.html#l00082">CLOCK_SECOND</a>, <a class="el" href="cpu_2cc2538_2clock_8c_source.html#l00118">clock_time()</a>, <a class="el" href="uip-nd6_8c_source.html#l00114">nbr</a>, <a class="el" href="rpl-types_8h_source.html#l00078">ROOT_RANK</a>, <a class="el" href="rpl-lite_2rpl-dag_8c_source.html#l00065">rpl_dag_state_to_str()</a>, <a class="el" href="rpl-lite_2rpl_8c_source.html#l00069">rpl_get_global_address()</a>, <a class="el" href="rpl-neighbor_8c_source.html#l00126">rpl_neighbor_count()</a>, <a class="el" href="rpl-neighbor_8c_source.html#l00207">rpl_neighbor_get_ipaddr()</a>, <a class="el" href="rpl-neighbor_8c_source.html#l00183">rpl_neighbor_get_link_metric()</a>, <a class="el" href="rpl-neighbor_8c_source.html#l00214">rpl_neighbor_get_link_stats()</a>, <a class="el" href="rpl-neighbor_8c_source.html#l00174">rpl_neighbor_is_acceptable_parent()</a>, and <a class="el" href="rpl-neighbor_8c_source.html#l00192">rpl_neighbor_rank_via_nbr()</a>.</p>
 
 <p>Referenced by <a class="el" href="rpl-lite_2rpl-dag_8c_source.html#l00231">rpl_dag_update_state()</a>, and <a class="el" href="rpl-lite_2rpl-dag_8c_source.html#l00172">rpl_global_repair()</a>.</p>
 
@@ -1527,7 +1651,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
         <tr>
           <td class="memname">rpl_rank_t rpl_neighbor_rank_via_nbr </td>
           <td>(</td>
-          <td class="paramtype">rpl_nbr_t *&#160;</td>
+          <td class="paramtype"><a class="el" href="structrpl__nbr.html">rpl_nbr_t</a> *&#160;</td>
           <td class="paramname"><em>nbr</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1549,12 +1673,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 
 </div>
 </div>
-<a class="anchor" id="gad9a52ff68a6861446e58b6159463b21e"></a>
+<a class="anchor" id="gae79b9c8837d0ab8b24859b191e3b7756"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rpl_nbr_t* rpl_neighbor_select_best </td>
+          <td class="memname"><a class="el" href="structrpl__nbr.html">rpl_nbr_t</a> * rpl_neighbor_select_best </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -1568,7 +1692,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 
 <p>Definition at line <a class="el" href="rpl-neighbor_8c_source.html#l00346">346</a> of file <a class="el" href="rpl-neighbor_8c_source.html">rpl-neighbor.c</a>.</p>
 
-<p>References <a class="el" href="rpl-classic_2rpl-dag-root_8c_source.html#l00259">rpl_dag_root_is_root()</a>, <a class="el" href="rpl-neighbor_8c_source.html#l00207">rpl_neighbor_get_ipaddr()</a>, and <a class="el" href="rpl-neighbor_8c_source.html#l00221">rpl_neighbor_is_fresh()</a>.</p>
+<p>References <a class="el" href="rpl-classic_2rpl-dag-root_8c_source.html#l00259">rpl_dag_root_is_root()</a>, <a class="el" href="rpl-neighbor_8c_source.html#l00207">rpl_neighbor_get_ipaddr()</a>, <a class="el" href="rpl-neighbor_8c_source.html#l00221">rpl_neighbor_is_fresh()</a>, and <a class="el" href="group__rpl-lite.html#ga16833c4ffb7f93d5aacd5ff96886e52a">rpl_schedule_probing()</a>.</p>
 
 <p>Referenced by <a class="el" href="rpl-lite_2rpl-dag_8c_source.html#l00231">rpl_dag_update_state()</a>.</p>
 
@@ -1581,7 +1705,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
         <tr>
           <td class="memname">void rpl_neighbor_set_preferred_parent </td>
           <td>(</td>
-          <td class="paramtype">rpl_nbr_t *&#160;</td>
+          <td class="paramtype"><a class="el" href="structrpl__nbr.html">rpl_nbr_t</a> *&#160;</td>
           <td class="paramname"><em>nbr</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1933,7 +2057,42 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 
 <p>Definition at line <a class="el" href="rpl-lite_2rpl-dag_8c_source.html#l00579">579</a> of file <a class="el" href="rpl-lite_2rpl-dag_8c_source.html">rpl-dag.c</a>.</p>
 
-<p>References <a class="el" href="rpl-lite_2rpl-ns_8c_source.html#l00102">rpl_ns_expire_parent()</a>, and <a class="el" href="rpl-lite_2rpl-ns_8c_source.html#l00112">rpl_ns_update_node()</a>.</p>
+<p>References <a class="el" href="rpl-types_8h_source.html#l00072">RPL_LIFETIME</a>, <a class="el" href="rpl-lite_2rpl-ns_8c_source.html#l00102">rpl_ns_expire_parent()</a>, <a class="el" href="rpl-lite_2rpl-ns_8c_source.html#l00112">rpl_ns_update_node()</a>, and <a class="el" href="group__rpl-lite.html#gac0fc67dc797559f43491808cf8b84699">rpl_timers_schedule_dao_ack()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga1eb0b8ee10b8841eca1cee80ba6a0d2d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rpl_process_dao_ack </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>sequence</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>status</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Processes incoming DAO-ACK. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sequence</td><td>The DAO-ACK sequence number </td></tr>
+    <tr><td class="paramname">status</td><td>The DAO-ACK status (see RPL_DAO_ACK_* defines) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1972,7 +2131,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 
 <p>Definition at line <a class="el" href="rpl-lite_2rpl-dag_8c_source.html#l00546">546</a> of file <a class="el" href="rpl-lite_2rpl-dag_8c_source.html">rpl-dag.c</a>.</p>
 
-<p>References <a class="el" href="rpl-classic_2rpl-dag-root_8c_source.html#l00259">rpl_dag_root_is_root()</a>, and <a class="el" href="rpl-lite_2rpl-dag_8c_source.html#l00231">rpl_dag_update_state()</a>.</p>
+<p>References <a class="el" href="rpl-types_8h_source.html#l00078">ROOT_RANK</a>, <a class="el" href="rpl-classic_2rpl-dag-root_8c_source.html#l00259">rpl_dag_root_is_root()</a>, <a class="el" href="rpl-lite_2rpl-dag_8c_source.html#l00231">rpl_dag_update_state()</a>, and <a class="el" href="rpl-types_8h_source.html#l00072">RPL_LIFETIME</a>.</p>
 
 </div>
 </div>
@@ -2022,7 +2181,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
         <tr>
           <td class="memname">int rpl_process_hbh </td>
           <td>(</td>
-          <td class="paramtype">rpl_nbr_t *&#160;</td>
+          <td class="paramtype"><a class="el" href="structrpl__nbr.html">rpl_nbr_t</a> *&#160;</td>
           <td class="paramname"><em>sender</em>, </td>
         </tr>
         <tr>
@@ -2078,7 +2237,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
         <tr>
           <td class="memname">void rpl_reset_prefix </td>
           <td>(</td>
-          <td class="paramtype">rpl_prefix_t *&#160;</td>
+          <td class="paramtype"><a class="el" href="structrpl__prefix.html">rpl_prefix_t</a> *&#160;</td>
           <td class="paramname"><em>last_prefix</em></td><td>)</td>
           <td></td>
         </tr>
@@ -2108,7 +2267,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
         <tr>
           <td class="memname">int rpl_set_prefix </td>
           <td>(</td>
-          <td class="paramtype">rpl_prefix_t *&#160;</td>
+          <td class="paramtype"><a class="el" href="structrpl__prefix.html">rpl_prefix_t</a> *&#160;</td>
           <td class="paramname"><em>prefix</em></td><td>)</td>
           <td></td>
         </tr>
@@ -2237,7 +2396,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 31 2017 23:29:17 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 7 2017 12:06:27 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

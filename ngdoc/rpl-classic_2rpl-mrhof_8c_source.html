@@ -143,7 +143,7 @@
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;reset(rpl_dag_t *dag)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;reset(<a class="code" href="structrpl__dag.html">rpl_dag_t</a> *dag)</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;{</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  PRINTF(<span class="stringliteral">&quot;RPL: Reset MRHOF\n&quot;</span>);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
@@ -249,7 +249,7 @@
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="keyword">static</span> rpl_parent_t *</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;best_parent(rpl_parent_t *p1, rpl_parent_t *p2)</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;{</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  rpl_dag_t *dag;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  <a class="code" href="structrpl__dag.html">rpl_dag_t</a> *dag;</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  uint16_t p1_cost;</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  uint16_t p2_cost;</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  <span class="keywordtype">int</span> p1_is_acceptable;</div>
@@ -280,8 +280,8 @@
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  <span class="keywordflow">return</span> p1_cost &lt; p2_cost ? p1 : p2;</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;}</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="keyword">static</span> rpl_dag_t *</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;best_dag(rpl_dag_t *d1, rpl_dag_t *d2)</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="keyword">static</span> <a class="code" href="structrpl__dag.html">rpl_dag_t</a> *</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;best_dag(<a class="code" href="structrpl__dag.html">rpl_dag_t</a> *d1, <a class="code" href="structrpl__dag.html">rpl_dag_t</a> *d2)</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;{</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  <span class="keywordflow">if</span>(d1-&gt;grounded != d2-&gt;grounded) {</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordflow">return</span> d1-&gt;grounded ? d1 : d2;</div>
@@ -296,15 +296,15 @@
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="preprocessor">#if !RPL_WITH_MC</span></div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="preprocessor"></span><span class="keyword">static</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;update_metric_container(rpl_instance_t *instance)</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;update_metric_container(<a class="code" href="structrpl__instance.html">rpl_instance_t</a> *instance)</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;{</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  instance-&gt;mc.type = RPL_DAG_MC_NONE;</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;}</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="preprocessor">#else </span><span class="comment">/* RPL_WITH_MC */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="preprocessor"></span><span class="keyword">static</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;update_metric_container(rpl_instance_t *instance)</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;update_metric_container(<a class="code" href="structrpl__instance.html">rpl_instance_t</a> *instance)</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;{</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;  rpl_dag_t *dag;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;  <a class="code" href="structrpl__dag.html">rpl_dag_t</a> *dag;</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  uint16_t path_cost;</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;  uint8_t type;</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;</div>
@@ -314,7 +314,7 @@
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;  }</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  <span class="keywordflow">if</span>(dag-&gt;rank == ROOT_RANK(instance)) {</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  <span class="keywordflow">if</span>(dag-&gt;rank == <a class="code" href="group__rpl-lite.html#gae33bd529ba3bfc61e6068308b0482ee7">ROOT_RANK</a>(instance)) {</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="comment">/* Configure MC at root only, other nodes are auto-configured when joining */</span></div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    instance-&gt;mc.type = RPL_DAG_MC;</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    instance-&gt;mc.flags = 0;</div>
@@ -335,7 +335,7 @@
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;      <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordflow">case</span> RPL_DAG_MC_ENERGY:</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;      instance-&gt;mc.length = <span class="keyword">sizeof</span>(instance-&gt;mc.obj.energy);</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;      <span class="keywordflow">if</span>(dag-&gt;rank == ROOT_RANK(instance)) {</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;      <span class="keywordflow">if</span>(dag-&gt;rank == <a class="code" href="group__rpl-lite.html#gae33bd529ba3bfc61e6068308b0482ee7">ROOT_RANK</a>(instance)) {</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        type = RPL_DAG_MC_ENERGY_TYPE_MAINS;</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;      } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        type = RPL_DAG_MC_ENERGY_TYPE_BATTERY;</div>
@@ -351,7 +351,7 @@
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;}</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* RPL_WITH_MC */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;<span class="preprocessor"></span><span class="comment">/*---------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;rpl_of_t rpl_mrhof = {</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<a class="code" href="structrpl__of.html">rpl_of_t</a> rpl_mrhof = {</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;  reset,</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;<span class="preprocessor">#if RPL_WITH_DAO_ACK</span></div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="preprocessor"></span>  dao_ack_callback,</div>
@@ -367,12 +367,16 @@
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;};</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="comment">/** @}*/</span></div>
+<div class="ttc" id="structrpl__dag_html"><div class="ttname"><a href="structrpl__dag.html">rpl_dag</a></div><div class="ttdoc">RPL DAG structure. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-classic_2rpl_8h_source.html#l00135">rpl.h:135</a></div></div>
+<div class="ttc" id="structrpl__instance_html"><div class="ttname"><a href="structrpl__instance.html">rpl_instance</a></div><div class="ttdoc">RPL instance structure. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-classic_2rpl_8h_source.html#l00219">rpl.h:219</a></div></div>
+<div class="ttc" id="group__rpl-lite_html_gae33bd529ba3bfc61e6068308b0482ee7"><div class="ttname"><a href="group__rpl-lite.html#gae33bd529ba3bfc61e6068308b0482ee7">ROOT_RANK</a></div><div class="ttdeci">#define ROOT_RANK</div><div class="ttdoc">Rank of a root node. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-types_8h_source.html#l00078">rpl-types.h:78</a></div></div>
 <div class="ttc" id="uip-debug_8h_html"><div class="ttname"><a href="uip-debug_8h.html">uip-debug.h</a></div><div class="ttdoc">    A set of debugging macros for the IP stack </div></div>
+<div class="ttc" id="structrpl__of_html"><div class="ttname"><a href="structrpl__of.html">rpl_of</a></div><div class="ttdoc">API for RPL objective functions (OF) </div><div class="ttdef"><b>Definition:</b> <a href="rpl-classic_2rpl_8h_source.html#l00201">rpl.h:201</a></div></div>
 <div class="ttc" id="mac_8h_html_abe974f22edeef8189603ba75fd90ff3ca7289d883fcead5ad7d148f222a98381a"><div class="ttname"><a href="mac_8h.html#abe974f22edeef8189603ba75fd90ff3ca7289d883fcead5ad7d148f222a98381a">MAC_TX_OK</a></div><div class="ttdoc">The MAC layer transmission was OK. </div><div class="ttdef"><b>Definition:</b> <a href="mac_8h_source.html#l00076">mac.h:76</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 31 2017 23:29:03 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 7 2017 12:06:20 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

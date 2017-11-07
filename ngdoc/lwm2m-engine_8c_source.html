@@ -241,7 +241,7 @@
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="preprocessor">#if UIP_CONF_IPV6_RPL</span></div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="preprocessor"></span>  {</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    rpl_dag_t *dag;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <a class="code" href="structrpl__dag.html">rpl_dag_t</a> *dag;</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="comment">/* Use the DAG id as server address if no other has been specified */</span></div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    dag = <a class="code" href="group__uip.html#ga8976e165e3a5b6410b68a81c2cdadc68">rpl_get_any_dag</a>();</div>
@@ -283,7 +283,7 @@
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="preprocessor">#if UIP_CONF_IPV6_RPL</span></div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="preprocessor"></span>  {</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    rpl_dag_t *dag;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <a class="code" href="structrpl__dag.html">rpl_dag_t</a> *dag;</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="comment">/* Use the DAG id as server address if no other has been specified */</span></div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    dag = <a class="code" href="group__uip.html#ga8976e165e3a5b6410b68a81c2cdadc68">rpl_get_any_dag</a>();</div>
@@ -1182,6 +1182,7 @@
 <div class="ttc" id="uip-nd6_8c_html_a4e1a84fd63a1c24d54501f93d9bc5757"><div class="ttname"><a href="uip-nd6_8c.html#a4e1a84fd63a1c24d54501f93d9bc5757">ipaddr</a></div><div class="ttdeci">static uip_ipaddr_t ipaddr</div><div class="ttdoc">Pointer to prefix information option in uip_buf. </div><div class="ttdef"><b>Definition:</b> <a href="uip-nd6_8c_source.html#l00124">uip-nd6.c:124</a></div></div>
 <div class="ttc" id="lwm2m-object_8h_html"><div class="ttname"><a href="lwm2m-object_8h.html">lwm2m-object.h</a></div><div class="ttdoc">    Header file for the Contiki OMA LWM2M object API  </div></div>
 <div class="ttc" id="group__process_html_ga27e9b6fc13f0438e37a198f69b38b4cf"><div class="ttname"><a href="group__process.html#ga27e9b6fc13f0438e37a198f69b38b4cf">PROCESS</a></div><div class="ttdeci">#define PROCESS(name, strname)</div><div class="ttdoc">Declare a process. </div><div class="ttdef"><b>Definition:</b> <a href="process_8h_source.html#l00307">process.h:307</a></div></div>
+<div class="ttc" id="structrpl__dag_html"><div class="ttname"><a href="structrpl__dag.html">rpl_dag</a></div><div class="ttdoc">RPL DAG structure. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-classic_2rpl_8h_source.html#l00135">rpl.h:135</a></div></div>
 <div class="ttc" id="group__process_html_ga496ba132ce7a2ec12a8313dc05ab0142"><div class="ttname"><a href="group__process.html#ga496ba132ce7a2ec12a8313dc05ab0142">process_poll</a></div><div class="ttdeci">void process_poll(struct process *p)</div><div class="ttdoc">Request a process to be polled. </div><div class="ttdef"><b>Definition:</b> <a href="process_8c_source.html#l00371">process.c:371</a></div></div>
 <div class="ttc" id="uip-nd6_8c_html_a9a7cf6986d952290ec159e9a084003ff"><div class="ttname"><a href="uip-nd6_8c.html#a9a7cf6986d952290ec159e9a084003ff">addr</a></div><div class="ttdeci">static uip_ds6_addr_t * addr</div><div class="ttdoc">Pointer to a nbr cache entry. </div><div class="ttdef"><b>Definition:</b> <a href="uip-nd6_8c_source.html#l00115">uip-nd6.c:115</a></div></div>
 <div class="ttc" id="group__process_html_ga8efc62947f2ca2c870f52896e0dc1a81"><div class="ttname"><a href="group__process.html#ga8efc62947f2ca2c870f52896e0dc1a81">PROCESS_BEGIN</a></div><div class="ttdeci">#define PROCESS_BEGIN()</div><div class="ttdoc">Define the beginning of a process. </div><div class="ttdef"><b>Definition:</b> <a href="process_8h_source.html#l00120">process.h:120</a></div></div>
@@ -1226,7 +1227,7 @@
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 31 2017 23:29:04 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 7 2017 12:06:21 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

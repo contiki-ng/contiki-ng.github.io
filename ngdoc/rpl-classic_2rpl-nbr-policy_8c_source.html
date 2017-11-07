@@ -242,7 +242,7 @@
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="keyword">const</span> linkaddr_t *</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;find_removable_dio(uip_ipaddr_t *from, rpl_dio_t *dio)</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;{</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  rpl_instance_t *instance;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  <a class="code" href="structrpl__instance.html">rpl_instance_t</a> *instance;</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  update_nbr();</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
@@ -267,14 +267,14 @@
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;}</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="keyword">const</span> linkaddr_t *</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;find_removable_dao(uip_ipaddr_t *from, rpl_instance_t *instance)</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;find_removable_dao(uip_ipaddr_t *from, <a class="code" href="structrpl__instance.html">rpl_instance_t</a> *instance)</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;{</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  <span class="keywordtype">int</span> max = MAX_CHILDREN;</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  update_nbr();</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  <span class="keywordflow">if</span>(instance != NULL) {</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="comment">/* No need to reserve space for parents for RPL ROOT */</span></div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keywordflow">if</span>(instance-&gt;current_dag-&gt;rank == ROOT_RANK(instance)) {</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keywordflow">if</span>(instance-&gt;current_dag-&gt;rank == <a class="code" href="group__rpl-lite.html#gae33bd529ba3bfc61e6068308b0482ee7">ROOT_RANK</a>(instance)) {</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;      max = NBR_TABLE_MAX_NEIGHBORS;</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    }</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  }</div>
@@ -309,6 +309,8 @@
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="comment">/** @}*/</span></div>
 <div class="ttc" id="group__uip_html_gaf966537cf73ee5973da59bba6b21b731"><div class="ttname"><a href="group__uip.html#gaf966537cf73ee5973da59bba6b21b731">UIP_IP_BUF</a></div><div class="ttdeci">#define UIP_IP_BUF</div><div class="ttdoc">Pointer to IP header. </div><div class="ttdef"><b>Definition:</b> <a href="uip-nd6_8c_source.html#l00096">uip-nd6.c:96</a></div></div>
 <div class="ttc" id="uip-nd6_8c_html_a0469af3fec6ddbe5fb60093767575e44"><div class="ttname"><a href="uip-nd6_8c.html#a0469af3fec6ddbe5fb60093767575e44">nbr</a></div><div class="ttdeci">static uip_ds6_nbr_t * nbr</div><div class="ttdoc">Pointer to llao option in uip_buf. </div><div class="ttdef"><b>Definition:</b> <a href="uip-nd6_8c_source.html#l00114">uip-nd6.c:114</a></div></div>
+<div class="ttc" id="structrpl__instance_html"><div class="ttname"><a href="structrpl__instance.html">rpl_instance</a></div><div class="ttdoc">RPL instance structure. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-classic_2rpl_8h_source.html#l00219">rpl.h:219</a></div></div>
+<div class="ttc" id="group__rpl-lite_html_gae33bd529ba3bfc61e6068308b0482ee7"><div class="ttname"><a href="group__rpl-lite.html#gae33bd529ba3bfc61e6068308b0482ee7">ROOT_RANK</a></div><div class="ttdeci">#define ROOT_RANK</div><div class="ttdoc">Rank of a root node. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-types_8h_source.html#l00078">rpl-types.h:78</a></div></div>
 <div class="ttc" id="uip-ds6-nbr_8h_html"><div class="ttname"><a href="uip-ds6-nbr_8h.html">uip-ds6-nbr.h</a></div><div class="ttdoc">IPv6 Neighbor cache (link-layer/IPv6 address mapping) </div></div>
 <div class="ttc" id="structuip__802154__longaddr_html"><div class="ttname"><a href="structuip__802154__longaddr.html">uip_802154_longaddr</a></div><div class="ttdoc">64 bit 802.15.4 address </div><div class="ttdef"><b>Definition:</b> <a href="uip_8h_source.html#l00115">uip.h:115</a></div></div>
 <div class="ttc" id="uip-debug_8h_html"><div class="ttname"><a href="uip-debug_8h.html">uip-debug.h</a></div><div class="ttdoc">    A set of debugging macros for the IP stack </div></div>
@@ -320,7 +322,7 @@
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 31 2017 23:29:03 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 7 2017 12:06:20 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

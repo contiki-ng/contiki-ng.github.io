@@ -96,43 +96,43 @@
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;contiki.h&quot;</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;contiki-net.h&quot;</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="platform_8h.html">sys/platform.h</a>&quot;</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &quot;dev/watchdog.h&quot;</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#if BUILD_WITH_ORCHESTRA</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="orchestra_8h.html">os/services/orchestra/orchestra.h</a>&quot;</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* BUILD_WITH_ORCHESTRA */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#if BUILD_WITH_SHELL</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="serial-shell_8h.html">os/services/shell/serial-shell.h</a>&quot;</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* BUILD_WITH_SHELL */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">/* Log configuration */</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="log_8h.html">sys/log.h</a>&quot;</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#define LOG_MODULE &quot;Main&quot;</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define LOG_LEVEL LOG_LEVEL_MAIN</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor"></span><span class="comment">/*---------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keywordtype">int</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#if PLATFORM_MAIN_ACCEPTS_ARGS</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor"></span>main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv)</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <a class="code" href="group__native__platform.html#gab5f8db3bcbaff01421dc630b9d2779ad">platform_process_args</a>(argc, argv);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor"></span>main(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor"></span>  <a class="code" href="group__cc2538dk.html#ga6719b0d352559b922f36d15452886f33">platform_init_stage_one</a>();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <a class="code" href="group__cc2538-clock.html#ga78ab77b57cf2e00089f0a3a22508524c">clock_init</a>();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="group__rt.html#ga655b7809b449b92eb2579db5f5c10e78">rtimer_init</a>();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <a class="code" href="group__process.html#gaab238b68c176e90138159f41af9133f1">process_init</a>();</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <a class="code" href="group__process.html#gab353be0ee7b9c98f4599b21371f3b17b">process_start</a>(&amp;etimer_process, NULL);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="group__ctimer.html#ga0b183fdc4a1b4be0630a29dfe4fbf3a2">ctimer_init</a>();</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="group__cc2538-wdt.html#gad3e3f89e8fb1ad9489dc281c05335f5f">watchdog_init</a>();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  energest_init();</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  ENERGEST_ON(ENERGEST_TYPE_CPU);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="energest_8h.html">sys/energest.h</a>&quot;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &quot;dev/watchdog.h&quot;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#if BUILD_WITH_ORCHESTRA</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="orchestra_8h.html">os/services/orchestra/orchestra.h</a>&quot;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* BUILD_WITH_ORCHESTRA */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#if BUILD_WITH_SHELL</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="serial-shell_8h.html">os/services/shell/serial-shell.h</a>&quot;</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* BUILD_WITH_SHELL */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">/* Log configuration */</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="log_8h.html">sys/log.h</a>&quot;</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#define LOG_MODULE &quot;Main&quot;</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define LOG_LEVEL LOG_LEVEL_MAIN</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor"></span><span class="comment">/*---------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keywordtype">int</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#if PLATFORM_MAIN_ACCEPTS_ARGS</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor"></span>main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <a class="code" href="group__native__platform.html#gab5f8db3bcbaff01421dc630b9d2779ad">platform_process_args</a>(argc, argv);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor"></span>main(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor"></span>  <a class="code" href="group__cc2538dk.html#ga6719b0d352559b922f36d15452886f33">platform_init_stage_one</a>();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="group__cc2538-clock.html#ga78ab77b57cf2e00089f0a3a22508524c">clock_init</a>();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <a class="code" href="group__rt.html#ga655b7809b449b92eb2579db5f5c10e78">rtimer_init</a>();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <a class="code" href="group__process.html#gaab238b68c176e90138159f41af9133f1">process_init</a>();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="group__process.html#gab353be0ee7b9c98f4599b21371f3b17b">process_start</a>(&amp;etimer_process, NULL);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="group__ctimer.html#ga0b183fdc4a1b4be0630a29dfe4fbf3a2">ctimer_init</a>();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="group__cc2538-wdt.html#gad3e3f89e8fb1ad9489dc281c05335f5f">watchdog_init</a>();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  energest_init();</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <a class="code" href="group__cc2538dk.html#gaab1b4c3f4dccd0c98c889c54c157470e">platform_init_stage_two</a>();</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
@@ -198,7 +198,8 @@
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment"> * @}</span></div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment"> */</span></div>
-<div class="ttc" id="group__main_html_ga87eb4448b64a5525609704ed1f835644"><div class="ttname"><a href="group__main.html#ga87eb4448b64a5525609704ed1f835644">platform_main_loop</a></div><div class="ttdeci">void platform_main_loop(void)</div><div class="ttdoc">The platform&#39;s main loop, if provided. </div><div class="ttdef"><b>Definition:</b> <a href="jn516x_2platform_8c_source.html#l00318">platform.c:318</a></div></div>
+<div class="ttc" id="energest_8h_html"><div class="ttname"><a href="energest_8h.html">energest.h</a></div><div class="ttdoc">    Header file for the energy estimation mechanism  </div></div>
+<div class="ttc" id="group__main_html_ga87eb4448b64a5525609704ed1f835644"><div class="ttname"><a href="group__main.html#ga87eb4448b64a5525609704ed1f835644">platform_main_loop</a></div><div class="ttdeci">void platform_main_loop(void)</div><div class="ttdoc">The platform&#39;s main loop, if provided. </div><div class="ttdef"><b>Definition:</b> <a href="jn516x_2platform_8c_source.html#l00319">platform.c:319</a></div></div>
 <div class="ttc" id="group__cc2538dk_html_gaab1b4c3f4dccd0c98c889c54c157470e"><div class="ttname"><a href="group__cc2538dk.html#gaab1b4c3f4dccd0c98c889c54c157470e">platform_init_stage_two</a></div><div class="ttdeci">void platform_init_stage_two()</div><div class="ttdoc">Stage 2 of platform driver initialisation. </div><div class="ttdef"><b>Definition:</b> <a href="cc2538dk_2platform_8c_source.html#l00125">platform.c:125</a></div></div>
 <div class="ttc" id="group__cc2538dk_html_gaa98c41aae3b9a3380ba78a48eb5c7583"><div class="ttname"><a href="group__cc2538dk.html#gaa98c41aae3b9a3380ba78a48eb5c7583">platform_idle</a></div><div class="ttdeci">void platform_idle()</div><div class="ttdoc">The platform&#39;s idle/sleep function. </div><div class="ttdef"><b>Definition:</b> <a href="cc2538dk_2platform_8c_source.html#l00184">platform.c:184</a></div></div>
 <div class="ttc" id="group__ctimer_html_ga0b183fdc4a1b4be0630a29dfe4fbf3a2"><div class="ttname"><a href="group__ctimer.html#ga0b183fdc4a1b4be0630a29dfe4fbf3a2">ctimer_init</a></div><div class="ttdeci">void ctimer_init(void)</div><div class="ttdoc">Initialize the callback timer library. </div><div class="ttdef"><b>Definition:</b> <a href="ctimer_8c_source.html#l00091">ctimer.c:91</a></div></div>
@@ -224,7 +225,7 @@
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 31 2017 23:28:56 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 7 2017 12:06:18 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

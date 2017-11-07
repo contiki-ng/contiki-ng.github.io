@@ -3218,7 +3218,7 @@
             <LI><OBJECT type="text/sitemap"><param name="Name" value="debug-uart.h"><param name="Local" value="cpu_2cc26xx-cc13xx_2debug-uart_8h.html"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="slip-arch.c"><param name="Local" value="cpu_2cc26xx-cc13xx_2slip-arch_8c.html"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="dbg_send_bytes"><param name="Local" value="group__cc26xx-char-io.html#gadef70a241af7bc73aee9abd1783a8dc8"><param name="ImageNumber" value="11"></OBJECT>
-            <LI><OBJECT type="text/sitemap"><param name="Name" value="slip_arch_init"><param name="Local" value="group__cc26xx-char-io.html#ga9968f75d6fd206d47a813fdda9b687bc"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="slip_arch_init"><param name="Local" value="group__cc26xx-char-io.html#ga491aba145ad36e9a744df92694943fb0"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="slip_arch_writeb"><param name="Local" value="group__cc26xx-char-io.html#ga0bdfcf5778cecf50bf206d976438e8d9"><param name="ImageNumber" value="11"></OBJECT>
             </UL>
           <LI><OBJECT type="text/sitemap"><param name="Name" value="CC13xx/CC26xx GPIO interrupt handling"><param name="ImageNumber" value="1"></OBJECT>
@@ -3333,7 +3333,6 @@
             <UL>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="cc26xx-uart.c"><param name="Local" value="cc26xx-uart_8c.html"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="cc26xx-uart.h"><param name="Local" value="cc26xx-uart_8h.html"><param name="ImageNumber" value="11"></OBJECT>
-            <LI><OBJECT type="text/sitemap"><param name="Name" value="uart1.h"><param name="Local" value="cpu_2cc26xx-cc13xx_2dev_2uart1_8h.html"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="cc26xx_uart_busy"><param name="Local" value="group__cc26xx-uart.html#gaa7db9cce08888fb64dba7df542701774"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="cc26xx_uart_init"><param name="Local" value="group__cc26xx-uart.html#ga06757a39647f656a282b61ef6b074172"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="cc26xx_uart_set_input"><param name="Local" value="group__cc26xx-uart.html#ga6fc60e0d4fb048cbc8fe35a93e198481"><param name="ImageNumber" value="11"></OBJECT>
@@ -3850,7 +3849,7 @@
             <LI><OBJECT type="text/sitemap"><param name="Name" value="debug-uart.h"><param name="Local" value="cpu_2cc2538_2debug-uart_8h.html"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="slip-arch.c"><param name="Local" value="cpu_2cc2538_2slip-arch_8c.html"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="dbg_flush"><param name="Local" value="group__cc2538-char-io.html#ga44a409a0430e174a85a70107c5abd43d"><param name="ImageNumber" value="11"></OBJECT>
-            <LI><OBJECT type="text/sitemap"><param name="Name" value="slip_arch_init"><param name="Local" value="group__cc2538-char-io.html#ga9968f75d6fd206d47a813fdda9b687bc"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="slip_arch_init"><param name="Local" value="group__cc2538-char-io.html#ga491aba145ad36e9a744df92694943fb0"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="slip_arch_writeb"><param name="Local" value="group__cc2538-char-io.html#ga0bdfcf5778cecf50bf206d976438e8d9"><param name="ImageNumber" value="11"></OBJECT>
             </UL>
           <LI><OBJECT type="text/sitemap"><param name="Name" value="cc2538 Clock"><param name="ImageNumber" value="1"></OBJECT>
@@ -5167,7 +5166,6 @@
             <UL>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="uart.c"><param name="Local" value="uart_8c.html"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="uart.h"><param name="Local" value="uart_8h.html"><param name="ImageNumber" value="11"></OBJECT>
-            <LI><OBJECT type="text/sitemap"><param name="Name" value="uart1.h"><param name="Local" value="cpu_2cc2538_2dev_2uart1_8h.html"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="UART_CC"><param name="Local" value="group__cc2538-uart.html#ga1e4c27089086827b7e26cb8232f562bd"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="UART_CC_CS"><param name="Local" value="group__cc2538-uart.html#ga0842b9fdf1aad6b969e7822e64844319"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="UART_CTL"><param name="Local" value="group__cc2538-uart.html#ga38a0228dc300e7cd6337f0083ea65c9c"><param name="ImageNumber" value="11"></OBJECT>
@@ -6639,9 +6637,12 @@
         </UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="RPL-lite"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-conf.h"><param name="Local" value="rpl-lite_2rpl-conf_8h.html"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-const.h"><param name="Local" value="rpl-const_8h.html"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-dag-root.c"><param name="Local" value="rpl-lite_2rpl-dag-root_8c.html"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-dag-root.h"><param name="Local" value="rpl-lite_2rpl-dag-root_8h.html"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-dag.c"><param name="Local" value="rpl-lite_2rpl-dag_8c.html"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-dag.h"><param name="Local" value="rpl-dag_8h.html"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-ext-header.c"><param name="Local" value="rpl-lite_2rpl-ext-header_8c.html"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-ext-header.h"><param name="Local" value="rpl-ext-header_8h.html"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-icmp6.c"><param name="Local" value="rpl-lite_2rpl-icmp6_8c.html"><param name="ImageNumber" value="11"></OBJECT>
@@ -6649,13 +6650,45 @@
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-mrhof.c"><param name="Local" value="rpl-lite_2rpl-mrhof_8c.html"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-nbr-policy.c"><param name="Local" value="rpl-lite_2rpl-nbr-policy_8c.html"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-neighbor.c"><param name="Local" value="rpl-neighbor_8c.html"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-neighbor.h"><param name="Local" value="rpl-neighbor_8h.html"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-ns.c"><param name="Local" value="rpl-lite_2rpl-ns_8c.html"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-ns.h"><param name="Local" value="rpl-lite_2rpl-ns_8h.html"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-of0.c"><param name="Local" value="rpl-lite_2rpl-of0_8c.html"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-timers.c"><param name="Local" value="rpl-lite_2rpl-timers_8c.html"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-timers.h"><param name="Local" value="rpl-timers_8h.html"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-types.h"><param name="Local" value="rpl-types_8h.html"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl.c"><param name="Local" value="rpl-lite_2rpl_8c.html"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_metric_object_energy"><param name="ImageNumber" value="1"></OBJECT>
+          <UL>
+          </UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_metric_container"><param name="ImageNumber" value="1"></OBJECT>
+          <UL>
+          </UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_prefix"><param name="ImageNumber" value="1"></OBJECT>
+          <UL>
+          </UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_nbr"><param name="ImageNumber" value="1"></OBJECT>
+          <UL>
+          </UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_of"><param name="ImageNumber" value="1"></OBJECT>
+          <UL>
+          </UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag"><param name="ImageNumber" value="1"></OBJECT>
+          <UL>
+          </UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_instance"><param name="ImageNumber" value="1"></OBJECT>
+          <UL>
+          </UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="DAG_RANK"><param name="Local" value="group__rpl-lite.html#ga942c01e927b32169271dd344007ac928"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="ROOT_RANK"><param name="Local" value="group__rpl-lite.html#gae33bd529ba3bfc61e6068308b0482ee7"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="RPL_LIFETIME"><param name="Local" value="group__rpl-lite.html#ga83e5484decd181443ba0c98ceb4e9196"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="uip_create_linklocal_rplnodes_mcast"><param name="Local" value="group__rpl-lite.html#ga0072bf95228f953c66afec4447c9c412"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="uip_is_addr_linklocal_rplnodes_mcast"><param name="Local" value="group__rpl-lite.html#ga405c374bc89ef38047eb083f45a7780f"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_state"><param name="ImageNumber" value="1"></OBJECT>
+          <UL>
+          </UL>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_init"><param name="Local" value="group__rpl-lite.html#ga8e8d465b518552aa7f8b868df515dd31"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_init_root"><param name="Local" value="group__rpl-lite.html#gac626c8c88fef0298b9c1f35c54ee49da"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_init_root"><param name="Local" value="group__rpl-lite.html#ga715fec352c9cb2e6de3f85da84c2fbf2"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_leave"><param name="Local" value="group__rpl-lite.html#gad4d3bc7b5fa6bdb68c43a2de52ed62f3"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_periodic"><param name="Local" value="group__rpl-lite.html#ga5f815b8e9f6b500a4675ce5b81f94228"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_poison_and_leave"><param name="Local" value="group__rpl-lite.html#ga9b09ef3349ded5020c88bca8e167911b"><param name="ImageNumber" value="11"></OBJECT>
@@ -6664,7 +6697,7 @@
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_root_init_dag_delay"><param name="Local" value="group__rpl-lite.html#ga082fb4f83458a342dee0574517f4afd3"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_root_init_dag_immediately"><param name="Local" value="group__rpl-lite.html#gabfe7c885006c584758d98ad86dee58f1"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_root_is_root"><param name="Local" value="group__rpl-lite.html#ga3df0553a34de69d88691ef128ad55097"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_state_to_str"><param name="Local" value="group__rpl-lite.html#ga7a6acbdda4488f3771a084a5c703fa81"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_state_to_str"><param name="Local" value="group__rpl-lite.html#gad2718ea0486e7bfe884a5daf906fe221"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_update_state"><param name="Local" value="group__rpl-lite.html#ga57e069677f6ea78554d70243d6b3d263"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_ext_header_hbh_update"><param name="Local" value="group__rpl-lite.html#gada748afd301c6623a881930ab4b394a1"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_ext_header_remove"><param name="Local" value="group__rpl-lite.html#ga3b960496af730debd115a9cfdb3ead91"><param name="ImageNumber" value="11"></OBJECT>
@@ -6688,12 +6721,12 @@
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_local_repair"><param name="Local" value="group__rpl-lite.html#gae27b569c835024a9e461ae3912c70778"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_lollipop_greater_than"><param name="Local" value="group__rpl-lite.html#ga3bb0d38b1f525e6795820f835632fdf9"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_count"><param name="Local" value="group__rpl-lite.html#gafce2df2d30554b43660d98f41f1a130e"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_get_from_ipaddr"><param name="Local" value="group__rpl-lite.html#ga82cbc22b01378ef30eef204dc88727db"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_get_from_lladdr"><param name="Local" value="group__rpl-lite.html#gaea79cc87c534135169dd5f803db5989c"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_get_ipaddr"><param name="Local" value="group__rpl-lite.html#ga39d8da804f13a79bbf87d623448e63d4"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_get_from_ipaddr"><param name="Local" value="group__rpl-lite.html#ga9f328e7d0b904c95547f70073c997b89"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_get_from_lladdr"><param name="Local" value="group__rpl-lite.html#ga046cdfb4e53460342b97672a6b695fa7"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_get_ipaddr"><param name="Local" value="group__rpl-lite.html#gac8b82e4fc7bffd251854748b35503b57"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_get_link_metric"><param name="Local" value="group__rpl-lite.html#ga43c22bfe34694fd82bfa676a26d242ef"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_get_link_stats"><param name="Local" value="group__rpl-lite.html#ga1933d220b1a9c9b6d7da0dc1421096d3"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_get_lladdr"><param name="Local" value="group__rpl-lite.html#ga201b98452ff81a4b6ec9343b71270aac"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_get_link_stats"><param name="Local" value="group__rpl-lite.html#ga8fc3bd591c49d7e4a909568c3bdfb4b4"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_get_lladdr"><param name="Local" value="group__rpl-lite.html#ga4d1244edd4b081898250ce9743803679"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_init"><param name="Local" value="group__rpl-lite.html#ga0378846b62008f835fecfa61226cd906"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_is_acceptable_parent"><param name="Local" value="group__rpl-lite.html#gaf2ddc7fabc692b9d8bd7e9ebfa43bc8a"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_is_fresh"><param name="Local" value="group__rpl-lite.html#ga4e9982f7fb544e9bc582814828769861"><param name="ImageNumber" value="11"></OBJECT>
@@ -6702,7 +6735,7 @@
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_print_list"><param name="Local" value="group__rpl-lite.html#gae3e7fe43195d08da4c5ae5585791729a"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_rank_via_nbr"><param name="Local" value="group__rpl-lite.html#ga1b6dc3b4a4f57f621347e505c3aa2e81"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_remove_all"><param name="Local" value="group__rpl-lite.html#ga46c892cc449cd258a02f7eac8bad18b8"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_select_best"><param name="Local" value="group__rpl-lite.html#gad9a52ff68a6861446e58b6159463b21e"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_select_best"><param name="Local" value="group__rpl-lite.html#gae79b9c8837d0ab8b24859b191e3b7756"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_set_preferred_parent"><param name="Local" value="group__rpl-lite.html#gac05fe65242c2d0a89dede401442074bb"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_ns_expire_parent"><param name="Local" value="group__rpl-lite.html#ga65cf975f46d6216c2492ef4a3dd9e9a8"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_ns_free_all"><param name="Local" value="group__rpl-lite.html#ga4bc4b10bd5894a0f404a85442117c0d3"><param name="ImageNumber" value="11"></OBJECT>
@@ -6716,15 +6749,18 @@
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_ns_periodic"><param name="Local" value="group__rpl-lite.html#ga92b72d7498a39fae7a7382647722e61d"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_ns_update_node"><param name="Local" value="group__rpl-lite.html#gabf20db7c44bd94065a0e3de871fb3274"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_process_dao"><param name="Local" value="group__rpl-lite.html#gab2ea55dae5cd99c6d1305fdf526f2fe0"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_process_dao_ack"><param name="Local" value="group__rpl-lite.html#ga1eb0b8ee10b8841eca1cee80ba6a0d2d"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_process_dio"><param name="Local" value="group__rpl-lite.html#gab8521c4e508ce92f41dc21588fe53d3d"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_process_dis"><param name="Local" value="group__rpl-lite.html#ga95fdf47cfb0500dd67bd4a6c5fd28afe"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_process_hbh"><param name="Local" value="group__rpl-lite.html#gad24ac3a37d82f71a45758d14a3ddc131"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_reset_prefix"><param name="Local" value="group__rpl-lite.html#ga7f438615b8a459e2ba7ae61db8d41443"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_schedule_probing"><param name="Local" value="group__rpl-lite.html#ga16833c4ffb7f93d5aacd5ff96886e52a"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_set_prefix"><param name="Local" value="group__rpl-lite.html#ga1bb22bed04b727b54e0b07b8a99dc0f2"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_set_prefix_from_addr"><param name="Local" value="group__rpl-lite.html#ga8a02637dfd57cfeaa4ca754858fd3c5e"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_timers_dio_reset"><param name="Local" value="group__rpl-lite.html#ga92a5a1b168aa55c3c3b35ce590f3931f"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_timers_init"><param name="Local" value="group__rpl-lite.html#ga9c2e99d6b699d4058d600d9b7018c6c7"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_timers_schedule_dao"><param name="Local" value="group__rpl-lite.html#ga837202e5a0a412abf6a5f1c01825d3f4"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_timers_schedule_dao_ack"><param name="Local" value="group__rpl-lite.html#gac0fc67dc797559f43491808cf8b84699"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_timers_schedule_leaving"><param name="Local" value="group__rpl-lite.html#ga85812ae2d8481dc5130ebe84e512a8aa"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_timers_schedule_periodic_dis"><param name="Local" value="group__rpl-lite.html#gae640bfa4cf7a246a150956a1c1691519"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_timers_schedule_state_update"><param name="Local" value="group__rpl-lite.html#gafdd6edb1b76922e31cf60b2ee5eebded"><param name="ImageNumber" value="11"></OBJECT>
@@ -7373,13 +7409,10 @@
         <LI><OBJECT type="text/sitemap"><param name="Name" value="get_match_length"><param name="Local" value="group__uip.html#ga1df687bf878d4a950e2925140e092314"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_init"><param name="Local" value="group__uip.html#ga8e8d465b518552aa7f8b868df515dd31"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_ext_header_remove"><param name="Local" value="group__uip.html#ga3b960496af730debd115a9cfdb3ead91"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_get_any_dag"><param name="Local" value="group__uip.html#ga8976e165e3a5b6410b68a81c2cdadc68"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_get_default_instance"><param name="Local" value="group__uip.html#ga8173f5da900f946a8de35b4dd701ce44"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_get_mode"><param name="Local" value="group__uip.html#gaa2d8fdf0f0b093df9df9c9aa5adab636"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_has_downward_route"><param name="Local" value="group__uip.html#ga0a3d30c204925e9ee67ece7cd34299fc"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_init"><param name="Local" value="group__uip.html#ga494f643ec9bdf344cdabef720ba413a4"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_link_callback"><param name="Local" value="group__uip.html#gaea69c58737efa5a5df40ce91c21c1384"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_process_dio"><param name="Local" value="group__uip.html#gab8521c4e508ce92f41dc21588fe53d3d"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_set_mode"><param name="Local" value="group__uip.html#ga1ec074e574f5dd73485b4b6a12a13480"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="uip_add32"><param name="Local" value="group__uip.html#ga5a380cbebc834ec7aea86f6cfff7f19e"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="uip_chksum"><param name="Local" value="group__uip.html#gad9827a2bf893ba21b373eb2ea36ad688"><param name="ImageNumber" value="11"></OBJECT>
@@ -8088,6 +8121,27 @@
       <LI><OBJECT type="text/sitemap"><param name="Name" value="icmp_bad"><param name="Local" value="structroll__tm__stats.html#a6c19afaca07b2f0680ae01609b59ee3f"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="icmp_in"><param name="Local" value="structroll__tm__stats.html#a07ddc255be141da29a31f444c4dec0db"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="icmp_out"><param name="Local" value="structroll__tm__stats.html#a26679485a3491d4b59bcfec6de7e3c7e"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_instance"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_metric_container"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_metric_object_energy"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_nbr"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_of"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_prefix"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
       </UL>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="rtimer"><param name="ImageNumber" value="1"></OBJECT>
       <UL>
@@ -12826,9 +12880,6 @@
               <LI><OBJECT type="text/sitemap"><param name="Name" value="uart_set_input"><param name="Local" value="uart_8h.html#ga7c12d536a82d50cdcb672a2e48128723"><param name="ImageNumber" value="11"></OBJECT>
               <LI><OBJECT type="text/sitemap"><param name="Name" value="uart_write_byte"><param name="Local" value="uart_8h.html#gabb4e007f91b4179508d33b778f074f3d"><param name="ImageNumber" value="11"></OBJECT>
               </UL>
-            <LI><OBJECT type="text/sitemap"><param name="Name" value="uart1.h"><param name="ImageNumber" value="1"></OBJECT>
-              <UL>
-              </UL>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="udma.c"><param name="ImageNumber" value="1"></OBJECT>
               <UL>
               <LI><OBJECT type="text/sitemap"><param name="Name" value="udma_channel_disable"><param name="Local" value="udma_8c.html#ga65bb0aa57624243a5bd12659c2cfc208"><param name="ImageNumber" value="11"></OBJECT>
@@ -13290,7 +13341,7 @@
             </UL>
           <LI><OBJECT type="text/sitemap"><param name="Name" value="slip-arch.c"><param name="ImageNumber" value="1"></OBJECT>
             <UL>
-            <LI><OBJECT type="text/sitemap"><param name="Name" value="slip_arch_init"><param name="Local" value="cpu_2cc2538_2slip-arch_8c.html#ga9968f75d6fd206d47a813fdda9b687bc"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="slip_arch_init"><param name="Local" value="cpu_2cc2538_2slip-arch_8c.html#ga491aba145ad36e9a744df92694943fb0"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="slip_arch_writeb"><param name="Local" value="cpu_2cc2538_2slip-arch_8c.html#ga0bdfcf5778cecf50bf206d976438e8d9"><param name="ImageNumber" value="11"></OBJECT>
             </UL>
           <LI><OBJECT type="text/sitemap"><param name="Name" value="soc.c"><param name="ImageNumber" value="1"></OBJECT>
@@ -13435,9 +13486,6 @@
               <LI><OBJECT type="text/sitemap"><param name="Name" value="soc_trng_init"><param name="Local" value="soc-trng_8h.html#ga40a3e1b31c8551fe667d074047724562"><param name="ImageNumber" value="11"></OBJECT>
               <LI><OBJECT type="text/sitemap"><param name="Name" value="soc_trng_rand_asynchronous"><param name="Local" value="soc-trng_8h.html#gaaec53709a3a51640e2c8cf9b21a5045c"><param name="ImageNumber" value="11"></OBJECT>
               <LI><OBJECT type="text/sitemap"><param name="Name" value="soc_trng_rand_synchronous"><param name="Local" value="soc-trng_8h.html#gada2eebe5a39eca3995f9654debc6078f"><param name="ImageNumber" value="11"></OBJECT>
-              </UL>
-            <LI><OBJECT type="text/sitemap"><param name="Name" value="uart1.h"><param name="ImageNumber" value="1"></OBJECT>
-              <UL>
               </UL>
             </UL>
           <LI><OBJECT type="text/sitemap"><param name="Name" value="rf-core"><param name="ImageNumber" value="1"></OBJECT>
@@ -13592,7 +13640,7 @@
             </UL>
           <LI><OBJECT type="text/sitemap"><param name="Name" value="slip-arch.c"><param name="ImageNumber" value="1"></OBJECT>
             <UL>
-            <LI><OBJECT type="text/sitemap"><param name="Name" value="slip_arch_init"><param name="Local" value="cpu_2cc26xx-cc13xx_2slip-arch_8c.html#ga9968f75d6fd206d47a813fdda9b687bc"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="slip_arch_init"><param name="Local" value="cpu_2cc26xx-cc13xx_2slip-arch_8c.html#ga491aba145ad36e9a744df92694943fb0"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="slip_arch_writeb"><param name="Local" value="cpu_2cc26xx-cc13xx_2slip-arch_8c.html#ga0bdfcf5778cecf50bf206d976438e8d9"><param name="ImageNumber" value="11"></OBJECT>
             </UL>
           <LI><OBJECT type="text/sitemap"><param name="Name" value="ti-lib-rom.h"><param name="ImageNumber" value="1"></OBJECT>
@@ -13699,7 +13747,6 @@
           <LI><OBJECT type="text/sitemap"><param name="Name" value="dev"><param name="ImageNumber" value="1"></OBJECT>
             <UL>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="eeprom.c"><param name="Local" value="cpu_2native_2dev_2eeprom_8c_source.html"><param name="ImageNumber" value="11"></OBJECT>
-            <LI><OBJECT type="text/sitemap"><param name="Name" value="uart1.h"><param name="Local" value="cpu_2native_2dev_2uart1_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
             </UL>
           <LI><OBJECT type="text/sitemap"><param name="Name" value="net"><param name="ImageNumber" value="1"></OBJECT>
             <UL>
@@ -14059,7 +14106,6 @@
               <LI><OBJECT type="text/sitemap"><param name="Name" value="rs232_set_input"><param name="Local" value="rs232_8h.html#a16661aa2ee3a811ff25a6749a8de5359"><param name="ImageNumber" value="11"></OBJECT>
               <LI><OBJECT type="text/sitemap"><param name="Name" value="rs232_set_speed"><param name="Local" value="rs232_8h.html#abaf95b3fd741e44c81b7562f7d3ae7ef"><param name="ImageNumber" value="11"></OBJECT>
               </UL>
-            <LI><OBJECT type="text/sitemap"><param name="Name" value="uart1.h"><param name="Local" value="platform_2cooja_2dev_2uart1_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="vib-sensor.c"><param name="Local" value="cooja_2dev_2vib-sensor_8c_source.html"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="vib-sensor.h"><param name="Local" value="cooja_2dev_2vib-sensor_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="watchdog.c"><param name="Local" value="platform_2cooja_2dev_2watchdog_8c_source.html"><param name="ImageNumber" value="11"></OBJECT>
@@ -17264,8 +17310,12 @@
           </UL>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-lite"><param name="ImageNumber" value="1"></OBJECT>
           <UL>
-          <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-conf.h"><param name="Local" value="rpl-lite_2rpl-conf_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
-          <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-const.h"><param name="Local" value="rpl-const_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-conf.h"><param name="ImageNumber" value="1"></OBJECT>
+            <UL>
+            </UL>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-const.h"><param name="ImageNumber" value="1"></OBJECT>
+            <UL>
+            </UL>
           <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-dag-root.c"><param name="ImageNumber" value="1"></OBJECT>
             <UL>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_root_init"><param name="Local" value="rpl-lite_2rpl-dag-root_8c.html#ga5d2bc9acc84060b609a2faa1aa4003f6"><param name="ImageNumber" value="11"></OBJECT>
@@ -17283,12 +17333,12 @@
           <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-dag.c"><param name="ImageNumber" value="1"></OBJECT>
             <UL>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_init"><param name="Local" value="rpl-lite_2rpl-dag_8c.html#ga8e8d465b518552aa7f8b868df515dd31"><param name="ImageNumber" value="11"></OBJECT>
-            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_init_root"><param name="Local" value="rpl-lite_2rpl-dag_8c.html#gac626c8c88fef0298b9c1f35c54ee49da"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_init_root"><param name="Local" value="rpl-lite_2rpl-dag_8c.html#ga715fec352c9cb2e6de3f85da84c2fbf2"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_leave"><param name="Local" value="rpl-lite_2rpl-dag_8c.html#gad4d3bc7b5fa6bdb68c43a2de52ed62f3"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_periodic"><param name="Local" value="rpl-lite_2rpl-dag_8c.html#ga5f815b8e9f6b500a4675ce5b81f94228"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_poison_and_leave"><param name="Local" value="rpl-lite_2rpl-dag_8c.html#ga9b09ef3349ded5020c88bca8e167911b"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_ready_to_advertise"><param name="Local" value="rpl-lite_2rpl-dag_8c.html#gabf64aca5fd69270d4f3b7b4fcc7f053f"><param name="ImageNumber" value="11"></OBJECT>
-            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_state_to_str"><param name="Local" value="rpl-lite_2rpl-dag_8c.html#ga7a6acbdda4488f3771a084a5c703fa81"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_state_to_str"><param name="Local" value="rpl-lite_2rpl-dag_8c.html#gad2718ea0486e7bfe884a5daf906fe221"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_update_state"><param name="Local" value="rpl-lite_2rpl-dag_8c.html#ga57e069677f6ea78554d70243d6b3d263"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_get_any_dag"><param name="Local" value="rpl-lite_2rpl-dag_8c.html#ga8976e165e3a5b6410b68a81c2cdadc68"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_get_default_instance"><param name="Local" value="rpl-lite_2rpl-dag_8c.html#ga8173f5da900f946a8de35b4dd701ce44"><param name="ImageNumber" value="11"></OBJECT>
@@ -17300,7 +17350,27 @@
             <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_process_dis"><param name="Local" value="rpl-lite_2rpl-dag_8c.html#ga95fdf47cfb0500dd67bd4a6c5fd28afe"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_process_hbh"><param name="Local" value="rpl-lite_2rpl-dag_8c.html#gad24ac3a37d82f71a45758d14a3ddc131"><param name="ImageNumber" value="11"></OBJECT>
             </UL>
-          <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-dag.h"><param name="Local" value="rpl-dag_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-dag.h"><param name="ImageNumber" value="1"></OBJECT>
+            <UL>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_init"><param name="Local" value="rpl-dag_8h.html#ga8e8d465b518552aa7f8b868df515dd31"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_init_root"><param name="Local" value="rpl-dag_8h.html#ga715fec352c9cb2e6de3f85da84c2fbf2"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_leave"><param name="Local" value="rpl-dag_8h.html#gad4d3bc7b5fa6bdb68c43a2de52ed62f3"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_periodic"><param name="Local" value="rpl-dag_8h.html#ga5f815b8e9f6b500a4675ce5b81f94228"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_poison_and_leave"><param name="Local" value="rpl-dag_8h.html#ga9b09ef3349ded5020c88bca8e167911b"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_ready_to_advertise"><param name="Local" value="rpl-dag_8h.html#gabf64aca5fd69270d4f3b7b4fcc7f053f"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_state_to_str"><param name="Local" value="rpl-dag_8h.html#gad2718ea0486e7bfe884a5daf906fe221"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_update_state"><param name="Local" value="rpl-dag_8h.html#ga57e069677f6ea78554d70243d6b3d263"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_get_any_dag"><param name="Local" value="rpl-dag_8h.html#ga8976e165e3a5b6410b68a81c2cdadc68"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_get_default_instance"><param name="Local" value="rpl-dag_8h.html#ga8173f5da900f946a8de35b4dd701ce44"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_global_repair"><param name="Local" value="rpl-dag_8h.html#ga1f3706b22c198c354f4364a3cbb92836"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_is_addr_in_our_dag"><param name="Local" value="rpl-dag_8h.html#gaed104e6c0b24684d78b49eef5df4f1bb"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_local_repair"><param name="Local" value="rpl-dag_8h.html#gae27b569c835024a9e461ae3912c70778"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_process_dao"><param name="Local" value="rpl-dag_8h.html#gab2ea55dae5cd99c6d1305fdf526f2fe0"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_process_dao_ack"><param name="Local" value="rpl-dag_8h.html#ga1eb0b8ee10b8841eca1cee80ba6a0d2d"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_process_dio"><param name="Local" value="rpl-dag_8h.html#gab8521c4e508ce92f41dc21588fe53d3d"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_process_dis"><param name="Local" value="rpl-dag_8h.html#ga95fdf47cfb0500dd67bd4a6c5fd28afe"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_process_hbh"><param name="Local" value="rpl-dag_8h.html#gad24ac3a37d82f71a45758d14a3ddc131"><param name="ImageNumber" value="11"></OBJECT>
+            </UL>
           <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-ext-header.c"><param name="ImageNumber" value="1"></OBJECT>
             <UL>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_ext_header_hbh_update"><param name="Local" value="rpl-lite_2rpl-ext-header_8c.html#gada748afd301c6623a881930ab4b394a1"><param name="ImageNumber" value="11"></OBJECT>
@@ -17343,12 +17413,12 @@
           <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-neighbor.c"><param name="ImageNumber" value="1"></OBJECT>
             <UL>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_count"><param name="Local" value="rpl-neighbor_8c.html#gafce2df2d30554b43660d98f41f1a130e"><param name="ImageNumber" value="11"></OBJECT>
-            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_get_from_ipaddr"><param name="Local" value="rpl-neighbor_8c.html#ga82cbc22b01378ef30eef204dc88727db"><param name="ImageNumber" value="11"></OBJECT>
-            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_get_from_lladdr"><param name="Local" value="rpl-neighbor_8c.html#gaea79cc87c534135169dd5f803db5989c"><param name="ImageNumber" value="11"></OBJECT>
-            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_get_ipaddr"><param name="Local" value="rpl-neighbor_8c.html#ga39d8da804f13a79bbf87d623448e63d4"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_get_from_ipaddr"><param name="Local" value="rpl-neighbor_8c.html#ga9f328e7d0b904c95547f70073c997b89"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_get_from_lladdr"><param name="Local" value="rpl-neighbor_8c.html#ga046cdfb4e53460342b97672a6b695fa7"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_get_ipaddr"><param name="Local" value="rpl-neighbor_8c.html#gac8b82e4fc7bffd251854748b35503b57"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_get_link_metric"><param name="Local" value="rpl-neighbor_8c.html#ga43c22bfe34694fd82bfa676a26d242ef"><param name="ImageNumber" value="11"></OBJECT>
-            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_get_link_stats"><param name="Local" value="rpl-neighbor_8c.html#ga1933d220b1a9c9b6d7da0dc1421096d3"><param name="ImageNumber" value="11"></OBJECT>
-            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_get_lladdr"><param name="Local" value="rpl-neighbor_8c.html#ga201b98452ff81a4b6ec9343b71270aac"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_get_link_stats"><param name="Local" value="rpl-neighbor_8c.html#ga8fc3bd591c49d7e4a909568c3bdfb4b4"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_get_lladdr"><param name="Local" value="rpl-neighbor_8c.html#ga4d1244edd4b081898250ce9743803679"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_init"><param name="Local" value="rpl-neighbor_8c.html#ga0378846b62008f835fecfa61226cd906"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_is_acceptable_parent"><param name="Local" value="rpl-neighbor_8c.html#gaf2ddc7fabc692b9d8bd7e9ebfa43bc8a"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_is_fresh"><param name="Local" value="rpl-neighbor_8c.html#ga4e9982f7fb544e9bc582814828769861"><param name="ImageNumber" value="11"></OBJECT>
@@ -17357,10 +17427,29 @@
             <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_print_list"><param name="Local" value="rpl-neighbor_8c.html#gae3e7fe43195d08da4c5ae5585791729a"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_rank_via_nbr"><param name="Local" value="rpl-neighbor_8c.html#ga1b6dc3b4a4f57f621347e505c3aa2e81"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_remove_all"><param name="Local" value="rpl-neighbor_8c.html#ga46c892cc449cd258a02f7eac8bad18b8"><param name="ImageNumber" value="11"></OBJECT>
-            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_select_best"><param name="Local" value="rpl-neighbor_8c.html#gad9a52ff68a6861446e58b6159463b21e"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_select_best"><param name="Local" value="rpl-neighbor_8c.html#gae79b9c8837d0ab8b24859b191e3b7756"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_set_preferred_parent"><param name="Local" value="rpl-neighbor_8c.html#gac05fe65242c2d0a89dede401442074bb"><param name="ImageNumber" value="11"></OBJECT>
             </UL>
-          <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-neighbor.h"><param name="Local" value="rpl-neighbor_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-neighbor.h"><param name="ImageNumber" value="1"></OBJECT>
+            <UL>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_count"><param name="Local" value="rpl-neighbor_8h.html#gafce2df2d30554b43660d98f41f1a130e"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_get_from_ipaddr"><param name="Local" value="rpl-neighbor_8h.html#ga9f328e7d0b904c95547f70073c997b89"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_get_from_lladdr"><param name="Local" value="rpl-neighbor_8h.html#ga046cdfb4e53460342b97672a6b695fa7"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_get_ipaddr"><param name="Local" value="rpl-neighbor_8h.html#gac8b82e4fc7bffd251854748b35503b57"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_get_link_metric"><param name="Local" value="rpl-neighbor_8h.html#ga43c22bfe34694fd82bfa676a26d242ef"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_get_link_stats"><param name="Local" value="rpl-neighbor_8h.html#ga8fc3bd591c49d7e4a909568c3bdfb4b4"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_get_lladdr"><param name="Local" value="rpl-neighbor_8h.html#ga4d1244edd4b081898250ce9743803679"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_init"><param name="Local" value="rpl-neighbor_8h.html#ga0378846b62008f835fecfa61226cd906"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_is_acceptable_parent"><param name="Local" value="rpl-neighbor_8h.html#gaf2ddc7fabc692b9d8bd7e9ebfa43bc8a"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_is_fresh"><param name="Local" value="rpl-neighbor_8h.html#ga4e9982f7fb544e9bc582814828769861"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_is_parent"><param name="Local" value="rpl-neighbor_8h.html#ga60715c50b3891828bb6fa8aa2d723718"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_is_reachable"><param name="Local" value="rpl-neighbor_8h.html#gadc0c271a08ec3486a053d9ce9dc2468b"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_print_list"><param name="Local" value="rpl-neighbor_8h.html#gae3e7fe43195d08da4c5ae5585791729a"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_rank_via_nbr"><param name="Local" value="rpl-neighbor_8h.html#ga1b6dc3b4a4f57f621347e505c3aa2e81"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_remove_all"><param name="Local" value="rpl-neighbor_8h.html#ga46c892cc449cd258a02f7eac8bad18b8"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_select_best"><param name="Local" value="rpl-neighbor_8h.html#gae79b9c8837d0ab8b24859b191e3b7756"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_neighbor_set_preferred_parent"><param name="Local" value="rpl-neighbor_8h.html#gac05fe65242c2d0a89dede401442074bb"><param name="ImageNumber" value="11"></OBJECT>
+            </UL>
           <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-ns.c"><param name="ImageNumber" value="1"></OBJECT>
             <UL>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_ns_expire_parent"><param name="Local" value="rpl-lite_2rpl-ns_8c.html#ga65cf975f46d6216c2492ef4a3dd9e9a8"><param name="ImageNumber" value="11"></OBJECT>
@@ -17405,8 +17494,36 @@
             <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_timers_unschedule_leaving"><param name="Local" value="rpl-lite_2rpl-timers_8c.html#gac50a950d31cb6175e7647d03430e1c71"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_timers_unschedule_state_update"><param name="Local" value="rpl-lite_2rpl-timers_8c.html#ga7ad447fa688621afd32851b7736ac726"><param name="ImageNumber" value="11"></OBJECT>
             </UL>
-          <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-timers.h"><param name="Local" value="rpl-timers_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
-          <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-types.h"><param name="Local" value="rpl-types_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-timers.h"><param name="ImageNumber" value="1"></OBJECT>
+            <UL>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_schedule_probing"><param name="Local" value="rpl-timers_8h.html#ga16833c4ffb7f93d5aacd5ff96886e52a"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_timers_dio_reset"><param name="Local" value="rpl-timers_8h.html#ga92a5a1b168aa55c3c3b35ce590f3931f"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_timers_init"><param name="Local" value="rpl-timers_8h.html#ga9c2e99d6b699d4058d600d9b7018c6c7"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_timers_schedule_dao"><param name="Local" value="rpl-timers_8h.html#ga837202e5a0a412abf6a5f1c01825d3f4"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_timers_schedule_dao_ack"><param name="Local" value="rpl-timers_8h.html#gac0fc67dc797559f43491808cf8b84699"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_timers_schedule_leaving"><param name="Local" value="rpl-timers_8h.html#ga85812ae2d8481dc5130ebe84e512a8aa"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_timers_schedule_periodic_dis"><param name="Local" value="rpl-timers_8h.html#gae640bfa4cf7a246a150956a1c1691519"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_timers_schedule_state_update"><param name="Local" value="rpl-timers_8h.html#gafdd6edb1b76922e31cf60b2ee5eebded"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_timers_schedule_unicast_dio"><param name="Local" value="rpl-timers_8h.html#gafe38c20d1297d8fd65c042d2837e7035"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_timers_stop_dag_timers"><param name="Local" value="rpl-timers_8h.html#ga0c8087f355d36588d064a19a969dd902"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_timers_unschedule_leaving"><param name="Local" value="rpl-timers_8h.html#gac50a950d31cb6175e7647d03430e1c71"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_timers_unschedule_state_update"><param name="Local" value="rpl-timers_8h.html#ga7ad447fa688621afd32851b7736ac726"><param name="ImageNumber" value="11"></OBJECT>
+            </UL>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl-types.h"><param name="ImageNumber" value="1"></OBJECT>
+            <UL>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="DAG_RANK"><param name="Local" value="rpl-types_8h.html#ga942c01e927b32169271dd344007ac928"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="ROOT_RANK"><param name="Local" value="rpl-types_8h.html#gae33bd529ba3bfc61e6068308b0482ee7"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="RPL_LIFETIME"><param name="Local" value="rpl-types_8h.html#ga83e5484decd181443ba0c98ceb4e9196"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="uip_create_linklocal_rplnodes_mcast"><param name="Local" value="rpl-types_8h.html#ga0072bf95228f953c66afec4447c9c412"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="uip_is_addr_linklocal_rplnodes_mcast"><param name="Local" value="rpl-types_8h.html#ga405c374bc89ef38047eb083f45a7780f"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_dag_state"><param name="ImageNumber" value="1"></OBJECT>
+              <UL>
+              <LI><OBJECT type="text/sitemap"><param name="Name" value="DAG_INITIALIZED"><param name="Local" value="rpl-types_8h.html#ggac7e013fe9d1e9082aa8aedde38a08955a0041ce8cc7bb25e7da73b5f7b6871c69"><param name="ImageNumber" value="11"></OBJECT>
+              <LI><OBJECT type="text/sitemap"><param name="Name" value="DAG_JOINED"><param name="Local" value="rpl-types_8h.html#ggac7e013fe9d1e9082aa8aedde38a08955a001ef127aa58707d17e45d6adaf9fa02"><param name="ImageNumber" value="11"></OBJECT>
+              <LI><OBJECT type="text/sitemap"><param name="Name" value="DAG_REACHABLE"><param name="Local" value="rpl-types_8h.html#ggac7e013fe9d1e9082aa8aedde38a08955ae9147adea434fb60305c3b66e9bd02e3"><param name="ImageNumber" value="11"></OBJECT>
+              <LI><OBJECT type="text/sitemap"><param name="Name" value="DAG_POISONING"><param name="Local" value="rpl-types_8h.html#ggac7e013fe9d1e9082aa8aedde38a08955a2fb18cce06b46b39396713134a8fc226"><param name="ImageNumber" value="11"></OBJECT>
+              </UL>
+            </UL>
           <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl.c"><param name="ImageNumber" value="1"></OBJECT>
             <UL>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="rpl_get_global_address"><param name="Local" value="rpl-lite_2rpl_8c.html#ga8bb77ebdc640aea81b7fbf57243f1d20"><param name="ImageNumber" value="11"></OBJECT>
@@ -18088,6 +18205,7 @@
             <UL>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="ENERGEST_TYPE_CPU"><param name="Local" value="energest_8h.html#a268f766940fc78ea8bd576fc2fa81842acd7b91ad09db754647de696a9404b0a0"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="ENERGEST_TYPE_LPM"><param name="Local" value="energest_8h.html#a268f766940fc78ea8bd576fc2fa81842a0b57631058e3aa709d14ac88a468fe11"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="ENERGEST_TYPE_DEEP_LPM"><param name="Local" value="energest_8h.html#a268f766940fc78ea8bd576fc2fa81842a1be44f97cdaad8faa89341a1a4a219b0"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="ENERGEST_TYPE_TRANSMIT"><param name="Local" value="energest_8h.html#a268f766940fc78ea8bd576fc2fa81842a6140936ad94b9cc670c44eb1f265db9f"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="ENERGEST_TYPE_LISTEN"><param name="Local" value="energest_8h.html#a268f766940fc78ea8bd576fc2fa81842af811dff69eaa84e503c376969ee78250"><param name="ImageNumber" value="11"></OBJECT>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="ENERGEST_TYPE_MAX"><param name="Local" value="energest_8h.html#a268f766940fc78ea8bd576fc2fa81842ae4b98e72625b52f7f60702bcf57fb6f8"><param name="ImageNumber" value="11"></OBJECT>

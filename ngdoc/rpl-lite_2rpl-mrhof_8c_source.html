@@ -151,9 +151,9 @@
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keyword">static</span> uint16_t</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;nbr_link_metric(rpl_nbr_t *<a class="code" href="uip-nd6_8c.html#a0469af3fec6ddbe5fb60093767575e44">nbr</a>)</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;nbr_link_metric(<a class="code" href="structrpl__nbr.html">rpl_nbr_t</a> *<a class="code" href="uip-nd6_8c.html#a0469af3fec6ddbe5fb60093767575e44">nbr</a>)</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;{</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keyword">const</span> <span class="keyword">struct </span>link_stats *stats = <a class="code" href="group__rpl-lite.html#ga1933d220b1a9c9b6d7da0dc1421096d3">rpl_neighbor_get_link_stats</a>(nbr);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keyword">const</span> <span class="keyword">struct </span>link_stats *stats = <a class="code" href="group__rpl-lite.html#ga8fc3bd591c49d7e4a909568c3bdfb4b4">rpl_neighbor_get_link_stats</a>(nbr);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keywordflow">return</span> stats != NULL ? stats-&gt;etx : 0xffff;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
@@ -169,7 +169,7 @@
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor"></span>}</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="keyword">static</span> uint16_t</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;nbr_path_cost(rpl_nbr_t *<a class="code" href="uip-nd6_8c.html#a0469af3fec6ddbe5fb60093767575e44">nbr</a>)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;nbr_path_cost(<a class="code" href="structrpl__nbr.html">rpl_nbr_t</a> *<a class="code" href="uip-nd6_8c.html#a0469af3fec6ddbe5fb60093767575e44">nbr</a>)</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;{</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  uint16_t base;</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
@@ -199,7 +199,7 @@
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;}</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="keyword">static</span> rpl_rank_t</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;rank_via_nbr(rpl_nbr_t *nbr)</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;rank_via_nbr(<a class="code" href="structrpl__nbr.html">rpl_nbr_t</a> *nbr)</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;{</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  uint16_t min_hoprankinc;</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  uint16_t path_cost;</div>
@@ -216,7 +216,7 @@
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;}</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;nbr_has_usable_link(rpl_nbr_t *nbr)</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;nbr_has_usable_link(<a class="code" href="structrpl__nbr.html">rpl_nbr_t</a> *nbr)</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;{</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  uint16_t link_metric = nbr_link_metric(nbr);</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <span class="comment">/* Exclude links with too high link metrics  */</span></div>
@@ -224,7 +224,7 @@
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;}</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;nbr_is_acceptable_parent(rpl_nbr_t *nbr)</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;nbr_is_acceptable_parent(<a class="code" href="structrpl__nbr.html">rpl_nbr_t</a> *nbr)</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;{</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  uint16_t path_cost = nbr_path_cost(nbr);</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <span class="comment">/* Exclude links with too high link metrics or path cost (RFC6719, 3.2.2) */</span></div>
@@ -232,7 +232,7 @@
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;}</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span></div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;within_hysteresis(rpl_nbr_t *nbr)</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;within_hysteresis(<a class="code" href="structrpl__nbr.html">rpl_nbr_t</a> *nbr)</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;{</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  uint16_t path_cost = nbr_path_cost(nbr);</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  uint16_t parent_path_cost = nbr_path_cost(curr_instance.dag.preferred_parent);</div>
@@ -246,8 +246,8 @@
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  <span class="keywordflow">return</span> within_rank_hysteresis &amp;&amp; within_time_hysteresis;</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;}</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="keyword">static</span> rpl_nbr_t *</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;best_parent(rpl_nbr_t *nbr1, rpl_nbr_t *nbr2)</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="keyword">static</span> <a class="code" href="structrpl__nbr.html">rpl_nbr_t</a> *</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;best_parent(<a class="code" href="structrpl__nbr.html">rpl_nbr_t</a> *nbr1, <a class="code" href="structrpl__nbr.html">rpl_nbr_t</a> *nbr2)</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;{</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  <span class="keywordtype">int</span> nbr1_is_acceptable;</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  <span class="keywordtype">int</span> nbr2_is_acceptable;</div>
@@ -293,7 +293,7 @@
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;  }</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  <span class="keywordflow">if</span>(curr_instance.dag.rank == ROOT_RANK) {</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  <span class="keywordflow">if</span>(curr_instance.dag.rank == <a class="code" href="group__rpl-lite.html#gae33bd529ba3bfc61e6068308b0482ee7">ROOT_RANK</a>) {</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="comment">/* Configure MC at root only, other nodes are auto-configured when joining */</span></div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    curr_instance.mc.type = RPL_DAG_MC;</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    curr_instance.mc.flags = 0;</div>
@@ -314,7 +314,7 @@
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;      <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordflow">case</span> RPL_DAG_MC_ENERGY:</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;      curr_instance.mc.length = <span class="keyword">sizeof</span>(curr_instance.mc.obj.energy);</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;      <span class="keywordflow">if</span>(curr_instance.dag.rank == ROOT_RANK) {</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;      <span class="keywordflow">if</span>(curr_instance.dag.rank == <a class="code" href="group__rpl-lite.html#gae33bd529ba3bfc61e6068308b0482ee7">ROOT_RANK</a>) {</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        type = RPL_DAG_MC_ENERGY_TYPE_MAINS;</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;      } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        type = RPL_DAG_MC_ENERGY_TYPE_BATTERY;</div>
@@ -330,7 +330,7 @@
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;}</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* RPL_WITH_MC */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="preprocessor"></span><span class="comment">/*---------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;rpl_of_t rpl_mrhof = {</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<a class="code" href="structrpl__of.html">rpl_of_t</a> rpl_mrhof = {</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  reset,</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  nbr_link_metric,</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;  nbr_has_usable_link,</div>
@@ -345,12 +345,15 @@
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="comment">/** @}*/</span></div>
 <div class="ttc" id="group__cc2538-clock_html_ga50c22f9b9d60dd1f9e59b63a3a6676b1"><div class="ttname"><a href="group__cc2538-clock.html#ga50c22f9b9d60dd1f9e59b63a3a6676b1">clock_time</a></div><div class="ttdeci">CCIF clock_time_t clock_time(void)</div><div class="ttdoc">Get the current clock time. </div><div class="ttdef"><b>Definition:</b> <a href="cpu_2cc2538_2clock_8c_source.html#l00118">clock.c:118</a></div></div>
 <div class="ttc" id="uip-nd6_8c_html_a0469af3fec6ddbe5fb60093767575e44"><div class="ttname"><a href="uip-nd6_8c.html#a0469af3fec6ddbe5fb60093767575e44">nbr</a></div><div class="ttdeci">static uip_ds6_nbr_t * nbr</div><div class="ttdoc">Pointer to llao option in uip_buf. </div><div class="ttdef"><b>Definition:</b> <a href="uip-nd6_8c_source.html#l00114">uip-nd6.c:114</a></div></div>
-<div class="ttc" id="group__rpl-lite_html_ga1933d220b1a9c9b6d7da0dc1421096d3"><div class="ttname"><a href="group__rpl-lite.html#ga1933d220b1a9c9b6d7da0dc1421096d3">rpl_neighbor_get_link_stats</a></div><div class="ttdeci">const struct link_stats * rpl_neighbor_get_link_stats(rpl_nbr_t *nbr)</div><div class="ttdoc">Returns a neighbor&#39;s link statistics. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-neighbor_8c_source.html#l00214">rpl-neighbor.c:214</a></div></div>
+<div class="ttc" id="group__rpl-lite_html_gae33bd529ba3bfc61e6068308b0482ee7"><div class="ttname"><a href="group__rpl-lite.html#gae33bd529ba3bfc61e6068308b0482ee7">ROOT_RANK</a></div><div class="ttdeci">#define ROOT_RANK</div><div class="ttdoc">Rank of a root node. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-types_8h_source.html#l00078">rpl-types.h:78</a></div></div>
+<div class="ttc" id="structrpl__of_html"><div class="ttname"><a href="structrpl__of.html">rpl_of</a></div><div class="ttdoc">API for RPL objective functions (OF) </div><div class="ttdef"><b>Definition:</b> <a href="rpl-classic_2rpl_8h_source.html#l00201">rpl.h:201</a></div></div>
+<div class="ttc" id="group__rpl-lite_html_ga8fc3bd591c49d7e4a909568c3bdfb4b4"><div class="ttname"><a href="group__rpl-lite.html#ga8fc3bd591c49d7e4a909568c3bdfb4b4">rpl_neighbor_get_link_stats</a></div><div class="ttdeci">const struct link_stats * rpl_neighbor_get_link_stats(rpl_nbr_t *nbr)</div><div class="ttdoc">Returns a neighbor&#39;s link statistics. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-neighbor_8c_source.html#l00214">rpl-neighbor.c:214</a></div></div>
+<div class="ttc" id="structrpl__nbr_html"><div class="ttname"><a href="structrpl__nbr.html">rpl_nbr</a></div><div class="ttdoc">All information related to a RPL neighbor. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-types_8h_source.html#l00136">rpl-types.h:136</a></div></div>
 <div class="ttc" id="log_8h_html"><div class="ttname"><a href="log_8h.html">log.h</a></div><div class="ttdoc">    Header file for the logging system  </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 31 2017 23:29:03 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 7 2017 12:06:20 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

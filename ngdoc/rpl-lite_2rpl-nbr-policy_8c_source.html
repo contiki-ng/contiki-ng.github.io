@@ -136,7 +136,7 @@
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;update_state(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;{</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <a class="code" href="structuip__ds6__nbr.html">uip_ds6_nbr_t</a> *ds6_nbr;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  rpl_nbr_t *rpl_nbr;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <a class="code" href="structrpl__nbr.html">rpl_nbr_t</a> *<a class="code" href="structrpl__nbr.html">rpl_nbr</a>;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  rpl_rank_t nbr_rank;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordtype">int</span> num_used = 0;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
@@ -156,7 +156,7 @@
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keywordflow">while</span>(ds6_nbr != NULL) {</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    linkaddr_t *nbr_lladdr = nbr_table_get_lladdr(ds6_neighbors, ds6_nbr);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    rpl_nbr = <a class="code" href="group__rpl-lite.html#gaea79cc87c534135169dd5f803db5989c">rpl_neighbor_get_from_lladdr</a>((<a class="code" href="structuip__802154__longaddr.html">uip_lladdr_t</a> *)nbr_lladdr);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    rpl_nbr = <a class="code" href="group__rpl-lite.html#ga046cdfb4e53460342b97672a6b695fa7">rpl_neighbor_get_from_lladdr</a>((<a class="code" href="structuip__802154__longaddr.html">uip_lladdr_t</a> *)nbr_lladdr);</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">if</span>(rpl_nbr != NULL &amp;&amp; <a class="code" href="group__rpl-lite.html#ga60715c50b3891828bb6fa8aa2d723718">rpl_neighbor_is_parent</a>(rpl_nbr)) {</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      num_parents++;</div>
@@ -230,18 +230,19 @@
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment">/** @}*/</span></div>
 <div class="ttc" id="group__uip_html_gaf966537cf73ee5973da59bba6b21b731"><div class="ttname"><a href="group__uip.html#gaf966537cf73ee5973da59bba6b21b731">UIP_IP_BUF</a></div><div class="ttdeci">#define UIP_IP_BUF</div><div class="ttdoc">Pointer to IP header. </div><div class="ttdef"><b>Definition:</b> <a href="uip-nd6_8c_source.html#l00096">uip-nd6.c:96</a></div></div>
 <div class="ttc" id="structuip__802154__longaddr_html"><div class="ttname"><a href="structuip__802154__longaddr.html">uip_802154_longaddr</a></div><div class="ttdoc">64 bit 802.15.4 address </div><div class="ttdef"><b>Definition:</b> <a href="uip_8h_source.html#l00115">uip.h:115</a></div></div>
-<div class="ttc" id="group__rpl-lite_html_gaea79cc87c534135169dd5f803db5989c"><div class="ttname"><a href="group__rpl-lite.html#gaea79cc87c534135169dd5f803db5989c">rpl_neighbor_get_from_lladdr</a></div><div class="ttdeci">rpl_nbr_t * rpl_neighbor_get_from_lladdr(uip_lladdr_t *addr)</div><div class="ttdoc">Returns a neighbor from its link-layer address. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-neighbor_8c_source.html#l00168">rpl-neighbor.c:168</a></div></div>
 <div class="ttc" id="group__rpl-lite_html_ga60715c50b3891828bb6fa8aa2d723718"><div class="ttname"><a href="group__rpl-lite.html#ga60715c50b3891828bb6fa8aa2d723718">rpl_neighbor_is_parent</a></div><div class="ttdeci">int rpl_neighbor_is_parent(rpl_nbr_t *nbr)</div><div class="ttdoc">Tells whether a neighbor is in the parent set. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-neighbor_8c_source.html#l00245">rpl-neighbor.c:245</a></div></div>
 <div class="ttc" id="group__clock_html_gae3ced0551b26c9b99cb45a86f34d100a"><div class="ttname"><a href="group__clock.html#gae3ced0551b26c9b99cb45a86f34d100a">CLOCK_SECOND</a></div><div class="ttdeci">#define CLOCK_SECOND</div><div class="ttdoc">A second, measured in system clock time. </div><div class="ttdef"><b>Definition:</b> <a href="clock_8h_source.html#l00082">clock.h:82</a></div></div>
 <div class="ttc" id="group__ctimer_html_ga27fd17da97a91042bfb1adf1991cc545"><div class="ttname"><a href="group__ctimer.html#ga27fd17da97a91042bfb1adf1991cc545">ctimer_set</a></div><div class="ttdeci">void ctimer_set(struct ctimer *c, clock_time_t t, void(*f)(void *), void *ptr)</div><div class="ttdoc">Set a callback timer. </div><div class="ttdef"><b>Definition:</b> <a href="ctimer_8c_source.html#l00099">ctimer.c:99</a></div></div>
+<div class="ttc" id="structrpl__nbr_html"><div class="ttname"><a href="structrpl__nbr.html">rpl_nbr</a></div><div class="ttdoc">All information related to a RPL neighbor. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-types_8h_source.html#l00136">rpl-types.h:136</a></div></div>
 <div class="ttc" id="group__ctimer_html_gaddaf856390b1f3f572b62def662088aa"><div class="ttname"><a href="group__ctimer.html#gaddaf856390b1f3f572b62def662088aa">ctimer_restart</a></div><div class="ttdeci">void ctimer_restart(struct ctimer *c)</div><div class="ttdoc">Restart a callback timer from the current point in time. </div><div class="ttdef"><b>Definition:</b> <a href="ctimer_8c_source.html#l00137">ctimer.c:137</a></div></div>
 <div class="ttc" id="group__rpl-lite_html_ga1b6dc3b4a4f57f621347e505c3aa2e81"><div class="ttname"><a href="group__rpl-lite.html#ga1b6dc3b4a4f57f621347e505c3aa2e81">rpl_neighbor_rank_via_nbr</a></div><div class="ttdeci">rpl_rank_t rpl_neighbor_rank_via_nbr(rpl_nbr_t *nbr)</div><div class="ttdoc">Returns our rank if selecting a given parent as preferred parent. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-neighbor_8c_source.html#l00192">rpl-neighbor.c:192</a></div></div>
 <div class="ttc" id="log_8h_html"><div class="ttname"><a href="log_8h.html">log.h</a></div><div class="ttdoc">    Header file for the logging system  </div></div>
+<div class="ttc" id="group__rpl-lite_html_ga046cdfb4e53460342b97672a6b695fa7"><div class="ttname"><a href="group__rpl-lite.html#ga046cdfb4e53460342b97672a6b695fa7">rpl_neighbor_get_from_lladdr</a></div><div class="ttdeci">rpl_nbr_t * rpl_neighbor_get_from_lladdr(uip_lladdr_t *addr)</div><div class="ttdoc">Returns a neighbor from its link-layer address. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-neighbor_8c_source.html#l00168">rpl-neighbor.c:168</a></div></div>
 <div class="ttc" id="structuip__ds6__nbr_html"><div class="ttname"><a href="structuip__ds6__nbr.html">uip_ds6_nbr</a></div><div class="ttdoc">An entry in the nbr cache. </div><div class="ttdef"><b>Definition:</b> <a href="uip-ds6-nbr_8h_source.html#l00068">uip-ds6-nbr.h:68</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 31 2017 23:29:03 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 7 2017 12:06:20 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

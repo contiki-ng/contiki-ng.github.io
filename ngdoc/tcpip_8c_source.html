@@ -528,8 +528,8 @@
 <div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;  <span class="comment">/* If we are running RPL, and if we are the root of the</span></div>
 <div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;<span class="comment">     network, we&#39;ll trigger a global repair before we remove</span></div>
 <div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;<span class="comment">     the route. */</span></div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;  rpl_dag_t *dag;</div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;  dag = (rpl_dag_t *)route-&gt;state.dag;</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;  <a class="code" href="structrpl__dag.html">rpl_dag_t</a> *dag;</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;  dag = (<a class="code" href="structrpl__dag.html">rpl_dag_t</a> *)route-&gt;state.dag;</div>
 <div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;  <span class="keywordflow">if</span>(dag != NULL &amp;&amp; dag-&gt;instance != NULL) {</div>
 <div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;    rpl_repair_root(dag-&gt;instance-&gt;instance_id);</div>
 <div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;  }</div>
@@ -909,6 +909,7 @@
 <div class="ttc" id="group__tcpip_html_ga3cb4f212906fc7b8909a3f8938006470"><div class="ttname"><a href="group__tcpip.html#ga3cb4f212906fc7b8909a3f8938006470">udp_attach</a></div><div class="ttdeci">void udp_attach(struct uip_udp_conn *conn, void *appstate)</div><div class="ttdoc">Attach the current process to a UDP connection. </div><div class="ttdef"><b>Definition:</b> <a href="tcpip_8c_source.html#l00242">tcpip.c:242</a></div></div>
 <div class="ttc" id="group__tcpip_html_ga0d5e21d13844dbebd703fb8ed6b058d0"><div class="ttname"><a href="group__tcpip.html#ga0d5e21d13844dbebd703fb8ed6b058d0">tcpip_input</a></div><div class="ttdeci">void tcpip_input(void)</div><div class="ttdoc">Deliver an incoming packet to the TCP/IP stack. </div><div class="ttdef"><b>Definition:</b> <a href="tcpip_8c_source.html#l00432">tcpip.c:432</a></div></div>
 <div class="ttc" id="structuip__conn_html"><div class="ttname"><a href="structuip__conn.html">uip_conn</a></div><div class="ttdoc">Representation of a uIP TCP connection. </div><div class="ttdef"><b>Definition:</b> <a href="uip_8h_source.html#l01335">uip.h:1335</a></div></div>
+<div class="ttc" id="structrpl__dag_html"><div class="ttname"><a href="structrpl__dag.html">rpl_dag</a></div><div class="ttdoc">RPL DAG structure. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-classic_2rpl_8h_source.html#l00135">rpl.h:135</a></div></div>
 <div class="ttc" id="uip-nd6_8c_html_a0469af3fec6ddbe5fb60093767575e44"><div class="ttname"><a href="uip-nd6_8c.html#a0469af3fec6ddbe5fb60093767575e44">nbr</a></div><div class="ttdeci">static uip_ds6_nbr_t * nbr</div><div class="ttdoc">Pointer to llao option in uip_buf. </div><div class="ttdef"><b>Definition:</b> <a href="uip-nd6_8c_source.html#l00114">uip-nd6.c:114</a></div></div>
 <div class="ttc" id="group__uip_html_ga58caaf04f99927a91072308e7f388b12"><div class="ttname"><a href="group__uip.html#ga58caaf04f99927a91072308e7f388b12">uip_ds6_send_rs</a></div><div class="ttdeci">void uip_ds6_send_rs(void)</div><div class="ttdoc">Send periodic RS to find router. </div><div class="ttdef"><b>Definition:</b> <a href="uip-ds6_8c_source.html#l00707">uip-ds6.c:707</a></div></div>
 <div class="ttc" id="uip-nd6_8c_html_a9a7cf6986d952290ec159e9a084003ff"><div class="ttname"><a href="uip-nd6_8c.html#a9a7cf6986d952290ec159e9a084003ff">addr</a></div><div class="ttdeci">static uip_ds6_addr_t * addr</div><div class="ttdoc">Pointer to a nbr cache entry. </div><div class="ttdef"><b>Definition:</b> <a href="uip-nd6_8c_source.html#l00115">uip-nd6.c:115</a></div></div>
@@ -993,7 +994,7 @@
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 31 2017 23:29:00 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 7 2017 12:06:19 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

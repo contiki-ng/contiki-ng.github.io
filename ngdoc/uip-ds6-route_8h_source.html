@@ -99,7 +99,7 @@
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="list_8h.html">lib/list.h</a>&quot;</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#if UIP_CONF_IPV6_RPL</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#if UIP_CONF_IPV6_RPL_LITE == 1</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;net/rpl-lite/rpl-conf.h&quot;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="rpl-lite_2rpl-conf_8h.html">net/rpl-lite/rpl-conf.h</a>&quot;</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#else </span><span class="comment">/* UIP_CONF_IPV6_RPL_LITE == 1 */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;net/rpl-classic/rpl-conf.h&quot;</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* UIP_CONF_IPV6_RPL_LITE == 1 */</span><span class="preprocessor"></span></div>
@@ -198,10 +198,10 @@
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="preprocessor">    (route)-&gt;state.state_flags &amp;= ~(RPL_ROUTE_ENTRY_DAO_NACK|RPL_ROUTE_ENTRY_DAO_PENDING); \</span></div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="preprocessor">  } while(0)</span></div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="keyword">struct </span>rpl_dag;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="keyword">struct </span><a class="code" href="structrpl__dag.html">rpl_dag</a>;</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>rpl_route_entry {</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  uint32_t lifetime;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <span class="keyword">struct </span>rpl_dag *dag;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <span class="keyword">struct </span><a class="code" href="structrpl__dag.html">rpl_dag</a> *dag;</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  uint8_t dao_seqno_out;</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  uint8_t dao_seqno_in;</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  uint8_t state_flags;</div>
@@ -277,6 +277,8 @@
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="preprocessor"></span><span class="comment">/** @} */</span></div>
 <div class="ttc" id="uip-nd6_8c_html_a4e1a84fd63a1c24d54501f93d9bc5757"><div class="ttname"><a href="uip-nd6_8c.html#a4e1a84fd63a1c24d54501f93d9bc5757">ipaddr</a></div><div class="ttdeci">static uip_ipaddr_t ipaddr</div><div class="ttdoc">Pointer to prefix information option in uip_buf. </div><div class="ttdef"><b>Definition:</b> <a href="uip-nd6_8c_source.html#l00124">uip-nd6.c:124</a></div></div>
 <div class="ttc" id="structuip__ds6__defrt_html"><div class="ttname"><a href="structuip__ds6__defrt.html">uip_ds6_defrt</a></div><div class="ttdoc">An entry in the default router list. </div><div class="ttdef"><b>Definition:</b> <a href="uip-ds6-route_8h_source.html#l00188">uip-ds6-route.h:188</a></div></div>
+<div class="ttc" id="structrpl__dag_html"><div class="ttname"><a href="structrpl__dag.html">rpl_dag</a></div><div class="ttdoc">RPL DAG structure. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-classic_2rpl_8h_source.html#l00135">rpl.h:135</a></div></div>
+<div class="ttc" id="rpl-lite_2rpl-conf_8h_html"><div class="ttname"><a href="rpl-lite_2rpl-conf_8h.html">rpl-conf.h</a></div><div class="ttdoc">Public configuration and API declarations for ContikiRPL. </div></div>
 <div class="ttc" id="structuip__ds6__route__neighbor__route_html"><div class="ttname"><a href="structuip__ds6__route__neighbor__route.html">uip_ds6_route_neighbor_route</a></div><div class="ttdoc">A neighbor route list entry, used on the uip_ds6_route-&gt;neighbor_routes-&gt;route_list list...</div><div class="ttdef"><b>Definition:</b> <a href="uip-ds6-route_8h_source.html#l00182">uip-ds6-route.h:182</a></div></div>
 <div class="ttc" id="structuip__ds6__route__neighbor__routes_html"><div class="ttname"><a href="structuip__ds6__route__neighbor__routes.html">uip_ds6_route_neighbor_routes</a></div><div class="ttdoc">The neighbor routes hold a list of routing table entries that are attached to a specific neihbor...</div><div class="ttdef"><b>Definition:</b> <a href="uip-ds6-route_8h_source.html#l00160">uip-ds6-route.h:160</a></div></div>
 <div class="ttc" id="group__uip_html_ga606bc837378f0d367991617f64812ae3"><div class="ttname"><a href="group__uip.html#ga606bc837378f0d367991617f64812ae3">uip_ds6_route_t</a></div><div class="ttdeci">struct uip_ds6_route uip_ds6_route_t</div><div class="ttdoc">An entry in the routing table. </div></div>
@@ -291,7 +293,7 @@
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 31 2017 23:29:00 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 7 2017 12:06:19 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

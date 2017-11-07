@@ -603,7 +603,7 @@
 <div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;  uint8_t prefixlen;</div>
 <div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;  <span class="keywordtype">int</span> pos;</div>
 <div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;  <span class="keyword">const</span> uip_ipaddr_t *prefix = <a class="code" href="group__rpl-lite.html#ga8bb77ebdc640aea81b7fbf57243f1d20">rpl_get_global_address</a>();</div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;  uip_ipaddr_t *parent_ipaddr = <a class="code" href="group__rpl-lite.html#ga39d8da804f13a79bbf87d623448e63d4">rpl_neighbor_get_ipaddr</a>(curr_instance.dag.preferred_parent);</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;  uip_ipaddr_t *parent_ipaddr = <a class="code" href="group__rpl-lite.html#gac8b82e4fc7bffd251854748b35503b57">rpl_neighbor_get_ipaddr</a>(curr_instance.dag.preferred_parent);</div>
 <div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;</div>
 <div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;  <span class="comment">/* Make sure we&#39;re up-to-date before sending data out */</span></div>
 <div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;  <a class="code" href="group__rpl-lite.html#ga57e069677f6ea78554d70243d6b3d263">rpl_dag_update_state</a>();</div>
@@ -701,7 +701,7 @@
 <div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;  LOG_INFO_6ADDR(&amp;<a class="code" href="group__uip.html#gaf966537cf73ee5973da59bba6b21b731">UIP_IP_BUF</a>-&gt;srcipaddr);</div>
 <div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;  LOG_INFO_(<span class="stringliteral">&quot;\n&quot;</span>);</div>
 <div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;</div>
-<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;  rpl_process_dao_ack(sequence, status);</div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;  <a class="code" href="group__rpl-lite.html#ga1eb0b8ee10b8841eca1cee80ba6a0d2d">rpl_process_dao_ack</a>(sequence, status);</div>
 <div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;</div>
 <div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;  discard:</div>
 <div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;    uip_clear_buf();</div>
@@ -745,12 +745,13 @@
 <div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;<span class="comment">/** @}*/</span></div>
 <div class="ttc" id="group__uip_html_gaf966537cf73ee5973da59bba6b21b731"><div class="ttname"><a href="group__uip.html#gaf966537cf73ee5973da59bba6b21b731">UIP_IP_BUF</a></div><div class="ttdeci">#define UIP_IP_BUF</div><div class="ttdoc">Pointer to IP header. </div><div class="ttdef"><b>Definition:</b> <a href="uip-nd6_8c_source.html#l00096">uip-nd6.c:96</a></div></div>
 <div class="ttc" id="uip-icmp6_8h_html"><div class="ttname"><a href="uip-icmp6_8h.html">uip-icmp6.h</a></div><div class="ttdoc">Header file for ICMPv6 message and error handing (RFC 4443) </div></div>
-<div class="ttc" id="group__rpl-lite_html_ga39d8da804f13a79bbf87d623448e63d4"><div class="ttname"><a href="group__rpl-lite.html#ga39d8da804f13a79bbf87d623448e63d4">rpl_neighbor_get_ipaddr</a></div><div class="ttdeci">uip_ipaddr_t * rpl_neighbor_get_ipaddr(rpl_nbr_t *nbr)</div><div class="ttdoc">Returns a neighbor&#39;s (link-local) IPv6 address. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-neighbor_8c_source.html#l00207">rpl-neighbor.c:207</a></div></div>
+<div class="ttc" id="group__rpl-lite_html_gac8b82e4fc7bffd251854748b35503b57"><div class="ttname"><a href="group__rpl-lite.html#gac8b82e4fc7bffd251854748b35503b57">rpl_neighbor_get_ipaddr</a></div><div class="ttdeci">uip_ipaddr_t * rpl_neighbor_get_ipaddr(rpl_nbr_t *nbr)</div><div class="ttdoc">Returns a neighbor&#39;s (link-local) IPv6 address. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-neighbor_8c_source.html#l00207">rpl-neighbor.c:207</a></div></div>
 <div class="ttc" id="uip-nd6_8c_html_a0469af3fec6ddbe5fb60093767575e44"><div class="ttname"><a href="uip-nd6_8c.html#a0469af3fec6ddbe5fb60093767575e44">nbr</a></div><div class="ttdeci">static uip_ds6_nbr_t * nbr</div><div class="ttdoc">Pointer to llao option in uip_buf. </div><div class="ttdef"><b>Definition:</b> <a href="uip-nd6_8c_source.html#l00114">uip-nd6.c:114</a></div></div>
 <div class="ttc" id="group__rpl-lite_html_gab2ea55dae5cd99c6d1305fdf526f2fe0"><div class="ttname"><a href="group__rpl-lite.html#gab2ea55dae5cd99c6d1305fdf526f2fe0">rpl_process_dao</a></div><div class="ttdeci">void rpl_process_dao(uip_ipaddr_t *from, rpl_dao_t *dao)</div><div class="ttdoc">Processes incoming DAO. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-lite_2rpl-dag_8c_source.html#l00579">rpl-dag.c:579</a></div></div>
 <div class="ttc" id="uip-nd6_8c_html_a9a7cf6986d952290ec159e9a084003ff"><div class="ttname"><a href="uip-nd6_8c.html#a9a7cf6986d952290ec159e9a084003ff">addr</a></div><div class="ttdeci">static uip_ds6_addr_t * addr</div><div class="ttdoc">Pointer to a nbr cache entry. </div><div class="ttdef"><b>Definition:</b> <a href="uip-nd6_8c_source.html#l00115">uip-nd6.c:115</a></div></div>
 <div class="ttc" id="structuip__802154__longaddr_html"><div class="ttname"><a href="structuip__802154__longaddr.html">uip_802154_longaddr</a></div><div class="ttdoc">64 bit 802.15.4 address </div><div class="ttdef"><b>Definition:</b> <a href="uip_8h_source.html#l00115">uip.h:115</a></div></div>
 <div class="ttc" id="group__rpl-lite_html_gaa7d10c9a528955060d4b26f2920bd16b"><div class="ttname"><a href="group__rpl-lite.html#gaa7d10c9a528955060d4b26f2920bd16b">rpl_icmp6_dao_output</a></div><div class="ttdeci">void rpl_icmp6_dao_output(uint8_t lifetime)</div><div class="ttdoc">Creates an ICMPv6 DAO packet and sends it to the root, advertising the current preferred parent...</div><div class="ttdef"><b>Definition:</b> <a href="rpl-lite_2rpl-icmp6_8c_source.html#l00547">rpl-icmp6.c:547</a></div></div>
+<div class="ttc" id="group__rpl-lite_html_ga1eb0b8ee10b8841eca1cee80ba6a0d2d"><div class="ttname"><a href="group__rpl-lite.html#ga1eb0b8ee10b8841eca1cee80ba6a0d2d">rpl_process_dao_ack</a></div><div class="ttdeci">void rpl_process_dao_ack(uint8_t sequence, uint8_t status)</div><div class="ttdoc">Processes incoming DAO-ACK. </div></div>
 <div class="ttc" id="group__rpl-lite_html_ga95fdf47cfb0500dd67bd4a6c5fd28afe"><div class="ttname"><a href="group__rpl-lite.html#ga95fdf47cfb0500dd67bd4a6c5fd28afe">rpl_process_dis</a></div><div class="ttdeci">void rpl_process_dis(uip_ipaddr_t *from, int is_multicast)</div><div class="ttdoc">Processes incoming DIS. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-lite_2rpl-dag_8c_source.html#l00565">rpl-dag.c:565</a></div></div>
 <div class="ttc" id="group__uipdrivervars_html_ga96b8904e098e8f1f896379732f1996be"><div class="ttname"><a href="group__uipdrivervars.html#ga96b8904e098e8f1f896379732f1996be">uip_len</a></div><div class="ttdeci">CCIF uint16_t uip_len</div><div class="ttdoc">The length of the packet in the uip_buf buffer. </div><div class="ttdef"><b>Definition:</b> <a href="uip6_8c_source.html#l00186">uip6.c:186</a></div></div>
 <div class="ttc" id="group__uipconvfunc_html_ga769512993b7b27271909d6daa4748b60"><div class="ttname"><a href="group__uipconvfunc.html#ga769512993b7b27271909d6daa4748b60">uip_ipaddr_copy</a></div><div class="ttdeci">#define uip_ipaddr_copy(dest, src)</div><div class="ttdoc">Copy an IP address from one place to another. </div><div class="ttdef"><b>Definition:</b> <a href="uip_8h_source.html#l01009">uip.h:1009</a></div></div>
@@ -773,7 +774,7 @@
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 31 2017 23:29:03 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 7 2017 12:06:20 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

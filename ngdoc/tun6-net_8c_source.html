@@ -123,7 +123,7 @@
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#ifndef __CYGWIN__</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor"></span><span class="keyword">static</span> <span class="keywordtype">int</span> tunfd;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor"></span><span class="keyword">static</span> <span class="keywordtype">int</span> tunfd = -1;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> set_fd(fd_set *rset, fd_set *wset);</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> handle_fd(fd_set *rset, fd_set *wset);</div>
@@ -287,7 +287,7 @@
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;tun_output(uint8_t *data, <span class="keywordtype">int</span> len)</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;{</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  <span class="comment">/* fprintf(stderr, &quot;*** Writing to tun...%d\n&quot;, len); */</span></div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  <span class="keywordflow">if</span>(write(tunfd, data, len) != len) {</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  <span class="keywordflow">if</span>(tunfd != -1 &amp;&amp; write(tunfd, data, len) != len) {</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    err(1, <span class="stringliteral">&quot;serial_to_tun: write&quot;</span>);</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keywordflow">return</span> -1;</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  }</div>
@@ -298,66 +298,82 @@
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;tun_input(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data, <span class="keywordtype">int</span> maxlen)</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;{</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;  <span class="keywordtype">int</span> size;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  <span class="keywordflow">if</span>((size = read(tunfd, data, maxlen)) == -1)</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    err(1, <span class="stringliteral">&quot;tun_input: read&quot;</span>);</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;  <span class="keywordflow">return</span> size;</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;}</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="keyword">static</span> uint8_t</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<a class="code" href="group__sicslowpan.html#gaab2d9d0e3ef2ce7170f8fbc5a6ae70b2">output</a>(<span class="keyword">const</span> linkaddr_t *localdest)</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;{</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  LOG_DBG(<span class="stringliteral">&quot;SUT: %u\n&quot;</span>, <a class="code" href="group__uipdrivervars.html#ga96b8904e098e8f1f896379732f1996be">uip_len</a>);</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="group__uipdrivervars.html#ga96b8904e098e8f1f896379732f1996be">uip_len</a> &gt; 0) {</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordflow">return</span> tun_output(&amp;<a class="code" href="group__uipdevfunc.html#gacd4537a3bf8a16f8f9af3660caf5040a">uip_buf</a>[<a class="code" href="group__uipoptgeneral.html#gae6f4a2453dbd8bc60e6a82774552366a">UIP_LLH_LEN</a>], <a class="code" href="group__uipdrivervars.html#ga96b8904e098e8f1f896379732f1996be">uip_len</a>);</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  }</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;}</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="comment">/* tun and slip select callback                                              */</span></div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span></div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;set_fd(fd_set *rset, fd_set *wset)</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;{</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  FD_SET(tunfd, rset);</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;  <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;}</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;handle_fd(fd_set *rset, fd_set *wset)</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;{</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  <span class="keywordtype">int</span> size;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;  <span class="keywordflow">if</span>(tunfd == -1) {</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="comment">/* tun is not open */</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  }</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;  <span class="keywordflow">if</span>((size = read(tunfd, data, maxlen)) == -1) {</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    err(1, <span class="stringliteral">&quot;tun_input: read&quot;</span>);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;  }</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  <span class="keywordflow">return</span> size;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;}</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="keyword">static</span> uint8_t</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<a class="code" href="group__sicslowpan.html#gaab2d9d0e3ef2ce7170f8fbc5a6ae70b2">output</a>(<span class="keyword">const</span> linkaddr_t *localdest)</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;{</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  LOG_DBG(<span class="stringliteral">&quot;SUT: %u\n&quot;</span>, <a class="code" href="group__uipdrivervars.html#ga96b8904e098e8f1f896379732f1996be">uip_len</a>);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="group__uipdrivervars.html#ga96b8904e098e8f1f896379732f1996be">uip_len</a> &gt; 0) {</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keywordflow">return</span> tun_output(&amp;<a class="code" href="group__uipdevfunc.html#gacd4537a3bf8a16f8f9af3660caf5040a">uip_buf</a>[<a class="code" href="group__uipoptgeneral.html#gae6f4a2453dbd8bc60e6a82774552366a">UIP_LLH_LEN</a>], <a class="code" href="group__uipdrivervars.html#ga96b8904e098e8f1f896379732f1996be">uip_len</a>);</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  }</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;}</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="comment">/* tun and slip select callback                                              */</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;set_fd(fd_set *rset, fd_set *wset)</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;{</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  <span class="keywordflow">if</span>(tunfd == -1) {</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  }</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  LOG_INFO(<span class="stringliteral">&quot;Tun6-handle FD\n&quot;</span>);</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;  <span class="keywordflow">if</span>(FD_ISSET(tunfd, rset)) {</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    size = tun_input(&amp;<a class="code" href="group__uipdevfunc.html#gacd4537a3bf8a16f8f9af3660caf5040a">uip_buf</a>[<a class="code" href="group__uipoptgeneral.html#gae6f4a2453dbd8bc60e6a82774552366a">UIP_LLH_LEN</a>], <span class="keyword">sizeof</span>(<a class="code" href="group__uipdevfunc.html#gacd4537a3bf8a16f8f9af3660caf5040a">uip_buf</a>));</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    LOG_DBG(<span class="stringliteral">&quot;TUN data incoming read:%d\n&quot;</span>, size);</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <a class="code" href="group__uipdrivervars.html#ga96b8904e098e8f1f896379732f1996be">uip_len</a> = size;</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <a class="code" href="group__tcpip.html#ga0d5e21d13844dbebd703fb8ed6b058d0">tcpip_input</a>();</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  }</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;}</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*  __CYGWIN_ */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="group__sicslowpan.html#gaea484884d194d01baee1026655a4692d">input</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;{</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;  <span class="comment">/* should not happen */</span></div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;  LOG_DBG(<span class="stringliteral">&quot;Tun6 - input\n&quot;</span>);</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;}</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  FD_SET(tunfd, rset);</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;}</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;handle_fd(fd_set *rset, fd_set *wset)</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;{</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  <span class="keywordtype">int</span> size;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;  <span class="keywordflow">if</span>(tunfd == -1) {</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="comment">/* tun is not open */</span></div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;  }</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;  LOG_INFO(<span class="stringliteral">&quot;Tun6-handle FD\n&quot;</span>);</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="keyword">const</span> <span class="keyword">struct </span><a class="code" href="structnetwork__driver.html">network_driver</a> tun6_net_driver ={</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;  <span class="stringliteral">&quot;tun6&quot;</span>,</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;  tun_init,</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;  <a class="code" href="group__sicslowpan.html#gaea484884d194d01baee1026655a4692d">input</a>,</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  <a class="code" href="group__sicslowpan.html#gaab2d9d0e3ef2ce7170f8fbc5a6ae70b2">output</a></div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;};</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;  <span class="keywordflow">if</span>(FD_ISSET(tunfd, rset)) {</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    size = tun_input(&amp;<a class="code" href="group__uipdevfunc.html#gacd4537a3bf8a16f8f9af3660caf5040a">uip_buf</a>[<a class="code" href="group__uipoptgeneral.html#gae6f4a2453dbd8bc60e6a82774552366a">UIP_LLH_LEN</a>], <span class="keyword">sizeof</span>(<a class="code" href="group__uipdevfunc.html#gacd4537a3bf8a16f8f9af3660caf5040a">uip_buf</a>));</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    LOG_DBG(<span class="stringliteral">&quot;TUN data incoming read:%d\n&quot;</span>, size);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <a class="code" href="group__uipdrivervars.html#ga96b8904e098e8f1f896379732f1996be">uip_len</a> = size;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <a class="code" href="group__tcpip.html#ga0d5e21d13844dbebd703fb8ed6b058d0">tcpip_input</a>();</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;  }</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;}</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*  __CYGWIN_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="group__sicslowpan.html#gaea484884d194d01baee1026655a4692d">input</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;{</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;  <span class="comment">/* should not happen */</span></div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;  LOG_DBG(<span class="stringliteral">&quot;Tun6 - input\n&quot;</span>);</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;}</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="keyword">const</span> <span class="keyword">struct </span><a class="code" href="structnetwork__driver.html">network_driver</a> tun6_net_driver ={</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;  <span class="stringliteral">&quot;tun6&quot;</span>,</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;  tun_init,</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;  <a class="code" href="group__sicslowpan.html#gaea484884d194d01baee1026655a4692d">input</a>,</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;  <a class="code" href="group__sicslowpan.html#gaab2d9d0e3ef2ce7170f8fbc5a6ae70b2">output</a></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;};</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
 <div class="ttc" id="uip-nd6_8c_html_a4e1a84fd63a1c24d54501f93d9bc5757"><div class="ttname"><a href="uip-nd6_8c.html#a4e1a84fd63a1c24d54501f93d9bc5757">ipaddr</a></div><div class="ttdeci">static uip_ipaddr_t ipaddr</div><div class="ttdoc">Pointer to prefix information option in uip_buf. </div><div class="ttdef"><b>Definition:</b> <a href="uip-nd6_8c_source.html#l00124">uip-nd6.c:124</a></div></div>
 <div class="ttc" id="group__tcpip_html_ga0d5e21d13844dbebd703fb8ed6b058d0"><div class="ttname"><a href="group__tcpip.html#ga0d5e21d13844dbebd703fb8ed6b058d0">tcpip_input</a></div><div class="ttdeci">void tcpip_input(void)</div><div class="ttdoc">Deliver an incoming packet to the TCP/IP stack. </div><div class="ttdef"><b>Definition:</b> <a href="tcpip_8c_source.html#l00432">tcpip.c:432</a></div></div>
 <div class="ttc" id="group__sicslowpan_html_gaab2d9d0e3ef2ce7170f8fbc5a6ae70b2"><div class="ttname"><a href="group__sicslowpan.html#gaab2d9d0e3ef2ce7170f8fbc5a6ae70b2">output</a></div><div class="ttdeci">static uint8_t output(const linkaddr_t *localdest)</div><div class="ttdoc">Take an IP packet and format it to be sent on an 802.15.4 network using 6lowpan. </div><div class="ttdef"><b>Definition:</b> <a href="sicslowpan_8c_source.html#l01485">sicslowpan.c:1485</a></div></div>
@@ -374,7 +390,7 @@
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 31 2017 23:28:50 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 7 2017 12:06:16 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

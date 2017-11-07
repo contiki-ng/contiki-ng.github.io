@@ -124,7 +124,7 @@
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;node_matches_address(<span class="keyword">const</span> rpl_dag_t *dag, <span class="keyword">const</span> rpl_ns_node_t *node, <span class="keyword">const</span> uip_ipaddr_t *<a class="code" href="uip-nd6_8c.html#a9a7cf6986d952290ec159e9a084003ff">addr</a>)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;node_matches_address(<span class="keyword">const</span> <a class="code" href="structrpl__dag.html">rpl_dag_t</a> *dag, <span class="keyword">const</span> rpl_ns_node_t *node, <span class="keyword">const</span> uip_ipaddr_t *<a class="code" href="uip-nd6_8c.html#a9a7cf6986d952290ec159e9a084003ff">addr</a>)</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordflow">return</span> addr != NULL</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      &amp;&amp; node != NULL</div>
@@ -135,7 +135,7 @@
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;rpl_ns_node_t *</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<a class="code" href="group__rpl-lite.html#gafdb129e8f94e13b20560aa4b4fd33e15">rpl_ns_get_node</a>(<span class="keyword">const</span> rpl_dag_t *dag, <span class="keyword">const</span> uip_ipaddr_t *addr)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<a class="code" href="group__rpl-lite.html#gafdb129e8f94e13b20560aa4b4fd33e15">rpl_ns_get_node</a>(<span class="keyword">const</span> <a class="code" href="structrpl__dag.html">rpl_dag_t</a> *dag, <span class="keyword">const</span> uip_ipaddr_t *addr)</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;{</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  rpl_ns_node_t *l;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordflow">for</span>(l = <a class="code" href="group__list.html#gacc0723982dcfcc54cfa6ba932ee63051">list_head</a>(nodelist); l != NULL; l = <a class="code" href="group__list.html#gae9c13698f6fd8620561f0d1124ec8cdf">list_item_next</a>(l)) {</div>
@@ -148,7 +148,7 @@
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keywordtype">int</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;rpl_ns_is_node_reachable(<span class="keyword">const</span> rpl_dag_t *dag, <span class="keyword">const</span> uip_ipaddr_t *addr)</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;rpl_ns_is_node_reachable(<span class="keyword">const</span> <a class="code" href="structrpl__dag.html">rpl_dag_t</a> *dag, <span class="keyword">const</span> uip_ipaddr_t *addr)</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;{</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keywordtype">int</span> max_depth = RPL_NS_LINK_NUM;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  rpl_ns_node_t *node = <a class="code" href="group__rpl-lite.html#gafdb129e8f94e13b20560aa4b4fd33e15">rpl_ns_get_node</a>(dag, addr);</div>
@@ -161,7 +161,7 @@
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<a class="code" href="group__rpl-lite.html#ga65cf975f46d6216c2492ef4a3dd9e9a8">rpl_ns_expire_parent</a>(rpl_dag_t *dag, <span class="keyword">const</span> uip_ipaddr_t *child, <span class="keyword">const</span> uip_ipaddr_t *parent)</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<a class="code" href="group__rpl-lite.html#ga65cf975f46d6216c2492ef4a3dd9e9a8">rpl_ns_expire_parent</a>(<a class="code" href="structrpl__dag.html">rpl_dag_t</a> *dag, <span class="keyword">const</span> uip_ipaddr_t *child, <span class="keyword">const</span> uip_ipaddr_t *parent)</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;{</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  rpl_ns_node_t *l = <a class="code" href="group__rpl-lite.html#gafdb129e8f94e13b20560aa4b4fd33e15">rpl_ns_get_node</a>(dag, child);</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="comment">/* Check if parent matches */</span></div>
@@ -171,7 +171,7 @@
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;rpl_ns_node_t *</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<a class="code" href="group__rpl-lite.html#gabf20db7c44bd94065a0e3de871fb3274">rpl_ns_update_node</a>(rpl_dag_t *dag, <span class="keyword">const</span> uip_ipaddr_t *child, <span class="keyword">const</span> uip_ipaddr_t *parent, uint32_t lifetime)</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<a class="code" href="group__rpl-lite.html#gabf20db7c44bd94065a0e3de871fb3274">rpl_ns_update_node</a>(<a class="code" href="structrpl__dag.html">rpl_dag_t</a> *dag, <span class="keyword">const</span> uip_ipaddr_t *child, <span class="keyword">const</span> uip_ipaddr_t *parent, uint32_t lifetime)</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;{</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  rpl_ns_node_t *child_node = <a class="code" href="group__rpl-lite.html#gafdb129e8f94e13b20560aa4b4fd33e15">rpl_ns_get_node</a>(dag, child);</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  rpl_ns_node_t *parent_node = <a class="code" href="group__rpl-lite.html#gafdb129e8f94e13b20560aa4b4fd33e15">rpl_ns_get_node</a>(dag, parent);</div>
@@ -283,6 +283,7 @@
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* RPL_WITH_NON_STORING */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="tcpip_8h_html"><div class="ttname"><a href="tcpip_8h.html">tcpip.h</a></div><div class="ttdoc">     Header for the Contiki/uIP interface. </div></div>
 <div class="ttc" id="uip-icmp6_8h_html"><div class="ttname"><a href="uip-icmp6_8h.html">uip-icmp6.h</a></div><div class="ttdoc">Header file for ICMPv6 message and error handing (RFC 4443) </div></div>
+<div class="ttc" id="structrpl__dag_html"><div class="ttname"><a href="structrpl__dag.html">rpl_dag</a></div><div class="ttdoc">RPL DAG structure. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-classic_2rpl_8h_source.html#l00135">rpl.h:135</a></div></div>
 <div class="ttc" id="uip-nd6_8c_html_a9a7cf6986d952290ec159e9a084003ff"><div class="ttname"><a href="uip-nd6_8c.html#a9a7cf6986d952290ec159e9a084003ff">addr</a></div><div class="ttdeci">static uip_ds6_addr_t * addr</div><div class="ttdoc">Pointer to a nbr cache entry. </div><div class="ttdef"><b>Definition:</b> <a href="uip-nd6_8c_source.html#l00115">uip-nd6.c:115</a></div></div>
 <div class="ttc" id="rpl-classic_2rpl-ns_8h_html"><div class="ttname"><a href="rpl-classic_2rpl-ns_8h.html">rpl-ns.h</a></div><div class="ttdoc">    RPL non-storing mode specific functions. </div></div>
 <div class="ttc" id="uip-debug_8h_html"><div class="ttname"><a href="uip-debug_8h.html">uip-debug.h</a></div><div class="ttdoc">    A set of debugging macros for the IP stack </div></div>
@@ -312,7 +313,7 @@
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 31 2017 23:29:03 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 7 2017 12:06:20 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

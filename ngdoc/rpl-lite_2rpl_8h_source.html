@@ -101,21 +101,21 @@
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">/********** Includes **********/</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="uip_8h.html">net/ipv6/uip.h</a>&quot;</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#include &quot;net/rpl-lite/rpl-const.h&quot;</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#include &quot;net/rpl-lite/rpl-conf.h&quot;</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#include &quot;net/rpl-lite/rpl-types.h&quot;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="rpl-const_8h.html">net/rpl-lite/rpl-const.h</a>&quot;</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="rpl-lite_2rpl-conf_8h.html">net/rpl-lite/rpl-conf.h</a>&quot;</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="rpl-types_8h.html">net/rpl-lite/rpl-types.h</a>&quot;</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="rpl-icmp6_8h.html">net/rpl-lite/rpl-icmp6.h</a>&quot;</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#include &quot;net/rpl-lite/rpl-dag.h&quot;</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="rpl-dag_8h.html">net/rpl-lite/rpl-dag.h</a>&quot;</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="rpl-lite_2rpl-ns_8h.html">net/rpl-lite/rpl-ns.h</a>&quot;</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="rpl-lite_2rpl-dag-root_8h.html">net/rpl-lite/rpl-dag-root.h</a>&quot;</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#include &quot;net/rpl-lite/rpl-neighbor.h&quot;</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="rpl-neighbor_8h.html">net/rpl-lite/rpl-neighbor.h</a>&quot;</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="rpl-ext-header_8h.html">net/rpl-lite/rpl-ext-header.h</a>&quot;</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#include &quot;net/rpl-lite/rpl-timers.h&quot;</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="rpl-timers_8h.html">net/rpl-lite/rpl-timers.h</a>&quot;</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">/********** Public symbols **********/</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">/* The only instance */</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">extern</span> rpl_instance_t curr_instance;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">extern</span> <a class="code" href="structrpl__instance.html">rpl_instance_t</a> curr_instance;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">/* The RPL multicast address (used for DIS and DIO) */</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">extern</span> uip_ipaddr_t rpl_multicast_addr;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
@@ -136,7 +136,7 @@
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment"> * \param prefix The prefix</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment"> * \return 1 if success, 0 otherwise</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__rpl-lite.html#ga1bb22bed04b727b54e0b07b8a99dc0f2">rpl_set_prefix</a>(rpl_prefix_t *prefix);<span class="comment"></span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__rpl-lite.html#ga1bb22bed04b727b54e0b07b8a99dc0f2">rpl_set_prefix</a>(<a class="code" href="structrpl__prefix.html">rpl_prefix_t</a> *prefix);<span class="comment"></span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">* Set prefix from an IPv6 address</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">*</span></div>
@@ -153,7 +153,7 @@
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment"> * \param last_prefix The last prefix (which is to be removed)</span></div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__rpl-lite.html#ga7f438615b8a459e2ba7ae61db8d41443">rpl_reset_prefix</a>(rpl_prefix_t *last_prefix);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__rpl-lite.html#ga7f438615b8a459e2ba7ae61db8d41443">rpl_reset_prefix</a>(<a class="code" href="structrpl__prefix.html">rpl_prefix_t</a> *last_prefix);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment"> * Get one of the node&#39;s global addresses</span></div>
@@ -188,24 +188,32 @@
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment"> /** @} */</span></div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* RPL_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="rpl-dag_8h_html"><div class="ttname"><a href="rpl-dag_8h.html">rpl-dag.h</a></div><div class="ttdoc">Header file for rpl-dag module. </div></div>
 <div class="ttc" id="group__uip_html_gaea69c58737efa5a5df40ce91c21c1384"><div class="ttname"><a href="group__uip.html#gaea69c58737efa5a5df40ce91c21c1384">rpl_link_callback</a></div><div class="ttdeci">void rpl_link_callback(const linkaddr_t *addr, int status, int numtx)</div><div class="ttdoc">Called by lower layers after every packet transmission. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-classic_2rpl_8c_source.html#l00253">rpl.c:253</a></div></div>
 <div class="ttc" id="rpl-lite_2rpl-ns_8h_html"><div class="ttname"><a href="rpl-lite_2rpl-ns_8h.html">rpl-ns.h</a></div><div class="ttdoc">RPL non-storing mode specific functions. </div></div>
+<div class="ttc" id="structrpl__instance_html"><div class="ttname"><a href="structrpl__instance.html">rpl_instance</a></div><div class="ttdoc">RPL instance structure. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-classic_2rpl_8h_source.html#l00219">rpl.h:219</a></div></div>
+<div class="ttc" id="rpl-lite_2rpl-conf_8h_html"><div class="ttname"><a href="rpl-lite_2rpl-conf_8h.html">rpl-conf.h</a></div><div class="ttdoc">Public configuration and API declarations for ContikiRPL. </div></div>
 <div class="ttc" id="uip-nd6_8c_html_a9a7cf6986d952290ec159e9a084003ff"><div class="ttname"><a href="uip-nd6_8c.html#a9a7cf6986d952290ec159e9a084003ff">addr</a></div><div class="ttdeci">static uip_ds6_addr_t * addr</div><div class="ttdoc">Pointer to a nbr cache entry. </div><div class="ttdef"><b>Definition:</b> <a href="uip-nd6_8c_source.html#l00115">uip-nd6.c:115</a></div></div>
 <div class="ttc" id="group__rpl-lite_html_ga3bb0d38b1f525e6795820f835632fdf9"><div class="ttname"><a href="group__rpl-lite.html#ga3bb0d38b1f525e6795820f835632fdf9">rpl_lollipop_greater_than</a></div><div class="ttdeci">int rpl_lollipop_greater_than(int a, int b)</div><div class="ttdoc">Greater-than function for a lollipop counter. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-lite_2rpl_8c_source.html#l00055">rpl.c:55</a></div></div>
+<div class="ttc" id="rpl-timers_8h_html"><div class="ttname"><a href="rpl-timers_8h.html">rpl-timers.h</a></div><div class="ttdoc">Header file for rpl-timers module. </div></div>
+<div class="ttc" id="structrpl__prefix_html"><div class="ttname"><a href="structrpl__prefix.html">rpl_prefix</a></div><div class="ttdoc">RPL prefix information. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-classic_2rpl_8h_source.html#l00126">rpl.h:126</a></div></div>
+<div class="ttc" id="rpl-types_8h_html"><div class="ttname"><a href="rpl-types_8h.html">rpl-types.h</a></div><div class="ttdoc">RPL types and macros. </div></div>
 <div class="ttc" id="group__rpl-lite_html_ga8a02637dfd57cfeaa4ca754858fd3c5e"><div class="ttname"><a href="group__rpl-lite.html#ga8a02637dfd57cfeaa4ca754858fd3c5e">rpl_set_prefix_from_addr</a></div><div class="ttdeci">int rpl_set_prefix_from_addr(uip_ipaddr_t *addr, unsigned len, uint8_t flags)</div><div class="ttdoc">Set prefix from an IPv6 address. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-lite_2rpl_8c_source.html#l00133">rpl.c:133</a></div></div>
 <div class="ttc" id="group__rpl-lite_html_ga1bb22bed04b727b54e0b07b8a99dc0f2"><div class="ttname"><a href="group__rpl-lite.html#ga1bb22bed04b727b54e0b07b8a99dc0f2">rpl_set_prefix</a></div><div class="ttdeci">int rpl_set_prefix(rpl_prefix_t *prefix)</div><div class="ttdoc">Set prefix from an prefix data structure (from DIO) </div><div class="ttdef"><b>Definition:</b> <a href="rpl-lite_2rpl_8c_source.html#l00161">rpl.c:161</a></div></div>
 <div class="ttc" id="group__rpl-lite_html_ga2f5eaddf52d96d4476c9a85f1b0f844c"><div class="ttname"><a href="group__rpl-lite.html#ga2f5eaddf52d96d4476c9a85f1b0f844c">rpl_is_reachable</a></div><div class="ttdeci">int rpl_is_reachable(void)</div><div class="ttdoc">Get the RPL&#39;s best guess on if we are reachable via have downward route or not. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-lite_2rpl_8c_source.html#l00103">rpl.c:103</a></div></div>
+<div class="ttc" id="rpl-const_8h_html"><div class="ttname"><a href="rpl-const_8h.html">rpl-const.h</a></div><div class="ttdoc">Constants for RPL. </div></div>
 <div class="ttc" id="rpl-ext-header_8h_html"><div class="ttname"><a href="rpl-ext-header_8h.html">rpl-ext-header.h</a></div><div class="ttdoc">Header file for rpl-ext-header. </div></div>
 <div class="ttc" id="group__rpl-lite_html_ga8bb77ebdc640aea81b7fbf57243f1d20"><div class="ttname"><a href="group__rpl-lite.html#ga8bb77ebdc640aea81b7fbf57243f1d20">rpl_get_global_address</a></div><div class="ttdeci">const uip_ipaddr_t * rpl_get_global_address(void)</div><div class="ttdoc">Get one of the node&#39;s global addresses. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-lite_2rpl_8c_source.html#l00069">rpl.c:69</a></div></div>
 <div class="ttc" id="uip_8h_html"><div class="ttname"><a href="uip_8h.html">uip.h</a></div><div class="ttdoc">Header file for the uIP TCP/IP stack. </div></div>
 <div class="ttc" id="rpl-lite_2rpl-dag-root_8h_html"><div class="ttname"><a href="rpl-lite_2rpl-dag-root_8h.html">rpl-dag-root.h</a></div><div class="ttdoc">DAG root utility functions for RPL. </div></div>
 <div class="ttc" id="rpl-icmp6_8h_html"><div class="ttname"><a href="rpl-icmp6_8h.html">rpl-icmp6.h</a></div><div class="ttdoc">Header file for rpl-ext-header. </div></div>
+<div class="ttc" id="rpl-neighbor_8h_html"><div class="ttname"><a href="rpl-neighbor_8h.html">rpl-neighbor.h</a></div><div class="ttdoc">Header file for rpl-neighbor module. </div></div>
 <div class="ttc" id="group__rpl-lite_html_ga7f438615b8a459e2ba7ae61db8d41443"><div class="ttname"><a href="group__rpl-lite.html#ga7f438615b8a459e2ba7ae61db8d41443">rpl_reset_prefix</a></div><div class="ttdeci">void rpl_reset_prefix(rpl_prefix_t *last_prefix)</div><div class="ttdoc">Removes current prefx. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-lite_2rpl_8c_source.html#l00117">rpl.c:117</a></div></div>
 <div class="ttc" id="group__uip_html_ga494f643ec9bdf344cdabef720ba413a4"><div class="ttname"><a href="group__uip.html#ga494f643ec9bdf344cdabef720ba413a4">rpl_init</a></div><div class="ttdeci">void rpl_init(void)</div><div class="ttdoc">Initialize RPL main module. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-classic_2rpl_8c_source.html#l00331">rpl.c:331</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 31 2017 23:29:03 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 7 2017 12:06:20 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

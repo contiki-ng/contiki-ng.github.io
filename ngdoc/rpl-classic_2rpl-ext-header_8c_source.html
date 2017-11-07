@@ -124,7 +124,7 @@
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keywordtype">int</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="group__uip.html#gada748afd301c6623a881930ab4b394a1">   72</a></span>&#160;<a class="code" href="group__uip.html#gada748afd301c6623a881930ab4b394a1">rpl_ext_header_hbh_update</a>(<span class="keywordtype">int</span> <a class="code" href="group__uip.html#ga3612c8a7e64e9863f20b27e4f3def660">uip_ext_opt_offset</a>)</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;{</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  rpl_instance_t *instance;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <a class="code" href="structrpl__instance.html">rpl_instance_t</a> *instance;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">int</span> down;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  uint16_t sender_rank;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  uint8_t sender_closer;</div>
@@ -233,7 +233,7 @@
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;{</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  uint8_t *<a class="code" href="group__uip.html#ga6a2217b24bdcc949e5831fbfa139bc45">uip_next_hdr</a>;</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  <span class="keywordtype">int</span> last_uip_ext_len = <a class="code" href="group__uipdrivervars.html#ga0c63b80e0f8038403df5fee2bac3aab8">uip_ext_len</a>;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  rpl_dag_t *dag;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  <a class="code" href="structrpl__dag.html">rpl_dag_t</a> *dag;</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  rpl_ns_node_t *dest_node;</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  rpl_ns_node_t *root_node;</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div>
@@ -388,7 +388,7 @@
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;  rpl_ns_node_t *dest_node;</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;  rpl_ns_node_t *root_node;</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;  rpl_ns_node_t *node;</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;  rpl_dag_t *dag;</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;  <a class="code" href="structrpl__dag.html">rpl_dag_t</a> *dag;</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;  uip_ipaddr_t node_addr;</div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;  PRINTF(<span class="stringliteral">&quot;RPL: SRH creating source routing header with destination &quot;</span>);</div>
@@ -521,7 +521,7 @@
 <div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span></div>
 <div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;update_hbh_header(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;{</div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;  rpl_instance_t *instance;</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;  <a class="code" href="structrpl__instance.html">rpl_instance_t</a> *instance;</div>
 <div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="group__uip.html#ga3612c8a7e64e9863f20b27e4f3def660">uip_ext_opt_offset</a>;</div>
 <div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;  <span class="keywordtype">int</span> last_uip_ext_len;</div>
 <div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;  rpl_parent_t *parent;</div>
@@ -594,7 +594,7 @@
 <div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;}</div>
 <div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
 <div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span></div>
-<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;insert_hbh_header(<span class="keyword">const</span> rpl_instance_t *instance)</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;insert_hbh_header(<span class="keyword">const</span> <a class="code" href="structrpl__instance.html">rpl_instance_t</a> *instance)</div>
 <div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;{</div>
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="group__uip.html#ga3612c8a7e64e9863f20b27e4f3def660">uip_ext_opt_offset</a>;</div>
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;  <span class="keywordtype">int</span> last_uip_ext_len;</div>
@@ -693,7 +693,7 @@
 <div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;    <span class="keywordflow">return</span> 1;</div>
 <div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;  }</div>
 <div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;</div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;  <span class="keywordflow">if</span>(default_instance-&gt;current_dag-&gt;rank == ROOT_RANK(default_instance)) {</div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;  <span class="keywordflow">if</span>(default_instance-&gt;current_dag-&gt;rank == <a class="code" href="group__rpl-lite.html#gae33bd529ba3bfc61e6068308b0482ee7">ROOT_RANK</a>(default_instance)) {</div>
 <div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;    <span class="comment">/* At the root, remove headers if any, and insert SRH or HBH</span></div>
 <div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;<span class="comment">    * (SRH is inserted only if the destination is in the DODAG) */</span></div>
 <div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;    <a class="code" href="group__uip.html#ga3b960496af730debd115a9cfdb3ead91">rpl_ext_header_remove</a>();</div>
@@ -727,7 +727,10 @@
 <div class="ttc" id="group__uip_html_ga3b960496af730debd115a9cfdb3ead91"><div class="ttname"><a href="group__uip.html#ga3b960496af730debd115a9cfdb3ead91">rpl_ext_header_remove</a></div><div class="ttdeci">void rpl_ext_header_remove(void)</div><div class="ttdoc">Removes all RPL extension headers. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-classic_2rpl-ext-header_8c_source.html#l00591">rpl-ext-header.c:591</a></div></div>
 <div class="ttc" id="tcpip_8h_html"><div class="ttname"><a href="tcpip_8h.html">tcpip.h</a></div><div class="ttdoc">     Header for the Contiki/uIP interface. </div></div>
 <div class="ttc" id="group__uip_html_ga488258fa3fa2856c84a9884842423086"><div class="ttname"><a href="group__uip.html#ga488258fa3fa2856c84a9884842423086">uip_l2_l3_hdr_len</a></div><div class="ttdeci">#define uip_l2_l3_hdr_len</div><div class="ttdoc">The sums below are quite used in ND. </div><div class="ttdef"><b>Definition:</b> <a href="uip_8h_source.html#l00075">uip.h:75</a></div></div>
+<div class="ttc" id="structrpl__dag_html"><div class="ttname"><a href="structrpl__dag.html">rpl_dag</a></div><div class="ttdoc">RPL DAG structure. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-classic_2rpl_8h_source.html#l00135">rpl.h:135</a></div></div>
+<div class="ttc" id="structrpl__instance_html"><div class="ttname"><a href="structrpl__instance.html">rpl_instance</a></div><div class="ttdoc">RPL instance structure. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-classic_2rpl_8h_source.html#l00219">rpl.h:219</a></div></div>
 <div class="ttc" id="group__uip_html_gada748afd301c6623a881930ab4b394a1"><div class="ttname"><a href="group__uip.html#gada748afd301c6623a881930ab4b394a1">rpl_ext_header_hbh_update</a></div><div class="ttdeci">int rpl_ext_header_hbh_update(int uip_ext_opt_offset)</div><div class="ttdoc">Process and update the RPL extension headers of the current uIP packet. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-classic_2rpl-ext-header_8c_source.html#l00072">rpl-ext-header.c:72</a></div></div>
+<div class="ttc" id="group__rpl-lite_html_gae33bd529ba3bfc61e6068308b0482ee7"><div class="ttname"><a href="group__rpl-lite.html#gae33bd529ba3bfc61e6068308b0482ee7">ROOT_RANK</a></div><div class="ttdeci">#define ROOT_RANK</div><div class="ttdoc">Rank of a root node. </div><div class="ttdef"><b>Definition:</b> <a href="rpl-types_8h_source.html#l00078">rpl-types.h:78</a></div></div>
 <div class="ttc" id="group__uip_html_gaf8e4f4f473a763397b17d0550ddefc62"><div class="ttname"><a href="group__uip.html#gaf8e4f4f473a763397b17d0550ddefc62">UIP_PROTO_HBHO</a></div><div class="ttdeci">#define UIP_PROTO_HBHO</div><div class="ttdoc">extension headers types </div><div class="ttdef"><b>Definition:</b> <a href="uip_8h_source.html#l01895">uip.h:1895</a></div></div>
 <div class="ttc" id="group__uipoptgeneral_html_ga3589822ecb9d9c4145209756396b8a6b"><div class="ttname"><a href="group__uipoptgeneral.html#ga3589822ecb9d9c4145209756396b8a6b">UIP_BUFSIZE</a></div><div class="ttdeci">#define UIP_BUFSIZE</div><div class="ttdoc">The size of the uIP packet buffer. </div><div class="ttdef"><b>Definition:</b> <a href="uipopt_8h_source.html#l00154">uipopt.h:154</a></div></div>
 <div class="ttc" id="structuip__802154__longaddr_html"><div class="ttname"><a href="structuip__802154__longaddr.html">uip_802154_longaddr</a></div><div class="ttdoc">64 bit 802.15.4 address </div><div class="ttdef"><b>Definition:</b> <a href="uip_8h_source.html#l00115">uip.h:115</a></div></div>
@@ -755,7 +758,7 @@
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 31 2017 23:29:03 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 7 2017 12:06:20 for Contiki-NG by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
