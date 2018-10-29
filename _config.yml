@@ -1,0 +1,19 @@
+theme: jekyll-theme-cayman
+title: Contiki-NG Testbed Runs
+timezone: 'SE'
+github:
+  is_project_page: true
+
+collections:
+  setups:
+    output: true
+  runs:
+    output: true
+  logs:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
