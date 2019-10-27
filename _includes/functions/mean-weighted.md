@@ -5,10 +5,12 @@
 {% assign sum__ = 0. %}
 {% assign sum_weights__ = 0. %}
 {% for val in {{data}} %}
+{% if forloop.rindex <= mean_head_count %}
 {% assign index = forloop.index | plus: -1 %}
 {% assign w = data_weights[index] %}
 {% assign sum_weights__ = sum_weights__ | plus: w %}
 {% assign valw = val | times: w %}
 {% assign sum__ = sum__ | plus: valw %}
+{% endif %}
 {% endfor %}
 {% assign return = sum__ | divided_by: sum_weights__ %}
