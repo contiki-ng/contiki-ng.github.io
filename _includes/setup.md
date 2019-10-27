@@ -4,6 +4,12 @@
 {% assign runs = runs | sort: "date" %}
 {% assign runs_reversed = runs | reverse %}
 {% assign runs_count = runs | size %}
+{% assign subset_max = 25 %}
+{% if runs_count <= subset_max %}
+{% assign runs_subset_count = runs_count %}
+{% else %}
+{% assign runs_subset_count = subset_max %}
+{% endif %}
 
 # Setup page
 
@@ -18,8 +24,6 @@
 {% endif %}
 
 {{setup.description}}
-
-## Statistics summary
 
 [//]: # Compute mean statistics for this setup
 
@@ -39,6 +43,7 @@
 {% assign network_formation_array = network_formation_array | push: run.global-stats.network-formation-time %}
 {% endfor %}
 
+{% assign mean_head_count = runs_subset_count %}
 {% assign data_weights = duration_array %}
 
 {% assign data = duration_array %}
@@ -64,6 +69,10 @@
 {% assign data = network_formation_array %}
 {% include functions/mean.md %}
 {% assign network_formation_mean = return %}
+
+## Statistics summary
+
+Statistics for the last {{ runs_subset_count }} runs (out of {{ runs_count }})
 
 * Run duration: {{duration_mean | round: 1}} minutes
 * Round-trip PDR: {{pdr_mean | round: 4}} %
