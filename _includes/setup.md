@@ -72,20 +72,11 @@
 * Channel utilization: {{channel_utilization_mean | round: 4}} %
 * Network formation time: {{network_formation_mean | round: 1}} seconds
 
-## Runs
-
 {% if runs_count != 0 %}
 
-Runs for this setup:
-
-|  | Round-trip PDR (%) | RTT (s) | Duty cycle (%) |
-| --- | ---: | ---: | ---:  |
-{% for run in runs_reversed -%}
-{% assign date = run.date | date: "%m/%d/%Y %H:%M:%S" -%}
-[{{date}}]({{ run.url }}) | {{run.global-stats.pdr}} | {{run.global-stats.latency}} | {{run.global-stats.duty-cycle}} |
-{% endfor %}
-
 ## Graphs
+
+Scroll down for job details.
 
 {% for s in runs[0].stats %}
 {% assign metric = s[0] %}
@@ -108,6 +99,17 @@ Runs for this setup:
 [//]: # Now, plot the current metric
 {% include plotly/boxplot-show.md %}
 
+{% endfor %}
+
+## Runs
+
+Details of all {{ runs_count }} runs for this setup:
+
+|  | Round-trip PDR (%) | RTT (s) | Duty cycle (%) |
+| --- | ---: | ---: | ---:  |
+{% for run in runs_reversed -%}
+{% assign date = run.date | date: "%m/%d/%Y %H:%M:%S" -%}
+[{{date}}]({{ run.url }}) | {{run.global-stats.pdr}} | {{run.global-stats.latency}} | {{run.global-stats.duty-cycle}} |
 {% endfor %}
 
 {% else %}
