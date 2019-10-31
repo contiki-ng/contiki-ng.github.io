@@ -25,7 +25,8 @@ Last {{ runs_subset_count }} runs for this setup ([see graphs and stats for all 
 |  | Round-trip PDR (%) | RTT (s) | Duty cycle (%) |
 | --- | ---: | ---: | ---:  |
 {% for run in runs_reversed -%}
-{% if forloop.rindex <= runs_subset_count -%}
+{% assign min_index = runs_count | minus: runs_subset_count -%}
+{% if forloop.rindex > min_index -%}
 {% assign date = run.date | date: "%m/%d/%Y %H:%M:%S" -%}
 [{{date}}]({{ run.url }}) | {{run.global-stats.pdr}} | {{run.global-stats.latency}} | {{run.global-stats.duty-cycle}} |
 {% endif -%}
