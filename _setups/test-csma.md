@@ -1,5 +1,5 @@
 ---
-index: 2
+index: 10
 uid: test-csma
 label: RPL-Lite + CSMA (Defaults)
 repository: contiki-ng/contiki-ng

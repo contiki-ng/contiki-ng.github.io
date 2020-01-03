@@ -1,5 +1,5 @@
 ---
-index: 1
+index: 2
 uid: test-tsch
 label: RPL-Lite + 6TiSCH + Orchestra (Defaults)
 repository: contiki-ng/contiki-ng
